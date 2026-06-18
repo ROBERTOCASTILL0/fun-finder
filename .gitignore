@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+public_family_events_cache.json
+.DS_Store
+.pytest_cache/
+.venv/

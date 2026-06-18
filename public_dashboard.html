@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>San Diego Fun Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef5ff;
+  --bg-accent:#fef6ea;
+  --surface:#ffffff;
+  --surface-2:#f7fbff;
+  --surface-3:#fffaf3;
+  --line:#d9e7f6;
+  --line-strong:#c6d9f0;
+  --text:#17324d;
+  --muted:#5b7695;
+  --soft:#7d96b1;
+  --blue:#4f8ef7;
+  --blue-2:#7fb7ff;
+  --green:#33b27b;
+  --amber:#f2b24d;
+  --pink:#ef7db1;
+  --shadow:0 20px 48px rgba(72,111,158,.12);
+  --radius-xl:28px;
+  --radius-lg:22px;
+  --radius-md:18px;
+  --radius-sm:14px;
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{background:linear-gradient(180deg,#eff7ff 0%,#f9fbff 48%,#fff7ef 100%)}
+body{margin:0;color:var(--text);background:radial-gradient(900px 420px at 0% 0%,rgba(127,183,255,.26),transparent 55%),radial-gradient(800px 380px at 100% 0%,rgba(242,178,77,.18),transparent 52%),linear-gradient(180deg,#eef5ff 0%,#f8fbff 45%,#fff8ef 100%)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,.btn,.chipBtn,.dayCard,.eventLink{min-height:44px}
+.app{max-width:1120px;margin:0 auto;padding:18px 14px 34px}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 16px;background:linear-gradient(180deg,rgba(238,245,255,.94),rgba(238,245,255,.76),rgba(238,245,255,0));backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}.brandIcon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#4f8ef7,#87c4ff 65%,#f7d087);box-shadow:var(--shadow);color:white;font-size:24px}.brandText{min-width:0}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:2px}.brandText h1{margin:0;font-size:26px;line-height:1.05;letter-spacing:-.03em}.brandText p{margin:4px 0 0;color:var(--muted);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.btn{border:none;border-radius:16px;padding:0 16px;background:var(--surface);box-shadow:var(--shadow);color:var(--text);display:inline-flex;align-items:center;gap:8px;font-weight:700}.btn.secondary{background:#eff6ff;border:1px solid var(--line)}.btn.primary{background:linear-gradient(135deg,#4f8ef7,#76b1ff);color:#fff}.btn .mini{font-size:12px;font-weight:600;opacity:.88}
+.shell{display:grid;grid-template-columns:320px minmax(0,1fr);gap:18px;align-items:start}
+.panel,.hero,.eventCard,.dayCard,.summaryCard{background:var(--surface);border:1px solid rgba(201,220,240,.88);box-shadow:var(--shadow);border-radius:var(--radius-lg)}
+.sidebar{display:grid;gap:16px;position:sticky;top:82px}.panel{padding:18px}.panel h2,.panel h3{margin:0 0 8px}.sub{font-size:13px;color:var(--muted);line-height:1.45}
+.hero{padding:22px;background:linear-gradient(145deg,#f7fbff 0%,#ffffff 58%,#fff8ee 100%)}
+.heroTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}.heroTop h2{margin:0;font-size:30px;letter-spacing:-.04em}.heroTop p{margin:8px 0 0;color:var(--muted);max-width:700px;line-height:1.55}.statusPill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;background:#eff8f2;color:#1f7d57;border:1px solid #cdebdc;font-size:13px;font-weight:700;white-space:nowrap}.statusDot{width:10px;height:10px;border-radius:999px;background:var(--green)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.stat{padding:14px;border-radius:18px;background:var(--surface-2);border:1px solid var(--line)}.stat span{display:block;font-size:12px;color:var(--soft);margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.stat b{font-size:28px;letter-spacing:-.03em}.stat small{display:block;color:var(--muted);margin-top:5px;font-size:12px}
+.workspace{display:grid;gap:18px}
+.gridTwo{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:start}
+.sectionHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:14px}.sectionHead h2{margin:0;font-size:22px;letter-spacing:-.03em}.sectionHead p{margin:5px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
+.inlineActions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.chipBtn{border:none;border-radius:999px;padding:0 14px;background:#eff5fd;color:var(--muted);font-weight:700}.chipBtn.active{background:var(--text);color:#fff}.chipBtn.soft{background:#fff5e8;color:#9a6826}
+.summaryStrip{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:14px}.summaryCard{padding:14px 15px;background:linear-gradient(180deg,#fff,#f9fcff)}.summaryCard strong{display:block;font-size:15px;margin-bottom:4px}.summaryCard span{display:block;color:var(--muted);font-size:13px;line-height:1.45}
+.todaySummary{padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,#edf6ff,#fff7ec);border:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.55;color:#27496a;margin-bottom:14px}.eventList,.events{display:grid;gap:12px}.eventCard{padding:16px;background:linear-gradient(180deg,#fff,#fafeff)}.eventTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.eventCard h3{margin:0;font-size:18px;line-height:1.25;letter-spacing:-.02em}.eventMeta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 10px}.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;background:#f3f8fe;border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--muted)}.chip.free{background:#edf9f2;border-color:#caebd8;color:#207955}.chip.cat{background:#fff6e8;border-color:#f2dfbd;color:#8f6423}.chip.score{background:#eef4ff;border-color:#d4e0fb;color:#406fca}.desc{font-size:14px;line-height:1.55;color:var(--muted)}.eventLink{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:0 12px;border-radius:12px;background:#f2f8ff;color:#295cae;font-weight:800}
+.dayScrollerWrap{margin-bottom:14px}.dayScroller{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.dayCard{border:none;padding:14px;text-align:left;cursor:pointer;background:linear-gradient(180deg,#fff,#f8fbff);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;max-width:100%}.dayCard:hover{transform:translateY(-1px)}.dayCard.active{background:linear-gradient(180deg,#4f8ef7,#76b1ff);color:#fff;border-color:transparent}.dayCard.active .weekday,.dayCard.active .daySummary,.dayCard.active .count{color:#eef6ff;border-color:rgba(255,255,255,.25)}.dayHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px}.weekday{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.dayNum{font-size:22px;font-weight:800;letter-spacing:-.04em}.count{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--muted)}.todayBadge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#fff1f7;color:#c74c8b;border:1px solid #f6c9de;font-size:11px;font-weight:800}.daySummary{font-size:13px;line-height:1.4;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.helperGrid{display:grid;gap:12px}.helperRow{display:flex;gap:10px;flex-wrap:wrap}.miniCard{padding:14px;border-radius:18px;background:var(--surface-3);border:1px solid #f0dfc7}.miniCard strong{display:block;margin-bottom:4px}.miniCard span{display:block;color:var(--muted);font-size:13px;line-height:1.4}.sourceList,.catRow{display:flex;flex-wrap:wrap;gap:8px}.catBox,.sourcePill{padding:10px 12px;border-radius:14px;background:#f4f8fd;border:1px solid var(--line);font-size:13px;color:var(--muted);font-weight:700}.sourcePill{background:#fffaf1;border-color:#f1e1c2}.error{padding:13px 14px;border-radius:16px;background:#fff0f6;border:1px solid #f5c3d8;color:#a73a66;margin-bottom:14px;font-weight:600}
+.muted{color:var(--muted)}.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#35506b}
+.footerNote{font-size:12px;color:var(--soft);line-height:1.5}
+@media (max-width:1200px){.shell{grid-template-columns:1fr}.sidebar{position:static;order:2}.workspace{order:1}.gridTwo{grid-template-columns:1fr}.dayScroller{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.app{padding:12px 10px 28px}.topbar{padding-top:4px}.brandIcon{width:42px;height:42px;border-radius:14px}.brandText h1{font-size:24px}.brandText p{white-space:normal}.topActions{width:100%;display:grid;grid-template-columns:1fr 1fr}.btn{justify-content:center;padding:0 12px;border-radius:14px}.hero{padding:18px}.heroTop{flex-direction:column;align-items:flex-start}.stats,.summaryStrip{grid-template-columns:1fr 1fr}.dayScroller{grid-template-columns:repeat(2,minmax(0,1fr))}.sectionHead{flex-direction:column}.inlineActions{width:100%;justify-content:flex-start}}
+@media (max-width:520px){.stats,.summaryStrip,.topActions,.dayScroller{grid-template-columns:1fr}.panel{padding:15px}.eventCard{padding:14px}.eventTop{flex-direction:column}.brandText h1{font-size:22px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">
+      <div class="brandIcon">☀️</div>
+      <div class="brandText">
+        <div class="eyebrow">Public San Diego outing guide</div>
+        <h1>San Diego Fun Finder</h1>
+        <p>Family-friendly events and outings around San Diego County — built to answer “what can we do today?” fast.</p>
+      </div>
+    </div>
+    <div class="topActions">
+      <a class="btn secondary" href="#sourcesPanel">Sources</a>
+      <button class="btn primary" id="refreshBtn" onclick="loadFamily(false)">↻ Reload data</button>
+    </div>
+  </div>
+
+  <div id="errors"></div>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <section class="panel">
+        <div class="eyebrow">Quick planner</div>
+        <h2 style="font-size:24px;letter-spacing:-.03em;margin:0 0 8px;">Easy planning lane</h2>
+        <div class="sub">Use this side panel for the fast read: best next outing window, source freshness, and activity mix.</div>
+        <div class="helperGrid" style="margin-top:14px;">
+          <div class="miniCard">
+            <strong>Best next outing window</strong>
+            <span id="weekendSummary">Scanning the strongest upcoming day…</span>
+          </div>
+          <div class="miniCard">
+            <strong>Planner hint</strong>
+            <span id="sidebarTip">Open a day tile to swap the details panel instantly.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="sectionHead" style="margin-bottom:10px;">
+          <div>
+            <h3 style="font-size:18px;">Quick scan</h3>
+            <p class="sub">Fast numbers for deciding whether it’s worth heading out.</p>
+          </div>
+        </div>
+        <div class="stats" style="grid-template-columns:1fr 1fr;">
+          <div class="stat"><span>Today</span><b id="todayCount">—</b><small>ideas</small></div>
+          <div class="stat"><span>Free</span><b id="freeCount">—</b><small>in current window</small></div>
+          <div class="stat"><span>21 days</span><b id="totalCount">—</b><small>total surfaced</small></div>
+          <div class="stat"><span>Sources</span><b id="sourceCount" style="font-size:28px;">—</b><small>currently scanned</small></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3 style="font-size:18px;">Activity mix</h3>
+        <div class="sub" style="margin-bottom:12px;">What kinds of outings are showing up most right now.</div>
+        <div id="cats" class="catRow"></div>
+        <div class="sub" style="margin:16px 0 8px;">Sources</div>
+        <div id="sources" class="sourceList"></div>
+      </section>
+
+      <section class="panel">
+        <h3 style="font-size:18px;">Planning notes</h3>
+        <div class="footerNote">
+          County-wide options are included if they look worth the drive. Open any card to jump to the original source before you go.
+        </div>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <section class="hero">
+        <div class="heroTop">
+          <div>
+            <div class="eyebrow">Family-friendly planner</div>
+            <h2>See what is happening today — then plan the next few days in seconds.</h2>
+          </div>
+          <div class="statusPill"><span class="statusDot"></span><span id="statusText">Ready to scan</span></div>
+        </div>
+        <div class="summaryStrip">
+          <div class="summaryCard"><strong>Today’s vibe</strong><span id="todaySummary">Loading…</span></div>
+          <div class="summaryCard"><strong>Strongest upcoming day</strong><span id="bestDaySummary">Scanning…</span></div>
+          <div class="summaryCard"><strong>Quick tip</strong><span id="plannerTip">Tap a day tile to swap the details panel instantly.</span></div>
+        </div>
+      </section>
+
+      <div class="gridTwo">
+        <section class="panel">
+          <div class="sectionHead">
+            <div>
+              <h2>What is happening today?</h2>
+              <p>Start with the strongest family options first. Use the chips if you want to hide non-free picks.</p>
+            </div>
+            <div class="inlineActions">
+              <button class="chipBtn active" id="todayFilterAll" onclick="setTodayFilter('all')">All picks</button>
+              <button class="chipBtn soft" id="todayFilterFree" onclick="setTodayFilter('free')">Free only</button>
+            </div>
+          </div>
+          <div id="todayList" class="eventList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="sectionHead">
+            <div>
+              <h2>Browse the week</h2>
+              <p>Each day tile gives you the quick summary before you open the details.</p>
+            </div>
+            <div class="inlineActions">
+              <button class="chipBtn active" id="dayFilterAll" onclick="setDayFilter('all')">All picks</button>
+              <button class="chipBtn soft" id="dayFilterFree" onclick="setDayFilter('free')">Free only</button>
+            </div>
+          </div>
+          <div class="dayScrollerWrap">
+            <div id="calendarGrid" class="dayScroller"></div>
+          </div>
+          <div class="todaySummary" id="selectedSummary">Tap a day in the planner to see the short list.</div>
+          <div class="sectionHead" style="margin-top:0;">
+            <div>
+              <h2 id="selectedHeading">Day details</h2>
+              <p id="selectedMeta" class="sub">This panel updates whenever you switch days.</p>
+            </div>
+          </div>
+          <div id="selectedEvents" class="events"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let currentData=null;
+let selectedDayIndex=0;
+let todayFilter='all';
+let dayFilter='all';
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function stamp(v){try{return new Date(v).toLocaleString();}catch{return v||'—';}}
+function fmtDay(iso, opts={month:'long',day:'numeric'}){try{return new Date(iso+'T12:00:00').toLocaleDateString(undefined,opts);}catch{return iso;}}
+function filterEvents(events, mode){return (events||[]).filter(e=>mode==='free' ? e.is_free : true);}
+function chooseBestUpcomingDay(days){
+  const scored=(days||[]).map(day=>({day,score:(day.count||0)*3 + ((day.events||[]).filter(e=>e.is_free).length*2) + (day.is_today?-1:0)}));
+  scored.sort((a,b)=>b.score-a.score);
+  return scored[0]?.day || days?.[0] || null;
+}
+function computePlannerTip(data){
+  const best=chooseBestUpcomingDay(data.calendar||[]);
+  if(best && best.count){
+    return `${best.weekday} ${fmtDay(best.date,{month:'short',day:'numeric'})} currently looks strongest with ${best.count} ideas.`;
+  }
+  return 'Tap a day tile to swap the details panel instantly.';
+}
+function renderEvent(e){
+  return `<article class="eventCard">
+    <div class="eventTop">
+      <div>
+        <h3>${esc(e.title)}</h3>
+        <div class="eventMeta">
+          ${e.time_text?`<span class="chip">${esc(e.time_text)}</span>`:''}
+          ${e.venue?`<span class="chip">${esc(e.venue)}</span>`:''}
+          ${e.category?`<span class="chip cat">${esc(e.category)}</span>`:''}
+          ${e.is_free?`<span class="chip free">Free / easy-cost</span>`:''}
+          <span class="chip">${esc(e.source_label)}</span>
+        </div>
+      </div>
+    </div>
+    <div class="desc">${esc(e.description || 'No short description available yet.')}</div>
+    <a class="eventLink" href="${esc(e.url)}" target="_blank" rel="noopener">See details ↗</a>
+  </article>`;
+}
+function renderDayCard(day, idx){
+  const n=new Date(day.date+'T12:00:00');
+  const num=n.getDate();
+  return `<button class="dayCard ${idx===selectedDayIndex?'active':''}" data-idx="${idx}">
+    <div class="dayHead">
+      <div>
+        <div class="weekday">${esc(day.weekday)}</div>
+        <div class="dayNum">${esc(num)}</div>
+      </div>
+      <div style="display:grid;gap:6px;justify-items:end;">
+        ${day.is_today?'<span class="todayBadge">Today</span>':''}
+        <span class="count">${esc(day.count)} ideas</span>
+      </div>
+    </div>
+    <div class="daySummary">${esc(day.summary)}</div>
+  </button>`;
+}
+function updateFilterButtons(){
+  $('todayFilterAll').classList.toggle('active', todayFilter==='all');
+  $('todayFilterFree').classList.toggle('active', todayFilter==='free');
+  $('dayFilterAll').classList.toggle('active', dayFilter==='all');
+  $('dayFilterFree').classList.toggle('active', dayFilter==='free');
+}
+function setTodayFilter(mode){todayFilter=mode;updateFilterButtons();renderToday();}
+function setDayFilter(mode){dayFilter=mode;updateFilterButtons();renderSelectedDay();}
+function renderToday(){
+  const events=filterEvents(currentData?.today?.events||[], todayFilter);
+  $('todayList').innerHTML=events.length ? events.map(renderEvent).join('') : '<div class="muted">No matching public picks for today with this filter.</div>';
+}
+function renderSelectedDay(){
+  const days=currentData?.calendar||[];
+  const day=days[selectedDayIndex];
+  if(!day) return;
+  document.querySelectorAll('.dayCard').forEach((el,i)=>el.classList.toggle('active', i===selectedDayIndex));
+  const filtered=filterEvents(day.events||[], dayFilter);
+  $('selectedHeading').textContent=`${day.weekday} · ${fmtDay(day.date)}`;
+  $('selectedSummary').textContent=day.summary;
+  $('selectedMeta').textContent=`${filtered.length} shown${dayFilter==='free' ? ' (free only)' : ''} · ${day.count} total ideas surfaced for this day.`;
+  $('selectedEvents').innerHTML=filtered.length ? filtered.map(renderEvent).join('') : '<div class="muted">No matching public picks for this day with the current filter.</div>';
+}
+function selectDay(idx){selectedDayIndex=idx;renderSelectedDay();}
+async function loadFamily(force=false){
+  $('errors').innerHTML='';
+  $('statusText').textContent='Loading public event cache…';
+  $('refreshBtn').disabled=true;
+  try{
+    const url='/api/events';
+    const res=await fetch(url);
+    const data=await res.json();
+    currentData=data;
+    if(!data.ok){
+      $('errors').innerHTML=`<div class="error">Could not load public event scan: ${esc(data.error||'unknown error')}</div>`;
+      $('statusText').textContent='Needs attention';
+      return;
+    }
+    if((data.errors||[]).length){
+      $('errors').innerHTML=`<div class="error">Some sources had trouble, but usable results are still shown. ${esc(data.errors.join(' | '))}</div>`;
+    }
+    const bestDay=chooseBestUpcomingDay(data.calendar||[]);
+    const totalEvents=data.counts?.total_events ?? 0;
+    const freeEvents=data.counts?.free_events ?? 0;
+    $('todayCount').textContent=data.today?.count ?? 0;
+    $('totalCount').textContent=totalEvents;
+    $('freeCount').textContent=freeEvents;
+    $('sourceCount').textContent=(data.sources||[]).length;
+    $('statusText').textContent=`Updated ${stamp(data.generated_at)}`;
+    $('todaySummary').textContent=data.today?.summary || 'No summary available.';
+    $('bestDaySummary').textContent=bestDay ? `${bestDay.weekday} ${fmtDay(bestDay.date,{month:'short',day:'numeric'})} · ${bestDay.summary}` : 'No standout day surfaced yet.';
+    $('weekendSummary').textContent=bestDay ? `${bestDay.weekday} ${fmtDay(bestDay.date,{month:'short',day:'numeric'})} currently looks strongest.` : 'No standout day surfaced yet.';
+    $('plannerTip').textContent=computePlannerTip(data);
+    $('sidebarTip').textContent=data.today?.count ? `${data.today.count} good picks are ready today. Use filters if you want an easy free-only pass.` : 'Open a day tile to swap the details panel instantly.';
+    $('calendarGrid').innerHTML=(data.calendar||[]).map(renderDayCard).join('');
+    document.querySelectorAll('.dayCard').forEach(btn=>btn.addEventListener('click',()=>selectDay(Number(btn.dataset.idx))));
+    const cats=data.top_categories||[];
+    $('cats').innerHTML=cats.length ? cats.map(c=>`<div class="catBox">${esc(c.name)} · ${esc(c.count)}</div>`).join('') : '<div class="muted">No categories yet.</div>';
+    $('sources').innerHTML=(data.sources||[]).map(s=>`<div class="sourcePill">${esc(s)}</div>`).join('');
+    selectedDayIndex=0;
+    renderToday();
+    renderSelectedDay();
+  }catch(err){
+    $('errors').innerHTML=`<div class="error">Could not load public event scan right now. ${esc(err)}</div>`;
+    $('statusText').textContent='Connection hiccup';
+  }finally{
+    $('refreshBtn').disabled=false;
+  }
+}
+updateFilterButtons();
+loadFamily();
+</script>
+</body>
+</html>

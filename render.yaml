@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: san-diego-fun-finder
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt && python public_family_events.py refresh --json >/dev/null || true
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60
+    healthCheckPath: /health
+    autoDeploy: true
