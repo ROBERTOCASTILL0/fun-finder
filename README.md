@@ -4,7 +4,7 @@ Public, standalone San Diego family-friendly event finder.
 
 ## Security boundary
 
-This app is intentionally separate from RobertoGPT/Hermes/Tailscale/private dashboards. It exposes only:
+This app exposes only:
 
 - `GET /`
 - `GET /health`
