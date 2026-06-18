@@ -4,6 +4,8 @@ __pycache__/
 .env.*
 !.env.example
 public_family_events_cache.json
+fun_finder_analytics.sqlite3
+*.sqlite3
 .DS_Store
 .pytest_cache/
 .venv/

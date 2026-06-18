@@ -183,7 +183,7 @@ button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
     </div>
     <div class="top-btns">
       <button class="btn btn-ghost" onclick="openSources()">📋 Sources</button>
-      <button class="btn btn-primary" id="reloadBtn" onclick="loadEvents()">↻ Refresh</button>
+      <button class="btn btn-primary" id="reloadBtn" onclick="loadEvents('manual')">↻ Refresh</button>
     </div>
   </div>
 
@@ -350,23 +350,78 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&
 const txt=ev=>`${ev.title||''} ${ev.description||''} ${ev.venue||''} ${(ev.tags||[]).join(' ')} ${ev.category||''}`.toLowerCase();
 const meta=ev=>ev.metadata||{};
 const feat=(ev,k)=>!!(meta(ev).features||{})[k];
+const ANALYTICS_SESSION_KEY='sdfunfinder_analytics_session';
+let pageViewTracked=false, lastNoResultsSignature='', analyticsSessionMemory='';
 function todayPacificISO(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
 function todayIndex(){const cal=allData?.calendar||[]; const iso=todayPacificISO(); const idx=cal.findIndex(d=>d.is_today||d.date===iso); return idx>=0?idx:0;}
 function activeDayEvents(offset=0){return allData?.calendar?.[todayIndex()+offset]?.events||[];}
 function eventAudience(ev){return meta(ev).audience||'unknown';}
 
+// ── Privacy-first analytics ────────────────────────────
+function analyticsDisabled(){return navigator.doNotTrack==='1'||window.doNotTrack==='1'||navigator.globalPrivacyControl===true;}
+function safeStorageGet(storage,key){try{return storage.getItem(key)||'';}catch(_err){return'';}}
+function safeStorageSet(storage,key,value){try{storage.setItem(key,value);return true;}catch(_err){return false;}}
+function safeStorageRemove(storage,key){try{storage.removeItem(key);return true;}catch(_err){return false;}}
+function getAnalyticsSessionId(){
+  if(analyticsDisabled()) return '';
+  let sid=safeStorageGet(localStorage,'sdfunfinder_analytics_session')||analyticsSessionMemory;
+  if(sid) return sid;
+  sid=(window.crypto&&crypto.randomUUID?crypto.randomUUID():`sdfun-${Date.now()}-${Math.random().toString(16).slice(2)}`);
+  analyticsSessionMemory=sid;
+  safeStorageSet(localStorage,'sdfunfinder_analytics_session',sid);
+  return sid;
+}
+function trackAnalytics(eventName,extra={}){
+  try{
+    if(analyticsDisabled()) return Promise.resolve(false);
+    const sessionId=getAnalyticsSessionId();
+    if(!sessionId) return Promise.resolve(false);
+    const payload={session_id:sessionId,event_name:eventName,path:location.pathname,referrer:document.referrer||'direct',...extra};
+    const body=JSON.stringify(payload);
+    if(navigator.sendBeacon){
+      try{
+        const blob=new Blob([body],{type:'application/json'});
+        if(navigator.sendBeacon('/api/analytics',blob)) return Promise.resolve(true);
+      }catch(_err){}
+    }
+    return fetch('/api/analytics',{method:'POST',headers:{'Content-Type':'application/json'},body,keepalive:true})
+      .then(()=>true)
+      .catch(()=>false);
+  }catch(_err){
+    return Promise.resolve(false);
+  }
+}
+function trackFilterChange(filterKey,filterValue,metadata={}){
+  return trackAnalytics('filter_changed',{metadata:{filter_key:filterKey,filter_value:filterValue,...metadata}});
+}
+function trackEventDetailClick(link){
+  return trackAnalytics('event_detail_clicked',{
+    source_label:link.dataset.sourceLabel||'',
+    title:link.dataset.title||'',
+    category:link.dataset.category||'',
+    metadata:{timing:S.timing,area:S.area}
+  });
+}
+function maybeTrackNoResults(reason){
+  const signature=`${reason}|${S.audience}|${S.price}|${S.setting}|${S.feature}|${S.timing}|${S.area}|${S.kids}|${S.dogs}|${S.seniors}|${[...S.childAges].sort().join(',')}`;
+  if(signature===lastNoResultsSignature) return;
+  lastNoResultsSignature=signature;
+  trackAnalytics('no_results_seen',{metadata:{reason,audience:S.audience,price:S.price,setting:S.setting,feature:S.feature,timing:S.timing,area:S.area,kids:S.kids,dogs:S.dogs,seniors:S.seniors}});
+}
+
 // ── Profile persistence ────────────────────────────────
 function saveProfile(){
-  localStorage.setItem('sdfunfinder_v1',JSON.stringify({
+  safeStorageSet(localStorage,'sdfunfinder_v1',JSON.stringify({
     adults:S.adults,kids:S.kids,childAges:[...S.childAges],dogs:S.dogs,seniors:S.seniors,
     prefs:[...S.prefs],audience:S.audience,price:S.price,setting:S.setting,feature:S.feature,timing:S.timing,area:S.area
   }));
+  trackAnalytics('save_profile_clicked',{metadata:{audience:S.audience,price:S.price,setting:S.setting,feature:S.feature,timing:S.timing,area:S.area,kids:S.kids,dogs:S.dogs,seniors:S.seniors}});
   const b=$('saveBtn'); b.textContent='✅ Saved!';
   setTimeout(()=>{b.textContent='💾 Save profile';},2200);
 }
 function loadProfile(){
   try{
-    const raw=localStorage.getItem('sdfunfinder_v1'); if(!raw) return;
+    const raw=safeStorageGet(localStorage,'sdfunfinder_v1'); if(!raw) return;
     const p=JSON.parse(raw);
     S.adults=p.adults||1; S.kids=p.kids||0; S.childAges=new Set(p.childAges||[]);
     S.dogs=!!p.dogs; S.seniors=!!p.seniors; S.prefs=new Set(p.prefs||[]);
@@ -379,7 +434,11 @@ function loadProfile(){
     $('savedBanner').style.display='flex';
   }catch(e){}
 }
-function clearProfile(){localStorage.removeItem('sdfunfinder_v1');location.reload();}
+function clearProfile(){
+  trackAnalytics('clear_profile_clicked',{metadata:{had_saved_profile:!!safeStorageGet(localStorage,'sdfunfinder_v1')}});
+  safeStorageRemove(localStorage,'sdfunfinder_v1');
+  location.reload();
+}
 
 // ── UI sync ────────────────────────────────────────────
 function applyStateToUI(){
@@ -395,7 +454,12 @@ function applyStateToUI(){
         const b=document.createElement('button');
         b.className='age-chip'; b.textContent=lbl; b.dataset.age=val;
         b.classList.toggle('on',S.childAges.has(val));
-        b.onclick=()=>{S.childAges.has(val)?S.childAges.delete(val):S.childAges.add(val);b.classList.toggle('on');reRender();};
+        b.onclick=()=>{
+          S.childAges.has(val)?S.childAges.delete(val):S.childAges.add(val);
+          b.classList.toggle('on');
+          trackFilterChange('child_age',val,{active:S.childAges.has(val)});
+          reRender();
+        };
         ar.appendChild(b);
       });
     }else{
@@ -411,14 +475,46 @@ function applyStateToUI(){
 }
 
 // ── Controls ───────────────────────────────────────────
-function adjGroup(key,d){S[key]=Math.max(key==='adults'?1:0,S[key]+d);applyStateToUI();reRender();}
-function toggleGroup(key){S[key]=!S[key];applyStateToUI();reRender();}
-function togglePref(btn){const p=btn.dataset.pref;S.prefs.has(p)?S.prefs.delete(p):S.prefs.add(p);btn.classList.toggle('on',S.prefs.has(p));reRender();}
-function setTiming(btn){S.timing=btn.dataset.timing;document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
-function setArea(btn){S.area=btn.dataset.area;document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
-function setSelect(key,val){S[key]=val;applyStateToUI();reRender();}
+function adjGroup(key,d){
+  S[key]=Math.max(key==='adults'?1:0,S[key]+d);
+  trackFilterChange(key,S[key],{change:d});
+  applyStateToUI();
+  reRender();
+}
+function toggleGroup(key){
+  S[key]=!S[key];
+  trackFilterChange(key,S[key]);
+  applyStateToUI();
+  reRender();
+}
+function togglePref(btn){
+  const p=btn.dataset.pref;
+  S.prefs.has(p)?S.prefs.delete(p):S.prefs.add(p);
+  btn.classList.toggle('on',S.prefs.has(p));
+  trackFilterChange('preference',p,{active:S.prefs.has(p)});
+  reRender();
+}
+function setTiming(btn){
+  S.timing=btn.dataset.timing;
+  trackFilterChange('timing',S.timing);
+  document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b===btn));
+  reRender();
+}
+function setArea(btn){
+  S.area=btn.dataset.area;
+  trackFilterChange('area',S.area);
+  document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b===btn));
+  reRender();
+}
+function setSelect(key,val){
+  S[key]=val;
+  trackFilterChange(key,val);
+  applyStateToUI();
+  reRender();
+}
 function resetFilters(){
   S.adults=1;S.kids=0;S.childAges=new Set();S.dogs=false;S.seniors=false;S.prefs=new Set();S.audience='all';S.price='any';S.setting='any';S.feature='any';S.timing='today';S.area='all';
+  trackFilterChange('reset','default');
   $('ageRow').querySelectorAll('.age-chip').forEach(b=>b.remove());
   applyStateToUI();reRender();
 }
@@ -543,7 +639,7 @@ function renderCard(ev,label,reasons){
     ${ev.description?`<div class="card-desc">${esc(ev.description)}</div>`:''}
     ${whyBox(ev,reasons,label)}
     <div class="card-actions">
-      <a class="card-btn card-btn-primary" href="${esc(ev.url)}" target="_blank" rel="noopener">View details ↗</a>
+      <a class="card-btn card-btn-primary" href="${esc(ev.url)}" target="_blank" rel="noopener" data-source-label="${esc(ev.source_label||ev.source||'')}" data-title="${esc(ev.title||'')}" data-category="${esc(ev.category||'')}" onclick="trackEventDetailClick(this)">View details ↗</a>
     </div>
   </article>`;
 }
@@ -554,9 +650,11 @@ function reRender(){
   $('recsHeading').textContent=`🏆 Top matches for ${timingLabel()}`;
   if(!scored.length){
     $('recsMeta').textContent='';
+    maybeTrackNoResults('recommended_matches');
     $('recsList').innerHTML=`<div class="empty-state"><div class="emo">🔍</div><h3>No matches found</h3><p>Try a broader dropdown. Some filters, especially dog-friendly, only show events where the source explicitly provides that metadata.</p></div>`;
     return;
   }
+  lastNoResultsSignature='';
   $('recsMeta').textContent=`${scored.length} option${scored.length!==1?'s':''} · sorted by best fit for your group`;
   const labels=assignLabels(scored);
   $('recsList').innerHTML=`<div class="event-list">${scored.slice(0,10).map(({ev,reasons})=>renderCard(ev,labels.get(ev)||'',reasons)).join('')}</div>`;
@@ -572,10 +670,11 @@ function renderCalendar(){
     </button>`;
   }).join('');
 }
-function selectDay(i){
+function selectDay(i,{track=true}={}){
   selDay=i;
   document.querySelectorAll('.dayCard').forEach((el,idx)=>el.classList.toggle('active',idx===i));
   const day=allData?.calendar?.[i]; if(!day) return;
+  track&&trackAnalytics('day_selected',{metadata:{date:day.date,weekday:day.weekday,count:day.count}});
   const d=new Date(day.date+'T12:00:00'), sb=$('daySummaryBox');
   sb.style.display=''; sb.innerHTML=`<strong>${esc(day.weekday)}, ${d.toLocaleDateString(undefined,{month:'long',day:'numeric'})}</strong> · ${esc(day.summary)}`;
   $('dayEventList').innerHTML=day.events?.length
@@ -590,12 +689,16 @@ function showStatus(msg,type='ok'){
   el.innerHTML=`<span class="status-dot"></span>${esc(msg)}<button class="status-close" onclick="this.parentElement.style.display='none'" aria-label="Dismiss">×</button>`;
   if(type==='ok') setTimeout(()=>{if(el.classList.contains('ok'))el.style.display='none';},6000);
 }
-function openSources(){$('sourcesModal').classList.add('open');}
+function openSources(){
+  trackAnalytics('sources_modal_opened',{metadata:{loaded_sources:document.querySelectorAll('#sourcesBody .src-item').length}});
+  $('sourcesModal').classList.add('open');
+}
 function closeSources(){$('sourcesModal').classList.remove('open');}
 
 // ── Load ───────────────────────────────────────────────
-async function loadEvents(){
+async function loadEvents(trigger='auto'){
   const rb=$('reloadBtn'); rb.disabled=true; rb.textContent='⏳ Loading…';
+  if(trigger==='manual') trackAnalytics('refresh_clicked',{metadata:{timing:S.timing,area:S.area}});
   showStatus('Fetching the latest events…','load');
   try{
     const res=await fetch('/api/events');
@@ -607,6 +710,10 @@ async function loadEvents(){
       return;
     }
     allData=data;
+    if(!pageViewTracked){
+      trackAnalytics('page_view',{metadata:{timing:S.timing,area:S.area,sources:(data.sources||[]).length,total_events:data.counts?.total_events??0}});
+      pageViewTracked=true;
+    }
     $('statsRow').style.display='';
     $('statToday').textContent=(data.calendar?.[todayIndex()]?.count??data.today?.count??0);
     $('statFree').textContent=data.counts?.free_events??0;
@@ -623,7 +730,7 @@ async function loadEvents(){
     showStatus(`Events updated${ts?' at '+ts:''}. Ready to plan!`,'ok');
     selDay=todayIndex();
     renderCalendar();
-    selectDay(selDay);
+    selectDay(selDay,{track:false});
     reRender();
   }catch(err){
     showStatus('Connection issue — check your internet and tap Refresh.','err');
@@ -636,7 +743,7 @@ async function loadEvents(){
 // ── Init ───────────────────────────────────────────────
 loadProfile();
 applyStateToUI();
-loadEvents();
+loadEvents('auto');
 </script>
 </body>
 </html>

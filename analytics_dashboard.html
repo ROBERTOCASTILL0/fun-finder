@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fun Finder Analytics</title>
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#07111f;
+    --panel:#0f1b2e;
+    --panel-soft:#12233a;
+    --line:#28415f;
+    --text:#edf4ff;
+    --muted:#9eb1cc;
+    --accent:#68d7ff;
+    --accent-soft:rgba(104,215,255,.15);
+    --good:#7ef0b0;
+    --warn:#ffd27a;
+    --danger:#ff8e98;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#07111f 0%,#091728 100%);
+    color:var(--text);
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:18px 14px 36px}
+  .hero,.card{background:rgba(15,27,46,.92);border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 40px rgba(0,0,0,.2)}
+  .hero{padding:20px 18px;margin-bottom:14px}
+  .card{padding:16px}
+  .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{margin:8px 0 8px;font-size:30px;line-height:1.05}
+  h2{margin:0 0 10px;font-size:18px}
+  p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+  .status{padding:12px 14px;border-radius:16px;background:#0b1423;border:1px solid rgba(255,255,255,.06);margin-bottom:14px;color:var(--muted);font-size:14px;line-height:1.5}
+  .auth-card{display:grid;gap:12px;margin-bottom:14px}
+  .auth-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .auth-input{flex:1 1 240px;min-height:46px;padding:0 14px;border-radius:16px;border:1px solid var(--line);background:#0b1423;color:var(--text);font-size:15px}
+  .btn{min-height:46px;padding:0 16px;border-radius:16px;border:1px solid var(--line);background:var(--accent-soft);color:#e8fbff;font-weight:700}
+  .btn-ghost{background:transparent;color:var(--muted)}
+  .helper{font-size:13px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+  .metric{padding:16px;background:var(--panel-soft);border:1px solid var(--line);border-radius:18px;min-height:106px}
+  .metric b{display:block;font-size:28px;line-height:1.05;margin-bottom:8px}
+  .metric span{display:block;font-size:14px;color:var(--muted)}
+  .stack{display:grid;gap:12px}
+  .brief{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:999px;background:var(--accent-soft);border:1px solid rgba(104,215,255,.22);font-size:13px;color:#dff8ff}
+  ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  li{padding:12px 13px;border-radius:16px;background:#0c1729;border:1px solid rgba(255,255,255,.06)}
+  .row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .label{font-weight:700;font-size:15px}
+  .meta{font-size:13px;color:var(--muted);margin-top:4px}
+  .count{font-weight:800;color:var(--good);white-space:nowrap}
+  .empty{color:var(--muted);font-size:14px;line-height:1.5}
+  .danger{color:var(--danger)}
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    h1{font-size:26px}
+    .wrap{padding:14px 12px 30px}
+    .auth-row{flex-direction:column;align-items:stretch}
+    .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Private dashboard</div>
+    <h1>Fun Finder Analytics</h1>
+    <p id="heroText">Loading a short visitor briefing…</p>
+    <div class="brief" id="briefChips"></div>
+  </section>
+
+  <section class="card auth-card">
+    <div>
+      <h2>Enter analytics key</h2>
+      <p>Stored only in this browser tab via sessionStorage — not in the URL.</p>
+    </div>
+    <form id="authForm" class="auth-row">
+      <input id="keyInput" class="auth-input" type="password" autocomplete="current-password" placeholder="Analytics key" aria-label="Analytics key">
+      <button class="btn" type="submit">Unlock analytics</button>
+      <button class="btn btn-ghost" id="clearKeyBtn" type="button">Forget key</button>
+    </form>
+    <div class="helper" id="authHint">No key saved in this tab yet.</div>
+  </section>
+
+  <div class="status" id="statusBox">Enter analytics key to load the private first-party summary.</div>
+
+  <section class="grid" id="metricGrid">
+    <div class="metric"><b id="visitorsValue">—</b><span>Unique visitors</span></div>
+    <div class="metric"><b id="pageViewsValue">—</b><span>Page views</span></div>
+    <div class="metric"><b id="clicksValue">—</b><span>Event detail clicks</span></div>
+    <div class="metric"><b id="eventsValue">—</b><span>Total tracked events</span></div>
+  </section>
+
+  <section class="stack">
+    <article class="card">
+      <h2>Top filters people use</h2>
+      <ul id="filtersList"></ul>
+    </article>
+    <article class="card">
+      <h2>Top event sources earning clicks</h2>
+      <ul id="sourcesList"></ul>
+    </article>
+    <article class="card">
+      <h2>Most-clicked event titles</h2>
+      <ul id="titlesList"></ul>
+    </article>
+    <article class="card">
+      <h2>Where visitors are coming from</h2>
+      <ul id="referrersList"></ul>
+    </article>
+    <article class="card">
+      <h2>Daily trend</h2>
+      <ul id="dailyList"></ul>
+    </article>
+  </section>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const ANALYTICS_KEY_STORAGE = 'funFinderAnalyticsKey';
+let analyticsKeyMemory = '';
+
+function renderList(targetId, items, renderItem, emptyText){
+  const el = $(targetId);
+  if(!items || !items.length){
+    el.innerHTML = `<li class="empty">${emptyText}</li>`;
+    return;
+  }
+  el.innerHTML = items.map(renderItem).join('');
+}
+
+function num(value){
+  return Number(value || 0).toLocaleString();
+}
+
+function esc(value){
+  return String(value ?? '').replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function safeStorageGet(storage,key){
+  try{return storage.getItem(key)||'';}catch(_err){return '';}
+}
+
+function safeStorageSet(storage,key,value){
+  try{storage.setItem(key,value);return true;}catch(_err){return false;}
+}
+
+function safeStorageRemove(storage,key){
+  try{storage.removeItem(key);return true;}catch(_err){return false;}
+}
+
+function getStoredKey(){
+  return safeStorageGet(sessionStorage,'funFinderAnalyticsKey') || analyticsKeyMemory;
+}
+
+function setStoredKey(value){
+  const trimmed = String(value || '').trim();
+  analyticsKeyMemory = trimmed;
+  if(trimmed){
+    safeStorageSet(sessionStorage,'funFinderAnalyticsKey', trimmed);
+  }else{
+    safeStorageRemove(sessionStorage,'funFinderAnalyticsKey');
+  }
+}
+
+function resetMetrics(){
+  $('visitorsValue').textContent = '—';
+  $('pageViewsValue').textContent = '—';
+  $('clicksValue').textContent = '—';
+  $('eventsValue').textContent = '—';
+  $('heroText').textContent = 'Unlock the dashboard to view the latest visitor briefing.';
+  $('briefChips').innerHTML = '';
+  renderList('filtersList', [], () => '', 'Enter analytics key to load filter activity.');
+  renderList('sourcesList', [], () => '', 'Enter analytics key to load source click data.');
+  renderList('titlesList', [], () => '', 'Enter analytics key to load title click data.');
+  renderList('referrersList', [], () => '', 'Enter analytics key to load referrer data.');
+  renderList('dailyList', [], () => '', 'Enter analytics key to load the daily trend.');
+}
+
+function updateAuthHint(){
+  const hasKey = !!getStoredKey();
+  $('authHint').textContent = hasKey
+    ? 'Key is saved in this tab only. Use “Forget key” to clear it.'
+    : 'No key saved in this tab yet.';
+}
+
+async function loadSummary(){
+  const key = getStoredKey();
+  if(!key){
+    resetMetrics();
+    $('statusBox').textContent = 'Enter analytics key to load the private first-party summary.';
+    updateAuthHint();
+    return;
+  }
+
+  updateAuthHint();
+  $('statusBox').textContent = 'Loading private analytics summary…';
+
+  const resp = await fetch('/api/analytics/summary?days=30', {
+    credentials:'same-origin',
+    headers:{'X-Analytics-Key': key}
+  });
+  const data = await resp.json();
+
+  if(resp.status === 403){
+    $('statusBox').innerHTML = '<span class="danger">Analytics key was rejected. Enter it again to continue.</span>';
+    setStoredKey('');
+    updateAuthHint();
+    resetMetrics();
+    return;
+  }
+
+  if(!resp.ok || !data.ok){
+    $('statusBox').textContent = data.error ? `Analytics error: ${data.error}` : 'Unable to load analytics summary.';
+    resetMetrics();
+    return;
+  }
+
+  $('statusBox').textContent = `Showing the last ${data.window_days} day(s). Updated ${new Date(data.generated_at).toLocaleString()}.`;
+  $('visitorsValue').textContent = num(data.totals.unique_sessions);
+  $('pageViewsValue').textContent = num(data.totals.page_views);
+  $('clicksValue').textContent = num(data.totals.outbound_clicks);
+  $('eventsValue').textContent = num(data.totals.events);
+  $('heroText').textContent = `First-party briefing: ${num(data.totals.unique_sessions)} visitor session(s), ${num(data.totals.page_views)} page view(s), and ${num(data.totals.outbound_clicks)} outbound event click(s) in the current window.`;
+  $('briefChips').innerHTML = [
+    `<span class="chip">Window: ${num(data.window_days)} days</span>`,
+    `<span class="chip">Top action: ${esc((data.top_events[0] && data.top_events[0].name) || 'n/a')}</span>`,
+    `<span class="chip">Top source: ${esc((data.top_sources[0] && data.top_sources[0].source_label) || 'n/a')}</span>`
+  ].join('');
+
+  renderList('filtersList', data.top_filters, (item) => `
+    <li>
+      <div class="row">
+        <div>
+          <div class="label">${esc(item.filter)} → ${esc(item.value)}</div>
+          <div class="meta">How often visitors changed this control to that value.</div>
+        </div>
+        <div class="count">${num(item.count)}</div>
+      </div>
+    </li>
+  `, 'No filter changes have been captured yet.');
+
+  renderList('sourcesList', data.top_sources, (item) => `
+    <li>
+      <div class="row">
+        <div>
+          <div class="label">${esc(item.source_label)}</div>
+          <div class="meta">Outbound clicks to events from this source.</div>
+        </div>
+        <div class="count">${num(item.count)}</div>
+      </div>
+    </li>
+  `, 'No outbound event clicks have been captured yet.');
+
+  renderList('titlesList', data.top_titles, (item) => `
+    <li>
+      <div class="row">
+        <div>
+          <div class="label">${esc(item.title)}</div>
+          <div class="meta">Most-clicked event title.</div>
+        </div>
+        <div class="count">${num(item.count)}</div>
+      </div>
+    </li>
+  `, 'No clicked event titles yet.');
+
+  renderList('referrersList', data.top_referrers, (item) => `
+    <li>
+      <div class="row">
+        <div>
+          <div class="label">${esc(item.referrer)}</div>
+          <div class="meta">Referrer origin reported by the browser on tracked page views.</div>
+        </div>
+        <div class="count">${num(item.count)}</div>
+      </div>
+    </li>
+  `, 'No referrer data yet.');
+
+  renderList('dailyList', data.daily, (item) => `
+    <li>
+      <div class="row">
+        <div>
+          <div class="label">${esc(item.date)}</div>
+          <div class="meta">${num(item.unique_sessions)} visitor(s) · ${num(item.page_views)} page view(s)</div>
+        </div>
+        <div class="count">${num(item.outbound_clicks)} clicks</div>
+      </div>
+    </li>
+  `, 'No daily trend data yet.');
+}
+
+$('authForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  setStoredKey($('keyInput').value);
+  $('keyInput').value = '';
+  await loadSummary();
+});
+
+$('clearKeyBtn').addEventListener('click', () => {
+  setStoredKey('');
+  $('keyInput').value = '';
+  updateAuthHint();
+  resetMetrics();
+  $('statusBox').textContent = 'Analytics key cleared from this tab.';
+});
+
+updateAuthHint();
+resetMetrics();
+loadSummary().catch((err) => {
+  $('statusBox').textContent = `Analytics error: ${err.message}`;
+});
+</script>
+</body>
+</html>
