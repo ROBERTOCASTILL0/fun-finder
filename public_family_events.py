@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent
 CACHE_PATH = ROOT / 'public_family_events_cache.json'
 PT = ZoneInfo('America/Los_Angeles') if ZoneInfo else None
 NOW = lambda: datetime.now(PT) if PT else datetime.utcnow()
-CACHE_HOURS = 12
+CACHE_HOURS = 6
 DAY_WINDOW = 21
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; SanDiegoFunFinder/1.0; public event discovery)'}
 TIMEOUT = 18
@@ -30,6 +30,7 @@ SOURCE_LABELS = {
     'family': 'San Diego Family',
     'kids': 'Kids Out And About',
     'kpbs': 'KPBS',
+    'reader': 'San Diego Reader',
 }
 
 POSITIVE_KEYWORDS = {
@@ -115,6 +116,7 @@ class Event:
     is_free: bool = False
     score: int = 0
     tags: list[str] = field(default_factory=list)
+    metadata: dict = field(default_factory=dict)
 
 
 def clean_text(value: str) -> str:
@@ -198,11 +200,85 @@ def score_event(title: str, description: str, venue: str = '', source: str = '')
     return score, is_free, sorted(set(tags)), category
 
 
+
+def detect_area(text: str) -> str:
+    t = text.lower()
+    areas = [
+        ('beach', ['beach', 'ocean', 'coast', 'del mar', 'coronado', 'mission beach', 'la jolla', 'ocean beach', 'pacific beach', 'shelter island', 'mission bay']),
+        ('downtown', ['downtown', 'gaslamp', 'little italy', 'embarcadero', 'barrio logan', 'petco', 'harbor', 'kettner']),
+        ('balboa', ['balboa', 'san diego zoo', 'fleet science', 'natural history museum', 'spreckels', 'botanical']),
+        ('north-county', ['north county', 'carlsbad', 'encinitas', 'escondido', 'oceanside', 'solana beach', 'vista', 'san marcos', 'rancho santa fe', 'legoland', 'bonsall']),
+        ('east-county', ['east county', 'el cajon', 'santee', 'lakeside', 'alpine', 'lemon grove', 'spring valley', 'la mesa']),
+        ('south-bay', ['south bay', 'chula vista', 'national city', 'bonita', 'imperial beach', 'otay']),
+    ]
+    for area, keys in areas:
+        if any(k in t for k in keys):
+            return area
+    return 'central-san-diego' if 'san diego' in t else 'unknown'
+
+
+def detect_time_period(time_text: str, text: str = '') -> str:
+    t = f'{time_text} {text}'.lower()
+    if re.search(r'\b(6|7|8|9|10|11)\s*(a\.?m\.?|am)\b|\bmorning\b', t):
+        return 'morning'
+    if re.search(r'\b(12|1|2|3|4|5)\s*(p\.?m\.?|pm)\b|\b(noon|afternoon)\b', t):
+        return 'afternoon'
+    if re.search(r'\b(6|7|8|9|10|11)\s*(p\.?m\.?|pm)\b|\b(evening|night|sunset)\b', t):
+        return 'evening'
+    return 'unknown'
+
+
+def classify_metadata(title: str, description: str, venue: str, source: str, time_text: str = '', is_free: bool = False, category: str = '') -> dict:
+    text = clean_text(f'{title} {description} {venue} {category}').lower()
+    kids_re = r'\b(kids?|children|child|family|families|toddler|baby|babies|preschool|camp|storytime|story time|teen|ages?\s*\d|lego|puppet)\b'
+    adult_re = r'\b(21\+|adult|adults only|cocktail|beer|wine|bar|brewery|winemaker|networking|professional|career|trivia night|karaoke|open mic)\b'
+    toddler_re = r'\b(toddler|baby|infant|preschool|storytime|story time|sensory|ages?\s*[0-5])\b'
+    audience = 'all_ages'
+    # Explicit adult/21+ language wins over generic words like "storytime"
+    # so Adult Storytime does not leak into kid/toddler filters.
+    if re.search(adult_re, text):
+        audience = 'adult'
+    elif re.search(toddler_re, text):
+        audience = 'young_children'
+    elif re.search(kids_re, text) or source in {'family', 'kids'}:
+        audience = 'family'
+    indoor = bool(re.search(r'\b(indoor|museum|library|gallery|center|theatre|theater|aquarium|school|studio|hotel|restaurant|bar|brewery)\b', text))
+    outdoor = bool(re.search(r'\b(outdoor|park|beach|garden|nature|hike|trail|market|fair|festival|farmers|amphitheatre|walk|bay|waterfront)\b', text))
+    metadata = {
+        'audience': audience,
+        'age_groups': sorted([g for g, ok in {
+            'toddler': bool(re.search(toddler_re, text)),
+            'kids': bool(re.search(kids_re, text)),
+            'teens': bool(re.search(r'\b(teen|ages?\s*(1[0-9]|13\+))\b', text)),
+            'adults': audience == 'adult' or bool(re.search(adult_re, text)),
+        }.items() if ok]),
+        'features': {
+            'free': bool(is_free),
+            'outdoor': outdoor,
+            'indoor': indoor,
+            'dog_friendly': bool(re.search(r'\b(dog|dogs|pet|leash)\b', text)),
+            'toddler_friendly': bool(re.search(toddler_re, text)),
+            'stroller_friendly': bool(re.search(r'\b(stroller|paved|flat|accessible|wheelchair)\b', text)),
+            'low_walking': bool(re.search(r'\b(accessible|seated|easy|short walk|wheelchair|bench)\b', text)),
+            'shade': bool(re.search(r'\b(shade|shaded|covered|indoor)\b', text)),
+            'bathrooms': bool(re.search(r'\b(restroom|bathroom|facilities|park|center|museum|library|hotel)\b', text)),
+            'food_nearby': bool(re.search(r'\b(food|restaurant|snack|vendor|market|concession|cafe|dining)\b', text)),
+        },
+        'area': detect_area(text),
+        'time_period': detect_time_period(time_text, text),
+        'source_key': source,
+        'metadata_version': 2,
+    }
+    return metadata
+
 def normalize_event(title: str, date: str | None, url: str, source: str, description: str = '', venue: str = '', time_text: str = '') -> Event | None:
     if not title or not date:
         return None
     score, is_free, tags, category = score_event(title, description, venue, source)
-    if score < 0:
+    metadata = classify_metadata(title, description, venue, source, time_text, is_free, category)
+    # Keep a broader set for adult/general San Diego browsing while still dropping
+    # strongly irrelevant family-unfriendly items from family-first sources.
+    if score < -6:
         return None
     return Event(
         title=clean_text(title),
@@ -217,6 +293,7 @@ def normalize_event(title: str, date: str | None, url: str, source: str, descrip
         is_free=is_free,
         score=score,
         tags=tags,
+        metadata=metadata,
     )
 
 
@@ -329,9 +406,57 @@ def parse_kpbs(html: str) -> list[Event]:
     return events
 
 
+
+def parse_reader_events(html: str) -> list[Event]:
+    events: list[Event] = []
+    scripts = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S | re.I)
+    for raw in scripts[:180]:
+        raw = unescape(raw).strip()
+        try:
+            data = json.loads(raw)
+        except Exception:
+            continue
+        if isinstance(data, list):
+            items = data
+        else:
+            items = [data]
+        for item in items:
+            if not isinstance(item, dict) or item.get('@type') != 'Event':
+                continue
+            name = item.get('name') or ''
+            start = str(item.get('startDate') or '')[:10]
+            if not re.match(r'\d{4}-\d{2}-\d{2}', start):
+                continue
+            loc = item.get('location') or {}
+            if isinstance(loc, dict):
+                venue = clean_text(loc.get('name') or '')
+                addr = loc.get('address') or {}
+                if isinstance(addr, dict):
+                    city = addr.get('addressLocality') or ''
+                    if city and city.lower() not in venue.lower():
+                        venue = clean_text(f'{venue}, {city}')
+            else:
+                venue = ''
+            desc = item.get('description') or ''
+            url = item.get('url') or ''
+            if url and url.startswith('/'):
+                url = urljoin('https://www.sandiegoreader.com', url)
+            ev = normalize_event(
+                title=name,
+                date=start,
+                url=url or 'https://www.sandiegoreader.com/events/',
+                source='reader',
+                description=desc,
+                venue=venue,
+                time_text=str(item.get('startDate') or ''),
+            )
+            if ev:
+                events.append(ev)
+    return events
+
 def dedupe(events: list[Event]) -> list[Event]:
     chosen: dict[tuple[str, str], Event] = {}
-    priority = {'family': 4, 'kids': 4, 'city': 3, 'kpbs': 2}
+    priority = {'family': 5, 'kids': 5, 'city': 4, 'reader': 3, 'kpbs': 2}
     for ev in sorted(events, key=lambda e: (e.date, -e.score, e.title.lower())):
         key = (re.sub(r'[^a-z0-9]+', ' ', ev.title.lower()).strip()[:56], ev.date)
         old = chosen.get(key)
@@ -412,6 +537,7 @@ def refresh_cache() -> dict:
         ('family', 'https://www.sandiegofamily.com/things-to-do/events-calendar', parse_family_calendar),
         ('kids', 'https://sandiego.kidsoutandabout.com/', parse_kidsoutandabout),
         ('kpbs', 'https://www.kpbs.org/events/all', parse_kpbs),
+        ('reader', 'https://www.sandiegoreader.com/events/', parse_reader_events),
     ]
     for key, url, parser in sources:
         try:

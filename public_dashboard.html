@@ -224,6 +224,8 @@ button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
         <div class="plan-label">What do you need?</div>
         <div class="chip-row" id="prefChips">
           <button class="chip" data-pref="free" onclick="togglePref(this)">💰 Free only</button>
+          <button class="chip" data-pref="adult-only" onclick="togglePref(this)">👤 Adults only</button>
+          <button class="chip" data-pref="family-friendly" onclick="togglePref(this)">👨‍👩‍👧 Family-friendly</button>
           <button class="chip" data-pref="outdoor" onclick="togglePref(this)">🌿 Outdoor</button>
           <button class="chip" data-pref="indoor" onclick="togglePref(this)">🏛️ Indoor</button>
           <button class="chip" data-pref="dog-friendly" onclick="togglePref(this)">🐕 Dog-friendly</button>
@@ -315,6 +317,12 @@ let allData=null, selDay=0;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const txt=ev=>`${ev.title||''} ${ev.description||''} ${ev.venue||''} ${(ev.tags||[]).join(' ')} ${ev.category||''}`.toLowerCase();
+const meta=ev=>ev.metadata||{};
+const feat=(ev,k)=>!!(meta(ev).features||{})[k];
+function todayPacificISO(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
+function todayIndex(){const cal=allData?.calendar||[]; const iso=todayPacificISO(); const idx=cal.findIndex(d=>d.is_today||d.date===iso); return idx>=0?idx:0;}
+function activeDayEvents(offset=0){return allData?.calendar?.[todayIndex()+offset]?.events||[];}
+function eventAudience(ev){return meta(ev).audience||'unknown';}
 
 // ── Profile persistence ────────────────────────────────
 function saveProfile(){
@@ -390,39 +398,58 @@ const AREA_RX={
   'south-bay':/\b(south bay|chula vista|national city|bonita|imperial beach|otay)\b/
 };
 function scoreEvent(ev){
-  if(S.prefs.has('free')&&!ev.is_free) return {score:-9999,reasons:[]};
-  let s=(ev.score||0)*0.4; const t=txt(ev); const reasons=[];
-  if(ev.is_free) s+=5;
-  if(S.kids>0&&/\b(kid|child|famil|children)\b/.test(t)){s+=3;reasons.push('family-friendly');}
+  const m=meta(ev), features=m.features||{}, audience=eventAudience(ev);
+  const t=txt(ev); const reasons=[];
+
+  // Hard filters: selected chips should actually narrow results, not merely re-rank.
+  if(S.prefs.has('free')&&!features.free&&!ev.is_free) return {score:-9999,reasons:[]};
+  if(S.prefs.has('adult-only')&&audience!=='adult') return {score:-9999,reasons:[]};
+  if(S.prefs.has('family-friendly')&&!['family','young_children','all_ages'].includes(audience)) return {score:-9999,reasons:[]};
+  if(S.kids===0 && S.prefs.has('adult-only') && audience!=='adult') return {score:-9999,reasons:[]};
+  if(S.kids>0 && audience==='adult') return {score:-9999,reasons:[]};
+  if(S.prefs.has('outdoor')&&!features.outdoor) return {score:-9999,reasons:[]};
+  if(S.prefs.has('indoor')&&!features.indoor) return {score:-9999,reasons:[]};
+  if(S.prefs.has('dog-friendly')&&!features.dog_friendly) return {score:-9999,reasons:[]};
+  if(S.prefs.has('toddler-friendly')&&!features.toddler_friendly) return {score:-9999,reasons:[]};
+  if(S.prefs.has('stroller-friendly')&&!features.stroller_friendly) return {score:-9999,reasons:[]};
+  if(S.prefs.has('low-walking')&&!features.low_walking) return {score:-9999,reasons:[]};
+  if(S.prefs.has('shade')&&!features.shade) return {score:-9999,reasons:[]};
+  if(S.prefs.has('bathrooms')&&!features.bathrooms) return {score:-9999,reasons:[]};
+  if(S.prefs.has('food-nearby')&&!features.food_nearby) return {score:-9999,reasons:[]};
+  if(S.area!=='all'&&m.area!==S.area) return {score:-9999,reasons:[]};
+
+  let s=(ev.score||0)*0.4;
+  if(features.free||ev.is_free){s+=5;reasons.push('free admission');}
+  if(S.kids>0&&['family','young_children','all_ages'].includes(audience)){s+=3;reasons.push('family-friendly');}
   const toddler=S.kids>0&&[...S.childAges].some(a=>/^(infant|1yo|2yo|3yo)$/.test(a));
-  if(toddler&&/\b(toddler|baby|infant|storytime|story time|sensory|preschool)\b/.test(t)){s+=6;reasons.push('great for toddlers');}
-  if(S.dogs&&/\b(dog|pet|leash)\b/.test(t)){s+=4;reasons.push('dog-friendly');}
-  if(S.seniors&&/\b(senior|accessible|seated|easy)\b/.test(t)){s+=2;reasons.push('senior-friendly');}
-  if(S.prefs.has('outdoor')&&/\b(outdoor|park|beach|garden|nature|hike|trail|outside)\b/.test(t)){s+=4;reasons.push('outdoor');}
-  if(S.prefs.has('indoor')&&/\b(indoor|museum|library|gallery|center|theatre|theater|aquarium)\b/.test(t)){s+=4;reasons.push('indoor');}
-  if(S.prefs.has('dog-friendly')&&/\b(dog|pet)\b/.test(t)){s+=4;reasons.push('dog-friendly');}
-  if(S.prefs.has('toddler-friendly')&&/\b(toddler|storytime|sensory|baby|preschool)\b/.test(t)){s+=5;reasons.push('toddler OK');}
-  if(S.prefs.has('stroller-friendly')&&/\b(stroller|paved|flat|accessible)\b/.test(t)){s+=3;reasons.push('stroller OK');}
-  if(S.prefs.has('low-walking')&&/\b(easy|accessible|seated|bench|short)\b/.test(t)){s+=3;reasons.push('low walking');}
-  if(S.prefs.has('shade')&&/\b(shade|shaded|covered|indoor)\b/.test(t)){s+=2;reasons.push('shaded');}
-  if(S.prefs.has('bathrooms')&&/\b(restroom|bathroom|facilities|park|center|museum)\b/.test(t)){s+=1;reasons.push('bathrooms nearby');}
-  if(S.prefs.has('food-nearby')&&/\b(food|restaurant|snack|vendor|market|concession|cafe)\b/.test(t)){s+=2;reasons.push('food nearby');}
-  if(S.area!=='all'&&AREA_RX[S.area]?.test(t)){s+=5;reasons.push('in your area');}
+  if(toddler&&features.toddler_friendly){s+=6;reasons.push('great for toddlers');}
+  if(S.dogs&&features.dog_friendly){s+=4;reasons.push('dog-friendly');}
+  if(S.seniors&&features.low_walking){s+=2;reasons.push('senior-friendly');}
+  if(features.outdoor&&S.prefs.has('outdoor')){s+=4;reasons.push('outdoor');}
+  if(features.indoor&&S.prefs.has('indoor')){s+=4;reasons.push('indoor');}
+  if(features.stroller_friendly&&S.prefs.has('stroller-friendly')){s+=3;reasons.push('stroller OK');}
+  if(features.low_walking&&S.prefs.has('low-walking')){s+=3;reasons.push('low walking');}
+  if(features.shade&&S.prefs.has('shade')){s+=2;reasons.push('shaded');}
+  if(features.bathrooms&&S.prefs.has('bathrooms')){s+=1;reasons.push('bathrooms nearby');}
+  if(features.food_nearby&&S.prefs.has('food-nearby')){s+=2;reasons.push('food nearby');}
+  if(S.area!=='all'){s+=5;reasons.push('in your area');}
+  if(audience==='adult') reasons.push('adult-focused');
   return {score:s,reasons:[...new Set(reasons)]};
 }
 
 // ── Timing windows ─────────────────────────────────────
 function getTimingEvents(){
   if(!allData) return [];
-  const cal=allData.calendar||[];
-  if(S.timing==='today') return cal[0]?.events||[];
-  if(S.timing==='tomorrow') return cal[1]?.events||[];
+  const cal=allData.calendar||[], base=todayIndex();
+  if(S.timing==='today') return activeDayEvents(0);
+  if(S.timing==='tomorrow') return activeDayEvents(1);
   if(S.timing==='weekend'){
-    const dow=new Date().getDay(), dts=dow===6?0:dow===0?6:(6-dow), out=[];
-    for(let i=dts;i<=dts+1&&i<cal.length;i++) out.push(...(cal[i]?.events||[]));
+    const iso=todayPacificISO()+'T12:00:00';
+    const dow=new Date(iso).getDay(), dts=dow===6?0:dow===0?6:(6-dow), out=[];
+    for(let i=base+dts;i<=base+dts+1&&i<cal.length;i++) out.push(...(cal[i]?.events||[]));
     return out;
   }
-  const week=[]; cal.slice(0,7).forEach(d=>week.push(...(d.events||[])));
+  const week=[]; cal.slice(base,base+7).forEach(d=>week.push(...(d.events||[])));
   if(S.timing==='week') return week;
   const RX={morning:/\b(morning|8am|9am|10am|11am)\b/i,afternoon:/\b(afternoon|noon|12pm|1pm|2pm|3pm|4pm|5pm)\b/i,evening:/\b(evening|night|6pm|7pm|8pm|9pm|sunset)\b/i};
   return RX[S.timing]?week.filter(e=>RX[S.timing].test(e.time_text||'')):week;
@@ -440,7 +467,7 @@ function assignLabels(scored){
 }
 function whyBox(ev,reasons,label){
   const parts=[];
-  if(ev.is_free) parts.push('free admission');
+  if(feat(ev,'free')||ev.is_free) parts.push('free admission');
   parts.push(...reasons);
   if(!parts.length) return '';
   return `<div class="why-box ${ev.is_free?'green':'blue'}">✓ Why this fits: ${parts.map(esc).join(' · ')}</div>`;
@@ -448,18 +475,20 @@ function whyBox(ev,reasons,label){
 function renderCard(ev,label,reasons){
   const t=txt(ev), badges=[];
   if(label) badges.push(`<span class="badge b-best">${esc(label)}</span>`);
-  if(ev.is_free) badges.push('<span class="badge b-free">Free</span>');
-  if(/\b(dog|pet)\b/.test(t)) badges.push('<span class="badge b-dog">🐕 Dog-friendly</span>');
-  if(/\b(toddler|storytime|sensory|preschool)\b/.test(t)) badges.push('<span class="badge b-toddler">🧸 Toddler OK</span>');
+  const m=meta(ev), features=m.features||{};
+  if(features.free||ev.is_free) badges.push('<span class="badge b-free">Free</span>');
+  if(eventAudience(ev)==='adult') badges.push('<span class="badge b-src">👤 Adult-focused</span>');
+  if(features.dog_friendly) badges.push('<span class="badge b-dog">🐕 Dog-friendly</span>');
+  if(features.toddler_friendly) badges.push('<span class="badge b-toddler">🧸 Toddler OK</span>');
   if(ev.category) badges.push(`<span class="badge b-cat">${esc(ev.category)}</span>`);
   badges.push(`<span class="badge b-src">${esc(ev.source_label||ev.source||'Source')}</span>`);
-  const meta=[];
-  if(ev.time_text) meta.push(`<span class="meta-chip">🕐 ${esc(ev.time_text)}</span>`);
-  if(ev.venue) meta.push(`<span class="meta-chip">📍 ${esc(ev.venue)}</span>`);
+  const metaChips=[];
+  if(ev.time_text) metaChips.push(`<span class="meta-chip">🕐 ${esc(ev.time_text)}</span>`);
+  if(ev.venue) metaChips.push(`<span class="meta-chip">📍 ${esc(ev.venue)}</span>`);
   return `<article class="event-card">
     <div class="card-badges">${badges.join('')}</div>
     <h3 class="card-title">${esc(ev.title)}</h3>
-    ${meta.length?`<div class="card-meta">${meta.join('')}</div>`:''}
+    ${metaChips.length?`<div class="card-meta">${metaChips.join('')}</div>`:''}
     ${ev.description?`<div class="card-desc">${esc(ev.description)}</div>`:''}
     ${whyBox(ev,reasons,label)}
     <div class="card-actions">
@@ -528,7 +557,7 @@ async function loadEvents(){
     }
     allData=data;
     $('statsRow').style.display='';
-    $('statToday').textContent=data.today?.count??0;
+    $('statToday').textContent=(data.calendar?.[todayIndex()]?.count??data.today?.count??0);
     $('statFree').textContent=data.counts?.free_events??0;
     $('statTotal').textContent=data.counts?.total_events??0;
     $('statSources').textContent=(data.sources||[]).length;
@@ -543,8 +572,9 @@ async function loadEvents(){
       const ts=data.generated_at?new Date(data.generated_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'';
       showStatus(`Events updated${ts?' at '+ts:''}. Ready to plan!`,'ok');
     }
+    selDay=todayIndex();
     renderCalendar();
-    selectDay(0);
+    selectDay(selDay);
     reRender();
   }catch(err){
     showStatus('Connection issue — check your internet and tap Refresh.','err');
