@@ -1,321 +1,563 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>San Diego Fun Finder</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>San Diego Fun Finder — Family Outing Planner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#eef5ff;
-  --bg-accent:#fef6ea;
-  --surface:#ffffff;
-  --surface-2:#f7fbff;
-  --surface-3:#fffaf3;
-  --line:#d9e7f6;
-  --line-strong:#c6d9f0;
-  --text:#17324d;
-  --muted:#5b7695;
-  --soft:#7d96b1;
-  --blue:#4f8ef7;
-  --blue-2:#7fb7ff;
-  --green:#33b27b;
-  --amber:#f2b24d;
-  --pink:#ef7db1;
-  --shadow:0 20px 48px rgba(72,111,158,.12);
-  --radius-xl:28px;
-  --radius-lg:22px;
-  --radius-md:18px;
-  --radius-sm:14px;
+  --bg:#eef5ff; --surface:#ffffff; --surface2:#f7fbff;
+  --border:#d9e7f6; --text:#17324d; --muted:#5b7695; --soft:#8da4be;
+  --blue:#4f8ef7; --blue-lt:#e8f2ff;
+  --green:#2ea06b; --green-lt:#eaf6f1;
+  --orange:#f07c36; --orange-lt:#fff4ec;
+  --pink:#d9538b; --pink-lt:#fef0f6;
+  --amber:#d99b2b; --amber-lt:#fffbeb;
+  --shadow:0 2px 14px rgba(40,80,130,.09),0 1px 3px rgba(40,80,130,.06);
+  --shadow-lg:0 8px 36px rgba(40,80,130,.13);
+  --r:18px; --r-pill:999px;
   font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
-*{box-sizing:border-box}
-html{background:linear-gradient(180deg,#eff7ff 0%,#f9fbff 48%,#fff7ef 100%)}
-body{margin:0;color:var(--text);background:radial-gradient(900px 420px at 0% 0%,rgba(127,183,255,.26),transparent 55%),radial-gradient(800px 380px at 100% 0%,rgba(242,178,77,.18),transparent 52%),linear-gradient(180deg,#eef5ff 0%,#f8fbff 45%,#fff8ef 100%)}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--text);min-height:100vh;
+  background:radial-gradient(900px 400px at 0% 0%,rgba(127,183,255,.22),transparent 55%),
+             radial-gradient(700px 350px at 100% 0%,rgba(242,178,77,.14),transparent 50%),
+             linear-gradient(180deg,#eef5ff 0%,#f8fbff 50%,#fff8ef 100%)}
 a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit}
-button,.btn,.chipBtn,.dayCard,.eventLink{min-height:44px}
-.app{max-width:1120px;margin:0 auto;padding:18px 14px 34px}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 16px;background:linear-gradient(180deg,rgba(238,245,255,.94),rgba(238,245,255,.76),rgba(238,245,255,0));backdrop-filter:blur(10px)}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}.brandIcon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#4f8ef7,#87c4ff 65%,#f7d087);box-shadow:var(--shadow);color:white;font-size:24px}.brandText{min-width:0}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:2px}.brandText h1{margin:0;font-size:26px;line-height:1.05;letter-spacing:-.03em}.brandText p{margin:4px 0 0;color:var(--muted);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.btn{border:none;border-radius:16px;padding:0 16px;background:var(--surface);box-shadow:var(--shadow);color:var(--text);display:inline-flex;align-items:center;gap:8px;font-weight:700}.btn.secondary{background:#eff6ff;border:1px solid var(--line)}.btn.primary{background:linear-gradient(135deg,#4f8ef7,#76b1ff);color:#fff}.btn .mini{font-size:12px;font-weight:600;opacity:.88}
-.shell{display:grid;grid-template-columns:320px minmax(0,1fr);gap:18px;align-items:start}
-.panel,.hero,.eventCard,.dayCard,.summaryCard{background:var(--surface);border:1px solid rgba(201,220,240,.88);box-shadow:var(--shadow);border-radius:var(--radius-lg)}
-.sidebar{display:grid;gap:16px;position:sticky;top:82px}.panel{padding:18px}.panel h2,.panel h3{margin:0 0 8px}.sub{font-size:13px;color:var(--muted);line-height:1.45}
-.hero{padding:22px;background:linear-gradient(145deg,#f7fbff 0%,#ffffff 58%,#fff8ee 100%)}
-.heroTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}.heroTop h2{margin:0;font-size:30px;letter-spacing:-.04em}.heroTop p{margin:8px 0 0;color:var(--muted);max-width:700px;line-height:1.55}.statusPill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;background:#eff8f2;color:#1f7d57;border:1px solid #cdebdc;font-size:13px;font-weight:700;white-space:nowrap}.statusDot{width:10px;height:10px;border-radius:999px;background:var(--green)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.stat{padding:14px;border-radius:18px;background:var(--surface-2);border:1px solid var(--line)}.stat span{display:block;font-size:12px;color:var(--soft);margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.stat b{font-size:28px;letter-spacing:-.03em}.stat small{display:block;color:var(--muted);margin-top:5px;font-size:12px}
-.workspace{display:grid;gap:18px}
-.gridTwo{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:start}
-.sectionHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:14px}.sectionHead h2{margin:0;font-size:22px;letter-spacing:-.03em}.sectionHead p{margin:5px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
-.inlineActions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.chipBtn{border:none;border-radius:999px;padding:0 14px;background:#eff5fd;color:var(--muted);font-weight:700}.chipBtn.active{background:var(--text);color:#fff}.chipBtn.soft{background:#fff5e8;color:#9a6826}
-.summaryStrip{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:14px}.summaryCard{padding:14px 15px;background:linear-gradient(180deg,#fff,#f9fcff)}.summaryCard strong{display:block;font-size:15px;margin-bottom:4px}.summaryCard span{display:block;color:var(--muted);font-size:13px;line-height:1.45}
-.todaySummary{padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,#edf6ff,#fff7ec);border:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.55;color:#27496a;margin-bottom:14px}.eventList,.events{display:grid;gap:12px}.eventCard{padding:16px;background:linear-gradient(180deg,#fff,#fafeff)}.eventTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.eventCard h3{margin:0;font-size:18px;line-height:1.25;letter-spacing:-.02em}.eventMeta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 10px}.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;background:#f3f8fe;border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--muted)}.chip.free{background:#edf9f2;border-color:#caebd8;color:#207955}.chip.cat{background:#fff6e8;border-color:#f2dfbd;color:#8f6423}.chip.score{background:#eef4ff;border-color:#d4e0fb;color:#406fca}.desc{font-size:14px;line-height:1.55;color:var(--muted)}.eventLink{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:0 12px;border-radius:12px;background:#f2f8ff;color:#295cae;font-weight:800}
-.dayScrollerWrap{margin-bottom:14px}.dayScroller{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.dayCard{border:none;padding:14px;text-align:left;cursor:pointer;background:linear-gradient(180deg,#fff,#f8fbff);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;max-width:100%}.dayCard:hover{transform:translateY(-1px)}.dayCard.active{background:linear-gradient(180deg,#4f8ef7,#76b1ff);color:#fff;border-color:transparent}.dayCard.active .weekday,.dayCard.active .daySummary,.dayCard.active .count{color:#eef6ff;border-color:rgba(255,255,255,.25)}.dayHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px}.weekday{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.dayNum{font-size:22px;font-weight:800;letter-spacing:-.04em}.count{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--muted)}.todayBadge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#fff1f7;color:#c74c8b;border:1px solid #f6c9de;font-size:11px;font-weight:800}.daySummary{font-size:13px;line-height:1.4;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.helperGrid{display:grid;gap:12px}.helperRow{display:flex;gap:10px;flex-wrap:wrap}.miniCard{padding:14px;border-radius:18px;background:var(--surface-3);border:1px solid #f0dfc7}.miniCard strong{display:block;margin-bottom:4px}.miniCard span{display:block;color:var(--muted);font-size:13px;line-height:1.4}.sourceList,.catRow{display:flex;flex-wrap:wrap;gap:8px}.catBox,.sourcePill{padding:10px 12px;border-radius:14px;background:#f4f8fd;border:1px solid var(--line);font-size:13px;color:var(--muted);font-weight:700}.sourcePill{background:#fffaf1;border-color:#f1e1c2}.error{padding:13px 14px;border-radius:16px;background:#fff0f6;border:1px solid #f5c3d8;color:#a73a66;margin-bottom:14px;font-weight:600}
-.muted{color:var(--muted)}.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#35506b}
-.footerNote{font-size:12px;color:var(--soft);line-height:1.5}
-@media (max-width:1200px){.shell{grid-template-columns:1fr}.sidebar{position:static;order:2}.workspace{order:1}.gridTwo{grid-template-columns:1fr}.dayScroller{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:760px){.app{padding:12px 10px 28px}.topbar{padding-top:4px}.brandIcon{width:42px;height:42px;border-radius:14px}.brandText h1{font-size:24px}.brandText p{white-space:normal}.topActions{width:100%;display:grid;grid-template-columns:1fr 1fr}.btn{justify-content:center;padding:0 12px;border-radius:14px}.hero{padding:18px}.heroTop{flex-direction:column;align-items:flex-start}.stats,.summaryStrip{grid-template-columns:1fr 1fr}.dayScroller{grid-template-columns:repeat(2,minmax(0,1fr))}.sectionHead{flex-direction:column}.inlineActions{width:100%;justify-content:flex-start}}
-@media (max-width:520px){.stats,.summaryStrip,.topActions,.dayScroller{grid-template-columns:1fr}.panel{padding:15px}.eventCard{padding:14px}.eventTop{flex-direction:column}.brandText h1{font-size:22px}}
-@media (prefers-reduced-motion: reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
+.btn,.chip,.dayCard,.card-btn,.hbtn,.age-chip{min-height:38px}
+.app{max-width:1060px;margin:0 auto;padding:14px 14px 48px}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 14px;background:linear-gradient(180deg,rgba(238,245,255,.96) 82%,transparent);backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#4f8ef7,#87c4ff 65%,#f7d087);display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);flex-shrink:0}
+.brand h1{margin:0;font-size:22px;font-weight:800;letter-spacing:-.04em;line-height:1.1}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+.top-btns{display:flex;gap:8px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px;border-radius:var(--r-pill);font-size:14px;font-weight:700;transition:opacity .15s,transform .1s}
+.btn:active{transform:scale(.97)} .btn:hover{opacity:.86}
+.btn-ghost{background:var(--surface);border:1.5px solid var(--border);color:var(--muted);box-shadow:var(--shadow)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(79,142,247,.38)}
+.btn-primary:disabled{opacity:.55}
+
+/* Plan panel */
+.plan-panel{background:var(--surface);border:1.5px solid var(--border);border-radius:22px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.plan-header{display:flex;align-items:center;gap:10px;padding:15px 20px 13px;border-bottom:1.5px solid var(--border)}
+.plan-header h2{margin:0;font-size:17px;font-weight:800;letter-spacing:-.03em}
+.header-btns{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.hbtn{height:34px;padding:0 14px;border-radius:var(--r-pill);font-size:13px;font-weight:700;border:1.5px solid transparent}
+.hbtn-save{background:var(--green-lt);color:var(--green);border-color:#b8e8d4}
+.hbtn-reset{background:var(--pink-lt);color:var(--pink);border-color:#f4c6d5}
+.hbtn-toggle{background:var(--surface);border-color:var(--border);color:var(--muted)}
+.plan-body{padding:16px 20px 20px;display:grid;gap:18px}
+.plan-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);margin-bottom:9px}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:5px;height:38px;padding:0 14px;border-radius:var(--r-pill);font-size:13px;font-weight:600;border:1.5px solid var(--border);background:var(--surface2);color:var(--muted);transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.on{background:var(--text);color:#fff;border-color:var(--text)}
+.chip.hi{background:var(--blue-lt);color:var(--blue);border-color:#c5d9fb}
+.counter-wrap{display:flex;align-items:center;gap:7px;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-pill);padding:4px 10px;height:44px}
+.counter-wrap span{font-size:13px;font-weight:600;min-width:78px;text-align:center}
+.ctr-btn{width:32px;height:32px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border);font-size:18px;line-height:1;display:grid;place-items:center;color:var(--text);font-weight:700;transition:all .12s}
+.ctr-btn:hover{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.age-chip{height:34px;padding:0 12px;font-size:12px;font-weight:700;border-radius:var(--r-pill);background:var(--surface2);border:1.5px solid var(--border);color:var(--muted);transition:all .14s}
+.age-chip.on{background:var(--pink-lt);border-color:#f4bcd1;color:var(--pink)}
+
+/* Status + banners */
+.status-bar{display:flex;align-items:center;gap:10px;padding:11px 16px;border-radius:14px;font-size:13px;font-weight:600;margin-bottom:16px}
+.status-bar.ok{background:var(--green-lt);border:1.5px solid #b8e8d4;color:#1a7a50}
+.status-bar.load{background:var(--blue-lt);border:1.5px solid #c5d9fb;color:#2755a3}
+.status-bar.warn{background:var(--amber-lt);border:1.5px solid #fde68a;color:#92400e}
+.status-bar.err{background:var(--pink-lt);border:1.5px solid #f4c6d5;color:#a3243a}
+.status-dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
+.status-close{margin-left:auto;font-size:18px;line-height:1;color:currentColor;opacity:.6}
+.saved-banner{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:14px;background:var(--green-lt);border:1.5px solid #b8e8d4;font-size:13px;font-weight:600;color:#1a7a50;margin-bottom:16px}
+.saved-banner button{margin-left:auto;font-size:12px;color:#1a7a50;font-weight:700;text-decoration:underline}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.stat-box{padding:14px;border-radius:16px;background:var(--surface);border:1.5px solid var(--border);box-shadow:var(--shadow);text-align:center}
+.stat-box b{display:block;font-size:28px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.stat-box span{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+
+/* Sections */
+.section{background:var(--surface);border:1.5px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+.section-head{display:flex;align-items:flex-start;gap:12px;justify-content:space-between;margin-bottom:18px}
+.section-head h2{margin:0;font-size:20px;font-weight:800;letter-spacing:-.04em}
+.section-head p{margin:5px 0 0;font-size:13px;color:var(--muted);line-height:1.5}
+
+/* Event cards */
+.event-list{display:grid;gap:13px}
+.event-card{background:linear-gradient(180deg,#fff,#fafeff);border:1.5px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);transition:box-shadow .18s,transform .18s}
+.event-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.card-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:var(--r-pill);font-size:11px;font-weight:800;letter-spacing:.03em;white-space:nowrap}
+.b-best{background:linear-gradient(135deg,#4f8ef7,#7fb3ff);color:#fff}
+.b-free{background:var(--green-lt);color:var(--green);border:1px solid #b8e8d4}
+.b-cat{background:var(--orange-lt);color:var(--orange);border:1px solid #fdd9be}
+.b-dog{background:var(--amber-lt);color:var(--amber);border:1px solid #fde68a}
+.b-toddler{background:var(--pink-lt);color:var(--pink);border:1px solid #f4bcd1}
+.b-src{background:var(--surface2);color:var(--soft);border:1px solid var(--border)}
+.card-title{font-size:18px;font-weight:800;letter-spacing:-.03em;margin:0 0 10px;line-height:1.25}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.meta-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:var(--r-pill);font-size:12px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
+.card-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.why-box{padding:10px 14px;border-radius:11px;font-size:13px;font-weight:600;margin-bottom:13px}
+.why-box.blue{background:var(--blue-lt);border:1px solid #c5d9fb;color:#2755a3}
+.why-box.green{background:var(--green-lt);border:1px solid #b8e8d4;color:#1a7a50}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap}
+.card-btn{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-radius:var(--r-pill);font-size:13px;font-weight:700}
+.card-btn:hover{opacity:.86}
+.card-btn-primary{background:var(--blue);color:#fff;box-shadow:0 1px 6px rgba(79,142,247,.35)}
+.card-btn-ghost{background:var(--surface2);border:1.5px solid var(--border);color:var(--text)}
+
+/* Day scroller */
+.day-scroller{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:9px;margin-bottom:14px}
+.dayCard{padding:13px;border-radius:16px;background:linear-gradient(180deg,#fff,#f8fbff);border:1.5px solid var(--border);text-align:left;box-shadow:var(--shadow);transition:all .14s}
+.dayCard:hover{border-color:var(--blue);transform:translateY(-1px)}
+.dayCard.active{background:linear-gradient(135deg,#4f8ef7,#76b1ff);color:#fff;border-color:transparent}
+.day-sub{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--soft)}
+.dayCard.active .day-sub{color:rgba(255,255,255,.8)}
+.dayCard.active .day-count{color:rgba(255,255,255,.85)}
+.day-num{font-size:24px;font-weight:800;letter-spacing:-.04em;line-height:1;margin:4px 0}
+.day-today-badge{display:inline-flex;padding:2px 8px;border-radius:var(--r-pill);background:#fff1f7;color:var(--pink);border:1px solid #f6c9de;font-size:10px;font-weight:800;margin-bottom:5px}
+.day-count{font-size:12px;font-weight:600;color:var(--muted)}
+.day-summary-box{padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,var(--blue-lt),#fff7ec);border:1.5px solid #d4e4fb;font-size:15px;font-weight:600;color:#2755a3;margin-bottom:16px;line-height:1.5}
+
+/* Empty + loading */
+.empty-state{text-align:center;padding:44px 24px;color:var(--muted)}
+.empty-state .emo{font-size:38px;margin-bottom:10px}
+.empty-state h3{margin:0 0 7px;font-size:17px;font-weight:700;color:var(--text)}
+.empty-state p{margin:0;font-size:14px;line-height:1.6}
+.shimmer-grid{display:grid;gap:13px}
+.shimmer{height:130px;border-radius:var(--r);background:linear-gradient(90deg,var(--surface2) 25%,var(--border) 50%,var(--surface2) 75%);background-size:200% 100%;animation:shim 1.4s infinite}
+@keyframes shim{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(10,22,42,.42);backdrop-filter:blur(5px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.open{display:flex}
+.modal{background:var(--surface);border-radius:22px;padding:24px;max-width:480px;width:100%;box-shadow:var(--shadow-lg);max-height:82vh;overflow-y:auto}
+.modal h3{margin:0;font-size:20px;font-weight:800}
+.src-item{padding:12px 14px;border-radius:13px;background:var(--surface2);border:1px solid var(--border);margin-bottom:8px}
+.src-item strong{display:block;font-weight:700;margin-bottom:2px;font-size:14px}
+.src-item span{color:var(--muted);font-size:13px}
+
+/* Responsive */
+@media (max-width:680px){
+  .app{padding:10px 10px 40px}
+  .brand h1{font-size:19px} .brand p{display:none}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .day-scroller{grid-template-columns:repeat(3,1fr)}
+  .section{padding:16px} .plan-body{padding:14px 16px 18px}
+}
+@media (max-width:420px){
+  .day-scroller{grid-template-columns:repeat(2,1fr)}
+  .card-title{font-size:16px}
+  .plan-header h2{font-size:15px}
+  .header-btns{gap:6px} .hbtn{padding:0 10px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
+
   <div class="topbar">
     <div class="brand">
-      <div class="brandIcon">☀️</div>
-      <div class="brandText">
-        <div class="eyebrow">Public San Diego outing guide</div>
+      <div class="brand-icon">☀️</div>
+      <div>
         <h1>San Diego Fun Finder</h1>
-        <p>Family-friendly events and outings around San Diego County — built to answer “what can we do today?” fast.</p>
+        <p>Family outing planner · San Diego County</p>
       </div>
     </div>
-    <div class="topActions">
-      <a class="btn secondary" href="#sourcesPanel">Sources</a>
-      <button class="btn primary" id="refreshBtn" onclick="loadFamily(false)">↻ Reload data</button>
+    <div class="top-btns">
+      <button class="btn btn-ghost" onclick="openSources()">📋 Sources</button>
+      <button class="btn btn-primary" id="reloadBtn" onclick="loadEvents()">↻ Refresh</button>
     </div>
   </div>
 
-  <div id="errors"></div>
+  <div id="savedBanner" class="saved-banner" style="display:none">
+    ✅ Your family profile was restored from your last visit.
+    <button onclick="clearProfile()">Clear</button>
+  </div>
 
-  <div class="shell">
-    <aside class="sidebar">
-      <section class="panel">
-        <div class="eyebrow">Quick planner</div>
-        <h2 style="font-size:24px;letter-spacing:-.03em;margin:0 0 8px;">Easy planning lane</h2>
-        <div class="sub">Use this side panel for the fast read: best next outing window, source freshness, and activity mix.</div>
-        <div class="helperGrid" style="margin-top:14px;">
-          <div class="miniCard">
-            <strong>Best next outing window</strong>
-            <span id="weekendSummary">Scanning the strongest upcoming day…</span>
-          </div>
-          <div class="miniCard">
-            <strong>Planner hint</strong>
-            <span id="sidebarTip">Open a day tile to swap the details panel instantly.</span>
-          </div>
-        </div>
-      </section>
+  <div id="statusBar" style="display:none"></div>
 
-      <section class="panel">
-        <div class="sectionHead" style="margin-bottom:10px;">
-          <div>
-            <h3 style="font-size:18px;">Quick scan</h3>
-            <p class="sub">Fast numbers for deciding whether it’s worth heading out.</p>
-          </div>
-        </div>
-        <div class="stats" style="grid-template-columns:1fr 1fr;">
-          <div class="stat"><span>Today</span><b id="todayCount">—</b><small>ideas</small></div>
-          <div class="stat"><span>Free</span><b id="freeCount">—</b><small>in current window</small></div>
-          <div class="stat"><span>21 days</span><b id="totalCount">—</b><small>total surfaced</small></div>
-          <div class="stat"><span>Sources</span><b id="sourceCount" style="font-size:28px;">—</b><small>currently scanned</small></div>
-        </div>
-      </section>
-
-      <section class="panel">
-        <h3 style="font-size:18px;">Activity mix</h3>
-        <div class="sub" style="margin-bottom:12px;">What kinds of outings are showing up most right now.</div>
-        <div id="cats" class="catRow"></div>
-        <div class="sub" style="margin:16px 0 8px;">Sources</div>
-        <div id="sources" class="sourceList"></div>
-      </section>
-
-      <section class="panel">
-        <h3 style="font-size:18px;">Planning notes</h3>
-        <div class="footerNote">
-          County-wide options are included if they look worth the drive. Open any card to jump to the original source before you go.
-        </div>
-      </section>
-    </aside>
-
-    <main class="workspace">
-      <section class="hero">
-        <div class="heroTop">
-          <div>
-            <div class="eyebrow">Family-friendly planner</div>
-            <h2>See what is happening today — then plan the next few days in seconds.</h2>
-          </div>
-          <div class="statusPill"><span class="statusDot"></span><span id="statusText">Ready to scan</span></div>
-        </div>
-        <div class="summaryStrip">
-          <div class="summaryCard"><strong>Today’s vibe</strong><span id="todaySummary">Loading…</span></div>
-          <div class="summaryCard"><strong>Strongest upcoming day</strong><span id="bestDaySummary">Scanning…</span></div>
-          <div class="summaryCard"><strong>Quick tip</strong><span id="plannerTip">Tap a day tile to swap the details panel instantly.</span></div>
-        </div>
-      </section>
-
-      <div class="gridTwo">
-        <section class="panel">
-          <div class="sectionHead">
-            <div>
-              <h2>What is happening today?</h2>
-              <p>Start with the strongest family options first. Use the chips if you want to hide non-free picks.</p>
-            </div>
-            <div class="inlineActions">
-              <button class="chipBtn active" id="todayFilterAll" onclick="setTodayFilter('all')">All picks</button>
-              <button class="chipBtn soft" id="todayFilterFree" onclick="setTodayFilter('free')">Free only</button>
-            </div>
-          </div>
-          <div id="todayList" class="eventList"></div>
-        </section>
-
-        <section class="panel">
-          <div class="sectionHead">
-            <div>
-              <h2>Browse the week</h2>
-              <p>Each day tile gives you the quick summary before you open the details.</p>
-            </div>
-            <div class="inlineActions">
-              <button class="chipBtn active" id="dayFilterAll" onclick="setDayFilter('all')">All picks</button>
-              <button class="chipBtn soft" id="dayFilterFree" onclick="setDayFilter('free')">Free only</button>
-            </div>
-          </div>
-          <div class="dayScrollerWrap">
-            <div id="calendarGrid" class="dayScroller"></div>
-          </div>
-          <div class="todaySummary" id="selectedSummary">Tap a day in the planner to see the short list.</div>
-          <div class="sectionHead" style="margin-top:0;">
-            <div>
-              <h2 id="selectedHeading">Day details</h2>
-              <p id="selectedMeta" class="sub">This panel updates whenever you switch days.</p>
-            </div>
-          </div>
-          <div id="selectedEvents" class="events"></div>
-        </section>
+  <div class="plan-panel">
+    <div class="plan-header">
+      <h2>🗺️ Plan My Outing</h2>
+      <div class="header-btns">
+        <button class="hbtn hbtn-save" id="saveBtn" onclick="saveProfile()">💾 Save profile</button>
+        <button class="hbtn hbtn-reset" onclick="resetFilters()">✕ Reset</button>
+        <button class="hbtn hbtn-toggle" id="planToggle" onclick="togglePlan()">▲ Hide</button>
       </div>
-    </main>
+    </div>
+    <div id="planBody" class="plan-body">
+
+      <div>
+        <div class="plan-label">Who's coming?</div>
+        <div class="chip-row">
+          <div class="counter-wrap">
+            <button class="ctr-btn" onclick="adjGroup('adults',-1)" aria-label="Fewer adults">−</button>
+            <span id="adultsLbl">👤 1 adult</span>
+            <button class="ctr-btn" onclick="adjGroup('adults',1)" aria-label="More adults">+</button>
+          </div>
+          <div class="counter-wrap">
+            <button class="ctr-btn" onclick="adjGroup('kids',-1)" aria-label="Fewer kids">−</button>
+            <span id="kidsLbl">👶 0 kids</span>
+            <button class="ctr-btn" onclick="adjGroup('kids',1)" aria-label="More kids">+</button>
+          </div>
+          <button class="chip" id="dogChip" onclick="toggleGroup('dogs')" aria-pressed="false">🐕 Dogs</button>
+          <button class="chip" id="seniorChip" onclick="toggleGroup('seniors')" aria-pressed="false">🌟 Seniors</button>
+        </div>
+        <div id="ageRow" class="chip-row" style="margin-top:10px;display:none;align-items:center">
+          <span style="font-size:12px;font-weight:700;color:var(--soft);flex-basis:100%">Kids' ages:</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="plan-label">What do you need?</div>
+        <div class="chip-row" id="prefChips">
+          <button class="chip" data-pref="free" onclick="togglePref(this)">💰 Free only</button>
+          <button class="chip" data-pref="outdoor" onclick="togglePref(this)">🌿 Outdoor</button>
+          <button class="chip" data-pref="indoor" onclick="togglePref(this)">🏛️ Indoor</button>
+          <button class="chip" data-pref="dog-friendly" onclick="togglePref(this)">🐕 Dog-friendly</button>
+          <button class="chip" data-pref="toddler-friendly" onclick="togglePref(this)">🧸 Toddler OK</button>
+          <button class="chip" data-pref="stroller-friendly" onclick="togglePref(this)">🛒 Stroller OK</button>
+          <button class="chip" data-pref="low-walking" onclick="togglePref(this)">🦽 Low walking</button>
+          <button class="chip" data-pref="shade" onclick="togglePref(this)">⛱️ Shade</button>
+          <button class="chip" data-pref="bathrooms" onclick="togglePref(this)">🚻 Bathrooms</button>
+          <button class="chip" data-pref="food-nearby" onclick="togglePref(this)">🍔 Food nearby</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="plan-label">When?</div>
+        <div class="chip-row">
+          <button class="chip hi" data-timing="today" onclick="setTiming(this)">📅 Today</button>
+          <button class="chip" data-timing="tomorrow" onclick="setTiming(this)">📅 Tomorrow</button>
+          <button class="chip" data-timing="weekend" onclick="setTiming(this)">🎉 This weekend</button>
+          <button class="chip" data-timing="week" onclick="setTiming(this)">🗓️ All week</button>
+          <button class="chip" data-timing="morning" onclick="setTiming(this)">🌅 Morning</button>
+          <button class="chip" data-timing="afternoon" onclick="setTiming(this)">☀️ Afternoon</button>
+          <button class="chip" data-timing="evening" onclick="setTiming(this)">🌙 Evening</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="plan-label">Where in San Diego?</div>
+        <div class="chip-row">
+          <button class="chip hi" data-area="all" onclick="setArea(this)">📍 All SD</button>
+          <button class="chip" data-area="beach" onclick="setArea(this)">🌊 Beach areas</button>
+          <button class="chip" data-area="downtown" onclick="setArea(this)">🏙️ Downtown</button>
+          <button class="chip" data-area="balboa" onclick="setArea(this)">🌳 Balboa Park</button>
+          <button class="chip" data-area="north-county" onclick="setArea(this)">🗺️ North County</button>
+          <button class="chip" data-area="east-county" onclick="setArea(this)">🏔️ East County</button>
+          <button class="chip" data-area="south-bay" onclick="setArea(this)">🌉 South Bay</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="stats-row" id="statsRow" style="display:none">
+    <div class="stat-box"><b id="statToday">—</b><span>Today</span></div>
+    <div class="stat-box"><b id="statFree">—</b><span>Free picks</span></div>
+    <div class="stat-box"><b id="statTotal">—</b><span>21-day total</span></div>
+    <div class="stat-box"><b id="statSources">—</b><span>Sources</span></div>
+  </div>
+
+  <div class="section" id="recsSection">
+    <div class="section-head">
+      <div>
+        <h2 id="recsHeading">🏆 Top matches for today</h2>
+        <p id="recsMeta">Loading events…</p>
+      </div>
+    </div>
+    <div id="recsList">
+      <div class="shimmer-grid"><div class="shimmer"></div><div class="shimmer"></div><div class="shimmer"></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <h2>🗓️ Browse the week</h2>
+        <p>Tap a day to see everything happening.</p>
+      </div>
+    </div>
+    <div class="day-scroller" id="calGrid"></div>
+    <div class="day-summary-box" id="daySummaryBox" style="display:none"></div>
+    <div class="event-list" id="dayEventList"></div>
+  </div>
+
+</div>
+
+<div class="modal-bg" id="sourcesModal" onclick="if(event.target===this)closeSources()">
+  <div class="modal" role="dialog" aria-label="Data sources">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <h3>📋 Data sources</h3>
+      <button class="btn btn-ghost" style="height:34px;padding:0 14px;font-size:13px" onclick="closeSources()">✕ Close</button>
+    </div>
+    <div id="sourcesBody">Loading…</div>
   </div>
 </div>
+
 <script>
+// ── State ──────────────────────────────────────────────
+const S={adults:1,kids:0,childAges:new Set(),dogs:false,seniors:false,prefs:new Set(),timing:'today',area:'all'};
+let allData=null, selDay=0;
 const $=id=>document.getElementById(id);
-let currentData=null;
-let selectedDayIndex=0;
-let todayFilter='all';
-let dayFilter='all';
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-function stamp(v){try{return new Date(v).toLocaleString();}catch{return v||'—';}}
-function fmtDay(iso, opts={month:'long',day:'numeric'}){try{return new Date(iso+'T12:00:00').toLocaleDateString(undefined,opts);}catch{return iso;}}
-function filterEvents(events, mode){return (events||[]).filter(e=>mode==='free' ? e.is_free : true);}
-function chooseBestUpcomingDay(days){
-  const scored=(days||[]).map(day=>({day,score:(day.count||0)*3 + ((day.events||[]).filter(e=>e.is_free).length*2) + (day.is_today?-1:0)}));
-  scored.sort((a,b)=>b.score-a.score);
-  return scored[0]?.day || days?.[0] || null;
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const txt=ev=>`${ev.title||''} ${ev.description||''} ${ev.venue||''} ${(ev.tags||[]).join(' ')} ${ev.category||''}`.toLowerCase();
+
+// ── Profile persistence ────────────────────────────────
+function saveProfile(){
+  localStorage.setItem('sdfunfinder_v1',JSON.stringify({
+    adults:S.adults,kids:S.kids,childAges:[...S.childAges],dogs:S.dogs,seniors:S.seniors,
+    prefs:[...S.prefs],timing:S.timing,area:S.area
+  }));
+  const b=$('saveBtn'); b.textContent='✅ Saved!';
+  setTimeout(()=>{b.textContent='💾 Save profile';},2200);
 }
-function computePlannerTip(data){
-  const best=chooseBestUpcomingDay(data.calendar||[]);
-  if(best && best.count){
-    return `${best.weekday} ${fmtDay(best.date,{month:'short',day:'numeric'})} currently looks strongest with ${best.count} ideas.`;
+function loadProfile(){
+  try{
+    const raw=localStorage.getItem('sdfunfinder_v1'); if(!raw) return;
+    const p=JSON.parse(raw);
+    S.adults=p.adults||1; S.kids=p.kids||0; S.childAges=new Set(p.childAges||[]);
+    S.dogs=!!p.dogs; S.seniors=!!p.seniors; S.prefs=new Set(p.prefs||[]);
+    S.timing=p.timing||'today'; S.area=p.area||'all';
+    $('savedBanner').style.display='flex';
+  }catch(e){}
+}
+function clearProfile(){localStorage.removeItem('sdfunfinder_v1');location.reload();}
+
+// ── UI sync ────────────────────────────────────────────
+function applyStateToUI(){
+  $('adultsLbl').textContent=`👤 ${S.adults} adult${S.adults!==1?'s':''}`;
+  $('kidsLbl').textContent=`👶 ${S.kids} kid${S.kids!==1?'s':''}`;
+  const dc=$('dogChip'); dc.classList.toggle('on',S.dogs); dc.setAttribute('aria-pressed',String(S.dogs));
+  const sc=$('seniorChip'); sc.classList.toggle('on',S.seniors); sc.setAttribute('aria-pressed',String(S.seniors));
+  const ar=$('ageRow');
+  if(S.kids>0){
+    ar.style.display='flex';
+    if(!ar.querySelector('.age-chip')){
+      [['<1','infant'],['1','1yo'],['2','2yo'],['3','3yo'],['4–5','4-5'],['6–8','6-8'],['9–12','9-12'],['13+','teen']].forEach(([lbl,val])=>{
+        const b=document.createElement('button');
+        b.className='age-chip'; b.textContent=lbl; b.dataset.age=val;
+        b.classList.toggle('on',S.childAges.has(val));
+        b.onclick=()=>{S.childAges.has(val)?S.childAges.delete(val):S.childAges.add(val);b.classList.toggle('on');reRender();};
+        ar.appendChild(b);
+      });
+    }else{
+      ar.querySelectorAll('.age-chip').forEach(b=>b.classList.toggle('on',S.childAges.has(b.dataset.age)));
+    }
+  }else{ar.style.display='none';}
+  document.querySelectorAll('[data-pref]').forEach(b=>b.classList.toggle('on',S.prefs.has(b.dataset.pref)));
+  document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b.dataset.timing===S.timing));
+  document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b.dataset.area===S.area));
+}
+
+// ── Controls ───────────────────────────────────────────
+function adjGroup(key,d){S[key]=Math.max(key==='adults'?1:0,S[key]+d);applyStateToUI();reRender();}
+function toggleGroup(key){S[key]=!S[key];applyStateToUI();reRender();}
+function togglePref(btn){const p=btn.dataset.pref;S.prefs.has(p)?S.prefs.delete(p):S.prefs.add(p);btn.classList.toggle('on',S.prefs.has(p));reRender();}
+function setTiming(btn){S.timing=btn.dataset.timing;document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
+function setArea(btn){S.area=btn.dataset.area;document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
+function resetFilters(){
+  S.adults=1;S.kids=0;S.childAges=new Set();S.dogs=false;S.seniors=false;S.prefs=new Set();S.timing='today';S.area='all';
+  $('ageRow').querySelectorAll('.age-chip').forEach(b=>b.remove());
+  applyStateToUI();reRender();
+}
+function togglePlan(){
+  const body=$('planBody'),btn=$('planToggle'),hidden=body.style.display==='none';
+  body.style.display=hidden?'':'none';
+  btn.textContent=hidden?'▲ Hide':'▼ Show filters';
+}
+
+// ── Scoring ────────────────────────────────────────────
+const AREA_RX={
+  beach:/\b(beach|ocean|coast|del mar|coronado|mission beach|la jolla|ocean beach|pacific beach|shores)\b/,
+  downtown:/\b(downtown|gaslamp|little italy|embarcadero|barrio|midtown|petco)\b/,
+  balboa:/\b(balboa|zoo|botanical|reuben|fleet|timken|natural history|spreckels)\b/,
+  'north-county':/\b(north county|carlsbad|encinitas|escondido|oceanside|solana|vista|san marcos|rancho santa fe|legoland)\b/,
+  'east-county':/\b(east county|el cajon|santee|lakeside|alpine|lemon grove|spring valley|la mesa)\b/,
+  'south-bay':/\b(south bay|chula vista|national city|bonita|imperial beach|otay)\b/
+};
+function scoreEvent(ev){
+  if(S.prefs.has('free')&&!ev.is_free) return {score:-9999,reasons:[]};
+  let s=(ev.score||0)*0.4; const t=txt(ev); const reasons=[];
+  if(ev.is_free) s+=5;
+  if(S.kids>0&&/\b(kid|child|famil|children)\b/.test(t)){s+=3;reasons.push('family-friendly');}
+  const toddler=S.kids>0&&[...S.childAges].some(a=>/^(infant|1yo|2yo|3yo)$/.test(a));
+  if(toddler&&/\b(toddler|baby|infant|storytime|story time|sensory|preschool)\b/.test(t)){s+=6;reasons.push('great for toddlers');}
+  if(S.dogs&&/\b(dog|pet|leash)\b/.test(t)){s+=4;reasons.push('dog-friendly');}
+  if(S.seniors&&/\b(senior|accessible|seated|easy)\b/.test(t)){s+=2;reasons.push('senior-friendly');}
+  if(S.prefs.has('outdoor')&&/\b(outdoor|park|beach|garden|nature|hike|trail|outside)\b/.test(t)){s+=4;reasons.push('outdoor');}
+  if(S.prefs.has('indoor')&&/\b(indoor|museum|library|gallery|center|theatre|theater|aquarium)\b/.test(t)){s+=4;reasons.push('indoor');}
+  if(S.prefs.has('dog-friendly')&&/\b(dog|pet)\b/.test(t)){s+=4;reasons.push('dog-friendly');}
+  if(S.prefs.has('toddler-friendly')&&/\b(toddler|storytime|sensory|baby|preschool)\b/.test(t)){s+=5;reasons.push('toddler OK');}
+  if(S.prefs.has('stroller-friendly')&&/\b(stroller|paved|flat|accessible)\b/.test(t)){s+=3;reasons.push('stroller OK');}
+  if(S.prefs.has('low-walking')&&/\b(easy|accessible|seated|bench|short)\b/.test(t)){s+=3;reasons.push('low walking');}
+  if(S.prefs.has('shade')&&/\b(shade|shaded|covered|indoor)\b/.test(t)){s+=2;reasons.push('shaded');}
+  if(S.prefs.has('bathrooms')&&/\b(restroom|bathroom|facilities|park|center|museum)\b/.test(t)){s+=1;reasons.push('bathrooms nearby');}
+  if(S.prefs.has('food-nearby')&&/\b(food|restaurant|snack|vendor|market|concession|cafe)\b/.test(t)){s+=2;reasons.push('food nearby');}
+  if(S.area!=='all'&&AREA_RX[S.area]?.test(t)){s+=5;reasons.push('in your area');}
+  return {score:s,reasons:[...new Set(reasons)]};
+}
+
+// ── Timing windows ─────────────────────────────────────
+function getTimingEvents(){
+  if(!allData) return [];
+  const cal=allData.calendar||[];
+  if(S.timing==='today') return cal[0]?.events||[];
+  if(S.timing==='tomorrow') return cal[1]?.events||[];
+  if(S.timing==='weekend'){
+    const dow=new Date().getDay(), dts=dow===6?0:dow===0?6:(6-dow), out=[];
+    for(let i=dts;i<=dts+1&&i<cal.length;i++) out.push(...(cal[i]?.events||[]));
+    return out;
   }
-  return 'Tap a day tile to swap the details panel instantly.';
+  const week=[]; cal.slice(0,7).forEach(d=>week.push(...(d.events||[])));
+  if(S.timing==='week') return week;
+  const RX={morning:/\b(morning|8am|9am|10am|11am)\b/i,afternoon:/\b(afternoon|noon|12pm|1pm|2pm|3pm|4pm|5pm)\b/i,evening:/\b(evening|night|6pm|7pm|8pm|9pm|sunset)\b/i};
+  return RX[S.timing]?week.filter(e=>RX[S.timing].test(e.time_text||'')):week;
 }
-function renderEvent(e){
-  return `<article class="eventCard">
-    <div class="eventTop">
-      <div>
-        <h3>${esc(e.title)}</h3>
-        <div class="eventMeta">
-          ${e.time_text?`<span class="chip">${esc(e.time_text)}</span>`:''}
-          ${e.venue?`<span class="chip">${esc(e.venue)}</span>`:''}
-          ${e.category?`<span class="chip cat">${esc(e.category)}</span>`:''}
-          ${e.is_free?`<span class="chip free">Free / easy-cost</span>`:''}
-          <span class="chip">${esc(e.source_label)}</span>
-        </div>
-      </div>
+function timingLabel(){return {today:'today',tomorrow:'tomorrow',weekend:'this weekend',week:'this week',morning:'mornings',afternoon:'afternoons',evening:'evenings'}[S.timing]||S.timing;}
+
+// ── Render ─────────────────────────────────────────────
+function assignLabels(scored){
+  const m=new Map();
+  if(scored[0]) m.set(scored[0].ev,'⭐ Best match');
+  const bf=scored.find(x=>x.ev.is_free&&!m.has(x.ev)); if(bf) m.set(bf.ev,'🆓 Best free pick');
+  const tp=scored.find(x=>/\b(toddler|storytime|sensory|preschool)\b/i.test(txt(x.ev))&&!m.has(x.ev)); if(tp) m.set(tp.ev,'🧸 Best for toddlers');
+  const dp=scored.find(x=>/\b(dog|pet)\b/i.test(txt(x.ev))&&!m.has(x.ev)); if(dp) m.set(dp.ev,'🐕 Dog-friendly pick');
+  return m;
+}
+function whyBox(ev,reasons,label){
+  const parts=[];
+  if(ev.is_free) parts.push('free admission');
+  parts.push(...reasons);
+  if(!parts.length) return '';
+  return `<div class="why-box ${ev.is_free?'green':'blue'}">✓ Why this fits: ${parts.map(esc).join(' · ')}</div>`;
+}
+function renderCard(ev,label,reasons){
+  const t=txt(ev), badges=[];
+  if(label) badges.push(`<span class="badge b-best">${esc(label)}</span>`);
+  if(ev.is_free) badges.push('<span class="badge b-free">Free</span>');
+  if(/\b(dog|pet)\b/.test(t)) badges.push('<span class="badge b-dog">🐕 Dog-friendly</span>');
+  if(/\b(toddler|storytime|sensory|preschool)\b/.test(t)) badges.push('<span class="badge b-toddler">🧸 Toddler OK</span>');
+  if(ev.category) badges.push(`<span class="badge b-cat">${esc(ev.category)}</span>`);
+  badges.push(`<span class="badge b-src">${esc(ev.source_label||ev.source||'Source')}</span>`);
+  const meta=[];
+  if(ev.time_text) meta.push(`<span class="meta-chip">🕐 ${esc(ev.time_text)}</span>`);
+  if(ev.venue) meta.push(`<span class="meta-chip">📍 ${esc(ev.venue)}</span>`);
+  return `<article class="event-card">
+    <div class="card-badges">${badges.join('')}</div>
+    <h3 class="card-title">${esc(ev.title)}</h3>
+    ${meta.length?`<div class="card-meta">${meta.join('')}</div>`:''}
+    ${ev.description?`<div class="card-desc">${esc(ev.description)}</div>`:''}
+    ${whyBox(ev,reasons,label)}
+    <div class="card-actions">
+      <a class="card-btn card-btn-primary" href="${esc(ev.url)}" target="_blank" rel="noopener">View details ↗</a>
     </div>
-    <div class="desc">${esc(e.description || 'No short description available yet.')}</div>
-    <a class="eventLink" href="${esc(e.url)}" target="_blank" rel="noopener">See details ↗</a>
   </article>`;
 }
-function renderDayCard(day, idx){
-  const n=new Date(day.date+'T12:00:00');
-  const num=n.getDate();
-  return `<button class="dayCard ${idx===selectedDayIndex?'active':''}" data-idx="${idx}">
-    <div class="dayHead">
-      <div>
-        <div class="weekday">${esc(day.weekday)}</div>
-        <div class="dayNum">${esc(num)}</div>
-      </div>
-      <div style="display:grid;gap:6px;justify-items:end;">
-        ${day.is_today?'<span class="todayBadge">Today</span>':''}
-        <span class="count">${esc(day.count)} ideas</span>
-      </div>
-    </div>
-    <div class="daySummary">${esc(day.summary)}</div>
-  </button>`;
+function reRender(){
+  if(!allData) return;
+  const scored=getTimingEvents().map(ev=>{const r=scoreEvent(ev);return {ev,score:r.score,reasons:r.reasons};})
+    .filter(x=>x.score>-9999).sort((a,b)=>b.score-a.score);
+  $('recsHeading').textContent=`🏆 Top matches for ${timingLabel()}`;
+  if(!scored.length){
+    $('recsMeta').textContent='';
+    $('recsList').innerHTML=`<div class="empty-state"><div class="emo">🔍</div><h3>No matches found</h3><p>Try removing a filter or picking a broader time window.</p></div>`;
+    return;
+  }
+  $('recsMeta').textContent=`${scored.length} option${scored.length!==1?'s':''} · sorted by best fit for your group`;
+  const labels=assignLabels(scored);
+  $('recsList').innerHTML=`<div class="event-list">${scored.slice(0,10).map(({ev,reasons})=>renderCard(ev,labels.get(ev)||'',reasons)).join('')}</div>`;
 }
-function updateFilterButtons(){
-  $('todayFilterAll').classList.toggle('active', todayFilter==='all');
-  $('todayFilterFree').classList.toggle('active', todayFilter==='free');
-  $('dayFilterAll').classList.toggle('active', dayFilter==='all');
-  $('dayFilterFree').classList.toggle('active', dayFilter==='free');
+function renderCalendar(){
+  $('calGrid').innerHTML=(allData?.calendar||[]).map((day,i)=>{
+    const d=new Date(day.date+'T12:00:00');
+    return `<button class="dayCard${i===selDay?' active':''}" data-i="${i}" onclick="selectDay(${i})" aria-label="${esc(day.weekday)} ${d.getDate()}, ${day.count} events">
+      <div class="day-sub">${esc(day.weekday)}</div>
+      <div class="day-num">${d.getDate()}</div>
+      ${day.is_today?'<div class="day-today-badge">Today</div>':''}
+      <div class="day-count">${day.count} picks</div>
+    </button>`;
+  }).join('');
 }
-function setTodayFilter(mode){todayFilter=mode;updateFilterButtons();renderToday();}
-function setDayFilter(mode){dayFilter=mode;updateFilterButtons();renderSelectedDay();}
-function renderToday(){
-  const events=filterEvents(currentData?.today?.events||[], todayFilter);
-  $('todayList').innerHTML=events.length ? events.map(renderEvent).join('') : '<div class="muted">No matching public picks for today with this filter.</div>';
+function selectDay(i){
+  selDay=i;
+  document.querySelectorAll('.dayCard').forEach((el,idx)=>el.classList.toggle('active',idx===i));
+  const day=allData?.calendar?.[i]; if(!day) return;
+  const d=new Date(day.date+'T12:00:00'), sb=$('daySummaryBox');
+  sb.style.display=''; sb.innerHTML=`<strong>${esc(day.weekday)}, ${d.toLocaleDateString(undefined,{month:'long',day:'numeric'})}</strong> · ${esc(day.summary)}`;
+  $('dayEventList').innerHTML=day.events?.length
+    ?`<div class="event-list">${day.events.slice(0,8).map(ev=>renderCard(ev,'',[])).join('')}</div>`
+    :`<div class="empty-state"><div class="emo">😴</div><h3>Nothing listed yet</h3><p>Check back closer to the date.</p></div>`;
 }
-function renderSelectedDay(){
-  const days=currentData?.calendar||[];
-  const day=days[selectedDayIndex];
-  if(!day) return;
-  document.querySelectorAll('.dayCard').forEach((el,i)=>el.classList.toggle('active', i===selectedDayIndex));
-  const filtered=filterEvents(day.events||[], dayFilter);
-  $('selectedHeading').textContent=`${day.weekday} · ${fmtDay(day.date)}`;
-  $('selectedSummary').textContent=day.summary;
-  $('selectedMeta').textContent=`${filtered.length} shown${dayFilter==='free' ? ' (free only)' : ''} · ${day.count} total ideas surfaced for this day.`;
-  $('selectedEvents').innerHTML=filtered.length ? filtered.map(renderEvent).join('') : '<div class="muted">No matching public picks for this day with the current filter.</div>';
+
+// ── Status + modal ─────────────────────────────────────
+function showStatus(msg,type='ok'){
+  const el=$('statusBar');
+  el.style.display='flex'; el.className=`status-bar ${type}`;
+  el.innerHTML=`<span class="status-dot"></span>${esc(msg)}<button class="status-close" onclick="this.parentElement.style.display='none'" aria-label="Dismiss">×</button>`;
+  if(type==='ok') setTimeout(()=>{if(el.classList.contains('ok'))el.style.display='none';},6000);
 }
-function selectDay(idx){selectedDayIndex=idx;renderSelectedDay();}
-async function loadFamily(force=false){
-  $('errors').innerHTML='';
-  $('statusText').textContent='Loading public event cache…';
-  $('refreshBtn').disabled=true;
+function openSources(){$('sourcesModal').classList.add('open');}
+function closeSources(){$('sourcesModal').classList.remove('open');}
+
+// ── Load ───────────────────────────────────────────────
+async function loadEvents(){
+  const rb=$('reloadBtn'); rb.disabled=true; rb.textContent='⏳ Loading…';
+  showStatus('Fetching the latest events…','load');
   try{
-    const url='/api/events';
-    const res=await fetch(url);
+    const res=await fetch('/api/events');
+    if(!res.ok) throw new Error(`Server returned ${res.status}`);
     const data=await res.json();
-    currentData=data;
     if(!data.ok){
-      $('errors').innerHTML=`<div class="error">Could not load public event scan: ${esc(data.error||'unknown error')}</div>`;
-      $('statusText').textContent='Needs attention';
+      showStatus('Our event data is refreshing — please try again in a moment.','warn');
+      $('recsList').innerHTML=`<div class="empty-state"><div class="emo">📡</div><h3>Data is refreshing</h3><p>The event cache is warming up. Reload in about 30 seconds.</p></div>`;
       return;
     }
-    if((data.errors||[]).length){
-      $('errors').innerHTML=`<div class="error">Some sources had trouble, but usable results are still shown. ${esc(data.errors.join(' | '))}</div>`;
+    allData=data;
+    $('statsRow').style.display='';
+    $('statToday').textContent=data.today?.count??0;
+    $('statFree').textContent=data.counts?.free_events??0;
+    $('statTotal').textContent=data.counts?.total_events??0;
+    $('statSources').textContent=(data.sources||[]).length;
+    const errs=data.errors||[];
+    $('sourcesBody').innerHTML=(data.sources||[]).map(s=>{
+      const bad=errs.find(x=>String(x).includes(s));
+      return `<div class="src-item"><strong>${esc(s)}</strong><span>${bad?'⚠️ Could not refresh — showing cached data':'✅ Loaded successfully'}</span></div>`;
+    }).join('')+(errs.length?`<p style="margin:12px 0 0;font-size:12px;color:var(--muted)">Details: ${esc(errs.join('; '))}</p>`:'');
+    if(errs.length){
+      showStatus("Some sources couldn't refresh, but we still found plenty of events.",'warn');
+    }else{
+      const ts=data.generated_at?new Date(data.generated_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'';
+      showStatus(`Events updated${ts?' at '+ts:''}. Ready to plan!`,'ok');
     }
-    const bestDay=chooseBestUpcomingDay(data.calendar||[]);
-    const totalEvents=data.counts?.total_events ?? 0;
-    const freeEvents=data.counts?.free_events ?? 0;
-    $('todayCount').textContent=data.today?.count ?? 0;
-    $('totalCount').textContent=totalEvents;
-    $('freeCount').textContent=freeEvents;
-    $('sourceCount').textContent=(data.sources||[]).length;
-    $('statusText').textContent=`Updated ${stamp(data.generated_at)}`;
-    $('todaySummary').textContent=data.today?.summary || 'No summary available.';
-    $('bestDaySummary').textContent=bestDay ? `${bestDay.weekday} ${fmtDay(bestDay.date,{month:'short',day:'numeric'})} · ${bestDay.summary}` : 'No standout day surfaced yet.';
-    $('weekendSummary').textContent=bestDay ? `${bestDay.weekday} ${fmtDay(bestDay.date,{month:'short',day:'numeric'})} currently looks strongest.` : 'No standout day surfaced yet.';
-    $('plannerTip').textContent=computePlannerTip(data);
-    $('sidebarTip').textContent=data.today?.count ? `${data.today.count} good picks are ready today. Use filters if you want an easy free-only pass.` : 'Open a day tile to swap the details panel instantly.';
-    $('calendarGrid').innerHTML=(data.calendar||[]).map(renderDayCard).join('');
-    document.querySelectorAll('.dayCard').forEach(btn=>btn.addEventListener('click',()=>selectDay(Number(btn.dataset.idx))));
-    const cats=data.top_categories||[];
-    $('cats').innerHTML=cats.length ? cats.map(c=>`<div class="catBox">${esc(c.name)} · ${esc(c.count)}</div>`).join('') : '<div class="muted">No categories yet.</div>';
-    $('sources').innerHTML=(data.sources||[]).map(s=>`<div class="sourcePill">${esc(s)}</div>`).join('');
-    selectedDayIndex=0;
-    renderToday();
-    renderSelectedDay();
+    renderCalendar();
+    selectDay(0);
+    reRender();
   }catch(err){
-    $('errors').innerHTML=`<div class="error">Could not load public event scan right now. ${esc(err)}</div>`;
-    $('statusText').textContent='Connection hiccup';
+    showStatus('Connection issue — check your internet and tap Refresh.','err');
+    $('recsList').innerHTML=`<div class="empty-state"><div class="emo">🌐</div><h3>Connection issue</h3><p>We couldn't reach the events data right now. Check your connection and try again.</p></div>`;
   }finally{
-    $('refreshBtn').disabled=false;
+    rb.disabled=false; rb.textContent='↻ Refresh';
   }
 }
-updateFilterButtons();
-loadFamily();
+
+// ── Init ───────────────────────────────────────────────
+loadProfile();
+applyStateToUI();
+loadEvents();
 </script>
 </body>
 </html>
