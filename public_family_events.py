@@ -229,7 +229,10 @@ def detect_time_period(time_text: str, text: str = '') -> str:
 
 
 def classify_metadata(title: str, description: str, venue: str, source: str, time_text: str = '', is_free: bool = False, category: str = '') -> dict:
-    text = clean_text(f'{title} {description} {venue} {category}').lower()
+    # Do not include the generic category label in the classification text; the
+    # old default "Family outing" label caused all-ages/adult records to be
+    # misclassified as kid/family events.
+    text = clean_text(f'{title} {description} {venue}').lower()
     kids_re = r'\b(kids?|children|child|family|families|toddler|baby|babies|preschool|camp|storytime|story time|teen|ages?\s*\d|lego|puppet)\b'
     adult_re = r'\b(21\+|adult|adults only|cocktail|beer|wine|bar|brewery|winemaker|networking|professional|career|trivia night|karaoke|open mic)\b'
     toddler_re = r'\b(toddler|baby|infant|preschool|storytime|story time|sensory|ages?\s*[0-5])\b'
@@ -244,20 +247,23 @@ def classify_metadata(title: str, description: str, venue: str, source: str, tim
         audience = 'family'
     indoor = bool(re.search(r'\b(indoor|museum|library|gallery|center|theatre|theater|aquarium|school|studio|hotel|restaurant|bar|brewery)\b', text))
     outdoor = bool(re.search(r'\b(outdoor|park|beach|garden|nature|hike|trail|market|fair|festival|farmers|amphitheatre|walk|bay|waterfront)\b', text))
+    is_adult = audience == 'adult'
     metadata = {
         'audience': audience,
         'age_groups': sorted([g for g, ok in {
-            'toddler': bool(re.search(toddler_re, text)),
-            'kids': bool(re.search(kids_re, text)),
-            'teens': bool(re.search(r'\b(teen|ages?\s*(1[0-9]|13\+))\b', text)),
-            'adults': audience == 'adult' or bool(re.search(adult_re, text)),
+            'toddler': (not is_adult) and bool(re.search(toddler_re, text)),
+            'kids': (not is_adult) and bool(re.search(kids_re, text)),
+            'teens': (not is_adult) and bool(re.search(r'\b(teen|ages?\s*(1[0-9]|13\+))\b', text)),
+            'adults': is_adult or bool(re.search(adult_re, text)),
         }.items() if ok]),
         'features': {
             'free': bool(is_free),
             'outdoor': outdoor,
             'indoor': indoor,
-            'dog_friendly': bool(re.search(r'\b(dog|dogs|pet|leash)\b', text)),
-            'toddler_friendly': bool(re.search(toddler_re, text)),
+            # Only mark true when a source explicitly says dogs/pets are welcome.
+            # A title like "Clifford the Big Red Dog" is not a dog-friendly venue signal.
+            'dog_friendly': bool(re.search(r'\b(dog[- ]friendly|pet[- ]friendly|dogs? (are )?(welcome|allowed|permitted)|bring (your )?(dog|fido)|leashed dogs?|well[- ]behaved dogs|pup|puppy|pooch)\b', text)),
+            'toddler_friendly': (not is_adult) and bool(re.search(toddler_re, text)),
             'stroller_friendly': bool(re.search(r'\b(stroller|paved|flat|accessible|wheelchair)\b', text)),
             'low_walking': bool(re.search(r'\b(accessible|seated|easy|short walk|wheelchair|bench)\b', text)),
             'shade': bool(re.search(r'\b(shade|shaded|covered|indoor)\b', text)),
@@ -276,6 +282,12 @@ def normalize_event(title: str, date: str | None, url: str, source: str, descrip
         return None
     score, is_free, tags, category = score_event(title, description, venue, source)
     metadata = classify_metadata(title, description, venue, source, time_text, is_free, category)
+    if metadata.get('audience') == 'adult':
+        category = 'Adult outing'
+    elif metadata.get('audience') == 'all_ages' and category == 'Family outing':
+        category = 'All-ages event'
+    elif metadata.get('audience') == 'young_children':
+        category = 'Toddler-friendly'
     # Keep a broader set for adult/general San Diego browsing while still dropping
     # strongly irrelevant family-unfriendly items from family-first sources.
     if score < -6:
@@ -485,7 +497,7 @@ def day_summary(events: list[Event]) -> str:
     return ' · '.join(pieces)
 
 
-def build_payload(events: list[Event], errors: list[str], fetched_at: str) -> dict:
+def build_payload(events: list[Event], errors: list[str], fetched_at: str, source_status: list[dict] | None = None) -> dict:
     today = NOW().date()
     days: dict[str, list[Event]] = defaultdict(list)
     for ev in events:
@@ -512,11 +524,19 @@ def build_payload(events: list[Event], errors: list[str], fetched_at: str) -> di
         })
     today_block = calendar[0] if calendar else {'events': [], 'summary': 'No data'}
     all_categories = Counter(e.category for e in events if e.category)
+    source_status = source_status or []
+    loaded_sources = [s['label'] for s in source_status if s.get('status') == 'loaded' and s.get('count', 0) > 0]
+    source_warnings = [s for s in source_status if s.get('status') != 'loaded']
     return {
         'ok': True,
         'generated_at': fetched_at,
-        'sources': [SOURCE_LABELS[s] for s in SOURCE_LABELS],
+        'sources': loaded_sources or sorted({e.source_label for e in events}),
+        # Non-fatal source scrape failures are kept out of public UI alerts.
+        # The site should show the sources that actually loaded rather than alarming
+        # families with backup-source HTTP errors.
         'errors': errors,
+        'source_status': source_status,
+        'source_warnings': source_warnings,
         'today': today_block,
         'calendar': calendar,
         'counts': {
@@ -531,6 +551,7 @@ def build_payload(events: list[Event], errors: list[str], fetched_at: str) -> di
 def refresh_cache() -> dict:
     fetched_at = NOW().isoformat(timespec='seconds')
     errors: list[str] = []
+    source_status: list[dict] = []
     events: list[Event] = []
     sources = [
         ('city', 'https://www.sandiego.gov/events', parse_city_events),
@@ -542,11 +563,16 @@ def refresh_cache() -> dict:
     for key, url, parser in sources:
         try:
             html = fetch(url)
-            events.extend(parser(html))
+            parsed = parser(html)
+            events.extend(parsed)
+            source_status.append({'key': key, 'label': SOURCE_LABELS[key], 'status': 'loaded', 'count': len(parsed)})
         except Exception as e:
-            errors.append(f'{SOURCE_LABELS[key]}: {e}')
+            # Non-fatal: backup sources can block automated fetches while the app
+            # still has healthy data from other sources. Keep the machine-readable
+            # warning, but do not make public UI display scary source errors.
+            source_status.append({'key': key, 'label': SOURCE_LABELS[key], 'status': 'unavailable', 'count': 0, 'detail': str(e)[:160]})
     events = dedupe(events)
-    payload = build_payload(events, errors, fetched_at)
+    payload = build_payload(events, errors, fetched_at, source_status)
     CACHE_PATH.write_text(json.dumps(payload, indent=2), encoding='utf-8')
     return payload
 

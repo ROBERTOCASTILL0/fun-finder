@@ -61,6 +61,12 @@ button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
 .chip:hover{border-color:var(--blue);color:var(--blue)}
 .chip.on{background:var(--text);color:#fff;border-color:var(--text)}
 .chip.hi{background:var(--blue-lt);color:var(--blue);border-color:#c5d9fb}
+.select-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.select-field{display:grid;gap:6px}
+.select-field label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
+.filter-select{height:44px;width:100%;border-radius:14px;border:1.5px solid var(--border);background:var(--surface2);color:var(--text);font-weight:700;padding:0 12px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset}
+.filter-select:focus{outline:3px solid rgba(79,142,247,.18);border-color:var(--blue)}
+.filter-hint{font-size:12px;color:var(--soft);line-height:1.45;margin-top:2px}
 .counter-wrap{display:flex;align-items:center;gap:7px;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-pill);padding:4px 10px;height:44px}
 .counter-wrap span{font-size:13px;font-weight:600;min-width:78px;text-align:center}
 .ctr-btn{width:32px;height:32px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border);font-size:18px;line-height:1;display:grid;place-items:center;color:var(--text);font-weight:700;transition:all .12s}
@@ -221,47 +227,72 @@ button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
       </div>
 
       <div>
-        <div class="plan-label">What do you need?</div>
-        <div class="chip-row" id="prefChips">
-          <button class="chip" data-pref="free" onclick="togglePref(this)">💰 Free only</button>
-          <button class="chip" data-pref="adult-only" onclick="togglePref(this)">👤 Adults only</button>
-          <button class="chip" data-pref="family-friendly" onclick="togglePref(this)">👨‍👩‍👧 Family-friendly</button>
-          <button class="chip" data-pref="outdoor" onclick="togglePref(this)">🌿 Outdoor</button>
-          <button class="chip" data-pref="indoor" onclick="togglePref(this)">🏛️ Indoor</button>
-          <button class="chip" data-pref="dog-friendly" onclick="togglePref(this)">🐕 Dog-friendly</button>
-          <button class="chip" data-pref="toddler-friendly" onclick="togglePref(this)">🧸 Toddler OK</button>
-          <button class="chip" data-pref="stroller-friendly" onclick="togglePref(this)">🛒 Stroller OK</button>
-          <button class="chip" data-pref="low-walking" onclick="togglePref(this)">🦽 Low walking</button>
-          <button class="chip" data-pref="shade" onclick="togglePref(this)">⛱️ Shade</button>
-          <button class="chip" data-pref="bathrooms" onclick="togglePref(this)">🚻 Bathrooms</button>
-          <button class="chip" data-pref="food-nearby" onclick="togglePref(this)">🍔 Food nearby</button>
+        <div class="plan-label">Filters</div>
+        <div class="select-grid">
+          <div class="select-field">
+            <label for="audienceSelect">Audience</label>
+            <select class="filter-select" id="audienceSelect" onchange="setSelect('audience',this.value)">
+              <option value="all">Any audience</option>
+              <option value="adult">Adults only</option>
+              <option value="all_ages">All-ages only</option>
+              <option value="family">Family / kids</option>
+              <option value="toddler">Toddler-friendly</option>
+            </select>
+          </div>
+          <div class="select-field">
+            <label for="priceSelect">Price</label>
+            <select class="filter-select" id="priceSelect" onchange="setSelect('price',this.value)">
+              <option value="any">Any price</option>
+              <option value="free">Free only</option>
+            </select>
+          </div>
+          <div class="select-field">
+            <label for="settingSelect">Setting</label>
+            <select class="filter-select" id="settingSelect" onchange="setSelect('setting',this.value)">
+              <option value="any">Indoor or outdoor</option>
+              <option value="outdoor">Outdoor only</option>
+              <option value="indoor">Indoor only</option>
+            </select>
+          </div>
+          <div class="select-field">
+            <label for="featureSelect">Feature</label>
+            <select class="filter-select" id="featureSelect" onchange="setSelect('feature',this.value)">
+              <option value="any">No special feature</option>
+              <option value="dog-friendly">Dog-friendly only</option>
+              <option value="stroller-friendly">Stroller-friendly</option>
+              <option value="low-walking">Low walking</option>
+              <option value="shade">Shade / covered</option>
+              <option value="bathrooms">Bathrooms nearby</option>
+              <option value="food-nearby">Food nearby</option>
+            </select>
+          </div>
+          <div class="select-field">
+            <label for="timingSelect">When</label>
+            <select class="filter-select" id="timingSelect" onchange="setSelect('timing',this.value)">
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+              <option value="weekend">This weekend</option>
+              <option value="week">All week</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+          <div class="select-field">
+            <label for="areaSelect">Area</label>
+            <select class="filter-select" id="areaSelect" onchange="setSelect('area',this.value)">
+              <option value="all">All San Diego</option>
+              <option value="beach">Beach areas</option>
+              <option value="downtown">Downtown</option>
+              <option value="balboa">Balboa Park</option>
+              <option value="north-county">North County</option>
+              <option value="east-county">East County</option>
+              <option value="south-bay">South Bay</option>
+              <option value="central-san-diego">Central San Diego</option>
+            </select>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <div class="plan-label">When?</div>
-        <div class="chip-row">
-          <button class="chip hi" data-timing="today" onclick="setTiming(this)">📅 Today</button>
-          <button class="chip" data-timing="tomorrow" onclick="setTiming(this)">📅 Tomorrow</button>
-          <button class="chip" data-timing="weekend" onclick="setTiming(this)">🎉 This weekend</button>
-          <button class="chip" data-timing="week" onclick="setTiming(this)">🗓️ All week</button>
-          <button class="chip" data-timing="morning" onclick="setTiming(this)">🌅 Morning</button>
-          <button class="chip" data-timing="afternoon" onclick="setTiming(this)">☀️ Afternoon</button>
-          <button class="chip" data-timing="evening" onclick="setTiming(this)">🌙 Evening</button>
-        </div>
-      </div>
-
-      <div>
-        <div class="plan-label">Where in San Diego?</div>
-        <div class="chip-row">
-          <button class="chip hi" data-area="all" onclick="setArea(this)">📍 All SD</button>
-          <button class="chip" data-area="beach" onclick="setArea(this)">🌊 Beach areas</button>
-          <button class="chip" data-area="downtown" onclick="setArea(this)">🏙️ Downtown</button>
-          <button class="chip" data-area="balboa" onclick="setArea(this)">🌳 Balboa Park</button>
-          <button class="chip" data-area="north-county" onclick="setArea(this)">🗺️ North County</button>
-          <button class="chip" data-area="east-county" onclick="setArea(this)">🏔️ East County</button>
-          <button class="chip" data-area="south-bay" onclick="setArea(this)">🌉 South Bay</button>
-        </div>
+        <div class="filter-hint">Filters now exclude non-matching events; dog-friendly requires a source to explicitly say dogs or pets are welcome.</div>
       </div>
 
     </div>
@@ -312,7 +343,7 @@ button,input{font:inherit;cursor:pointer;border:none;background:none;padding:0}
 
 <script>
 // ── State ──────────────────────────────────────────────
-const S={adults:1,kids:0,childAges:new Set(),dogs:false,seniors:false,prefs:new Set(),timing:'today',area:'all'};
+const S={adults:1,kids:0,childAges:new Set(),dogs:false,seniors:false,prefs:new Set(),audience:'all',price:'any',setting:'any',feature:'any',timing:'today',area:'all'};
 let allData=null, selDay=0;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -328,7 +359,7 @@ function eventAudience(ev){return meta(ev).audience||'unknown';}
 function saveProfile(){
   localStorage.setItem('sdfunfinder_v1',JSON.stringify({
     adults:S.adults,kids:S.kids,childAges:[...S.childAges],dogs:S.dogs,seniors:S.seniors,
-    prefs:[...S.prefs],timing:S.timing,area:S.area
+    prefs:[...S.prefs],audience:S.audience,price:S.price,setting:S.setting,feature:S.feature,timing:S.timing,area:S.area
   }));
   const b=$('saveBtn'); b.textContent='✅ Saved!';
   setTimeout(()=>{b.textContent='💾 Save profile';},2200);
@@ -339,6 +370,11 @@ function loadProfile(){
     const p=JSON.parse(raw);
     S.adults=p.adults||1; S.kids=p.kids||0; S.childAges=new Set(p.childAges||[]);
     S.dogs=!!p.dogs; S.seniors=!!p.seniors; S.prefs=new Set(p.prefs||[]);
+    // Migrate older chip-based saved profiles into the new dropdown controls.
+    S.audience=p.audience||((p.prefs||[]).includes('adult-only')?'adult':(p.prefs||[]).includes('family-friendly')?'family':(p.prefs||[]).includes('toddler-friendly')?'toddler':'all');
+    S.price=p.price||((p.prefs||[]).includes('free')?'free':'any');
+    S.setting=p.setting||((p.prefs||[]).includes('outdoor')?'outdoor':(p.prefs||[]).includes('indoor')?'indoor':'any');
+    S.feature=p.feature||(['dog-friendly','stroller-friendly','low-walking','shade','bathrooms','food-nearby'].find(x=>(p.prefs||[]).includes(x))||'any');
     S.timing=p.timing||'today'; S.area=p.area||'all';
     $('savedBanner').style.display='flex';
   }catch(e){}
@@ -366,6 +402,9 @@ function applyStateToUI(){
       ar.querySelectorAll('.age-chip').forEach(b=>b.classList.toggle('on',S.childAges.has(b.dataset.age)));
     }
   }else{ar.style.display='none';}
+  ['audience','price','setting','feature','timing','area'].forEach(k=>{
+    const el=$(k+'Select'); if(el) el.value=S[k];
+  });
   document.querySelectorAll('[data-pref]').forEach(b=>b.classList.toggle('on',S.prefs.has(b.dataset.pref)));
   document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b.dataset.timing===S.timing));
   document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b.dataset.area===S.area));
@@ -377,8 +416,9 @@ function toggleGroup(key){S[key]=!S[key];applyStateToUI();reRender();}
 function togglePref(btn){const p=btn.dataset.pref;S.prefs.has(p)?S.prefs.delete(p):S.prefs.add(p);btn.classList.toggle('on',S.prefs.has(p));reRender();}
 function setTiming(btn){S.timing=btn.dataset.timing;document.querySelectorAll('[data-timing]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
 function setArea(btn){S.area=btn.dataset.area;document.querySelectorAll('[data-area]').forEach(b=>b.classList.toggle('hi',b===btn));reRender();}
+function setSelect(key,val){S[key]=val;applyStateToUI();reRender();}
 function resetFilters(){
-  S.adults=1;S.kids=0;S.childAges=new Set();S.dogs=false;S.seniors=false;S.prefs=new Set();S.timing='today';S.area='all';
+  S.adults=1;S.kids=0;S.childAges=new Set();S.dogs=false;S.seniors=false;S.prefs=new Set();S.audience='all';S.price='any';S.setting='any';S.feature='any';S.timing='today';S.area='all';
   $('ageRow').querySelectorAll('.age-chip').forEach(b=>b.remove());
   applyStateToUI();reRender();
 }
@@ -399,41 +439,50 @@ const AREA_RX={
 };
 function scoreEvent(ev){
   const m=meta(ev), features=m.features||{}, audience=eventAudience(ev);
-  const t=txt(ev); const reasons=[];
+  const reasons=[];
+  const wantsFree=S.price==='free'||S.prefs.has('free');
+  const setting=S.setting||'any';
+  const feature=S.feature||'any';
+  let audienceMode=S.audience||'all';
+  if(S.prefs.has('adult-only')) audienceMode='adult';
+  if(S.prefs.has('family-friendly')) audienceMode='family';
+  if(S.prefs.has('toddler-friendly')) audienceMode='toddler';
 
-  // Hard filters: selected chips should actually narrow results, not merely re-rank.
-  if(S.prefs.has('free')&&!features.free&&!ev.is_free) return {score:-9999,reasons:[]};
-  if(S.prefs.has('adult-only')&&audience!=='adult') return {score:-9999,reasons:[]};
-  if(S.prefs.has('family-friendly')&&!['family','young_children','all_ages'].includes(audience)) return {score:-9999,reasons:[]};
-  if(S.kids===0 && S.prefs.has('adult-only') && audience!=='adult') return {score:-9999,reasons:[]};
+  // Hard filters: selected dropdowns/toggles exclude non-matching records before ranking.
+  if(wantsFree&&!features.free&&!ev.is_free) return {score:-9999,reasons:[]};
+  if(audienceMode==='adult'&&audience!=='adult') return {score:-9999,reasons:[]};
+  if(audienceMode==='all_ages'&&audience!=='all_ages') return {score:-9999,reasons:[]};
+  if(audienceMode==='family'&&!['family','young_children'].includes(audience)) return {score:-9999,reasons:[]};
+  if(audienceMode==='toddler'&&audience!=='young_children'&&!features.toddler_friendly) return {score:-9999,reasons:[]};
   if(S.kids>0 && audience==='adult') return {score:-9999,reasons:[]};
-  if(S.prefs.has('outdoor')&&!features.outdoor) return {score:-9999,reasons:[]};
-  if(S.prefs.has('indoor')&&!features.indoor) return {score:-9999,reasons:[]};
-  if(S.prefs.has('dog-friendly')&&!features.dog_friendly) return {score:-9999,reasons:[]};
-  if(S.prefs.has('toddler-friendly')&&!features.toddler_friendly) return {score:-9999,reasons:[]};
-  if(S.prefs.has('stroller-friendly')&&!features.stroller_friendly) return {score:-9999,reasons:[]};
-  if(S.prefs.has('low-walking')&&!features.low_walking) return {score:-9999,reasons:[]};
-  if(S.prefs.has('shade')&&!features.shade) return {score:-9999,reasons:[]};
-  if(S.prefs.has('bathrooms')&&!features.bathrooms) return {score:-9999,reasons:[]};
-  if(S.prefs.has('food-nearby')&&!features.food_nearby) return {score:-9999,reasons:[]};
+  if(setting==='outdoor'&&!features.outdoor) return {score:-9999,reasons:[]};
+  if(setting==='indoor'&&!features.indoor) return {score:-9999,reasons:[]};
+  if((S.dogs||feature==='dog-friendly'||S.prefs.has('dog-friendly'))&&!features.dog_friendly) return {score:-9999,reasons:[]};
+  if(feature==='stroller-friendly'&&!features.stroller_friendly) return {score:-9999,reasons:[]};
+  if(feature==='low-walking'&&!features.low_walking) return {score:-9999,reasons:[]};
+  if(feature==='shade'&&!features.shade) return {score:-9999,reasons:[]};
+  if(feature==='bathrooms'&&!features.bathrooms) return {score:-9999,reasons:[]};
+  if(feature==='food-nearby'&&!features.food_nearby) return {score:-9999,reasons:[]};
   if(S.area!=='all'&&m.area!==S.area) return {score:-9999,reasons:[]};
 
   let s=(ev.score||0)*0.4;
   if(features.free||ev.is_free){s+=5;reasons.push('free admission');}
-  if(S.kids>0&&['family','young_children','all_ages'].includes(audience)){s+=3;reasons.push('family-friendly');}
+  if(audienceMode==='adult'){s+=5;reasons.push('adult-focused');}
+  if(audienceMode==='all_ages'){s+=3;reasons.push('all-ages');}
+  if(audienceMode==='family'||S.kids>0){s+=3;reasons.push('family-friendly');}
+  if(audienceMode==='toddler'&&features.toddler_friendly){s+=6;reasons.push('toddler-friendly');}
   const toddler=S.kids>0&&[...S.childAges].some(a=>/^(infant|1yo|2yo|3yo)$/.test(a));
   if(toddler&&features.toddler_friendly){s+=6;reasons.push('great for toddlers');}
-  if(S.dogs&&features.dog_friendly){s+=4;reasons.push('dog-friendly');}
+  if((S.dogs||feature==='dog-friendly')&&features.dog_friendly){s+=5;reasons.push('explicitly dog-friendly');}
   if(S.seniors&&features.low_walking){s+=2;reasons.push('senior-friendly');}
-  if(features.outdoor&&S.prefs.has('outdoor')){s+=4;reasons.push('outdoor');}
-  if(features.indoor&&S.prefs.has('indoor')){s+=4;reasons.push('indoor');}
-  if(features.stroller_friendly&&S.prefs.has('stroller-friendly')){s+=3;reasons.push('stroller OK');}
-  if(features.low_walking&&S.prefs.has('low-walking')){s+=3;reasons.push('low walking');}
-  if(features.shade&&S.prefs.has('shade')){s+=2;reasons.push('shaded');}
-  if(features.bathrooms&&S.prefs.has('bathrooms')){s+=1;reasons.push('bathrooms nearby');}
-  if(features.food_nearby&&S.prefs.has('food-nearby')){s+=2;reasons.push('food nearby');}
-  if(S.area!=='all'){s+=5;reasons.push('in your area');}
-  if(audience==='adult') reasons.push('adult-focused');
+  if(features.outdoor&&setting==='outdoor'){s+=4;reasons.push('outdoor');}
+  if(features.indoor&&setting==='indoor'){s+=4;reasons.push('indoor');}
+  if(features.stroller_friendly&&feature==='stroller-friendly'){s+=3;reasons.push('stroller OK');}
+  if(features.low_walking&&feature==='low-walking'){s+=3;reasons.push('low walking');}
+  if(features.shade&&feature==='shade'){s+=2;reasons.push('shade / covered');}
+  if(features.bathrooms&&feature==='bathrooms'){s+=1;reasons.push('bathrooms nearby');}
+  if(features.food_nearby&&feature==='food-nearby'){s+=2;reasons.push('food nearby');}
+  if(S.area!=='all'){s+=5;reasons.push('in your selected area');}
   return {score:s,reasons:[...new Set(reasons)]};
 }
 
@@ -461,8 +510,8 @@ function assignLabels(scored){
   const m=new Map();
   if(scored[0]) m.set(scored[0].ev,'⭐ Best match');
   const bf=scored.find(x=>x.ev.is_free&&!m.has(x.ev)); if(bf) m.set(bf.ev,'🆓 Best free pick');
-  const tp=scored.find(x=>/\b(toddler|storytime|sensory|preschool)\b/i.test(txt(x.ev))&&!m.has(x.ev)); if(tp) m.set(tp.ev,'🧸 Best for toddlers');
-  const dp=scored.find(x=>/\b(dog|pet)\b/i.test(txt(x.ev))&&!m.has(x.ev)); if(dp) m.set(dp.ev,'🐕 Dog-friendly pick');
+  const tp=scored.find(x=>feat(x.ev,'toddler_friendly')&&!m.has(x.ev)); if(tp) m.set(tp.ev,'🧸 Best for toddlers');
+  const dp=scored.find(x=>feat(x.ev,'dog_friendly')&&!m.has(x.ev)); if(dp) m.set(dp.ev,'🐕 Dog-friendly pick');
   return m;
 }
 function whyBox(ev,reasons,label){
@@ -478,6 +527,8 @@ function renderCard(ev,label,reasons){
   const m=meta(ev), features=m.features||{};
   if(features.free||ev.is_free) badges.push('<span class="badge b-free">Free</span>');
   if(eventAudience(ev)==='adult') badges.push('<span class="badge b-src">👤 Adult-focused</span>');
+  if(eventAudience(ev)==='all_ages') badges.push('<span class="badge b-src">👥 All ages</span>');
+  if(['family','young_children'].includes(eventAudience(ev))) badges.push('<span class="badge b-src">👨‍👩‍👧 Family</span>');
   if(features.dog_friendly) badges.push('<span class="badge b-dog">🐕 Dog-friendly</span>');
   if(features.toddler_friendly) badges.push('<span class="badge b-toddler">🧸 Toddler OK</span>');
   if(ev.category) badges.push(`<span class="badge b-cat">${esc(ev.category)}</span>`);
@@ -503,7 +554,7 @@ function reRender(){
   $('recsHeading').textContent=`🏆 Top matches for ${timingLabel()}`;
   if(!scored.length){
     $('recsMeta').textContent='';
-    $('recsList').innerHTML=`<div class="empty-state"><div class="emo">🔍</div><h3>No matches found</h3><p>Try removing a filter or picking a broader time window.</p></div>`;
+    $('recsList').innerHTML=`<div class="empty-state"><div class="emo">🔍</div><h3>No matches found</h3><p>Try a broader dropdown. Some filters, especially dog-friendly, only show events where the source explicitly provides that metadata.</p></div>`;
     return;
   }
   $('recsMeta').textContent=`${scored.length} option${scored.length!==1?'s':''} · sorted by best fit for your group`;
@@ -561,17 +612,15 @@ async function loadEvents(){
     $('statFree').textContent=data.counts?.free_events??0;
     $('statTotal').textContent=data.counts?.total_events??0;
     $('statSources').textContent=(data.sources||[]).length;
-    const errs=data.errors||[];
-    $('sourcesBody').innerHTML=(data.sources||[]).map(s=>{
-      const bad=errs.find(x=>String(x).includes(s));
-      return `<div class="src-item"><strong>${esc(s)}</strong><span>${bad?'⚠️ Could not refresh — showing cached data':'✅ Loaded successfully'}</span></div>`;
-    }).join('')+(errs.length?`<p style="margin:12px 0 0;font-size:12px;color:var(--muted)">Details: ${esc(errs.join('; '))}</p>`:'');
-    if(errs.length){
-      showStatus("Some sources couldn't refresh, but we still found plenty of events.",'warn');
-    }else{
-      const ts=data.generated_at?new Date(data.generated_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'';
-      showStatus(`Events updated${ts?' at '+ts:''}. Ready to plan!`,'ok');
-    }
+    const statuses=(data.source_status||[]).filter(s=>s.status==='loaded'&&Number(s.count||0)>0);
+    const sourceNames=statuses.length?statuses.map(s=>s.label):(data.sources||[]).map(s=>String(s));
+    $('sourcesBody').innerHTML=sourceNames.map(s=>{
+      const st=statuses.find(x=>x.label===s);
+      const count=st&&Number.isFinite(Number(st.count))?` · ${Number(st.count)} found`:'';
+      return `<div class="src-item"><strong>${esc(s)}</strong><span>✅ Loaded${esc(count)}</span></div>`;
+    }).join('')+`<p style="margin:12px 0 0;font-size:12px;color:var(--muted)">Only successfully loaded public sources are shown here. Backup sources that block automated access are skipped silently.</p>`;
+    const ts=data.generated_at?new Date(data.generated_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'';
+    showStatus(`Events updated${ts?' at '+ts:''}. Ready to plan!`,'ok');
     selDay=todayIndex();
     renderCalendar();
     selectDay(selDay);
