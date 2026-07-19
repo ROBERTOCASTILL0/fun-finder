@@ -29,7 +29,7 @@ from public_family_events import (
 )
 
 CORE_SOURCE_KEYS = ('city', 'family', 'kids', 'kpbs')
-DEFAULT_SOURCE_KEYS = CORE_SOURCE_KEYS + ('reader', 'meetup_general', 'ucsd', 'sdhumane', 'meetup_dogs')
+DEFAULT_SOURCE_KEYS = CORE_SOURCE_KEYS + ('reader', 'meetup_general', 'ucsd', 'sdhumane', 'meetup_dogs', 'eventbrite')
 DEFAULT_DATA_DIR = Path('/opt/data/roberto-ui/data')
 DEFAULT_CANDIDATE_FULL = 'fun_finder_candidate_full.json'
 DEFAULT_LKG_FULL = 'fun_finder_last_known_good_full.json'

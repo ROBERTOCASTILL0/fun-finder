@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urljoin, urlparse
 from urllib.request import Request, urlopen
 
+import eventbrite_ingestion
 from snapshot_schema import SCHEMA_VERSION, normalize_public_snapshot
 
 try:
@@ -278,13 +279,18 @@ def score_event(title: str, description: str, venue: str = '', source: str = '')
         score += 2
     elif source == 'city':
         score += 1
-    is_free = 'free' in text or '$0' in text or 'no cost' in text
+    is_free = _text_implies_free(text)
     category = 'Family outing'
     for label, keys in CATEGORY_RULES:
         if any(k in text for k in keys):
             category = label
             break
     return score, is_free, sorted(set(tags)), category
+
+
+
+def _text_implies_free(text: str) -> bool:
+    return 'free' in text or '$0' in text or 'no cost' in text
 
 
 
@@ -306,11 +312,11 @@ def detect_area(text: str) -> str:
 
 def detect_time_period(time_text: str, text: str = '') -> str:
     t = f'{time_text} {text}'.lower()
-    if re.search(r'\b(6|7|8|9|10|11)\s*(a\.?m\.?|am)\b|\bmorning\b', t):
+    if re.search(r'\b(?:6|7|8|9|10|11)(?::[0-5]\d)?\s*(a\.?m\.?|am)\b|\bmorning\b', t):
         return 'morning'
-    if re.search(r'\b(12|1|2|3|4|5)\s*(p\.?m\.?|pm)\b|\b(noon|afternoon)\b', t):
+    if re.search(r'\b(?:12|1|2|3|4|5)(?::[0-5]\d)?\s*(p\.?m\.?|pm)\b|\b(noon|afternoon)\b', t):
         return 'afternoon'
-    if re.search(r'\b(6|7|8|9|10|11)\s*(p\.?m\.?|pm)\b|\b(evening|night|sunset)\b', t):
+    if re.search(r'\b(?:6|7|8|9|10|11)(?::[0-5]\d)?\s*(p\.?m\.?|pm)\b|\b(evening|night|sunset)\b', t):
         return 'evening'
     return 'unknown'
 
@@ -364,10 +370,30 @@ def classify_metadata(title: str, description: str, venue: str, source: str, tim
     }
     return metadata
 
-def normalize_event(title: str, date: str | None, url: str, source: str, description: str = '', venue: str = '', time_text: str = '') -> Event | None:
+def normalize_event(
+    title: str,
+    date: str | None,
+    url: str,
+    source: str,
+    description: str = '',
+    venue: str = '',
+    time_text: str = '',
+    *,
+    is_free_override: bool | None = None,
+    minimum_score: int = -6,
+) -> Event | None:
     if not title or not date:
         return None
     score, is_free, tags, category = score_event(title, description, venue, source)
+    if is_free_override is not None:
+        free_signal_present = _text_implies_free(f'{title} {description} {venue}'.lower())
+        if is_free_override and not free_signal_present:
+            score += POSITIVE_KEYWORDS.get('free', 0)
+            tags = sorted(set(tags + ['free']))
+        elif not is_free_override and free_signal_present:
+            score -= POSITIVE_KEYWORDS.get('free', 0)
+            tags = [tag for tag in tags if tag != 'free']
+        is_free = is_free_override
     metadata = classify_metadata(title, description, venue, source, time_text, is_free, category)
     if metadata.get('audience') == 'adult':
         category = 'Adult outing'
@@ -377,7 +403,7 @@ def normalize_event(title: str, date: str | None, url: str, source: str, descrip
         category = 'Toddler-friendly'
     # Keep a broader set for adult/general San Diego browsing while still dropping
     # strongly irrelevant family-unfriendly items from family-first sources.
-    if score < -6:
+    if score < minimum_score:
         return None
     return Event(
         title=clean_text(title),
@@ -632,7 +658,7 @@ def parse_tribe_events_html(html: str, source_key: str, base_url: str) -> list[E
 
 
 def dedupe(events: list[Event]) -> list[Event]:
-    chosen: dict[tuple[str, str], Event] = {}
+    chosen: dict[tuple[str, str, str], Event] = {}
     priority = {
         'family': 6,
         'kids': 6,
@@ -641,19 +667,32 @@ def dedupe(events: list[Event]) -> list[Event]:
         'sdhumane': 4,
         'ucsd': 4,
         'meetup_dogs': 4,
+        'eventbrite': 4,
         'reader': 3,
         'kpbs': 3,
         'meetup_general': 2,
     }
-    for ev in sorted(events, key=lambda e: (e.date, -e.score, e.title.lower())):
-        key = (re.sub(r'[^a-z0-9]+', ' ', ev.title.lower()).strip()[:56], ev.date)
+
+    def normalized_title(value: str) -> str:
+        return re.sub(r'[^a-z0-9]+', ' ', value.lower()).strip()[:56]
+
+    def normalized_venue(value: str) -> str:
+        return re.sub(r'[^a-z0-9]+', ' ', value.lower()).strip()[:48]
+
+    for ev in sorted(events, key=lambda e: (e.date, -e.score, e.title.lower(), e.venue.lower())):
+        venue_key = normalized_venue(ev.venue)
+        key = (normalized_title(ev.title), ev.date, venue_key)
+        if not venue_key:
+            key = (normalized_title(ev.title), ev.date, '')
         old = chosen.get(key)
         if old is None:
             chosen[key] = ev
             continue
-        if (ev.score, priority.get(ev.source, 1)) > (old.score, priority.get(old.source, 1)):
+        old_priority = (old.score, priority.get(old.source, 1), len(old.venue or ''))
+        new_priority = (ev.score, priority.get(ev.source, 1), len(ev.venue or ''))
+        if new_priority > old_priority:
             chosen[key] = ev
-    return sorted(chosen.values(), key=lambda e: (e.date, -e.score, e.title.lower()))
+    return sorted(chosen.values(), key=lambda e: (e.date, -e.score, e.title.lower(), e.venue.lower()))
 
 
 def day_summary(events: list[Event]) -> str:
@@ -679,7 +718,7 @@ def build_source_definitions() -> list[dict]:
         {'key': 'kpbs', 'category': 'general_events', 'url': 'https://www.kpbs.org/events/all', 'parsers': ('kpbs',)},
         {'key': 'times_of_sd', 'category': 'general_events', 'url': 'https://timesofsandiego.com/events/', 'parsers': ('jsonld', 'tribe')},
         {'key': 'tourism', 'category': 'general_events', 'url': 'https://www.sandiego.org/explore/events.aspx', 'parsers': ('jsonld', 'tribe')},
-        {'key': 'eventbrite', 'category': 'general_events', 'url': 'https://www.eventbrite.com/d/ca--san-diego/events/', 'parsers': ('jsonld',)},
+        {'key': 'eventbrite', 'category': 'general_events', 'url': 'https://www.eventbrite.com/d/ca--san-diego/events/', 'parsers': ('eventbrite_api',)},
         {'key': 'meetup_general', 'category': 'general_events', 'url': 'https://www.meetup.com/find/us--ca--san-diego/', 'parsers': ('jsonld',)},
         {'key': 'family', 'category': 'family_events', 'url': 'https://www.sandiegofamily.com/things-to-do/events-calendar', 'parsers': ('family',)},
         {'key': 'kids', 'category': 'family_events', 'url': 'https://sandiego.kidsoutandabout.com/', 'parsers': ('kids',)},
@@ -747,6 +786,13 @@ def fetch_source_result(source: dict) -> tuple[list[Event], dict]:
         'status': 'unavailable',
         'count': 0,
     }
+    if key == 'eventbrite':
+        return eventbrite_ingestion.fetch_eventbrite_source_result(
+            source,
+            normalizer=normalize_event,
+            source_label=SOURCE_LABELS[key],
+            now=NOW(),
+        )
     try:
         html = fetch(url)
     except Exception as exc:
