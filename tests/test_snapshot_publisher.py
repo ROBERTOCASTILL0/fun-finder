@@ -105,7 +105,7 @@ class SnapshotPublisherTests(unittest.TestCase):
             'top_categories': [{'name': 'Toddler-friendly', 'count': 1}],
         }
 
-    def test_publish_mirrors_before_runtime_post_and_verifies_unauthenticated_readback(self) -> None:
+    def test_publish_accepts_and_reads_back_before_advancing_durable_mirror(self) -> None:
         runtime_dir = Path(tempfile.mkdtemp(prefix='publisher-test-'))
         snapshot_path = runtime_dir / 'fun_finder_public_snapshot.json'
         publish_state_path = runtime_dir / 'fun_finder_publish_state.json'
@@ -115,8 +115,10 @@ class SnapshotPublisherTests(unittest.TestCase):
 
         requests: list[dict] = []
         mirror_calls: list[dict] = []
+        order: list[str] = []
 
         def opener(request, timeout=0):
+            order.append(request.get_method())
             requests.append({
                 'method': request.get_method(),
                 'url': request.full_url,
@@ -134,7 +136,7 @@ class SnapshotPublisherTests(unittest.TestCase):
             publish_state_path=publish_state_path,
             allow_test_base_url=True,
             mirror_factory=lambda **kwargs: type('Mirror', (), {
-                'mirror': staticmethod(lambda: mirror_calls.append(kwargs) or {
+                'mirror': staticmethod(lambda: order.append('MIRROR') or mirror_calls.append(kwargs) or {
                     'ok': True,
                     'status': 'mirrored',
                     'snapshot_id': snapshot['snapshot_id'],
@@ -151,6 +153,7 @@ class SnapshotPublisherTests(unittest.TestCase):
         self.assertEqual(requests[0]['authorization'], 'Bearer super-secret')
         self.assertEqual(requests[1]['url'], 'https://publisher.example.test/api/events')
         self.assertIsNone(requests[1]['authorization'])
+        self.assertEqual(order, ['POST', 'GET', 'MIRROR'])
         state = json.loads(publish_state_path.read_text(encoding='utf-8'))
         self.assertEqual(state['publish']['status'], 'published')
         self.assertEqual(state['publish']['snapshot_id'], snapshot['snapshot_id'])
@@ -184,7 +187,7 @@ class SnapshotPublisherTests(unittest.TestCase):
         self.assertEqual(calls, 0)
         self.assertIn('base URL', result['error'])
 
-    def test_mirror_failure_prevents_runtime_post(self) -> None:
+    def test_mirror_failure_after_runtime_acceptance_is_reported_for_retry(self) -> None:
         runtime_dir = Path(tempfile.mkdtemp(prefix='publisher-test-'))
         snapshot_path = runtime_dir / 'fun_finder_public_snapshot.json'
         publish_state_path = runtime_dir / 'fun_finder_publish_state.json'
@@ -193,9 +196,11 @@ class SnapshotPublisherTests(unittest.TestCase):
 
         def opener(request, timeout=0):
             nonlocal opener_calls
-            del request, timeout
+            del timeout
             opener_calls += 1
-            raise AssertionError('runtime publish should not be attempted when mirroring fails')
+            if request.get_method() == 'POST':
+                return _FakeResponse({'ok': True, 'snapshot_id': 'snap-publisher-001'}, status=202)
+            return _FakeResponse({'snapshot_id': 'snap-publisher-001', 'events': []}, status=200)
 
         publisher = snapshot_publisher.SnapshotPublisher(
             base_url='https://san-diego-fun-finder.onrender.com',
@@ -211,10 +216,40 @@ class SnapshotPublisherTests(unittest.TestCase):
         result = publisher.publish()
 
         self.assertFalse(result['ok'])
-        self.assertEqual(opener_calls, 0)
+        self.assertEqual(opener_calls, 2)
         state = json.loads(publish_state_path.read_text(encoding='utf-8'))
         self.assertEqual(state['publish']['status'], 'publish_failed')
         self.assertIn('mirror failed', state['publish']['error'])
+
+    def test_runtime_rejection_does_not_advance_durable_mirror(self) -> None:
+        runtime_dir = Path(tempfile.mkdtemp(prefix='publisher-test-'))
+        snapshot_path = runtime_dir / 'fun_finder_public_snapshot.json'
+        snapshot_path.write_text(json.dumps(self.make_snapshot()), encoding='utf-8')
+        mirror_calls = 0
+
+        def opener(_request, timeout=0):
+            del timeout
+            return _FakeResponse({'ok': False, 'error': 'rejected'}, status=400)
+
+        def mirror_factory(**_kwargs):
+            nonlocal mirror_calls
+            mirror_calls += 1
+            raise AssertionError('durable mirror must not advance before runtime acceptance')
+
+        publisher = snapshot_publisher.SnapshotPublisher(
+            base_url='https://san-diego-fun-finder.onrender.com',
+            ingest_key='super-secret',
+            public_snapshot_path=snapshot_path,
+            publish_state_path=runtime_dir / 'state.json',
+            opener=opener,
+            mirror_factory=mirror_factory,
+        )
+
+        result = publisher.publish()
+
+        self.assertFalse(result['ok'])
+        self.assertEqual(mirror_calls, 0)
+        self.assertIn('expected HTTP 202', result['error'])
 
     def test_main_prints_safe_summary_by_default_and_full_safe_json_with_flag(self) -> None:
         result = {

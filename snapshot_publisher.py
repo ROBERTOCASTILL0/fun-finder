@@ -78,13 +78,15 @@ class SnapshotPublisher:
             self._validate_base_url()
             if not self.ingest_key:
                 raise ValueError('FUN_FINDER_SNAPSHOT_INGEST_KEY is required')
-            mirror = self.mirror_factory(snapshot_path=self.public_snapshot_path).mirror()
             accepted = self._post_snapshot(snapshot)
             if accepted.get('snapshot_id') != snapshot['snapshot_id']:
                 raise ValueError('publish response snapshot_id mismatch')
             readback = self._get_events()
             if readback.get('snapshot_id') != snapshot['snapshot_id']:
                 raise ValueError('readback snapshot_id mismatch')
+            # Advance the durable recovery pointer only after Render has accepted
+            # the snapshot and public readback confirms the same identity.
+            mirror = self.mirror_factory(snapshot_path=self.public_snapshot_path).mirror()
             result = {
                 'ok': True,
                 'status': 'published',
