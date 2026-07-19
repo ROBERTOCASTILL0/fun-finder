@@ -89,13 +89,13 @@ class CanonicalEngineTests(unittest.TestCase):
             'error': 'token=secret',
         }
 
-    def test_default_allowlist_excludes_eventbrite(self) -> None:
+    def test_default_allowlist_includes_eventbrite_but_core_stays_unchanged(self) -> None:
         keys = [source['key'] for source in canonical_engine.build_canonical_source_definitions()]
         self.assertEqual(
             keys,
-            ['city', 'family', 'kids', 'kpbs', 'reader', 'meetup_general', 'ucsd', 'sdhumane', 'meetup_dogs'],
+            ['city', 'family', 'kids', 'kpbs', 'reader', 'meetup_general', 'ucsd', 'sdhumane', 'meetup_dogs', 'eventbrite'],
         )
-        self.assertNotIn('eventbrite', keys)
+        self.assertEqual(canonical_engine.CORE_SOURCE_KEYS, ('city', 'family', 'kids', 'kpbs'))
 
     def test_allowlist_overrides_are_subset_of_approved_sources_in_default_order(self) -> None:
         keys = [
@@ -104,13 +104,13 @@ class CanonicalEngineTests(unittest.TestCase):
                 ['meetup_dogs', 'eventbrite', 'family', 'unknown', 'city']
             )
         ]
-        self.assertEqual(keys, ['city', 'family', 'meetup_dogs'])
+        self.assertEqual(keys, ['city', 'family', 'meetup_dogs', 'eventbrite'])
 
-    def test_constructor_source_keys_cannot_enable_disallowed_sources(self) -> None:
-        engine = canonical_engine.CanonicalEngine(source_keys=['eventbrite', 'family', 'city'])
-        self.assertEqual(engine.source_keys, ('city', 'family'))
+    def test_constructor_source_keys_can_enable_eventbrite_but_only_with_approved_sources(self) -> None:
+        engine = canonical_engine.CanonicalEngine(source_keys=['eventbrite', 'family', 'city', 'unknown'])
+        self.assertEqual(engine.source_keys, ('city', 'family', 'eventbrite'))
 
-    def test_env_source_keys_cannot_enable_disallowed_sources_but_can_select_subset(self) -> None:
+    def test_env_source_keys_can_enable_eventbrite_but_still_filter_unknown_sources(self) -> None:
         previous = os.environ.get('FUN_FINDER_SOURCE_KEYS')
         os.environ['FUN_FINDER_SOURCE_KEYS'] = 'eventbrite,meetup_dogs,city,unknown'
         try:
@@ -120,7 +120,7 @@ class CanonicalEngineTests(unittest.TestCase):
                 os.environ.pop('FUN_FINDER_SOURCE_KEYS', None)
             else:
                 os.environ['FUN_FINDER_SOURCE_KEYS'] = previous
-        self.assertEqual(engine.source_keys, ('city', 'meetup_dogs'))
+        self.assertEqual(engine.source_keys, ('city', 'meetup_dogs', 'eventbrite'))
 
     def test_valid_candidate_promotes_all_artifacts_and_scrubs_public_projection(self) -> None:
         runtime_dir = self.make_runtime_dir()
@@ -136,6 +136,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', '403'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'empty'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'empty'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'empty'),
         }
 
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: results[source['key']]):
@@ -186,6 +187,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'timeout'),
         })
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: good_results[source['key']]):
             first = engine.refresh()
@@ -202,6 +204,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', 'down'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'down'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'down'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'down'),
         }
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: bad_results[source['key']]):
             second = engine.refresh()
@@ -232,6 +235,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'timeout'),
         })
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: results[source['key']]):
             engine.refresh()
@@ -260,6 +264,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'timeout'),
         })
         base_engine = canonical_engine.CanonicalEngine(data_dir=runtime_dir)
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: good_results[source['key']]):
@@ -297,6 +302,7 @@ class CanonicalEngineTests(unittest.TestCase):
             'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
             'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
             'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+            'eventbrite': self.make_unavailable_result('eventbrite', 'timeout'),
         })
         with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: results[source['key']]):
             outcome = engine.refresh()
