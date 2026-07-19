@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-11f8745aafcd6d34",
-  "generated_at": "2026-07-19T09:30:29.044251-07:00",
+  "snapshot_id": "snap-8624797afbc07c76",
+  "generated_at": "2026-07-19T09:49:11.899287-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -92,7 +92,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 28,
+      "count": 26,
       "parser": "jsonld"
     }
   ],
@@ -103,7 +103,7 @@
     "label": "Jul 19",
     "is_today": true,
     "count": 12,
-    "summary": "102 ideas \u00b7 12 free \u00b7 33 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+    "summary": "98 ideas \u00b7 9 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -565,7 +565,7 @@
       "label": "Jul 19",
       "is_today": true,
       "count": 12,
-      "summary": "102 ideas \u00b7 12 free \u00b7 33 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+      "summary": "98 ideas \u00b7 9 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -1732,8 +1732,8 @@
       "weekday": "Wed",
       "label": "Jul 22",
       "is_today": false,
-      "count": 9,
-      "summary": "9 ideas \u00b7 3 farmers market \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
+      "count": 10,
+      "summary": "10 ideas \u00b7 4 all-ages event \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
       "events": [
         {
           "title": "Dancing Barbie Dream Camp July 20-24",
@@ -2052,6 +2052,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Youth Transition Center - Probation Department Appreciation (Cert. teams only)",
+          "date": "2026-07-22",
+          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/315688271/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-22T20:15:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -2061,7 +2095,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "16 ideas \u00b7 2 free \u00b7 4 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "15 ideas \u00b7 2 free \u00b7 3 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -2507,8 +2541,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 2 free \u00b7 2 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
+      "count": 6,
+      "summary": "6 ideas \u00b7 2 free \u00b7 2 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -2655,6 +2689,40 @@
               "food_nearby": false
             },
             "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "10 Min Workout \"Pup Pilates: How to workout with your dog\" + Live Chat",
+          "date": "2026-07-24",
+          "url": "https://www.meetup.com/winendinewdoggies/events/315548410/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "Some of the real benefits of group exercise are: 1) You can get more bang for your buck; 2) There's camaraderie between participants; 3) It's great for everyone \u2013 whatever their fitness level; 4) You don\u2019t have to know what you are doing. Therefore, the 10-min Doggie Pilates has become our weekly event. Make a stamp card for your health and your dog bonding time, give it a paw print every time you guys join us. Also, don't hesitate to say hi using the live chat box in the screening room. How to join: At the event time, go to https://w2g.tv/?r=x8rac43l78z0k1lout (Copy and paste it if the link is broken) Stay Safe, Stay Well, and Stay CONNECTED!",
+          "time_text": "2026-07-24T19:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": true,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
             "metadata_version": 2
@@ -3671,8 +3739,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
+      "count": 4,
+      "summary": "4 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
       "events": [
         {
           "title": "Beginner Volleyball at Nite",
@@ -3729,6 +3797,40 @@
             "features": {
               "free": false,
               "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "private home visit",
+          "date": "2026-07-28",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-28T20:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -5045,7 +5147,7 @@
     }
   ],
   "counts": {
-    "total_events": 118,
+    "total_events": 121,
     "days": 21,
     "free_events": 19,
     "configured_sources": 9,
@@ -5058,7 +5160,7 @@
     },
     {
       "name": "All-ages event",
-      "count": 17
+      "count": 20
     },
     {
       "name": "Museum / zoo",
