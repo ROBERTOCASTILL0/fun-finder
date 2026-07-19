@@ -548,6 +548,7 @@ class EventbriteIngestionTests(unittest.TestCase):
                 detail = self.make_detail_payload(
                     event_id,
                     title=title,
+                    venue_name=title,
                     venue_city=venue_city,
                     localized_area_display=localized_area_display,
                     description_text=description_text,
@@ -563,6 +564,50 @@ class EventbriteIngestionTests(unittest.TestCase):
                 self.assertIsNotNone(event)
                 assert event is not None
                 self.assertEqual(event.metadata['area'], expected_area)
+
+    def test_eventbrite_authoritative_venue_area_uses_specific_address_clue_before_generic_san_diego(self) -> None:
+        detail = self.make_detail_payload(
+            '946',
+            title='Daygo Beach Boogie',
+            venue_name='Daygo Beach Boogie',
+            venue_city='San Diego',
+            localized_area_display='San Diego',
+            localized_multi_line_address_display='1740 E Mission Bay Dr.\nSan Diego, CA 92109',
+            description_text='Join us after our Balboa Park meetup with friends visiting from El Cajon and Chula Vista.',
+        )
+        detail['venue']['address']['localized_address_display'] = '1740 E Mission Bay Dr., San Diego, CA 92109'
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        assert event is not None
+        self.assertEqual(event.metadata['area'], 'beach')
+
+    def test_eventbrite_authoritative_venue_area_uses_venue_name_specificity_before_generic_san_diego(self) -> None:
+        detail = self.make_detail_payload(
+            '947',
+            title='Family Discovery Day',
+            venue_name='Balboa Park Carousel',
+            venue_city='San Diego',
+            localized_area_display='San Diego',
+            description_text='Downtown partners and Pacific Beach families are invited, but the venue is in the park.',
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        assert event is not None
+        self.assertEqual(event.metadata['area'], 'balboa')
 
     def test_full_description_and_categories_enrich_audience_category_and_metadata(self) -> None:
         detail = self.make_detail_payload(
