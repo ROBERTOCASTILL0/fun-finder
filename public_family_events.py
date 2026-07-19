@@ -279,13 +279,18 @@ def score_event(title: str, description: str, venue: str = '', source: str = '')
         score += 2
     elif source == 'city':
         score += 1
-    is_free = 'free' in text or '$0' in text or 'no cost' in text
+    is_free = _text_implies_free(text)
     category = 'Family outing'
     for label, keys in CATEGORY_RULES:
         if any(k in text for k in keys):
             category = label
             break
     return score, is_free, sorted(set(tags)), category
+
+
+
+def _text_implies_free(text: str) -> bool:
+    return 'free' in text or '$0' in text or 'no cost' in text
 
 
 
@@ -307,11 +312,11 @@ def detect_area(text: str) -> str:
 
 def detect_time_period(time_text: str, text: str = '') -> str:
     t = f'{time_text} {text}'.lower()
-    if re.search(r'\b(6|7|8|9|10|11)\s*(a\.?m\.?|am)\b|\bmorning\b', t):
+    if re.search(r'\b(?:6|7|8|9|10|11)(?::[0-5]\d)?\s*(a\.?m\.?|am)\b|\bmorning\b', t):
         return 'morning'
-    if re.search(r'\b(12|1|2|3|4|5)\s*(p\.?m\.?|pm)\b|\b(noon|afternoon)\b', t):
+    if re.search(r'\b(?:12|1|2|3|4|5)(?::[0-5]\d)?\s*(p\.?m\.?|pm)\b|\b(noon|afternoon)\b', t):
         return 'afternoon'
-    if re.search(r'\b(6|7|8|9|10|11)\s*(p\.?m\.?|pm)\b|\b(evening|night|sunset)\b', t):
+    if re.search(r'\b(?:6|7|8|9|10|11)(?::[0-5]\d)?\s*(p\.?m\.?|pm)\b|\b(evening|night|sunset)\b', t):
         return 'evening'
     return 'unknown'
 
@@ -365,10 +370,30 @@ def classify_metadata(title: str, description: str, venue: str, source: str, tim
     }
     return metadata
 
-def normalize_event(title: str, date: str | None, url: str, source: str, description: str = '', venue: str = '', time_text: str = '') -> Event | None:
+def normalize_event(
+    title: str,
+    date: str | None,
+    url: str,
+    source: str,
+    description: str = '',
+    venue: str = '',
+    time_text: str = '',
+    *,
+    is_free_override: bool | None = None,
+    minimum_score: int = -6,
+) -> Event | None:
     if not title or not date:
         return None
     score, is_free, tags, category = score_event(title, description, venue, source)
+    if is_free_override is not None:
+        free_signal_present = _text_implies_free(f'{title} {description} {venue}'.lower())
+        if is_free_override and not free_signal_present:
+            score += POSITIVE_KEYWORDS.get('free', 0)
+            tags = sorted(set(tags + ['free']))
+        elif not is_free_override and free_signal_present:
+            score -= POSITIVE_KEYWORDS.get('free', 0)
+            tags = [tag for tag in tags if tag != 'free']
+        is_free = is_free_override
     metadata = classify_metadata(title, description, venue, source, time_text, is_free, category)
     if metadata.get('audience') == 'adult':
         category = 'Adult outing'
@@ -378,7 +403,7 @@ def normalize_event(title: str, date: str | None, url: str, source: str, descrip
         category = 'Toddler-friendly'
     # Keep a broader set for adult/general San Diego browsing while still dropping
     # strongly irrelevant family-unfriendly items from family-first sources.
-    if score < -6:
+    if score < minimum_score:
         return None
     return Event(
         title=clean_text(title),

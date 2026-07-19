@@ -79,11 +79,19 @@ class EventbriteIngestionTests(unittest.TestCase):
         venue_name: str = 'Balboa Park Club',
         category: str = 'Community',
         subcategory: str = 'Family',
+        summary: str = 'Outdoor family event with restrooms, shade, and stroller access.',
+        description_text: str = '',
+        organizer_name: str = 'San Diego Organizer',
+        detail_is_free: bool | None = None,
+        ticket_is_free: bool | None = True,
+        localized_area_display: str | None = None,
+        localized_multi_line_address_display: str | None = None,
     ) -> dict:
         return {
             'id': event_id,
             'name': {'text': title or f'Eventbrite Event {event_id}'},
-            'summary': 'Outdoor family event with restrooms, shade, and stroller access.',
+            'summary': summary,
+            'description': {'text': description_text},
             'url': f'https://www.eventbrite.com/e/sample-event-{event_id}',
             'status': status,
             'listed': listed,
@@ -93,12 +101,15 @@ class EventbriteIngestionTests(unittest.TestCase):
             'logo': {'original': {'url': f'https://img.example.com/{event_id}.jpg'}},
             'category': {'name': category},
             'subcategory': {'name': subcategory},
-            'organizer': {'name': 'San Diego Organizer'},
-            'ticket_availability': {'is_free': True},
+            'organizer': {'name': organizer_name},
+            'is_free': detail_is_free,
+            'ticket_availability': ({'is_free': ticket_is_free} if ticket_is_free is not None else {}),
             'venue': {
                 'name': venue_name,
                 'address': {
                     'localized_address_display': f'{venue_name}, {venue_city}, {region}',
+                    'localized_area_display': localized_area_display,
+                    'localized_multi_line_address_display': localized_multi_line_address_display,
                     'city': venue_city,
                     'region': region,
                     'country': 'US',
@@ -223,6 +234,103 @@ class EventbriteIngestionTests(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertEqual(status['status'], 'loaded')
         self.assertIn('rate_limited', status['detail'])
+        self.assertIn('detail_calls=2', status['detail'])
+
+    def test_authoritative_free_mapping_prefers_detail_is_free_true(self) -> None:
+        detail = self.make_detail_payload(
+            '801',
+            title='Neighborhood Networking Mixer',
+            summary='Business networking for local professionals.',
+            description_text='Meet peers and enjoy a free community resource fair.',
+            category='Business & Professional',
+            subcategory='Networking',
+            detail_is_free=True,
+            ticket_is_free=False,
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        self.assertTrue(event.is_free)
+        self.assertTrue(event.metadata['features']['free'])
+
+    def test_authoritative_free_mapping_blocks_generic_false_positive_free_text(self) -> None:
+        detail = self.make_detail_payload(
+            '802',
+            title='Professional Networking Night',
+            summary='Ticketed mixer with paid entry; free parking nearby.',
+            description_text='Business networking for local professionals with free parking validation only.',
+            category='Business & Professional',
+            subcategory='Networking',
+            detail_is_free=False,
+            ticket_is_free=True,
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        self.assertFalse(event.is_free)
+        self.assertFalse(event.metadata['features']['free'])
+        self.assertNotIn('free', event.tags)
+
+    def test_retained_future_cache_event_is_emitted_without_rediscovery(self) -> None:
+        retained = self.make_detail_payload('901', title='Retained Cached Event', detail_is_free=True)
+        discovered = self.make_detail_payload('902', title='Freshly Rediscovered Event', detail_is_free=False)
+        self.cache_path.write_text(
+            json.dumps({'version': 1, 'events': {'901': {'fetched_at': self.now.isoformat(), 'detail': retained}}}),
+            encoding='utf-8',
+        )
+        calls, fake_urlopen = self.make_urlopen(
+            search_payloads=[self.make_search_payload('https://www.eventbrite.com/e/fresh-902'), self.make_search_payload()],
+            detail_payloads={'902': discovered},
+        )
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        self.assertEqual(sorted(event.title for event in events), ['Freshly Rediscovered Event', 'Retained Cached Event'])
+        self.assertEqual(status['count'], 2)
+        self.assertIn('cache_hits=1', status['detail'])
+        detail_ids = [url.split('/v3/events/', 1)[1].split('?', 1)[0] for url in calls if '/v3/events/' in url]
+        self.assertEqual(detail_ids, ['902'])
+
+    def test_stale_for_refresh_within_retention_survives_outage_but_beyond_retention_prunes(self) -> None:
+        os.environ['EVENTBRITE_CACHE_RETENTION_HOURS'] = '168'
+        within_retention = self.make_detail_payload('911', title='Retained During Outage', start_local='2026-07-25T10:00:00')
+        beyond_retention = self.make_detail_payload('912', title='Expired Retention', start_local='2026-07-26T10:00:00')
+        self.cache_path.write_text(
+            json.dumps(
+                {
+                    'version': 1,
+                    'events': {
+                        '911': {'fetched_at': (self.now - timedelta(hours=30)).isoformat(), 'detail': within_retention},
+                        '912': {'fetched_at': (self.now - timedelta(hours=200)).isoformat(), 'detail': beyond_retention},
+                    },
+                }
+            ),
+            encoding='utf-8',
+        )
+        calls, fake_urlopen = self.make_urlopen(search_payloads=[], detail_payloads={}, fail_search=URLError('search down'))
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        self.assertEqual([event.title for event in events], ['Retained During Outage'])
+        self.assertEqual(status['status'], 'loaded')
+        self.assertIn('cache_fallback', status['detail'])
+        self.assertIn('cache_hits=1', status['detail'])
+        cache_payload = json.loads(self.cache_path.read_text(encoding='utf-8'))
+        self.assertEqual(sorted(cache_payload['events'].keys()), ['911'])
 
     def test_cache_fallback_prunes_outside_window_and_canceled_records(self) -> None:
         valid = self.make_detail_payload('111', title='Cached Future', start_local='2026-07-21T10:00:00')
@@ -266,6 +374,85 @@ class EventbriteIngestionTests(unittest.TestCase):
         self.assertTrue(eventbrite_ingestion.is_allowed_san_diego_county_event(county_city))
         self.assertFalse(eventbrite_ingestion.is_allowed_san_diego_county_event(outside))
         self.assertFalse(eventbrite_ingestion.is_allowed_san_diego_county_event(online))
+
+    def test_county_geography_rejects_neighboring_locality_inside_old_bbox_and_accepts_unincorporated_allowlist(self) -> None:
+        temecula = self.make_detail_payload(
+            '445',
+            venue_city='Temecula',
+            region='CA',
+            latitude='33.4936',
+            longitude='-117.1484',
+            localized_area_display='Temecula',
+        )
+        borrego = self.make_detail_payload(
+            '446',
+            venue_city='Borrego Springs',
+            region='CA',
+            latitude='33.2559',
+            longitude='-116.3750',
+            localized_area_display='Borrego Springs',
+        )
+        casa_de_oro = self.make_detail_payload(
+            '447',
+            venue_city='Casa de Oro',
+            region='CA',
+            latitude='32.7428',
+            longitude='-116.9842',
+            localized_area_display='Casa de Oro',
+        )
+
+        self.assertFalse(eventbrite_ingestion.is_allowed_san_diego_county_event(temecula))
+        self.assertTrue(eventbrite_ingestion.is_allowed_san_diego_county_event(borrego))
+        self.assertTrue(eventbrite_ingestion.is_allowed_san_diego_county_event(casa_de_oro))
+
+    def test_county_geography_requires_california_with_exact_allowlist_match(self) -> None:
+        no_state = self.make_detail_payload('448', venue_city='Vista', region='NV', localized_area_display='Vista')
+        substring = self.make_detail_payload('449', venue_city='', region='CA', localized_area_display='Old Town Vista Point')
+
+        self.assertFalse(eventbrite_ingestion.is_allowed_san_diego_county_event(no_state))
+        self.assertFalse(eventbrite_ingestion.is_allowed_san_diego_county_event(substring))
+
+    def test_all_incorporated_cities_are_accepted(self) -> None:
+        for idx, city in enumerate(sorted([
+            'Carlsbad', 'Chula Vista', 'Coronado', 'Del Mar', 'El Cajon', 'Encinitas', 'Escondido',
+            'Imperial Beach', 'La Mesa', 'Lemon Grove', 'National City', 'Oceanside', 'Poway',
+            'San Diego', 'San Marcos', 'Santee', 'Solana Beach', 'Vista',
+        ]), start=1):
+            with self.subTest(city=city):
+                detail = self.make_detail_payload(str(500 + idx), venue_city=city, localized_area_display=city)
+                self.assertTrue(eventbrite_ingestion.is_allowed_san_diego_county_event(detail))
+
+    def test_full_description_and_categories_enrich_audience_category_and_metadata(self) -> None:
+        detail = self.make_detail_payload(
+            '950',
+            title='North County Networking Breakfast',
+            start_local='2026-07-20T09:30:00',
+            summary='Meet local founders in Encinitas.',
+            description_text='A business networking breakfast for startup founders and local professionals with coffee included.',
+            venue_city='Encinitas',
+            category='Business & Professional',
+            subcategory='Networking',
+            organizer_name='North County Startup Council',
+            detail_is_free=False,
+            ticket_is_free=False,
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        self.assertEqual(event.category, 'Adult outing')
+        self.assertEqual(event.metadata['audience'], 'adult')
+        self.assertEqual(event.metadata['time_period'], 'morning')
+        self.assertEqual(event.metadata['eventbrite_category'], 'Business & Professional')
+        self.assertEqual(event.metadata['eventbrite_subcategory'], 'Networking')
+        self.assertEqual(event.metadata['organizer_name'], 'North County Startup Council')
+        self.assertTrue(event.description.startswith('Meet local founders in Encinitas.'))
+        self.assertIn('startup founders', event.description)
 
     def test_normalized_eventbrite_event_validates_against_public_snapshot_schema(self) -> None:
         detail = self.make_detail_payload('555', title='Toddler Storytime on the Lawn', start_local='2026-07-19T10:00:00', category='Books', subcategory='Storytelling')
