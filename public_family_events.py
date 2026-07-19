@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import Counter, defaultdict
@@ -11,6 +12,8 @@ from html import unescape
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urljoin, urlparse
 from urllib.request import Request, urlopen
+
+from snapshot_schema import SCHEMA_VERSION, normalize_public_snapshot
 
 try:
     from zoneinfo import ZoneInfo
@@ -796,7 +799,8 @@ def build_payload(events: list[Event], errors: list[str], fetched_at: str, sourc
     source_status = source_status or []
     loaded_sources = [s['label'] for s in source_status if s.get('status') == 'loaded' and s.get('count', 0) > 0]
     source_warnings = [s for s in source_status if s.get('status') != 'loaded']
-    return {
+    payload = {
+        'schema_version': SCHEMA_VERSION,
         'ok': True,
         'generated_at': fetched_at,
         'sources': loaded_sources or sorted({e.source_label for e in events}),
@@ -814,6 +818,9 @@ def build_payload(events: list[Event], errors: list[str], fetched_at: str, sourc
         },
         'top_categories': [{'name': k, 'count': v} for k, v in all_categories.most_common(8)],
     }
+    snapshot_basis = json.dumps(payload, sort_keys=True, separators=(',', ':'))
+    payload['snapshot_id'] = f"snap-{hashlib.sha256(snapshot_basis.encode('utf-8')).hexdigest()[:16]}"
+    return normalize_public_snapshot(payload)
 
 
 def refresh_cache() -> dict:
