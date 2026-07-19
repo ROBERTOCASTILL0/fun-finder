@@ -119,9 +119,10 @@ class EventbriteIngestionTests(unittest.TestCase):
             },
         }
 
-    def make_urlopen(self, *, search_payloads: list[dict], detail_payloads: dict[str, dict], fail_search: Exception | None = None, fail_detail: dict[str, Exception] | None = None, gzip_search: bool = False):
+    def make_urlopen(self, *, search_payloads: list[dict], detail_payloads: dict[str, dict], listing_payloads: dict[str, dict] | None = None, fail_search: Exception | None = None, fail_detail: dict[str, Exception] | None = None, gzip_search: bool = False):
         calls: list[str] = []
         fail_detail = fail_detail or {}
+        listing_payloads = listing_payloads or {}
 
         def _urlopen(request, timeout=0):
             url = request.full_url
@@ -135,6 +136,11 @@ class EventbriteIngestionTests(unittest.TestCase):
                     encoded = gzip.compress(encoded)
                     return FakeHTTPResponse(encoded, encoding='gzip')
                 return FakeHTTPResponse(encoded)
+            if '/v3/organizers/' in url or '/v3/venues/' in url:
+                path = urlparse(url).path.rstrip('/')
+                entity_type, entity_id = path.split('/v3/', 1)[1].split('/', 2)[:2]
+                key = f'{entity_type}:{entity_id}'
+                return FakeHTTPResponse(json.dumps(listing_payloads[key]).encode('utf-8'))
             if '/v3/events/' in url:
                 event_id = url.rstrip('/').split('/v3/events/', 1)[1].split('?', 1)[0]
                 if event_id in fail_detail:
@@ -206,8 +212,8 @@ class EventbriteIngestionTests(unittest.TestCase):
         self.assertEqual(status['status'], 'loaded')
         self.assertEqual(status['count'], 3)
 
-    def test_detail_budget_is_hard_capped_at_24_and_fresh_cache_hits_use_zero_detail_calls(self) -> None:
-        os.environ['EVENTBRITE_DETAIL_MAX'] = '99'
+    def test_request_budget_allows_more_than_24_details_and_fresh_cache_hits_use_zero_detail_calls(self) -> None:
+        os.environ['EVENTBRITE_REQUEST_MAX'] = '1000'
         ids = [str(100 + idx) for idx in range(30)]
         cache = {
             'version': 1,
@@ -225,11 +231,171 @@ class EventbriteIngestionTests(unittest.TestCase):
             events, status = self.fetch()
 
         detail_ids = [url.split('/v3/events/', 1)[1].split('?', 1)[0] for url in calls if '/v3/events/' in url]
-        self.assertEqual(len(detail_ids), 24)
+        self.assertEqual(len(detail_ids), 28)
         self.assertNotIn('100', detail_ids)
         self.assertNotIn('101', detail_ids)
-        self.assertEqual(len(events), 26)
+        self.assertEqual(len(events), 30)
         self.assertIn('cache_hits=2', status['detail'])
+
+    def test_eventbrite_request_budget_defaults_and_hard_caps_at_1000(self) -> None:
+        os.environ.pop('EVENTBRITE_REQUEST_MAX', None)
+        self.assertEqual(eventbrite_ingestion.request_budget(), 1000)
+
+        os.environ['EVENTBRITE_REQUEST_MAX'] = '9999'
+        self.assertEqual(eventbrite_ingestion.request_budget(), 1000)
+
+        os.environ['EVENTBRITE_REQUEST_MAX'] = '600'
+        self.assertEqual(eventbrite_ingestion.request_budget(), 600)
+
+    def test_expanded_details_supply_uniform_filter_metadata_contract(self) -> None:
+        detail = self.make_detail_payload(
+            '812',
+            title='Accessible Family Picnic',
+            start_local='2026-07-20T09:30:00',
+            venue_city='Chula Vista',
+            summary='Outdoor family picnic. Dogs are welcome. Paved stroller access, shade, restrooms, and food vendors.',
+            detail_is_free=True,
+        )
+        event = SimpleNamespace(
+            metadata={'features': {'free': False}},
+            tags=[],
+            is_free=False,
+            category='All-ages event',
+        )
+
+        normalized = eventbrite_ingestion._apply_eventbrite_metadata_overrides(event, detail)
+
+        self.assertEqual(normalized.metadata['audience'], 'family')
+        self.assertEqual(normalized.metadata['area'], 'south-bay')
+        self.assertEqual(normalized.metadata['time_period'], 'morning')
+        self.assertEqual(normalized.metadata['age_groups'], ['kids'])
+        self.assertEqual(normalized.metadata['source_key'], 'eventbrite')
+        self.assertEqual(normalized.metadata['metadata_version'], 3)
+        self.assertEqual(
+            set(normalized.metadata['features']),
+            set(eventbrite_ingestion.FILTER_FEATURE_KEYS),
+        )
+        self.assertTrue(all(isinstance(value, bool) for value in normalized.metadata['features'].values()))
+        self.assertTrue(normalized.metadata['features']['free'])
+
+    def test_entity_expansion_harvests_organizer_and_venue_event_ids(self) -> None:
+        detail = self.make_detail_payload('100')
+        detail['organizer']['id'] = 'org-1'
+        detail['venue']['id'] = 'venue-1'
+        cache = {
+            'events': {
+                '100': {
+                    'fetched_at': self.now.isoformat(),
+                    'detail': detail,
+                }
+            }
+        }
+
+        entities = eventbrite_ingestion.extract_cached_entities(cache)
+
+        self.assertEqual(entities, [('organizers', 'org-1'), ('venues', 'venue-1')])
+
+    def test_listing_payload_event_ids_are_deduplicated(self) -> None:
+        payload = {'events': [{'id': '101'}, {'id': '102'}, {'id': '101'}, {'name': {'text': 'missing'}}]}
+
+        self.assertEqual(eventbrite_ingestion.extract_listing_event_ids(payload), ['101', '102'])
+
+    def test_cached_organizer_and_venue_listings_expand_discovery_before_detail_fetches(self) -> None:
+        seed = self.make_detail_payload('901', title='Cached Seed')
+        seed['organizer']['id'] = 'org-1'
+        seed['venue']['id'] = 'venue-1'
+        self.cache_path.write_text(
+            json.dumps({'version': 1, 'events': {'901': {'fetched_at': self.now.isoformat(), 'detail': seed}}}),
+            encoding='utf-8',
+        )
+        discovered = self.make_detail_payload('902', title='Entity Discovered Event')
+        calls, fake_urlopen = self.make_urlopen(
+            search_payloads=[self.make_search_payload(), self.make_search_payload()],
+            detail_payloads={'902': discovered},
+            listing_payloads={
+                'organizers:org-1': {'events': [{'id': '901'}, {'id': '902'}]},
+                'venues:venue-1': {'events': [{'id': '902'}]},
+            },
+        )
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        self.assertEqual(sorted(event.title for event in events), ['Cached Seed', 'Entity Discovered Event'])
+        self.assertEqual(len([url for url in calls if '/v3/organizers/' in url or '/v3/venues/' in url]), 2)
+        self.assertEqual(len([url for url in calls if '/v3/events/902' in url]), 1)
+        self.assertIn('entity_calls=2', status['detail'])
+        self.assertIn('entity_ids=1', status['detail'])
+
+    def test_total_eventbrite_calls_never_exceed_configured_request_budget(self) -> None:
+        os.environ['EVENTBRITE_REQUEST_MAX'] = '3'
+        os.environ['EVENTBRITE_ENTITY_MAX'] = '2'
+        seed = self.make_detail_payload('901', title='Cached Seed')
+        seed['organizer']['id'] = 'org-1'
+        seed['venue']['id'] = 'venue-1'
+        self.cache_path.write_text(
+            json.dumps({'version': 1, 'events': {'901': {'fetched_at': self.now.isoformat(), 'detail': seed}}}),
+            encoding='utf-8',
+        )
+        calls, fake_urlopen = self.make_urlopen(
+            search_payloads=[
+                self.make_search_payload('https://www.eventbrite.com/e/new-902', 'https://www.eventbrite.com/e/new-903'),
+                self.make_search_payload('https://www.eventbrite.com/e/new-904'),
+            ],
+            detail_payloads={event_id: self.make_detail_payload(event_id) for event_id in ('902', '903', '904')},
+            listing_payloads={
+                'organizers:org-1': {'events': []},
+                'venues:venue-1': {'events': []},
+            },
+        )
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        eventbrite_calls = [url for url in calls if 'eventbriteapi.com/v3/' in url]
+        self.assertEqual(len(eventbrite_calls), 3)
+        self.assertEqual(len([url for url in eventbrite_calls if '/v3/events/' in url]), 1)
+        self.assertEqual(sorted(event.title for event in events), ['Cached Seed', 'Eventbrite Event 902'])
+        self.assertIn('api_calls=3', status['detail'])
+
+    def test_entity_listing_429_stops_before_detail_fetches(self) -> None:
+        seed = self.make_detail_payload('901', title='Cached Seed')
+        seed['organizer']['id'] = 'org-1'
+        self.cache_path.write_text(
+            json.dumps({'version': 1, 'events': {'901': {'fetched_at': self.now.isoformat(), 'detail': seed}}}),
+            encoding='utf-8',
+        )
+        rate_limited = HTTPError('https://www.eventbrite.com', 429, 'Too Many Requests', hdrs=None, fp=None)  # type: ignore[arg-type]
+
+        with (
+            patch.object(eventbrite_ingestion, 'discover_event_ids', return_value=(['902'], {'discovery_calls': 2})),
+            patch.object(eventbrite_ingestion, '_fetch_entity_event_ids', side_effect=rate_limited),
+            patch.object(eventbrite_ingestion, '_fetch_event_detail') as detail_fetch,
+        ):
+            events, status = self.fetch()
+
+        detail_fetch.assert_not_called()
+        self.assertEqual([event.title for event in events], ['Cached Seed'])
+        self.assertIn('rate_limited=1', status['detail'])
+
+    def test_puppy_word_alone_does_not_claim_dog_friendly_policy(self) -> None:
+        detail = self.make_detail_payload(
+            '905',
+            title='Puppy Yoga',
+            summary='A playful yoga class inspired by puppies. No pets are permitted in the studio.',
+            detail_is_free=False,
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        assert event is not None
+        self.assertFalse(event.metadata['features']['dog_friendly'])
 
     def test_http_429_halts_further_detail_calls(self) -> None:
         search_payloads = [self.make_search_payload('https://www.eventbrite.com/e/one-111', 'https://www.eventbrite.com/e/two-222'), self.make_search_payload('https://www.eventbrite.com/e/three-333')]
@@ -238,7 +404,7 @@ class EventbriteIngestionTests(unittest.TestCase):
             '222': self.make_detail_payload('222', title='Two'),
             '333': self.make_detail_payload('333', title='Three'),
         }
-        rate_limited = HTTPError('https://www.eventbrite.com', 429, 'Too Many Requests', hdrs=None, fp=None)
+        rate_limited = HTTPError('https://www.eventbrite.com', 429, 'Too Many Requests', hdrs=None, fp=None)  # type: ignore[arg-type]
         calls, fake_urlopen = self.make_urlopen(search_payloads=search_payloads, detail_payloads=detail_payloads, fail_detail={'222': rate_limited})
 
         with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
@@ -672,7 +838,7 @@ class EventbriteIngestionTests(unittest.TestCase):
         metadata = normalized['today']['events'][0]['metadata']
         self.assertEqual(normalized['today']['events'][0]['source'], 'eventbrite')
         self.assertEqual(metadata['source_key'], 'eventbrite')
-        self.assertEqual(metadata['metadata_version'], 2)
+        self.assertEqual(metadata['metadata_version'], 3)
         self.assertIn('audience', metadata)
         self.assertIn('area', metadata)
         self.assertIn('time_period', metadata)

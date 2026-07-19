@@ -14,19 +14,33 @@ from urllib.request import Request, urlopen
 
 BRAVE_SEARCH_URL = 'https://api.search.brave.com/res/v1/web/search'
 EVENTBRITE_EVENT_URL_TEMPLATE = 'https://www.eventbriteapi.com/v3/events/{event_id}?expand=venue,organizer,category,subcategory,ticket_availability'
+EVENTBRITE_ENTITY_EVENTS_URL_TEMPLATE = 'https://www.eventbriteapi.com/v3/{entity_type}/{entity_id}/events/'
 DEFAULT_SOURCE_URL = 'https://www.eventbrite.com/d/ca--san-diego/events/'
 DEFAULT_CACHE_PATH = Path('/opt/data/roberto-ui/data/eventbrite_event_cache.json')
 DISCOVERY_COUNT = 20
 DISCOVERY_QUERY_LIMIT = 2
 DISCOVERY_WINDOW_DAYS = 21
-DEFAULT_DETAIL_BUDGET = 24
-HARD_DETAIL_BUDGET = 24
+DEFAULT_REQUEST_BUDGET = 1000
+HARD_REQUEST_BUDGET = 1000
+DEFAULT_ENTITY_BUDGET = 400
 DEFAULT_CACHE_HOURS = 24
 DEFAULT_CACHE_RETENTION_HOURS = 168
 DEFAULT_TIMEOUT = 12
 USER_AGENT = 'SanDiegoFunFinder/1.0 (+https://eventbrite.com; read-only public event discovery)'
 CACHE_VERSION = 1
-MAX_CACHE_RECORDS = 256
+MAX_CACHE_RECORDS = 2000
+FILTER_FEATURE_KEYS = (
+    'free',
+    'outdoor',
+    'indoor',
+    'dog_friendly',
+    'toddler_friendly',
+    'stroller_friendly',
+    'low_walking',
+    'shade',
+    'bathrooms',
+    'food_nearby',
+)
 EVENT_ID_RE = re.compile(r'https?://(?:www\.)?eventbrite\.com/e/[^?#]*-(\d+)(?:[/?#]|$)', re.I)
 COUNTY_CITY_ALLOWLIST = {
     'carlsbad',
@@ -261,9 +275,18 @@ def cache_retention_hours() -> int:
     return _env_int('EVENTBRITE_CACHE_RETENTION_HOURS', DEFAULT_CACHE_RETENTION_HOURS, minimum=24, maximum=336)
 
 
+def request_budget() -> int:
+    requested = _env_int('EVENTBRITE_REQUEST_MAX', DEFAULT_REQUEST_BUDGET, minimum=1, maximum=HARD_REQUEST_BUDGET)
+    return min(requested, HARD_REQUEST_BUDGET)
+
+
 def detail_budget() -> int:
-    requested = _env_int('EVENTBRITE_DETAIL_MAX', DEFAULT_DETAIL_BUDGET, minimum=1, maximum=HARD_DETAIL_BUDGET)
-    return min(requested, HARD_DETAIL_BUDGET)
+    """Backward-compatible alias for callers that previously budgeted detail calls only."""
+    return request_budget()
+
+
+def entity_budget() -> int:
+    return _env_int('EVENTBRITE_ENTITY_MAX', DEFAULT_ENTITY_BUDGET, minimum=0, maximum=HARD_REQUEST_BUDGET)
 
 
 def request_timeout() -> int:
@@ -319,6 +342,41 @@ def extract_eventbrite_ids(payload: dict[str, Any]) -> list[str]:
         if match:
             urls.append(match.group(1))
     return list(dict.fromkeys(urls))
+
+
+def extract_listing_event_ids(payload: dict[str, Any]) -> list[str]:
+    events = payload.get('events') if isinstance(payload, dict) else []
+    ids: list[str] = []
+    for item in events or []:
+        if not isinstance(item, dict):
+            continue
+        event_id = str(item.get('id') or '').strip()
+        if event_id:
+            ids.append(event_id)
+    return list(dict.fromkeys(ids))
+
+
+def extract_cached_entities(cache: dict[str, Any]) -> list[tuple[str, str]]:
+    organizers: list[str] = []
+    venues: list[str] = []
+    for record in (cache.get('events') or {}).values():
+        detail = record.get('detail') if isinstance(record, dict) else None
+        if not isinstance(detail, dict):
+            continue
+        organizer_payload = detail.get('organizer')
+        venue_payload = detail.get('venue')
+        organizer = organizer_payload if isinstance(organizer_payload, dict) else {}
+        venue = venue_payload if isinstance(venue_payload, dict) else {}
+        organizer_id = str(organizer.get('id') or '').strip()
+        venue_id = str(venue.get('id') or '').strip()
+        if organizer_id:
+            organizers.append(organizer_id)
+        if venue_id:
+            venues.append(venue_id)
+    return [
+        *[('organizers', value) for value in dict.fromkeys(organizers)],
+        *[('venues', value) for value in dict.fromkeys(venues)],
+    ]
 
 
 def _http_json(url: str, *, headers: dict[str, str], timeout: int) -> dict[str, Any]:
@@ -591,20 +649,105 @@ def _eventbrite_authoritative_is_free(detail: dict[str, Any]) -> bool | None:
     return None
 
 
+def _eventbrite_filter_text(detail: dict[str, Any]) -> str:
+    name_payload = detail.get('name')
+    description_payload = detail.get('description')
+    venue_payload = detail.get('venue')
+    name = name_payload if isinstance(name_payload, dict) else {}
+    description = description_payload if isinstance(description_payload, dict) else {}
+    venue = venue_payload if isinstance(venue_payload, dict) else {}
+    category_text, _ = _detail_keywords(detail)
+    return _normalized_text(
+        ' '.join(
+            str(value or '')
+            for value in (
+                name.get('text'),
+                detail.get('summary'),
+                description.get('text'),
+                venue.get('name'),
+                category_text,
+            )
+        )
+    )
+
+
+def _uniform_eventbrite_filter_metadata(metadata: dict[str, Any], detail: dict[str, Any]) -> dict[str, Any]:
+    text = _eventbrite_filter_text(detail)
+    adult = bool(re.search(r'\b(21|adult|adults only|cocktail|beer|wine|bar|brewery|networking|professional|career)\b', text))
+    toddler = (not adult) and bool(re.search(r'\b(toddler|baby|infant|preschool|storytime|sensory|ages [0-5])\b', text))
+    family = (not adult) and bool(re.search(r'\b(kid|kids|child|children|family|families|teen|lego|puppet)\b', text))
+    inferred_audience = 'adult' if adult else 'young_children' if toddler else 'family' if family else 'all_ages'
+    allowed_audiences = {'adult', 'all_ages', 'family', 'young_children'}
+    audience = metadata.get('audience') if metadata.get('audience') in allowed_audiences else inferred_audience
+
+    existing_features_payload = metadata.get('features')
+    existing_features = existing_features_payload if isinstance(existing_features_payload, dict) else {}
+    inferred_features = {
+        'free': bool(_eventbrite_authoritative_is_free(detail)),
+        'outdoor': bool(re.search(r'\b(outdoor|park|beach|garden|nature|hike|trail|market|fair|festival|farmers|walk|bay|waterfront|picnic)\b', text)),
+        'indoor': bool(re.search(r'\b(indoor|museum|library|gallery|center|theatre|theater|aquarium|school|studio|hotel|restaurant|bar|brewery)\b', text)),
+        'dog_friendly': bool(re.search(r'\b(dog friendly|pet friendly|dogs? (are )?(welcome|allowed|permitted)|bring (your )?(dog|fido)|leashed dogs?|well behaved dogs)\b', text)),
+        'toddler_friendly': toddler,
+        'stroller_friendly': bool(re.search(r'\b(stroller|paved|flat|accessible|wheelchair)\b', text)),
+        'low_walking': bool(re.search(r'\b(accessible|seated|easy|short walk|wheelchair|bench)\b', text)),
+        'shade': bool(re.search(r'\b(shade|shaded|covered|indoor)\b', text)),
+        'bathrooms': bool(re.search(r'\b(restroom|bathroom|facilities|park|center|museum|library|hotel)\b', text)),
+        'food_nearby': bool(re.search(r'\b(food|restaurant|snack|vendor|market|concession|cafe|dining)\b', text)),
+    }
+    metadata['features'] = {
+        key: bool(existing_features.get(key, inferred_features[key]))
+        for key in FILTER_FEATURE_KEYS
+    }
+    metadata['audience'] = audience
+    if not isinstance(metadata.get('age_groups'), list):
+        metadata['age_groups'] = (
+            ['adults'] if audience == 'adult'
+            else ['toddler'] if audience == 'young_children'
+            else ['kids'] if audience == 'family'
+            else []
+        )
+    else:
+        allowed_age_groups = {'adults', 'kids', 'teens', 'toddler'}
+        metadata['age_groups'] = sorted({value for value in metadata['age_groups'] if value in allowed_age_groups})
+
+    area = _eventbrite_authoritative_area_from_address(detail)
+    allowed_areas = {'balboa', 'beach', 'central-san-diego', 'downtown', 'east-county', 'north-county', 'south-bay', 'unknown'}
+    metadata['area'] = area or (metadata.get('area') if metadata.get('area') in allowed_areas else 'unknown')
+    start = _event_start(detail)
+    if start is not None:
+        metadata['time_period'] = 'morning' if start.hour < 12 else 'afternoon' if start.hour < 18 else 'evening'
+    elif metadata.get('time_period') not in {'morning', 'afternoon', 'evening', 'unknown'}:
+        metadata['time_period'] = 'unknown'
+    metadata['source_key'] = 'eventbrite'
+    metadata['metadata_version'] = 3
+    return metadata
+
 
 def _apply_eventbrite_metadata_overrides(event: Any, detail: dict[str, Any]) -> Any:
     metadata = dict(getattr(event, 'metadata', {}) or {})
     metadata['eventbrite_id'] = str(detail.get('id') or '')[:64]
-    organizer = detail.get('organizer') if isinstance(detail.get('organizer'), dict) else {}
-    organizer_name = organizer.get('name') if isinstance(organizer, dict) else ''
-    metadata['organizer_name'] = _bounded_clean_text(organizer_name, 160)
+    organizer_payload = detail.get('organizer')
+    venue_payload = detail.get('venue')
+    organizer = organizer_payload if isinstance(organizer_payload, dict) else {}
+    venue = venue_payload if isinstance(venue_payload, dict) else {}
+    organizer_id = _bounded_clean_text(organizer.get('id'), 64)
+    venue_id = _bounded_clean_text(venue.get('id'), 64)
+    if organizer_id:
+        metadata['organizer_id'] = organizer_id
+    if venue_id:
+        metadata['venue_id'] = venue_id
+    metadata['organizer_name'] = _bounded_clean_text(organizer.get('name'), 160)
     for field, metadata_key in (('category', 'eventbrite_category'), ('subcategory', 'eventbrite_subcategory')):
-        payload = detail.get(field) if isinstance(detail.get(field), dict) else {}
+        field_payload = detail.get(field)
+        payload = field_payload if isinstance(field_payload, dict) else {}
         value = payload.get('name') or payload.get('short_name') or ''
         metadata[metadata_key] = _bounded_clean_text(value, 160)
-    logo = detail.get('logo') if isinstance(detail.get('logo'), dict) else {}
-    original = logo.get('original') if isinstance(logo, dict) else {}
-    metadata['image_url'] = _bounded_clean_text(original.get('url') if isinstance(original, dict) else '', 500)
+    logo_payload = detail.get('logo')
+    logo = logo_payload if isinstance(logo_payload, dict) else {}
+    original_payload = logo.get('original')
+    original = original_payload if isinstance(original_payload, dict) else {}
+    metadata['image_url'] = _bounded_clean_text(original.get('url'), 500)
+    metadata = _uniform_eventbrite_filter_metadata(metadata, detail)
 
     authoritative_is_free = _eventbrite_authoritative_is_free(detail)
     if authoritative_is_free is not None:
@@ -758,6 +901,19 @@ def _fresh_cache_records(cache: dict[str, Any], now: datetime) -> dict[str, dict
     return fresh
 
 
+def _fetch_entity_event_ids(entity_type: str, entity_id: str, *, timeout: int) -> list[str]:
+    if entity_type not in {'organizers', 'venues'}:
+        return []
+    token = _eventbrite_private_token()
+    headers = {
+        'Accept': 'application/json',
+        'Authorization': f'Bearer {token}',
+        'User-Agent': USER_AGENT,
+    }
+    url = EVENTBRITE_ENTITY_EVENTS_URL_TEMPLATE.format(entity_type=entity_type, entity_id=entity_id)
+    return extract_listing_event_ids(_http_json(url, headers=headers, timeout=timeout))
+
+
 def _fetch_event_detail(event_id: str, *, timeout: int) -> dict[str, Any]:
     token = _eventbrite_private_token()
     headers = {
@@ -792,8 +948,11 @@ def fetch_eventbrite_source_result(
     metrics = {
         'discovery_calls': 0,
         'discovered_ids': 0,
+        'entity_calls': 0,
+        'entity_ids': 0,
         'cache_hits': 0,
         'detail_calls': 0,
+        'api_calls': 0,
         'accepted': 0,
         'rate_limited': False,
         'config_error': '',
@@ -821,6 +980,36 @@ def fetch_eventbrite_source_result(
         status['detail'] = _bounded_detail(f'discovery_error={type(exc).__name__}')
         return [], status
 
+    known_ids = set(discovered_ids) | set(retained_cache)
+    entity_discovered_ids: list[str] = []
+    entities = extract_cached_entities(cache)
+    if entities:
+        try:
+            _eventbrite_private_token()
+        except RuntimeError as exc:
+            metrics['config_error'] = str(exc)
+        else:
+            max_entity_calls = min(entity_budget(), request_budget())
+            for entity_type, entity_id in entities[:max_entity_calls]:
+                metrics['entity_calls'] += 1
+                metrics['api_calls'] += 1
+                try:
+                    listed_ids = _fetch_entity_event_ids(entity_type, entity_id, timeout=timeout)
+                except HTTPError as exc:
+                    if exc.code == 429:
+                        metrics['rate_limited'] = True
+                        break
+                    continue
+                except Exception:
+                    continue
+                for event_id in listed_ids:
+                    if event_id not in known_ids:
+                        known_ids.add(event_id)
+                        entity_discovered_ids.append(event_id)
+    metrics['entity_ids'] = len(entity_discovered_ids)
+    discovered_ids = list(dict.fromkeys([*discovered_ids, *entity_discovered_ids]))
+    metrics['discovered_ids'] = len(discovered_ids)
+
     accepted_events: list[Any] = []
     for event_id, record in retained_cache.items():
         event = normalize_eventbrite_detail(record['detail'], normalizer=normalizer, source_label=source_label, now=now)
@@ -843,9 +1032,12 @@ def fetch_eventbrite_source_result(
                         part
                         for part in [
                             f'discovery_calls={metrics["discovery_calls"]}',
+                            f'entity_calls={metrics["entity_calls"]}',
+                            f'entity_ids={metrics["entity_ids"]}',
                             f'discovered_ids={metrics["discovered_ids"]}',
                             f'cache_hits={metrics["cache_hits"]}',
                             f'detail_calls={metrics["detail_calls"]}',
+                            f'api_calls={metrics["api_calls"]}',
                             f'accepted={metrics["accepted"]}',
                             f'config_error={metrics["config_error"]}',
                         ]
@@ -856,8 +1048,12 @@ def fetch_eventbrite_source_result(
                 return accepted_events, status
             status.update({'status': 'unavailable', 'detail': _bounded_detail(str(exc))})
             return [], status
-    for event_id in uncached_ids[:detail_budget()]:
+    remaining_budget = max(0, request_budget() - metrics['entity_calls'])
+    if metrics['rate_limited']:
+        remaining_budget = 0
+    for event_id in uncached_ids[:remaining_budget]:
         metrics['detail_calls'] += 1
+        metrics['api_calls'] += 1
         try:
             detail = _fetch_event_detail(event_id, timeout=timeout)
         except HTTPError as exc:
@@ -880,9 +1076,12 @@ def fetch_eventbrite_source_result(
             part
             for part in [
                 f'discovery_calls={metrics["discovery_calls"]}',
+                f'entity_calls={metrics["entity_calls"]}',
+                f'entity_ids={metrics["entity_ids"]}',
                 f'discovered_ids={metrics["discovered_ids"]}',
                 f'cache_hits={metrics["cache_hits"]}',
                 f'detail_calls={metrics["detail_calls"]}',
+                f'api_calls={metrics["api_calls"]}',
                 f'accepted={metrics["accepted"]}',
                 'rate_limited=1' if metrics['rate_limited'] else '',
                 f'config_error={metrics["config_error"]}' if metrics['config_error'] else '',
