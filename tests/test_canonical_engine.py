@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import io
 import json
+import os
 import tempfile
 import unittest
 from datetime import timedelta
@@ -94,6 +96,31 @@ class CanonicalEngineTests(unittest.TestCase):
             ['city', 'family', 'kids', 'kpbs', 'reader', 'meetup_general', 'ucsd', 'sdhumane', 'meetup_dogs'],
         )
         self.assertNotIn('eventbrite', keys)
+
+    def test_allowlist_overrides_are_subset_of_approved_sources_in_default_order(self) -> None:
+        keys = [
+            source['key']
+            for source in canonical_engine.build_canonical_source_definitions(
+                ['meetup_dogs', 'eventbrite', 'family', 'unknown', 'city']
+            )
+        ]
+        self.assertEqual(keys, ['city', 'family', 'meetup_dogs'])
+
+    def test_constructor_source_keys_cannot_enable_disallowed_sources(self) -> None:
+        engine = canonical_engine.CanonicalEngine(source_keys=['eventbrite', 'family', 'city'])
+        self.assertEqual(engine.source_keys, ('city', 'family'))
+
+    def test_env_source_keys_cannot_enable_disallowed_sources_but_can_select_subset(self) -> None:
+        previous = os.environ.get('FUN_FINDER_SOURCE_KEYS')
+        os.environ['FUN_FINDER_SOURCE_KEYS'] = 'eventbrite,meetup_dogs,city,unknown'
+        try:
+            engine = canonical_engine.CanonicalEngine()
+        finally:
+            if previous is None:
+                os.environ.pop('FUN_FINDER_SOURCE_KEYS', None)
+            else:
+                os.environ['FUN_FINDER_SOURCE_KEYS'] = previous
+        self.assertEqual(engine.source_keys, ('city', 'meetup_dogs'))
 
     def test_valid_candidate_promotes_all_artifacts_and_scrubs_public_projection(self) -> None:
         runtime_dir = self.make_runtime_dir()
@@ -211,6 +238,58 @@ class CanonicalEngineTests(unittest.TestCase):
         self.assertTrue(payload['stale'])
         self.assertEqual(payload['today']['date'], canonical_engine.today_pt().isoformat())
         self.assertNotIn('detail', payload['source_status'][0])
+
+    def test_main_prints_safe_summary_by_default_and_full_result_with_json_flag(self) -> None:
+        result = {
+            'ok': True,
+            'snapshot_id': 'snap-canonical-001',
+            'generated_at': '2026-07-19T08:00:00-07:00',
+            'loaded_sources': 5,
+            'loaded_core_sources': 4,
+            'visible_occurrences': 42,
+            'today_occurrences': 3,
+            'artifact_paths': {'public_snapshot': '/tmp/public.json'},
+            'validation': {'messages': ['internal detail']},
+            'publish': {
+                'ok': True,
+                'status': 'published',
+                'snapshot_id': 'snap-canonical-001',
+                'ingest_key': 'super-secret',
+            },
+            'secret': 'super-secret',
+        }
+        expected_summary = {
+            'ok': True,
+            'snapshot_id': 'snap-canonical-001',
+            'generated_at': '2026-07-19T08:00:00-07:00',
+            'loaded_sources': 5,
+            'loaded_core_sources': 4,
+            'visible_occurrences': 42,
+            'today_occurrences': 3,
+            'validation_messages': ['internal detail'],
+            'artifact_paths': {'public_snapshot': '/tmp/public.json'},
+            'publish': {
+                'ok': True,
+                'snapshot_id': 'snap-canonical-001',
+                'status': 'published',
+            },
+        }
+
+        with patch.object(canonical_engine.CanonicalEngine, 'refresh', return_value=result):
+            with patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                exit_code = canonical_engine.main(['refresh', '--publish'])
+        self.assertEqual(exit_code, 0)
+        default_payload = json.loads(stdout.getvalue())
+        self.assertEqual(default_payload, expected_summary)
+        self.assertNotIn('super-secret', stdout.getvalue())
+
+        with patch.object(canonical_engine.CanonicalEngine, 'refresh', return_value=result):
+            with patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                exit_code = canonical_engine.main(['refresh', '--publish', '--json'])
+        self.assertEqual(exit_code, 0)
+        json_payload = json.loads(stdout.getvalue())
+        self.assertEqual(json_payload, expected_summary)
+        self.assertNotIn('super-secret', stdout.getvalue())
 
 
 if __name__ == '__main__':

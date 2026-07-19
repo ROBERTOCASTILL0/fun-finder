@@ -37,6 +37,19 @@ DEFAULT_PRIVATE_SNAPSHOT = 'fun_finder_private_snapshot.json'
 DEFAULT_PUBLIC_SNAPSHOT = 'fun_finder_public_snapshot.json'
 DEFAULT_PUBLISH_STATE = 'fun_finder_publish_state.json'
 DEFAULT_LOCK_NAME = '.fun_finder_canonical.lock'
+SAFE_CLI_KEYS = (
+    'ok',
+    'status',
+    'snapshot_id',
+    'generated_at',
+    'loaded_sources',
+    'loaded_core_sources',
+    'visible_occurrences',
+    'today_occurrences',
+    'validation_messages',
+    'artifact_paths',
+    'publish',
+)
 
 
 def now_pt() -> datetime:
@@ -47,8 +60,17 @@ def today_pt() -> date:
     return now_pt().date()
 
 
+def canonical_source_keys(source_keys: tuple[str, ...] | list[str] | None = None) -> tuple[str, ...]:
+    if not source_keys:
+        return DEFAULT_SOURCE_KEYS
+    requested = {key for key in source_keys if key in DEFAULT_SOURCE_KEYS}
+    if not requested:
+        return ()
+    return tuple(key for key in DEFAULT_SOURCE_KEYS if key in requested)
+
+
 def build_canonical_source_definitions(source_keys: tuple[str, ...] | list[str] | None = None) -> list[dict[str, Any]]:
-    allowed = tuple(source_keys or DEFAULT_SOURCE_KEYS)
+    allowed = canonical_source_keys(source_keys)
     all_sources = {source['key']: source for source in build_source_definitions()}
     return [dict(all_sources[key]) for key in allowed if key in all_sources]
 
@@ -76,7 +98,7 @@ class CanonicalEngine:
         self.public_snapshot_path = self._resolve_path(public_snapshot_path, 'FUN_FINDER_PUBLIC_SNAPSHOT_PATH', DEFAULT_PUBLIC_SNAPSHOT)
         self.publish_state_path = self._resolve_path(publish_state_path, 'FUN_FINDER_PUBLISH_STATE_PATH', DEFAULT_PUBLISH_STATE)
         self.lock_path = Path(lock_path or os.environ.get('FUN_FINDER_LOCK_PATH') or (self.data_dir / DEFAULT_LOCK_NAME))
-        self.source_keys = tuple(source_keys or _env_csv('FUN_FINDER_SOURCE_KEYS') or DEFAULT_SOURCE_KEYS)
+        self.source_keys = canonical_source_keys(source_keys or _env_csv('FUN_FINDER_SOURCE_KEYS'))
         self.publisher_factory = publisher_factory
 
     def _resolve_path(self, explicit: str | Path | None, env_name: str, default_name: str) -> Path:
@@ -350,6 +372,29 @@ def _scrub_public_projection(public_snapshot: dict[str, Any], *, stale: bool = F
     return safe
 
 
+def _safe_cli_result(result: dict[str, Any]) -> dict[str, Any]:
+    summary = {
+        'ok': result.get('ok', False),
+        'snapshot_id': result.get('snapshot_id'),
+        'generated_at': result.get('generated_at'),
+        'loaded_sources': result.get('loaded_sources'),
+        'loaded_core_sources': result.get('loaded_core_sources'),
+        'visible_occurrences': result.get('visible_occurrences'),
+        'today_occurrences': result.get('today_occurrences'),
+        'validation_messages': result.get('validation', {}).get('messages', []),
+        'artifact_paths': result.get('artifact_paths'),
+    }
+    if result.get('status'):
+        summary['status'] = result.get('status')
+    if result.get('publish'):
+        summary['publish'] = {
+            'ok': result['publish'].get('ok', False),
+            'snapshot_id': result['publish'].get('snapshot_id'),
+            'status': result['publish'].get('status'),
+        }
+    return {key: summary[key] for key in SAFE_CLI_KEYS if key in summary}
+
+
 def read_private_snapshot(force: bool = False, engine: CanonicalEngine | None = None) -> dict[str, Any]:
     engine = engine or CanonicalEngine()
     if force:
@@ -402,25 +447,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.command in {None, 'refresh'}:
         engine = CanonicalEngine()
         result = engine.refresh(publish=getattr(args, 'publish', False))
-        summary = {
-            'ok': result.get('ok', False),
-            'snapshot_id': result.get('snapshot_id'),
-            'generated_at': result.get('generated_at'),
-            'loaded_sources': result.get('loaded_sources'),
-            'loaded_core_sources': result.get('loaded_core_sources'),
-            'visible_occurrences': result.get('visible_occurrences'),
-            'today_occurrences': result.get('today_occurrences'),
-            'validation_messages': result.get('validation', {}).get('messages', []),
-            'artifact_paths': result.get('artifact_paths'),
-        }
-        if getattr(args, 'publish', False) and result.get('publish'):
-            summary['publish'] = {
-                'ok': result['publish'].get('ok', False),
-                'snapshot_id': result['publish'].get('snapshot_id'),
-                'status': result['publish'].get('status'),
-            }
-        if getattr(args, 'json', False) or True:
-            print(json.dumps(summary, indent=2))
+        safe_result = _safe_cli_result(result)
+        print(json.dumps(safe_result if getattr(args, 'json', False) else safe_result, indent=2))
         return 0 if result.get('ok') and (not getattr(args, 'publish', False) or result.get('publish', {}).get('ok')) else 1
     parser.print_help()
     return 1

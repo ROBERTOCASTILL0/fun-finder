@@ -19,6 +19,30 @@ DEFAULT_PUBLIC_SNAPSHOT_PATH = Path('/opt/data/roberto-ui/data/fun_finder_public
 DEFAULT_PUBLISH_STATE_PATH = Path('/opt/data/roberto-ui/data/fun_finder_publish_state.json')
 
 
+def _safe_publish_result(result: dict[str, Any]) -> dict[str, Any]:
+    safe: dict[str, Any] = {
+        'ok': bool(result.get('ok', False)),
+        'status': result.get('status'),
+        'snapshot_id': result.get('snapshot_id'),
+        'generated_at': result.get('generated_at'),
+    }
+    accepted = result.get('accepted')
+    if isinstance(accepted, dict):
+        safe['accepted'] = {
+            'snapshot_id': accepted.get('snapshot_id'),
+            'ok': bool(accepted.get('ok', False)),
+        }
+    readback = result.get('readback')
+    if isinstance(readback, dict):
+        safe['readback'] = {
+            'snapshot_id': readback.get('snapshot_id'),
+            'event_count': readback.get('event_count'),
+        }
+    if result.get('error'):
+        safe['error'] = result.get('error')
+    return safe
+
+
 class SnapshotPublisher:
     def __init__(
         self,
@@ -105,7 +129,6 @@ class SnapshotPublisher:
         request = Request(
             url=f'{self.base_url}/api/events',
             headers={
-                'Authorization': f'Bearer {self.ingest_key}',
                 'Accept': 'application/json',
             },
             method='GET',
@@ -166,7 +189,8 @@ def main(argv: list[str] | None = None) -> int:
         result = SnapshotPublisher().publish()
     except (OSError, ValueError, HTTPError, URLError, json.JSONDecodeError) as exc:
         result = {'ok': False, 'status': 'publish_failed', 'error': str(exc)}
-    print(json.dumps(result if args.json or True else {'ok': result.get('ok', False)}, indent=2))
+    safe_result = _safe_publish_result(result)
+    print(json.dumps(safe_result if args.json else safe_result, indent=2))
     return 0 if result.get('ok') else 1
 
 

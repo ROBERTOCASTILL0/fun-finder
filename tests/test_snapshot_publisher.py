@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import io
 import json
 import tempfile
 import threading
 import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from unittest.mock import patch
 
 import snapshot_publisher
 
@@ -125,6 +127,7 @@ class SnapshotPublisherTests(unittest.TestCase):
                     'method': 'GET',
                     'path': self.path,
                     'authorization': self.headers.get('Authorization'),
+                    'snapshot_key': self.headers.get('X-Snapshot-Key'),
                 })
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json')
@@ -154,10 +157,51 @@ class SnapshotPublisherTests(unittest.TestCase):
         self.assertEqual(requests[0]['path'], '/internal/snapshot')
         self.assertEqual(requests[0]['authorization'], 'Bearer super-secret')
         self.assertEqual(requests[1]['path'], '/api/events')
+        self.assertIsNone(requests[1]['authorization'])
+        self.assertIsNone(requests[1]['snapshot_key'])
         state = json.loads(publish_state_path.read_text(encoding='utf-8'))
         self.assertEqual(state['publish']['status'], 'published')
         self.assertEqual(state['publish']['snapshot_id'], snapshot['snapshot_id'])
         self.assertNotIn('super-secret', json.dumps(state))
+
+    def test_main_prints_safe_summary_by_default_and_full_safe_json_with_flag(self) -> None:
+        result = {
+            'ok': True,
+            'status': 'published',
+            'snapshot_id': 'snap-publisher-001',
+            'generated_at': '2026-07-19T08:00:00-07:00',
+            'accepted': {'snapshot_id': 'snap-publisher-001', 'ok': True, 'secret': 'nope'},
+            'readback': {'snapshot_id': 'snap-publisher-001', 'event_count': 7},
+            'ingest_key': 'super-secret',
+        }
+
+        with patch.object(snapshot_publisher.SnapshotPublisher, 'publish', return_value=result):
+            with patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                exit_code = snapshot_publisher.main([])
+        self.assertEqual(exit_code, 0)
+        default_payload = json.loads(stdout.getvalue())
+        self.assertEqual(
+            default_payload,
+            {
+                'ok': True,
+                'status': 'published',
+                'snapshot_id': 'snap-publisher-001',
+                'generated_at': '2026-07-19T08:00:00-07:00',
+                'accepted': {'snapshot_id': 'snap-publisher-001', 'ok': True},
+                'readback': {'snapshot_id': 'snap-publisher-001', 'event_count': 7},
+            },
+        )
+        self.assertNotIn('super-secret', stdout.getvalue())
+        self.assertNotIn('secret', stdout.getvalue())
+
+        with patch.object(snapshot_publisher.SnapshotPublisher, 'publish', return_value=result):
+            with patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                exit_code = snapshot_publisher.main(['--json'])
+        self.assertEqual(exit_code, 0)
+        json_payload = json.loads(stdout.getvalue())
+        self.assertEqual(json_payload, default_payload)
+        self.assertNotIn('super-secret', stdout.getvalue())
+        self.assertNotIn('secret', stdout.getvalue())
 
 
 if __name__ == '__main__':
