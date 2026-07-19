@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-370b0674dd1988da",
-  "generated_at": "2026-07-19T10:58:19.823520-07:00",
+  "snapshot_id": "snap-0f8839e77094b1fa",
+  "generated_at": "2026-07-19T11:01:17.458957-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -113,7 +113,7 @@
     "label": "Jul 19",
     "is_today": true,
     "count": 12,
-    "summary": "104 ideas \u00b7 12 free \u00b7 34 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+    "summary": "102 ideas \u00b7 12 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -575,7 +575,7 @@
       "label": "Jul 19",
       "is_today": true,
       "count": 12,
-      "summary": "104 ideas \u00b7 12 free \u00b7 34 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+      "summary": "102 ideas \u00b7 12 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -1035,8 +1035,8 @@
       "weekday": "Mon",
       "label": "Jul 20",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 3 museum / zoo \u00b7 Nickelodeon Takes Over The New Children\u2019s Museum, Dancing Barbie Dream Camp July 20-24",
+      "count": 8,
+      "summary": "8 ideas \u00b7 3 museum / zoo \u00b7 Nickelodeon Takes Over The New Children\u2019s Museum, Dancing Barbie Dream Camp July 20-24",
       "events": [
         {
           "title": "Nickelodeon Takes Over The New Children\u2019s Museum",
@@ -1185,6 +1185,42 @@
             "area": "central-san-diego",
             "time_period": "morning",
             "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Coronado \u26bd\ufe0f Soccer",
+          "date": "2026-07-20",
+          "url": "https://www.meetup.com/coronado-%EF%B8%8F-soccer/events/315477995/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "sunset park, coronado, ca, Coronado, CA, Ocean Blvd, Coronado, CA",
+          "description": "",
+          "time_text": "2026-07-20T00:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -1766,8 +1802,8 @@
       "weekday": "Wed",
       "label": "Jul 22",
       "is_today": false,
-      "count": 10,
-      "summary": "10 ideas \u00b7 4 all-ages event \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
+      "count": 9,
+      "summary": "9 ideas \u00b7 3 farmers market \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
       "events": [
         {
           "title": "Dancing Barbie Dream Camp July 20-24",
@@ -2054,40 +2090,6 @@
           }
         },
         {
-          "title": "Still Life Drawing/Painting",
-          "date": "2026-07-22",
-          "url": "https://www.meetup.com/drawing-fundamentals/events/315711685/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-22T16:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Wednesday Soccer at SDSU ENS Field",
           "date": "2026-07-22",
           "url": "https://www.meetup.com/soccer-at-snap/events/315303910/",
@@ -2129,7 +2131,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "15 ideas \u00b7 2 free \u00b7 3 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "16 ideas \u00b7 2 free \u00b7 4 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3748,8 +3750,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
+      "count": 3,
+      "summary": "3 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
       "events": [
         {
           "title": "Beginner Volleyball at Nite",
@@ -3806,40 +3808,6 @@
             "features": {
               "free": false,
               "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "private home visit",
-          "date": "2026-07-28",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-28T20:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -4508,8 +4476,8 @@
       "weekday": "Sun",
       "label": "Aug 2",
       "is_today": false,
-      "count": 6,
-      "summary": "6 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 Shark Summer at Birch Aquarium is Back for 2026, 35th Annual MORAVA Serbian Summer Folkfest 2026",
+      "count": 7,
+      "summary": "7 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 Shark Summer at Birch Aquarium is Back for 2026, 35th Annual MORAVA Serbian Summer Folkfest 2026",
       "events": [
         {
           "title": "Shark Summer at Birch Aquarium is Back for 2026",
@@ -4728,6 +4696,40 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Brunch and Friends in San Diego",
+          "date": "2026-08-02",
+          "url": "https://www.meetup.com/meetup-group-lipokkvs/events/315559714/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Secret Restaurant Location in Downtown, San Diego, CA, Ash St, San Diego, CA 92101, United States, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-02T19:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "downtown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -5115,8 +5117,8 @@
       "weekday": "Sat",
       "label": "Aug 8",
       "is_today": false,
-      "count": 2,
-      "summary": "2 ideas \u00b7 1 outdoor / nature \u00b7 Open-air Yoga - San Diego Botanic Garden, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
+      "count": 3,
+      "summary": "3 ideas \u00b7 2 all-ages event \u00b7 Open-air Yoga - San Diego Botanic Garden, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
       "events": [
         {
           "title": "Open-air Yoga - San Diego Botanic Garden",
@@ -5185,12 +5187,46 @@
             "source_key": "sdhumane",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Salad Lab by Darlene Schrijver",
+          "date": "2026-08-08",
+          "url": "https://www.meetup.com/cookbook-book-club/events/314703120/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "The Northminster Presbyterian Church, San Deigo, CA, 4324 Clairemont Mesa blvd, San Deigo, CA",
+          "description": "",
+          "time_text": "2026-08-08T21:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
         }
       ]
     }
   ],
   "counts": {
-    "total_events": 121,
+    "total_events": 122,
     "days": 21,
     "free_events": 21,
     "configured_sources": 10,
@@ -5199,7 +5235,7 @@
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 32
+      "count": 33
     },
     {
       "name": "Museum / zoo",
