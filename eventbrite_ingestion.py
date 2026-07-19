@@ -200,6 +200,22 @@ EVENTBRITE_DOWNTOWN_LOCALITIES = {
     'petco park',
 }
 
+EVENTBRITE_SPECIFIC_VENUE_ADDRESS_PHRASES: tuple[tuple[str, str], ...] = (
+    ('mission bay', 'beach'),
+    ('pacific beach', 'beach'),
+    ('ocean beach', 'beach'),
+    ('mission beach', 'beach'),
+    ('la jolla', 'beach'),
+    ('point loma', 'beach'),
+    ('shelter island', 'beach'),
+    ('balboa park', 'balboa'),
+    ('downtown', 'downtown'),
+    ('gaslamp', 'downtown'),
+    ('little italy', 'downtown'),
+    ('east village', 'downtown'),
+    ('marina', 'downtown'),
+)
+
 EVENTBRITE_SAN_DIEGO_NEIGHBORHOODS = {
     'carmel valley',
     'city heights',
@@ -426,6 +442,36 @@ def _address_locality_values(address: dict[str, Any]) -> list[str]:
 
 
 
+def _eventbrite_venue_address_specific_texts(detail: dict[str, Any], address: dict[str, Any]) -> list[str]:
+    values: list[str] = []
+
+    def add(raw: Any) -> None:
+        value = _normalized_text(raw)
+        if value and value not in values:
+            values.append(value)
+
+    venue = detail.get('venue') if isinstance(detail.get('venue'), dict) else None
+    if isinstance(venue, dict):
+        add(venue.get('name'))
+
+    add(address.get('localized_address_display'))
+    add(address.get('localized_multi_line_address_display'))
+    add(address.get('localized_area_display'))
+    add(address.get('city'))
+
+    return values
+
+
+
+def _eventbrite_specific_area_from_venue_address(detail: dict[str, Any], address: dict[str, Any]) -> str | None:
+    for value in _eventbrite_venue_address_specific_texts(detail, address):
+        for phrase, area in EVENTBRITE_SPECIFIC_VENUE_ADDRESS_PHRASES:
+            if phrase in value:
+                return area
+    return None
+
+
+
 def _eventbrite_authoritative_area_from_address(detail: dict[str, Any]) -> str | None:
     venue = detail.get('venue') if isinstance(detail.get('venue'), dict) else None
     address = venue.get('address') if isinstance(venue, dict) and isinstance(venue.get('address'), dict) else None
@@ -442,16 +488,23 @@ def _eventbrite_authoritative_area_from_address(detail: dict[str, Any]) -> str |
             return 'east-county'
         if locality in EVENTBRITE_NORTH_COUNTY_LOCALITIES:
             return 'north-county'
+
+    specific_area = _eventbrite_specific_area_from_venue_address(detail, address)
+    if specific_area is not None:
+        return specific_area
+
+    for locality in locality_values:
         if locality in EVENTBRITE_BEACH_LOCALITIES:
             return 'beach'
         if locality in EVENTBRITE_BALBOA_LOCALITIES or 'balboa park' in locality:
             return 'balboa'
         if locality in EVENTBRITE_DOWNTOWN_LOCALITIES or 'downtown' in locality:
             return 'downtown'
-        if locality == 'san diego':
-            return 'central-san-diego'
         if city == 'san diego' and locality in EVENTBRITE_SAN_DIEGO_NEIGHBORHOODS:
             return 'central-san-diego'
+
+    if city == 'san diego' or 'san diego' in locality_values:
+        return 'central-san-diego'
 
     return None
 
