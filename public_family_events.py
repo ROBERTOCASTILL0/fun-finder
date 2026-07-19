@@ -355,7 +355,7 @@ def classify_metadata(title: str, description: str, venue: str, source: str, tim
             'indoor': indoor,
             # Only mark true when a source explicitly says dogs/pets are welcome.
             # A title like "Clifford the Big Red Dog" is not a dog-friendly venue signal.
-            'dog_friendly': bool(re.search(r'\b(dog[- ]friendly|pet[- ]friendly|dogs? (are )?(welcome|allowed|permitted)|bring (your )?(dog|fido)|leashed dogs?|well[- ]behaved dogs|pup|puppy|pooch)\b', text)),
+            'dog_friendly': bool(re.search(r'\b(dog[- ]friendly|pet[- ]friendly|dogs? (are )?(welcome|allowed|permitted)|bring (your )?(dog|fido)|leashed dogs?|well[- ]behaved dogs)\b', text)),
             'toddler_friendly': (not is_adult) and bool(re.search(toddler_re, text)),
             'stroller_friendly': bool(re.search(r'\b(stroller|paved|flat|accessible|wheelchair)\b', text)),
             'low_walking': bool(re.search(r'\b(accessible|seated|easy|short walk|wheelchair|bench)\b', text)),
