@@ -27,7 +27,13 @@ Runner = Callable[[list[str]], str]
 
 
 def _run_gh_api(argv: list[str]) -> str:
-    completed = subprocess.run(argv, check=False, capture_output=True, text=True)
+    # Prefer gh's durable credential store. Shared process environments can retain
+    # expired token variables, and gh gives those variables precedence over a
+    # valid stored login.
+    env = os.environ.copy()
+    env.pop('GH_TOKEN', None)
+    env.pop('GITHUB_TOKEN', None)
+    completed = subprocess.run(argv, check=False, capture_output=True, text=True, env=env)
     if completed.returncode != 0:
         raise GhApiError('gh api command failed', returncode=completed.returncode, stderr=completed.stderr.strip())
     return completed.stdout

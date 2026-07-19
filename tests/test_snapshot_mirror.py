@@ -5,12 +5,33 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import snapshot_mirror
 from tests.snapshot_fixtures import make_snapshot
 
 
 class SnapshotMirrorTests(unittest.TestCase):
+    def test_default_runner_ignores_stale_environment_tokens(self) -> None:
+        captured: dict = {}
+
+        class Completed:
+            returncode = 0
+            stdout = '{}'
+            stderr = ''
+
+        def fake_run(argv, **kwargs):
+            captured['argv'] = argv
+            captured['env'] = kwargs['env']
+            return Completed()
+
+        with patch.dict('os.environ', {'GH_TOKEN': 'expired-gh', 'GITHUB_TOKEN': 'expired-github'}), \
+                patch.object(snapshot_mirror.subprocess, 'run', side_effect=fake_run):
+            self.assertEqual(snapshot_mirror._run_gh_api(['gh', 'api', 'user']), '{}')
+
+        self.assertNotIn('GH_TOKEN', captured['env'])
+        self.assertNotIn('GITHUB_TOKEN', captured['env'])
+
     def test_mirror_puts_validated_snapshot_to_github_contents_api(self) -> None:
         runtime_dir = Path(tempfile.mkdtemp(prefix='mirror-test-'))
         snapshot_path = runtime_dir / 'public_snapshot.json'
