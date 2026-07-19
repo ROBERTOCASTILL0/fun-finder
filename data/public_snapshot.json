@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-d11e0809dea90360",
-  "generated_at": "2026-07-19T11:01:44.206695-07:00",
+  "snapshot_id": "snap-8075e63f07fc5d51",
+  "generated_at": "2026-07-19T13:01:29.019800-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 75,
+      "count": 51,
       "parser": "reader"
     },
     {
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 51,
+      "count": 48,
       "parser": "jsonld"
     },
     {
@@ -113,7 +113,7 @@
     "label": "Jul 19",
     "is_today": true,
     "count": 12,
-    "summary": "98 ideas \u00b7 9 free \u00b7 31 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+    "summary": "70 ideas \u00b7 6 free \u00b7 19 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -149,46 +149,6 @@
           "area": "beach",
           "time_period": "unknown",
           "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Trail Tykes",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/ongoing/trail-tykes-sundays-wednesdays/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Mission Trails Regional Park, San Carlos",
-        "description": "Created for children 2 to 5 years of age, Trail Tykes takes place at 10AM every second and fourth Sunday of the month and on Wednesdays at 10:00 am. The free program includes a read-aloud story, and a craft/activity or a short walk with MTRP Foundation staff and volunteers. Please register to reserve your space.",
-        "time_text": "2026-07-19T10:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": true,
-        "score": 11,
-        "tags": [
-          "craft",
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "unknown",
-          "time_period": "morning",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -379,45 +339,6 @@
         }
       },
       {
-        "title": "Bastille Day French Market & Open-Air FIFA World Cup Final Watch Party",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/19/bastille-day-french-market-open-air/?et=363457",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Progress Park, San Diego",
-        "description": "Enjoy 20+ French vendors, food, culture, family activities, and the FIFA World Cup Final live on a giant LED screen at noon. Free and open to all, celebrating French culture, community, and the Chamber\u2019s 30th anniversary.",
-        "time_text": "2026-07-19T11:00-0700",
-        "category": "Farmers market",
-        "is_free": true,
-        "score": 6,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "central-san-diego",
-          "time_period": "afternoon",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Bastille Day- French Market: 4th Edition & FIFA World Cup Final Watch Party",
         "date": "2026-07-19",
         "url": "https://www.kpbs.org/events/2026/07/19/bastille-day-french-market-4th-edition-fifa-world-cup-final-watch-party",
@@ -456,89 +377,14 @@
         }
       },
       {
-        "title": "Bay Club Summer Camps",
+        "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Bay Club Hotel and Marina, San Diego",
-        "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-        "time_text": "2026-07-19T09:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Guided Nature Walk",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/ongoing/guided-nature-walk-new-time-830-100/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Mission Trails Regional Park, San Carlos",
-        "description": "Join a MTRP Trail Guide on a guided nature walk and learn about the plants, animals, geology, history, and ecology of the park. Native flowers continue to bloom. You will hike one of these scenic trails: * The Visitor Center Loop highlighting coastal sage scrub, chaparral, and riparian woodland habitats and the riverside grinding rocks, one of the archaeological sites in the park. * The Oak Grove Loop showcasing majestic coast live oaks, rare Engelmann\u2019s oaks, and a Kumeyaay \u2018ewaa (hut). The trails used are easy, but have uneven surfaces and some involve steps, so be sure to wear sturdy, closed-toe shoes and bring along water. A hat and sunscreen are also recommended. Walks are canceled if raining. During July and August, walks start from the front of the Visitor Center every Saturday, Sunday, and Wednesday at 8:30 a.m. Walks are free and open to the public, with no reservations required.",
-        "time_text": "2026-07-19T08:30-0700",
-        "category": "Outdoor / nature",
-        "is_free": true,
-        "score": 6,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "morning",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Shark Summer",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Birch Aquarium at Scripps, San Diego",
-        "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-        "time_text": "2026-07-19T09:00-0700",
+        "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+        "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+        "time_text": "2026-07-19T09:00:00-07:00",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 6,
@@ -560,7 +406,153 @@
             "bathrooms": false,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Alchemy + Light",
+        "date": "2026-07-19",
+        "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "William D. Cannon Art Gallery at Carlsbad Library",
+        "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
+        "time_text": "2026-07-19T13:00-0700",
+        "category": "Festival / community",
+        "is_free": true,
+        "score": 5,
+        "tags": [
+          "free"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": true,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "afternoon",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "FIFA\u00ae World Cup 2026 Experience - LEGOLAND California Resort",
+        "date": "2026-07-19",
+        "url": "https://sandiego.kidsoutandabout.com/content/fifa%C2%AE-world-cup-2026-experience-legoland-california-resort",
+        "source": "kids",
+        "source_label": "Kids Out And About",
+        "venue": "",
+        "description": "Exclusively at LEGOLAND\u00ae Resorts \u2013 limited-time, high-energy soccer celebration, featuring LEGO\u00ae soccer heroes, interactive soccer games and epic LEGO build activities.",
+        "time_text": "",
+        "category": "Craft / STEAM",
+        "is_free": false,
+        "score": 5,
+        "tags": [
+          "lego"
+        ],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "unknown",
+          "source_key": "kids",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Freaky Friday: A New Musical",
+        "date": "2026-07-19",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/19/freaky-friday-a-new-musical-comes-t/?et=362804",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Carlsbad Community Cultural Arts Center",
+        "description": "Freaky Friday: A New Musical is based on the Disney Theatrical Productions stage adaptation and the 2018 Disney Channel Original Movie of Freaky Friday, and its popularity is immense in the theatre world. In its first three days of airing on the Disney Channel, it was the number one telecast of the summer for kids and tweens. On stage, theatrical productions see overwhelming popularity with families across the country at sold out performances.Freaky Friday: A New Musical follows an overworked mother, Katherine, and her spontaneous teenage daughter, Ellie, who magically swap bodies the day before Katherine's wedding. Forced to walk in each other's shoes, they discover the hidden struggles of the other's life, ultimately mending their fractured relationship in a heart-warming production with a talented cast of fun characters and toe-tapping musical production numbers.",
+        "time_text": "2026-07-19T14:00-0700",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 5,
+        "tags": [],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "School of Rock - The Musical",
+        "date": "2026-07-19",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/19/star-theatre-company-presents-schoo/?et=361760",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Star Theatre, Oceanside",
+        "description": "\"Rock got no reason, rock got no rhyme \u2026 You better get me to school on time!\" Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical is a two-hour, two-act show (plus intermission), based on the hit movie. The tuner follows Dewey Finn, a failed, wannabe rock star who decides to earn an extra bit of cash by posing as a substitute teacher at a prestigious prep school. There he turns a class of straight\u2013A pupils into a guitar-shredding, bass-slapping, mind-blowing rock band. But can he get them to the Battle of the Bands without their parents and the school\u2019s headmistress finding out? Lloyd Webber produced the stage musical on Broadway and in the West End, penning 14 new numbers for the show, which additionally features all of the original songs from the movie. The composer\u2019s tracks \u201cYou\u2019re in the Band\u201d and \u201cStick it to the Man\u201d are well on their way to becoming rock solid standards, while the finale with \u201cTeacher\u2019s Pet\u201d brings audiences to their feet, eight shows a week. Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical, with its sensational live kids\u2019 rock band, is a loving testimony to the transforming power of music. Rated PG",
+        "time_text": "2026-07-19T14:00-0700",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 5,
+        "tags": [],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
           "time_period": "unknown",
           "source_key": "reader",
           "metadata_version": 2
@@ -575,7 +567,7 @@
       "label": "Jul 19",
       "is_today": true,
       "count": 12,
-      "summary": "98 ideas \u00b7 9 free \u00b7 31 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+      "summary": "70 ideas \u00b7 6 free \u00b7 19 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -611,46 +603,6 @@
             "area": "beach",
             "time_period": "unknown",
             "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Trail Tykes",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/ongoing/trail-tykes-sundays-wednesdays/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Mission Trails Regional Park, San Carlos",
-          "description": "Created for children 2 to 5 years of age, Trail Tykes takes place at 10AM every second and fourth Sunday of the month and on Wednesdays at 10:00 am. The free program includes a read-aloud story, and a craft/activity or a short walk with MTRP Foundation staff and volunteers. Please register to reserve your space.",
-          "time_text": "2026-07-19T10:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": true,
-          "score": 11,
-          "tags": [
-            "craft",
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "morning",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -841,45 +793,6 @@
           }
         },
         {
-          "title": "Bastille Day French Market & Open-Air FIFA World Cup Final Watch Party",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/19/bastille-day-french-market-open-air/?et=363457",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Progress Park, San Diego",
-          "description": "Enjoy 20+ French vendors, food, culture, family activities, and the FIFA World Cup Final live on a giant LED screen at noon. Free and open to all, celebrating French culture, community, and the Chamber\u2019s 30th anniversary.",
-          "time_text": "2026-07-19T11:00-0700",
-          "category": "Farmers market",
-          "is_free": true,
-          "score": 6,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "central-san-diego",
-            "time_period": "afternoon",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Bastille Day- French Market: 4th Edition & FIFA World Cup Final Watch Party",
           "date": "2026-07-19",
           "url": "https://www.kpbs.org/events/2026/07/19/bastille-day-french-market-4th-edition-fifa-world-cup-final-watch-party",
@@ -918,89 +831,14 @@
           }
         },
         {
-          "title": "Bay Club Summer Camps",
+          "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Bay Club Hotel and Marina, San Diego",
-          "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-          "time_text": "2026-07-19T09:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Guided Nature Walk",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/ongoing/guided-nature-walk-new-time-830-100/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Mission Trails Regional Park, San Carlos",
-          "description": "Join a MTRP Trail Guide on a guided nature walk and learn about the plants, animals, geology, history, and ecology of the park. Native flowers continue to bloom. You will hike one of these scenic trails: * The Visitor Center Loop highlighting coastal sage scrub, chaparral, and riparian woodland habitats and the riverside grinding rocks, one of the archaeological sites in the park. * The Oak Grove Loop showcasing majestic coast live oaks, rare Engelmann\u2019s oaks, and a Kumeyaay \u2018ewaa (hut). The trails used are easy, but have uneven surfaces and some involve steps, so be sure to wear sturdy, closed-toe shoes and bring along water. A hat and sunscreen are also recommended. Walks are canceled if raining. During July and August, walks start from the front of the Visitor Center every Saturday, Sunday, and Wednesday at 8:30 a.m. Walks are free and open to the public, with no reservations required.",
-          "time_text": "2026-07-19T08:30-0700",
-          "category": "Outdoor / nature",
-          "is_free": true,
-          "score": 6,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "morning",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Shark Summer",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Birch Aquarium at Scripps, San Diego",
-          "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-          "time_text": "2026-07-19T09:00-0700",
+          "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+          "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+          "time_text": "2026-07-19T09:00:00-07:00",
           "category": "Museum / zoo",
           "is_free": false,
           "score": 6,
@@ -1022,7 +860,153 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Alchemy + Light",
+          "date": "2026-07-19",
+          "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "William D. Cannon Art Gallery at Carlsbad Library",
+          "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
+          "time_text": "2026-07-19T13:00-0700",
+          "category": "Festival / community",
+          "is_free": true,
+          "score": 5,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "afternoon",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "FIFA\u00ae World Cup 2026 Experience - LEGOLAND California Resort",
+          "date": "2026-07-19",
+          "url": "https://sandiego.kidsoutandabout.com/content/fifa%C2%AE-world-cup-2026-experience-legoland-california-resort",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Exclusively at LEGOLAND\u00ae Resorts \u2013 limited-time, high-energy soccer celebration, featuring LEGO\u00ae soccer heroes, interactive soccer games and epic LEGO build activities.",
+          "time_text": "",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "lego"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Freaky Friday: A New Musical",
+          "date": "2026-07-19",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/19/freaky-friday-a-new-musical-comes-t/?et=362804",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Carlsbad Community Cultural Arts Center",
+          "description": "Freaky Friday: A New Musical is based on the Disney Theatrical Productions stage adaptation and the 2018 Disney Channel Original Movie of Freaky Friday, and its popularity is immense in the theatre world. In its first three days of airing on the Disney Channel, it was the number one telecast of the summer for kids and tweens. On stage, theatrical productions see overwhelming popularity with families across the country at sold out performances.Freaky Friday: A New Musical follows an overworked mother, Katherine, and her spontaneous teenage daughter, Ellie, who magically swap bodies the day before Katherine's wedding. Forced to walk in each other's shoes, they discover the hidden struggles of the other's life, ultimately mending their fractured relationship in a heart-warming production with a talented cast of fun characters and toe-tapping musical production numbers.",
+          "time_text": "2026-07-19T14:00-0700",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 5,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "School of Rock - The Musical",
+          "date": "2026-07-19",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/19/star-theatre-company-presents-schoo/?et=361760",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Star Theatre, Oceanside",
+          "description": "\"Rock got no reason, rock got no rhyme \u2026 You better get me to school on time!\" Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical is a two-hour, two-act show (plus intermission), based on the hit movie. The tuner follows Dewey Finn, a failed, wannabe rock star who decides to earn an extra bit of cash by posing as a substitute teacher at a prestigious prep school. There he turns a class of straight\u2013A pupils into a guitar-shredding, bass-slapping, mind-blowing rock band. But can he get them to the Battle of the Bands without their parents and the school\u2019s headmistress finding out? Lloyd Webber produced the stage musical on Broadway and in the West End, penning 14 new numbers for the show, which additionally features all of the original songs from the movie. The composer\u2019s tracks \u201cYou\u2019re in the Band\u201d and \u201cStick it to the Man\u201d are well on their way to becoming rock solid standards, while the finale with \u201cTeacher\u2019s Pet\u201d brings audiences to their feet, eight shows a week. Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical, with its sensational live kids\u2019 rock band, is a loving testimony to the transforming power of music. Rated PG",
+          "time_text": "2026-07-19T14:00-0700",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 5,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
             "time_period": "unknown",
             "source_key": "reader",
             "metadata_version": 2
@@ -1455,8 +1439,10 @@
             "area": "south-bay",
             "time_period": "morning",
             "source_key": "eventbrite",
-            "metadata_version": 2,
+            "metadata_version": 3,
             "eventbrite_id": "1993746630843",
+            "organizer_id": "54227301443",
+            "venue_id": "298523139",
             "organizer_name": "@beckysartworld",
             "eventbrite_category": "Family & Education",
             "eventbrite_subcategory": "Children & Youth",
@@ -1537,8 +1523,10 @@
             "area": "central-san-diego",
             "time_period": "afternoon",
             "source_key": "eventbrite",
-            "metadata_version": 2,
+            "metadata_version": 3,
             "eventbrite_id": "1992599309173",
+            "organizer_id": "66255161193",
+            "venue_id": "298321973",
             "organizer_name": "Helen Woodward Animal Center",
             "eventbrite_category": "Community & Culture",
             "eventbrite_subcategory": "Other",
@@ -2784,7 +2772,7 @@
               "free": false,
               "outdoor": false,
               "indoor": false,
-              "dog_friendly": true,
+              "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
               "low_walking": false,
@@ -2840,7 +2828,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "17 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "18 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -3064,8 +3052,10 @@
             "area": "beach",
             "time_period": "afternoon",
             "source_key": "eventbrite",
-            "metadata_version": 2,
+            "metadata_version": 3,
             "eventbrite_id": "1991811751567",
+            "organizer_id": "121458284909",
+            "venue_id": "298610344",
             "organizer_name": "Daygo Performance Team",
             "eventbrite_category": "Community & Culture",
             "eventbrite_subcategory": "State",
@@ -3763,7 +3753,7 @@
               "free": true,
               "outdoor": true,
               "indoor": true,
-              "dog_friendly": true,
+              "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": true,
               "low_walking": true,
@@ -3818,8 +3808,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
+      "count": 5,
+      "summary": "5 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
       "events": [
         {
           "title": "Beginner Volleyball at Nite",
@@ -3888,6 +3878,42 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Open Mic Night!",
+          "date": "2026-07-28",
+          "url": "https://www.meetup.com/deanos-pub-open-mic-meetup-group/events/315593225/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Deano's Pub, La Mesa, CA, 5286 Baltimore Dr, La Mesa, CA",
+          "description": "",
+          "time_text": "2026-07-28T01:00:00.000Z",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "east-county",
+            "time_period": "evening",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -5219,8 +5245,8 @@
       "weekday": "Sat",
       "label": "Aug 8",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 2 all-ages event \u00b7 Open-air Yoga - San Diego Botanic Garden, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 outdoor / nature \u00b7 Open-air Yoga - San Diego Botanic Garden, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
       "events": [
         {
           "title": "Open-air Yoga - San Diego Botanic Garden",
@@ -5289,40 +5315,6 @@
             "source_key": "sdhumane",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "Salad Lab by Darlene Schrijver",
-          "date": "2026-08-08",
-          "url": "https://www.meetup.com/cookbook-book-club/events/314703120/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "The Northminster Presbyterian Church, San Deigo, CA, 4324 Clairemont Mesa blvd, San Deigo, CA",
-          "description": "",
-          "time_text": "2026-08-08T21:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
         }
       ]
     }
@@ -5330,18 +5322,18 @@
   "counts": {
     "total_events": 125,
     "days": 21,
-    "free_events": 21,
+    "free_events": 19,
     "configured_sources": 10,
     "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 33
+      "count": 32
     },
     {
       "name": "All-ages event",
-      "count": 20
+      "count": 19
     },
     {
       "name": "Museum / zoo",
@@ -5349,14 +5341,14 @@
     },
     {
       "name": "Performance / movie",
-      "count": 13
-    },
-    {
-      "name": "Farmers market",
-      "count": 9
+      "count": 15
     },
     {
       "name": "Festival / community",
+      "count": 9
+    },
+    {
+      "name": "Farmers market",
       "count": 8
     },
     {
@@ -5365,7 +5357,7 @@
     },
     {
       "name": "Adult outing",
-      "count": 6
+      "count": 7
     }
   ]
 }
