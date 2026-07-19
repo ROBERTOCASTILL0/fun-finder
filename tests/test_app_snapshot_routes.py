@@ -80,6 +80,36 @@ class AppSnapshotRouteTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.get_json()['snapshot_id'], 'runtime-visible')
 
+    def test_internal_snapshot_rejects_naive_generated_at_without_replacing_active(self):
+        self.client.post('/internal/snapshot', json=make_snapshot(snapshot_id='runtime-good'), headers={'Authorization': 'Bearer ingest-key'})
+
+        publish = self.client.post(
+            '/internal/snapshot',
+            json=make_snapshot(snapshot_id='runtime-naive', generated_at='2026-07-19T08:01:58'),
+            headers={'Authorization': 'Bearer ingest-key'},
+        )
+        response = self.client.get('/api/events')
+
+        self.assertEqual(publish.status_code, 400)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()['snapshot_id'], 'runtime-good')
+
+    def test_internal_snapshot_rejects_deep_metadata_without_replacing_active(self):
+        self.client.post('/internal/snapshot', json=make_snapshot(snapshot_id='runtime-good'), headers={'Authorization': 'Bearer ingest-key'})
+        invalid = make_snapshot(snapshot_id='runtime-deep')
+        deep_value = 'leaf'
+        for depth in range(7):
+            deep_value = {f'level_{depth}': deep_value}
+        invalid['today']['events'][0]['metadata']['extra'] = deep_value
+        invalid['calendar'][0]['events'][0]['metadata']['extra'] = deep_value
+
+        publish = self.client.post('/internal/snapshot', json=invalid, headers={'Authorization': 'Bearer ingest-key'})
+        response = self.client.get('/api/events')
+
+        self.assertEqual(publish.status_code, 400)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()['snapshot_id'], 'runtime-good')
+
 
 if __name__ == '__main__':
     unittest.main()

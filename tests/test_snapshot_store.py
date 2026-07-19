@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from snapshot_schema import SnapshotValidationError
 from snapshot_store import publish_snapshot, load_active_snapshot
 from tests.snapshot_fixtures import make_snapshot
 
@@ -50,7 +51,7 @@ class SnapshotStoreTests(unittest.TestCase):
         invalid['today']['events'][0]['url'] = 'ftp://not-allowed.example.com'
         invalid['calendar'][0]['events'][0]['url'] = 'ftp://not-allowed.example.com'
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(SnapshotValidationError):
             publish_snapshot(invalid)
 
         loaded = load_active_snapshot()
@@ -64,6 +65,32 @@ class SnapshotStoreTests(unittest.TestCase):
 
         loaded = load_active_snapshot()
         self.assertEqual(loaded['snapshot_id'], 'newer')
+
+    def test_naive_generated_at_does_not_replace_active(self):
+        publish_snapshot(make_snapshot(snapshot_id='good-1'))
+
+        with self.assertRaises(SnapshotValidationError):
+            publish_snapshot(make_snapshot(snapshot_id='bad-naive', generated_at='2026-07-19T08:01:58'))
+
+        loaded = load_active_snapshot()
+        self.assertIsNotNone(loaded)
+        self.assertEqual(loaded['snapshot_id'], 'good-1')
+
+    def test_deep_metadata_does_not_replace_active(self):
+        publish_snapshot(make_snapshot(snapshot_id='good-1'))
+        invalid = make_snapshot(snapshot_id='bad-deep')
+        deep_value = 'leaf'
+        for depth in range(7):
+            deep_value = {f'level_{depth}': deep_value}
+        invalid['today']['events'][0]['metadata']['extra'] = deep_value
+        invalid['calendar'][0]['events'][0]['metadata']['extra'] = deep_value
+
+        with self.assertRaises(SnapshotValidationError):
+            publish_snapshot(invalid)
+
+        loaded = load_active_snapshot()
+        self.assertIsNotNone(loaded)
+        self.assertEqual(loaded['snapshot_id'], 'good-1')
 
 
 if __name__ == '__main__':

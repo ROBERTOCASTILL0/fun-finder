@@ -9,6 +9,8 @@ from urllib.parse import urlparse
 SCHEMA_VERSION = 1
 MAX_DAYS = 21
 MAX_EVENTS_PER_DAY = 12
+MAX_METADATA_DEPTH = 6
+MAX_COLLECTION_ITEMS = 64
 ALLOWED_AUDIENCES = ('adult', 'all_ages', 'family', 'young_children')
 ALLOWED_AREAS = ('balboa', 'beach', 'central-san-diego', 'downtown', 'east-county', 'north-county', 'south-bay', 'unknown')
 ALLOWED_TIME_PERIODS = ('afternoon', 'evening', 'morning', 'unknown')
@@ -52,37 +54,39 @@ ALLOWED_EVENT_KEYS = (
 def normalize_public_snapshot(payload: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(payload, dict):
         raise SnapshotValidationError('snapshot must be a JSON object')
+    try:
+        schema_version = payload.get('schema_version')
+        if schema_version != SCHEMA_VERSION:
+            raise SnapshotValidationError('unsupported schema_version')
 
-    schema_version = payload.get('schema_version')
-    if schema_version != SCHEMA_VERSION:
-        raise SnapshotValidationError('unsupported schema_version')
+        snapshot_id = _bounded_string(payload.get('snapshot_id'), 'snapshot_id', 128)
+        generated_at = _normalize_datetime(payload.get('generated_at'), 'generated_at')
+        if payload.get('ok') is not True:
+            raise SnapshotValidationError('ok must be true')
 
-    snapshot_id = _bounded_string(payload.get('snapshot_id'), 'snapshot_id', 128)
-    generated_at = _normalize_datetime(payload.get('generated_at'), 'generated_at')
-    if payload.get('ok') is not True:
-        raise SnapshotValidationError('ok must be true')
+        source_status = _normalize_source_status(payload.get('source_status'))
+        calendar = _normalize_calendar(payload.get('calendar'))
+        today = _normalize_today(payload.get('today'), calendar)
+        all_events = [event for day in calendar for event in day['events']]
 
-    source_status = _normalize_source_status(payload.get('source_status'))
-    calendar = _normalize_calendar(payload.get('calendar'))
-    today = _normalize_today(payload.get('today'), calendar)
-    all_events = [event for day in calendar for event in day['events']]
-
-    normalized = {
-        'schema_version': SCHEMA_VERSION,
-        'snapshot_id': snapshot_id,
-        'generated_at': generated_at,
-        'ok': True,
-        'sources': _normalize_sources(payload.get('sources'), source_status, all_events),
-        'errors': [],
-        'source_status': source_status,
-        'source_warnings': [],
-        'today': today,
-        'calendar': calendar,
-        'counts': _normalize_counts(all_events, calendar, source_status),
-        'top_categories': _normalize_top_categories(payload.get('top_categories'), all_events),
-    }
-    _ensure_json_safe(normalized)
-    return normalized
+        normalized = {
+            'schema_version': SCHEMA_VERSION,
+            'snapshot_id': snapshot_id,
+            'generated_at': generated_at,
+            'ok': True,
+            'sources': _normalize_sources(payload.get('sources'), source_status, all_events),
+            'errors': [],
+            'source_status': source_status,
+            'source_warnings': [],
+            'today': today,
+            'calendar': calendar,
+            'counts': _normalize_counts(all_events, calendar, source_status),
+            'top_categories': _normalize_top_categories(payload.get('top_categories'), all_events),
+        }
+        _ensure_json_safe(normalized)
+        return normalized
+    except RecursionError as exc:
+        raise SnapshotValidationError('snapshot metadata exceeds max depth') from exc
 
 
 def _normalize_sources(raw: Any, source_status: list[dict[str, Any]], events: list[dict[str, Any]]) -> list[str]:
@@ -270,26 +274,39 @@ def _normalize_tags(raw: Any, field: str) -> list[str]:
     return [_bounded_string(item, f'{field}[]', 40) for item in raw]
 
 
-def _normalize_json_object(raw: Any, field: str) -> dict[str, Any]:
+def _normalize_json_object(raw: Any, field: str, *, depth: int = 0) -> dict[str, Any]:
     if raw is None:
         return {}
     if not isinstance(raw, dict):
         raise SnapshotValidationError(f'{field} must be an object')
+    if depth > MAX_METADATA_DEPTH:
+        raise SnapshotValidationError(f'{field} exceeds max depth')
+    if len(raw) > MAX_COLLECTION_ITEMS:
+        raise SnapshotValidationError(f'{field} exceeds max items')
     normalized: dict[str, Any] = {}
     for key, value in raw.items():
-        normalized[_bounded_string(key, f'{field}.key', 80)] = _normalize_json_value(value, f'{field}.{key}')
+        normalized[_bounded_string(key, f'{field}.key', 80)] = _normalize_json_value(value, f'{field}.{key}', depth=depth + 1)
     return normalized
 
 
-def _normalize_json_value(value: Any, field: str) -> Any:
+def _normalize_json_value(value: Any, field: str, *, depth: int = 0) -> Any:
+    if depth > MAX_METADATA_DEPTH:
+        raise SnapshotValidationError(f'{field} exceeds max depth')
     if value is None or isinstance(value, (bool, int, float)):
         return value
     if isinstance(value, str):
         return _bounded_string(value, field, 400)
     if isinstance(value, list):
-        return [_normalize_json_value(item, f'{field}[]') for item in value]
+        if len(value) > MAX_COLLECTION_ITEMS:
+            raise SnapshotValidationError(f'{field} exceeds max items')
+        return [_normalize_json_value(item, f'{field}[]', depth=depth + 1) for item in value]
     if isinstance(value, dict):
-        return { _bounded_string(str(key), f'{field}.key', 80): _normalize_json_value(val, f'{field}.{key}') for key, val in value.items() }
+        if len(value) > MAX_COLLECTION_ITEMS:
+            raise SnapshotValidationError(f'{field} exceeds max items')
+        return {
+            _bounded_string(str(key), f'{field}.key', 80): _normalize_json_value(val, f'{field}.{key}', depth=depth + 1)
+            for key, val in value.items()
+        }
     raise SnapshotValidationError(f'{field} must be JSON-compatible')
 
 
@@ -304,9 +321,11 @@ def _normalize_url(value: Any, field: str) -> str:
 def _normalize_datetime(value: Any, field: str) -> str:
     text = _bounded_string(value, field, 64)
     try:
-        datetime.fromisoformat(text)
+        parsed = datetime.fromisoformat(text)
     except ValueError as exc:
         raise SnapshotValidationError(f'{field} must be ISO-8601 datetime') from exc
+    if parsed.utcoffset() is None:
+        raise SnapshotValidationError(f'{field} must include timezone offset')
     return text
 
 

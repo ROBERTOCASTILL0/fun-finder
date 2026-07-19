@@ -36,6 +36,23 @@ class SnapshotSchemaTests(unittest.TestCase):
         with self.assertRaises(SnapshotValidationError):
             normalize_public_snapshot(payload)
 
+    def test_rejects_naive_generated_at_timestamp(self):
+        payload = make_snapshot(generated_at='2026-07-19T08:01:58')
+
+        with self.assertRaises(SnapshotValidationError):
+            normalize_public_snapshot(payload)
+
+    def test_rejects_metadata_nested_beyond_max_depth(self):
+        payload = make_snapshot()
+        deep_value = 'leaf'
+        for depth in range(7):
+            deep_value = {f'level_{depth}': deep_value}
+        payload['today']['events'][0]['metadata']['extra'] = deep_value
+        payload['calendar'][0]['events'][0]['metadata']['extra'] = deep_value
+
+        with self.assertRaises(SnapshotValidationError):
+            normalize_public_snapshot(payload)
+
     def test_rejects_more_than_21_days(self):
         payload = make_snapshot()
         while len(payload['calendar']) < 22:
