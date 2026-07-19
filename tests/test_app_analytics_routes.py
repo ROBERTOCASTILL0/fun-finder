@@ -4,8 +4,6 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import app as app_module
-
 
 class AppAnalyticsRouteTests(unittest.TestCase):
     def setUp(self):
@@ -13,9 +11,10 @@ class AppAnalyticsRouteTests(unittest.TestCase):
         self.db_path = Path(self.tmp.name) / 'route-analytics.sqlite3'
         os.environ['FUN_FINDER_ANALYTICS_DB_PATH'] = str(self.db_path)
         os.environ['FUN_FINDER_ANALYTICS_KEY'] = 'dev-analytics-key'
-        importlib.reload(app_module)
-        app_module.app.config['TESTING'] = True
-        self.client = app_module.app.test_client()
+        self.app_module = importlib.import_module('app')
+        self.app_module = importlib.reload(self.app_module)
+        self.app_module.app.config['TESTING'] = True
+        self.client = self.app_module.app.test_client()
 
     def tearDown(self):
         os.environ.pop('FUN_FINDER_ANALYTICS_DB_PATH', None)

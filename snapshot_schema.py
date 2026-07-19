@@ -9,6 +9,22 @@ from urllib.parse import urlparse
 SCHEMA_VERSION = 1
 MAX_DAYS = 21
 MAX_EVENTS_PER_DAY = 12
+ALLOWED_AUDIENCES = ('adult', 'all_ages', 'family', 'young_children')
+ALLOWED_AREAS = ('balboa', 'beach', 'central-san-diego', 'downtown', 'east-county', 'north-county', 'south-bay', 'unknown')
+ALLOWED_TIME_PERIODS = ('afternoon', 'evening', 'morning', 'unknown')
+ALLOWED_AGE_GROUPS = ('adults', 'kids', 'teens', 'toddler')
+REQUIRED_FEATURE_KEYS = (
+    'free',
+    'outdoor',
+    'indoor',
+    'dog_friendly',
+    'toddler_friendly',
+    'stroller_friendly',
+    'low_walking',
+    'shade',
+    'bathrooms',
+    'food_nearby',
+)
 
 
 class SnapshotValidationError(ValueError):
@@ -190,9 +206,45 @@ def _normalize_event(raw: Any, field: str) -> dict[str, Any]:
         'is_free': _normalize_bool(raw.get('is_free'), f'{field}.is_free'),
         'score': _normalize_int(raw.get('score', 0), f'{field}.score'),
         'tags': _normalize_tags(raw.get('tags', []), f'{field}.tags'),
-        'metadata': _normalize_json_object(raw.get('metadata', {}), f'{field}.metadata'),
+        'metadata': _normalize_event_metadata(raw.get('metadata', {}), f'{field}.metadata'),
     }
     return normalized
+
+
+def _normalize_event_metadata(raw: Any, field: str) -> dict[str, Any]:
+    metadata = _normalize_json_object(raw, field)
+    metadata['audience'] = _normalize_enum(metadata.get('audience'), f'{field}.audience', ALLOWED_AUDIENCES)
+    metadata['area'] = _normalize_enum(metadata.get('area'), f'{field}.area', ALLOWED_AREAS)
+    metadata['time_period'] = _normalize_enum(metadata.get('time_period'), f'{field}.time_period', ALLOWED_TIME_PERIODS)
+    metadata['features'] = _normalize_features(metadata.get('features'), f'{field}.features')
+
+    age_groups = metadata.get('age_groups')
+    if age_groups is not None:
+        metadata['age_groups'] = _normalize_age_groups(age_groups, f'{field}.age_groups')
+
+    source_key = metadata.get('source_key')
+    if source_key is not None:
+        metadata['source_key'] = _bounded_string(source_key, f'{field}.source_key', 64)
+
+    metadata_version = metadata.get('metadata_version')
+    if metadata_version is not None:
+        metadata['metadata_version'] = _normalize_non_negative_int(metadata_version, f'{field}.metadata_version')
+    return metadata
+
+
+def _normalize_features(raw: Any, field: str) -> dict[str, bool]:
+    if not isinstance(raw, dict):
+        raise SnapshotValidationError(f'{field} must be an object')
+    normalized = dict(raw)
+    for key in REQUIRED_FEATURE_KEYS:
+        normalized[key] = _normalize_bool(normalized.get(key), f'{field}.{key}')
+    return normalized
+
+
+def _normalize_age_groups(raw: Any, field: str) -> list[str]:
+    if not isinstance(raw, list):
+        raise SnapshotValidationError(f'{field} must be a list')
+    return [_normalize_enum(item, f'{field}[]', ALLOWED_AGE_GROUPS) for item in raw]
 
 
 def _normalize_top_categories(raw: Any, events: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -284,6 +336,13 @@ def _normalize_bool(value: Any, field: str) -> bool:
     if not isinstance(value, bool):
         raise SnapshotValidationError(f'{field} must be a boolean')
     return value
+
+
+def _normalize_enum(value: Any, field: str, allowed: tuple[str, ...]) -> str:
+    text = _bounded_string(value, field, 64)
+    if text not in allowed:
+        raise SnapshotValidationError(f'{field} must be one of: {", ".join(allowed)}')
+    return text
 
 
 def _bounded_string(value: Any, field: str, max_length: int, *, allow_empty: bool = False) -> str:

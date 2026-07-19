@@ -19,16 +19,27 @@ class AppSnapshotRouteTests(unittest.TestCase):
         self.packaged_path.write_text(json.dumps(make_snapshot(snapshot_id='packaged-bootstrap')), encoding='utf-8')
         os.environ['FUN_FINDER_RUNTIME_SNAPSHOT_PATH'] = str(self.runtime_path)
         os.environ['FUN_FINDER_SNAPSHOT_INGEST_KEY'] = 'ingest-key'
+        self.original_app_module = sys.modules.get('app')
+        self.original_public_family_events = sys.modules.get('public_family_events')
         sys.modules.pop('app', None)
         sys.modules.pop('public_family_events', None)
         self.app_module = importlib.import_module('app')
         import snapshot_store
 
+        self.snapshot_store = snapshot_store
+        self.original_packaged_snapshot_path = snapshot_store.PACKAGED_SNAPSHOT_PATH
         snapshot_store.PACKAGED_SNAPSHOT_PATH = self.packaged_path
         self.app_module.app.config['TESTING'] = True
         self.client = self.app_module.app.test_client()
 
     def tearDown(self):
+        self.snapshot_store.PACKAGED_SNAPSHOT_PATH = self.original_packaged_snapshot_path
+        sys.modules.pop('app', None)
+        if self.original_app_module is not None:
+            sys.modules['app'] = self.original_app_module
+        sys.modules.pop('public_family_events', None)
+        if self.original_public_family_events is not None:
+            sys.modules['public_family_events'] = self.original_public_family_events
         os.environ.pop('FUN_FINDER_RUNTIME_SNAPSHOT_PATH', None)
         os.environ.pop('FUN_FINDER_SNAPSHOT_INGEST_KEY', None)
         self.tmp.cleanup()
@@ -41,9 +52,7 @@ class AppSnapshotRouteTests(unittest.TestCase):
         self.assertEqual(response.get_json()['snapshot_id'], 'packaged-bootstrap')
 
     def test_get_api_events_returns_503_when_no_valid_snapshot_exists(self):
-        import snapshot_store
-
-        snapshot_store.PACKAGED_SNAPSHOT_PATH = Path(self.tmp.name) / 'missing.json'
+        self.snapshot_store.PACKAGED_SNAPSHOT_PATH = Path(self.tmp.name) / 'missing.json'
         response = self.client.get('/api/events')
 
         self.assertEqual(response.status_code, 503)

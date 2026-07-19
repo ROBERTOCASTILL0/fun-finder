@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import unittest
+from pathlib import Path
 
 from snapshot_schema import SCHEMA_VERSION, SnapshotValidationError, normalize_public_snapshot
 from tests.snapshot_fixtures import make_snapshot
@@ -63,6 +65,102 @@ class SnapshotSchemaTests(unittest.TestCase):
 
         with self.assertRaises(SnapshotValidationError):
             normalize_public_snapshot(payload)
+
+    def test_rejects_missing_required_metadata_fields(self):
+        for field in ('audience', 'area', 'time_period', 'features'):
+            with self.subTest(field=field):
+                payload = make_snapshot()
+                del payload['today']['events'][0]['metadata'][field]
+                del payload['calendar'][0]['events'][0]['metadata'][field]
+
+                with self.assertRaises(SnapshotValidationError):
+                    normalize_public_snapshot(payload)
+
+    def test_rejects_invalid_required_metadata_value_types(self):
+        cases = {
+            'audience': ['family'],
+            'area': True,
+            'time_period': 1,
+            'features': [],
+        }
+        for field, invalid in cases.items():
+            with self.subTest(field=field):
+                payload = make_snapshot()
+                payload['today']['events'][0]['metadata'][field] = invalid
+                payload['calendar'][0]['events'][0]['metadata'][field] = invalid
+
+                with self.assertRaises(SnapshotValidationError):
+                    normalize_public_snapshot(payload)
+
+    def test_rejects_missing_required_feature_flags(self):
+        required_keys = (
+            'free',
+            'outdoor',
+            'indoor',
+            'dog_friendly',
+            'toddler_friendly',
+            'stroller_friendly',
+            'low_walking',
+            'shade',
+            'bathrooms',
+            'food_nearby',
+        )
+        for key in required_keys:
+            with self.subTest(feature_key=key):
+                payload = make_snapshot()
+                del payload['today']['events'][0]['metadata']['features'][key]
+                del payload['calendar'][0]['events'][0]['metadata']['features'][key]
+
+                with self.assertRaises(SnapshotValidationError):
+                    normalize_public_snapshot(payload)
+
+    def test_rejects_non_boolean_feature_flags(self):
+        for invalid in ('yes', 1, None):
+            with self.subTest(invalid=invalid):
+                payload = make_snapshot()
+                payload['today']['events'][0]['metadata']['features']['free'] = invalid
+                payload['calendar'][0]['events'][0]['metadata']['features']['free'] = invalid
+
+                with self.assertRaises(SnapshotValidationError):
+                    normalize_public_snapshot(payload)
+
+    def test_preserves_existing_filter_metadata_extensions(self):
+        payload = make_snapshot()
+
+        normalized = normalize_public_snapshot(payload)
+        metadata = normalized['today']['events'][0]['metadata']
+
+        self.assertEqual(metadata['age_groups'], ['toddler', 'kids'])
+        self.assertEqual(metadata['source_key'], 'city')
+        self.assertEqual(metadata['metadata_version'], 2)
+
+    def test_packaged_snapshot_validates_against_public_contract(self):
+        packaged_path = Path(__file__).resolve().parents[1] / 'data' / 'public_snapshot.json'
+        payload = json.loads(packaged_path.read_text(encoding='utf-8'))
+
+        normalized = normalize_public_snapshot(payload)
+
+        self.assertEqual(normalized['snapshot_id'], payload['snapshot_id'])
+
+    def test_producer_metadata_shape_validates_against_public_contract(self):
+        from public_family_events import normalize_event
+
+        event = normalize_event(
+            'Toddler Storytime at Balboa Park',
+            '2026-07-19',
+            'https://example.com/events/storytime',
+            'city',
+            'Outdoor family storytime with stroller access, restrooms, and shaded seating.',
+            'Balboa Park',
+            '10:00 AM',
+        )
+        payload = make_snapshot()
+        payload['today']['events'][0] = event.__dict__
+        payload['calendar'][0]['events'][0] = event.__dict__.copy()
+
+        normalized = normalize_public_snapshot(payload)
+
+        self.assertEqual(normalized['today']['events'][0]['metadata']['source_key'], 'city')
 
 
 if __name__ == '__main__':
