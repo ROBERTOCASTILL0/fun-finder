@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.error import URLError
 
 from tests.snapshot_fixtures import make_snapshot
 
@@ -29,6 +30,18 @@ class AppSnapshotRouteTests(unittest.TestCase):
         self.snapshot_store = snapshot_store
         self.original_packaged_snapshot_path = snapshot_store.PACKAGED_SNAPSHOT_PATH
         snapshot_store.PACKAGED_SNAPSHOT_PATH = self.packaged_path
+
+        def offline_opener(*_args, **_kwargs):
+            raise URLError('durable recovery disabled in route unit test')
+
+        setattr(
+            self.app_module,
+            'load_active_snapshot',
+            lambda: snapshot_store.load_active_snapshot(
+                durable_url='https://durable.test/snapshot.json',
+                opener=offline_opener,
+            ),
+        )
         self.app_module.app.config['TESTING'] = True
         self.client = self.app_module.app.test_client()
 

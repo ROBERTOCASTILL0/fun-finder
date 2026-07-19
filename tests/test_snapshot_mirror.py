@@ -23,6 +23,7 @@ class SnapshotMirrorTests(unittest.TestCase):
         def fake_run(argv, **kwargs):
             captured['argv'] = argv
             captured['env'] = kwargs['env']
+            captured['input'] = kwargs['input']
             return Completed()
 
         with patch.dict('os.environ', {'GH_TOKEN': 'expired-gh', 'GITHUB_TOKEN': 'expired-github'}), \
@@ -31,6 +32,7 @@ class SnapshotMirrorTests(unittest.TestCase):
 
         self.assertNotIn('GH_TOKEN', captured['env'])
         self.assertNotIn('GITHUB_TOKEN', captured['env'])
+        self.assertIsNone(captured['input'])
 
     def test_mirror_puts_validated_snapshot_to_github_contents_api(self) -> None:
         runtime_dir = Path(tempfile.mkdtemp(prefix='mirror-test-'))
@@ -39,18 +41,20 @@ class SnapshotMirrorTests(unittest.TestCase):
         snapshot_path.write_text(json.dumps(snapshot), encoding='utf-8')
         calls: list[list[str]] = []
 
-        def runner(argv: list[str]) -> str:
+        def runner(argv: list[str], *, input_text: str | None = None) -> str:
             calls.append(argv)
             if argv[:4] == ['gh', 'api', '--method', 'GET']:
                 return json.dumps({'sha': 'abc123'})
             if argv[:4] == ['gh', 'api', '--method', 'PUT']:
-                payload_arg = next(item for item in argv if item.startswith('content='))
-                decoded = base64.b64decode(payload_arg.split('=', 1)[1]).decode('utf-8')
+                self.assertEqual(argv[-2:], ['--input', '-'])
+                self.assertNotIn('content=', ' '.join(argv))
+                request_payload = json.loads(input_text or '{}')
+                decoded = base64.b64decode(request_payload['content']).decode('utf-8')
                 mirrored = json.loads(decoded)
                 self.assertEqual(mirrored['snapshot_id'], 'mirror-1')
-                self.assertIn('sha=abc123', argv)
-                self.assertIn('branch=published-snapshot', argv)
-                self.assertIn('message=Mirror public snapshot mirror-1 to published-snapshot', argv)
+                self.assertEqual(request_payload['sha'], 'abc123')
+                self.assertEqual(request_payload['branch'], 'published-snapshot')
+                self.assertEqual(request_payload['message'], 'Mirror public snapshot mirror-1 to published-snapshot')
                 return json.dumps({'content': {'sha': 'def456'}})
             raise AssertionError(f'unexpected call: {argv}')
 
@@ -70,18 +74,18 @@ class SnapshotMirrorTests(unittest.TestCase):
         snapshot_path.write_text(json.dumps(snapshot), encoding='utf-8')
         put_args: list[str] = []
 
-        def runner(argv: list[str]) -> str:
+        def runner(argv: list[str], *, input_text: str | None = None) -> str:
             if argv[:4] == ['gh', 'api', '--method', 'GET']:
                 raise snapshot_mirror.GhApiError('not found', returncode=1, stderr='404 Not Found')
             if argv[:4] == ['gh', 'api', '--method', 'PUT']:
-                put_args.extend(argv)
+                put_args.extend(json.loads(input_text or '{}').keys())
                 return json.dumps({'content': {'sha': 'newsha'}})
             raise AssertionError(f'unexpected call: {argv}')
 
         result = snapshot_mirror.mirror_snapshot(snapshot_path=snapshot_path, runner=runner)
 
         self.assertTrue(result['ok'])
-        self.assertNotIn('sha=', put_args)
+        self.assertNotIn('sha', put_args)
 
     def test_invalid_snapshot_is_rejected_before_gh_calls(self) -> None:
         runtime_dir = Path(tempfile.mkdtemp(prefix='mirror-test-'))
@@ -92,7 +96,7 @@ class SnapshotMirrorTests(unittest.TestCase):
         snapshot_path.write_text(json.dumps(invalid), encoding='utf-8')
         calls = 0
 
-        def runner(argv: list[str]) -> str:
+        def runner(argv: list[str], **_kwargs) -> str:
             nonlocal calls
             del argv
             calls += 1

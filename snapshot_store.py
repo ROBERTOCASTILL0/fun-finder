@@ -9,6 +9,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable, Iterator
 from urllib.error import HTTPError, URLError
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 from snapshot_schema import SnapshotValidationError, normalize_public_snapshot
@@ -16,7 +17,7 @@ from snapshot_schema import SnapshotValidationError, normalize_public_snapshot
 ROOT = Path(__file__).resolve().parent
 DEFAULT_RUNTIME_SNAPSHOT_PATH = Path('/tmp/sd-fun-finder/public_snapshot.json')
 PACKAGED_SNAPSHOT_PATH = ROOT / 'data' / 'public_snapshot.json'
-DEFAULT_DURABLE_SNAPSHOT_URL = 'https://raw.githubusercontent.com/ROBERTOCASTILL0/fun-finder/published-snapshot/data/public_snapshot.json'
+DEFAULT_DURABLE_SNAPSHOT_URL = 'https://api.github.com/repos/ROBERTOCASTILL0/fun-finder/contents/data/public_snapshot.json?ref=published-snapshot'
 MAX_DURABLE_BYTES = 1024 * 1024
 DURABLE_TIMEOUT_SECONDS = 8
 SAFE_USER_AGENT = 'sd-fun-finder/1.0'
@@ -37,8 +38,19 @@ def durable_snapshot_url(*, explicit_test_url: str | None = None) -> str:
     candidate = explicit_test_url or os.environ.get('FUN_FINDER_DURABLE_SNAPSHOT_URL') or DEFAULT_DURABLE_SNAPSHOT_URL
     if explicit_test_url:
         return candidate
-    if not candidate.startswith('https://raw.githubusercontent.com/'):
-        raise ValueError('durable snapshot URL must use https://raw.githubusercontent.com/')
+    parsed = urlparse(candidate)
+    if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.fragment:
+        raise ValueError('durable snapshot URL must be an approved GitHub HTTPS URL')
+    host = (parsed.hostname or '').lower()
+    if host == 'raw.githubusercontent.com':
+        if not parsed.path.startswith('/ROBERTOCASTILL0/fun-finder/') or parsed.query:
+            raise ValueError('durable snapshot URL must target the approved GitHub repository')
+    elif host == 'api.github.com':
+        expected_path = '/repos/ROBERTOCASTILL0/fun-finder/contents/data/public_snapshot.json'
+        if parsed.path != expected_path or parse_qs(parsed.query) != {'ref': ['published-snapshot']}:
+            raise ValueError('durable snapshot URL must target the approved snapshot branch')
+    else:
+        raise ValueError('durable snapshot URL must use an approved GitHub host')
     return candidate
 
 
@@ -87,7 +99,11 @@ def publish_snapshot(payload: dict[str, Any]) -> dict[str, Any]:
 def _fetch_durable_snapshot(*, durable_url: str | None, opener: Opener) -> dict[str, Any] | None:
     request = Request(
         durable_snapshot_url(explicit_test_url=durable_url),
-        headers={'Accept': 'application/json', 'User-Agent': SAFE_USER_AGENT},
+        headers={
+            'Accept': 'application/vnd.github.raw+json',
+            'User-Agent': SAFE_USER_AGENT,
+            'X-GitHub-Api-Version': '2022-11-28',
+        },
         method='GET',
     )
     try:

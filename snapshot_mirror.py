@@ -23,17 +23,24 @@ class GhApiError(RuntimeError):
         self.stderr = stderr
 
 
-Runner = Callable[[list[str]], str]
+Runner = Callable[..., str]
 
 
-def _run_gh_api(argv: list[str]) -> str:
+def _run_gh_api(argv: list[str], *, input_text: str | None = None) -> str:
     # Prefer gh's durable credential store. Shared process environments can retain
     # expired token variables, and gh gives those variables precedence over a
     # valid stored login.
     env = os.environ.copy()
     env.pop('GH_TOKEN', None)
     env.pop('GITHUB_TOKEN', None)
-    completed = subprocess.run(argv, check=False, capture_output=True, text=True, env=env)
+    completed = subprocess.run(
+        argv,
+        check=False,
+        capture_output=True,
+        text=True,
+        env=env,
+        input=input_text,
+    )
     if completed.returncode != 0:
         raise GhApiError('gh api command failed', returncode=completed.returncode, stderr=completed.stderr.strip())
     return completed.stdout
@@ -66,16 +73,17 @@ class SnapshotMirror:
             '--method',
             'PUT',
             f'/repos/{self.repo}/contents/{self.remote_path}',
-            '-f',
-            f'branch={self.branch}',
-            '-f',
-            f'message={SAFE_COMMIT_PREFIX} {snapshot["snapshot_id"]} to {self.branch}',
-            '-f',
-            f'content={content_b64}',
+            '--input',
+            '-',
         ]
+        request_payload = {
+            'branch': self.branch,
+            'message': f'{SAFE_COMMIT_PREFIX} {snapshot["snapshot_id"]} to {self.branch}',
+            'content': content_b64,
+        }
         if current_sha:
-            put_args.extend(['-f', f'sha={current_sha}'])
-        raw_response = self.runner(put_args)
+            request_payload['sha'] = current_sha
+        raw_response = self.runner(put_args, input_text=json.dumps(request_payload))
         payload = json.loads(raw_response or '{}')
         return {
             'ok': True,

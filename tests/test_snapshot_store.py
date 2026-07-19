@@ -6,6 +6,7 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 from urllib.error import URLError
 
 from snapshot_schema import SnapshotValidationError
@@ -36,6 +37,17 @@ class _FakeHttpResponse:
 
 
 class SnapshotStoreTests(unittest.TestCase):
+    def test_default_durable_url_targets_public_github_contents_endpoint(self) -> None:
+        self.assertEqual(
+            snapshot_store.durable_snapshot_url(),
+            'https://api.github.com/repos/ROBERTOCASTILL0/fun-finder/contents/data/public_snapshot.json?ref=published-snapshot',
+        )
+
+    def test_unapproved_durable_url_is_rejected(self) -> None:
+        with patch.dict(os.environ, {'FUN_FINDER_DURABLE_SNAPSHOT_URL': 'https://example.com/snapshot.json'}):
+            with self.assertRaises(ValueError):
+                snapshot_store.durable_snapshot_url()
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.runtime_path = Path(self.tmp.name) / 'runtime.json'
