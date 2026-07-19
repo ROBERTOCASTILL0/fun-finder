@@ -153,6 +153,21 @@ class EventbriteIngestionTests(unittest.TestCase):
             now=self.now,
         )
 
+    def test_build_discovery_queries_cover_same_year_window_with_quoted_month_year_pairs(self) -> None:
+        queries = eventbrite_ingestion.build_discovery_queries(datetime(2026, 7, 19, 8, 0, tzinfo=PT))
+
+        self.assertEqual(len(queries), 2)
+        for query in queries:
+            self.assertIn('("July 2026" OR "August 2026")', query)
+
+    def test_build_discovery_queries_cover_cross_year_window_with_correct_next_year(self) -> None:
+        queries = eventbrite_ingestion.build_discovery_queries(datetime(2026, 12, 20, 8, 0, tzinfo=PT))
+
+        self.assertEqual(len(queries), 2)
+        for query in queries:
+            self.assertIn('("December 2026" OR "January 2027")', query)
+            self.assertNotIn('January 2026', query)
+
     def test_discovery_uses_exactly_two_bounded_brave_queries_and_dedupes_canonical_ids(self) -> None:
         search_payloads = [
             self.make_search_payload(
@@ -331,6 +346,47 @@ class EventbriteIngestionTests(unittest.TestCase):
         self.assertIn('cache_hits=1', status['detail'])
         cache_payload = json.loads(self.cache_path.read_text(encoding='utf-8'))
         self.assertEqual(sorted(cache_payload['events'].keys()), ['911'])
+
+    def test_missing_eventbrite_token_without_retained_cache_returns_unavailable_without_detail_attempts(self) -> None:
+        os.environ.pop('EVENTBRITE_PRIVATE_TOKEN', None)
+        calls, fake_urlopen = self.make_urlopen(
+            search_payloads=[self.make_search_payload('https://www.eventbrite.com/e/fresh-991'), self.make_search_payload()],
+            detail_payloads={'991': self.make_detail_payload('991', title='Fresh 991')},
+        )
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        self.assertEqual(events, [])
+        self.assertEqual(status['status'], 'unavailable')
+        self.assertEqual(status['count'], 0)
+        self.assertEqual(status['detail'], 'missing_eventbrite_token')
+        detail_calls = [url for url in calls if '/v3/events/' in url]
+        self.assertEqual(detail_calls, [])
+
+    def test_missing_eventbrite_token_with_retained_cache_returns_loaded_without_detail_attempts(self) -> None:
+        retained = self.make_detail_payload('992', title='Retained Cached Event')
+        self.cache_path.write_text(
+            json.dumps({'version': 1, 'events': {'992': {'fetched_at': self.now.isoformat(), 'detail': retained}}}),
+            encoding='utf-8',
+        )
+        os.environ.pop('EVENTBRITE_PRIVATE_TOKEN', None)
+        calls, fake_urlopen = self.make_urlopen(
+            search_payloads=[self.make_search_payload('https://www.eventbrite.com/e/fresh-993'), self.make_search_payload()],
+            detail_payloads={'993': self.make_detail_payload('993', title='Fresh 993')},
+        )
+
+        with patch.object(eventbrite_ingestion, 'urlopen', fake_urlopen):
+            events, status = self.fetch()
+
+        self.assertEqual([event.title for event in events], ['Retained Cached Event'])
+        self.assertEqual(status['status'], 'loaded')
+        self.assertEqual(status['count'], 1)
+        self.assertIn('config_error=missing_eventbrite_token', status['detail'])
+        self.assertIn('cache_hits=1', status['detail'])
+        self.assertNotIn('eventbrite-test-token', status['detail'])
+        detail_calls = [url for url in calls if '/v3/events/' in url]
+        self.assertEqual(detail_calls, [])
 
     def test_cache_fallback_prunes_outside_window_and_canceled_records(self) -> None:
         valid = self.make_detail_payload('111', title='Cached Future', start_local='2026-07-21T10:00:00')

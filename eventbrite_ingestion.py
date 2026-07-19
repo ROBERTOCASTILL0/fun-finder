@@ -254,28 +254,27 @@ def request_timeout() -> int:
     return _env_int('EVENTBRITE_TIMEOUT_SECONDS', DEFAULT_TIMEOUT, minimum=3, maximum=30)
 
 
-def _canonical_month_terms(now: datetime) -> list[str]:
+def _canonical_month_year_terms(now: datetime) -> list[str]:
     months = []
     for offset in (0, DISCOVERY_WINDOW_DAYS - 1):
-        month = (now + timedelta(days=offset)).strftime('%B')
+        month = (now + timedelta(days=offset)).strftime('%B %Y')
         if month not in months:
             months.append(month)
     return months
 
 
 def build_discovery_queries(now: datetime) -> list[str]:
-    months = ' OR '.join(f'"{month}"' for month in _canonical_month_terms(now))
-    year = now.strftime('%Y')
+    month_years = ' OR '.join(f'"{month}"' for month in _canonical_month_year_terms(now))
     city_query = (
         'site:eventbrite.com/e/ '
         '("San Diego" OR "City of San Diego" OR "Balboa Park" OR "Mission Bay") '
-        f'({months}) "{year}"'
+        f'({month_years})'
     )
     county_query = (
         'site:eventbrite.com/e/ '
         '("San Diego County" OR "Chula Vista" OR "Oceanside" OR "Escondido" OR '
         '"Carlsbad" OR "La Mesa" OR "Encinitas" OR "National City") '
-        f'({months}) "{year}"'
+        f'({month_years})'
     )
     return [city_query, county_query]
 
@@ -707,9 +706,7 @@ def _fresh_cache_records(cache: dict[str, Any], now: datetime) -> dict[str, dict
 
 
 def _fetch_event_detail(event_id: str, *, timeout: int) -> dict[str, Any]:
-    token = os.environ.get('EVENTBRITE_PRIVATE_TOKEN')
-    if not token:
-        raise RuntimeError('missing_eventbrite_token')
+    token = _eventbrite_private_token()
     headers = {
         'Accept': 'application/json',
         'Authorization': f'Bearer {token}',
@@ -746,6 +743,7 @@ def fetch_eventbrite_source_result(
         'detail_calls': 0,
         'accepted': 0,
         'rate_limited': False,
+        'config_error': '',
     }
     try:
         discovered_ids, discovery_metrics = discover_event_ids(now, timeout=timeout)
@@ -777,6 +775,34 @@ def fetch_eventbrite_source_result(
             accepted_events.append(event)
             metrics['cache_hits'] += 1
     uncached_ids = [event_id for event_id in discovered_ids if event_id not in fresh_cache]
+    if uncached_ids:
+        try:
+            _eventbrite_private_token()
+        except RuntimeError as exc:
+            metrics['config_error'] = str(exc)
+            accepted_events = _dedupe_by_source_id(accepted_events)
+            metrics['accepted'] = len(accepted_events)
+            cache = _rewrite_cache_from_events(cache, retained_cache, now)
+            _save_cache(cache)
+            if accepted_events:
+                detail = _bounded_detail(
+                    ' '.join(
+                        part
+                        for part in [
+                            f'discovery_calls={metrics["discovery_calls"]}',
+                            f'discovered_ids={metrics["discovered_ids"]}',
+                            f'cache_hits={metrics["cache_hits"]}',
+                            f'detail_calls={metrics["detail_calls"]}',
+                            f'accepted={metrics["accepted"]}',
+                            f'config_error={metrics["config_error"]}',
+                        ]
+                        if part
+                    )
+                )
+                status.update({'status': 'loaded', 'count': len(accepted_events), 'detail': detail})
+                return accepted_events, status
+            status.update({'status': 'unavailable', 'detail': _bounded_detail(str(exc))})
+            return [], status
     for event_id in uncached_ids[:detail_budget()]:
         metrics['detail_calls'] += 1
         try:
@@ -806,6 +832,7 @@ def fetch_eventbrite_source_result(
                 f'detail_calls={metrics["detail_calls"]}',
                 f'accepted={metrics["accepted"]}',
                 'rate_limited=1' if metrics['rate_limited'] else '',
+                f'config_error={metrics["config_error"]}' if metrics['config_error'] else '',
             ]
             if part
         )
@@ -834,3 +861,10 @@ def _dedupe_by_source_id(events: list[Any]) -> list[Any]:
 
 def _bounded_detail(text: str) -> str:
     return text[:160]
+
+
+def _eventbrite_private_token() -> str:
+    token = os.environ.get('EVENTBRITE_PRIVATE_TOKEN')
+    if not token:
+        raise RuntimeError('missing_eventbrite_token')
+    return token
