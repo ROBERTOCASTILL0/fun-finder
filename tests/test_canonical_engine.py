@@ -167,6 +167,11 @@ class CanonicalEngineTests(unittest.TestCase):
         self.assertEqual(private_snapshot['validation']['loaded_core_sources'], 4)
         self.assertEqual(publish_state['refresh']['status'], 'validated')
         self.assertEqual(publish_state['public_snapshot']['snapshot_id'], public_snapshot['snapshot_id'])
+        self.assertTrue(engine.lkg_full_path.is_symlink())
+        self.assertTrue(engine.private_snapshot_path.is_symlink())
+        self.assertTrue(engine.public_snapshot_path.is_symlink())
+        self.assertEqual(engine.lkg_full_path.resolve().parent, engine.private_snapshot_path.resolve().parent)
+        self.assertEqual(engine.private_snapshot_path.resolve().parent, engine.public_snapshot_path.resolve().parent)
 
     def test_invalid_candidate_preserves_last_known_good(self) -> None:
         runtime_dir = self.make_runtime_dir()
@@ -238,6 +243,97 @@ class CanonicalEngineTests(unittest.TestCase):
         self.assertTrue(payload['stale'])
         self.assertEqual(payload['today']['date'], canonical_engine.today_pt().isoformat())
         self.assertNotIn('detail', payload['source_status'][0])
+
+    def test_generation_swap_failure_preserves_previous_active_trio(self) -> None:
+        class FailingSwapEngine(canonical_engine.CanonicalEngine):
+            def _swap_current_generation(self, generation_dir: Path) -> None:
+                raise RuntimeError('swap failed')
+
+        runtime_dir = self.make_runtime_dir()
+        good_results = {
+            key: self.make_loaded_result(key, [3] + [2] * 20)
+            for key in ['city', 'family', 'kids', 'kpbs']
+        }
+        good_results.update({
+            'reader': self.make_unavailable_result('reader', 'timeout'),
+            'meetup_general': self.make_unavailable_result('meetup_general', 'timeout'),
+            'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
+            'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
+            'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+        })
+        base_engine = canonical_engine.CanonicalEngine(data_dir=runtime_dir)
+        with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: good_results[source['key']]):
+            first = base_engine.refresh()
+        self.assertTrue(first['ok'])
+        old_snapshot_id = json.loads(base_engine.public_snapshot_path.read_text(encoding='utf-8'))['snapshot_id']
+        old_generation = base_engine.public_snapshot_path.resolve().parent
+
+        failing_engine = FailingSwapEngine(data_dir=runtime_dir)
+        with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: good_results[source['key']]):
+            with self.assertRaises(RuntimeError):
+                failing_engine.refresh()
+
+        self.assertEqual(json.loads(base_engine.public_snapshot_path.read_text(encoding='utf-8'))['snapshot_id'], old_snapshot_id)
+        self.assertEqual(base_engine.public_snapshot_path.resolve().parent, old_generation)
+        self.assertEqual(list((runtime_dir / 'generations').glob('*.tmp')), [])
+
+    def test_existing_regular_artifacts_are_migrated_to_alias_symlinks(self) -> None:
+        runtime_dir = self.make_runtime_dir()
+        engine = canonical_engine.CanonicalEngine(data_dir=runtime_dir)
+        legacy_public = {'snapshot_id': 'legacy-public'}
+        legacy_private = {'snapshot_id': 'legacy-private'}
+        legacy_lkg = {'public_snapshot': {'snapshot_id': 'legacy-lkg'}}
+        engine.public_snapshot_path.write_text(json.dumps(legacy_public), encoding='utf-8')
+        engine.private_snapshot_path.write_text(json.dumps(legacy_private), encoding='utf-8')
+        engine.lkg_full_path.write_text(json.dumps(legacy_lkg), encoding='utf-8')
+
+        results = {
+            key: self.make_loaded_result(key, [3] + [2] * 20)
+            for key in ['city', 'family', 'kids', 'kpbs']
+        }
+        results.update({
+            'reader': self.make_unavailable_result('reader', 'timeout'),
+            'meetup_general': self.make_unavailable_result('meetup_general', 'timeout'),
+            'ucsd': self.make_unavailable_result('ucsd', 'timeout'),
+            'sdhumane': self.make_unavailable_result('sdhumane', 'timeout'),
+            'meetup_dogs': self.make_unavailable_result('meetup_dogs', 'timeout'),
+        })
+        with patch.object(canonical_engine, 'fetch_source_result', side_effect=lambda source: results[source['key']]):
+            outcome = engine.refresh()
+
+        self.assertTrue(outcome['ok'])
+        self.assertTrue(engine.public_snapshot_path.is_symlink())
+        self.assertTrue(engine.private_snapshot_path.is_symlink())
+        self.assertTrue(engine.lkg_full_path.is_symlink())
+
+    def test_cli_refresh_publish_failure_exits_nonzero_and_safe_output(self) -> None:
+        result = {
+            'ok': True,
+            'snapshot_id': 'snap-canonical-001',
+            'generated_at': '2026-07-19T08:00:00.123456-07:00',
+            'loaded_sources': 5,
+            'loaded_core_sources': 4,
+            'visible_occurrences': 42,
+            'today_occurrences': 3,
+            'artifact_paths': {'public_snapshot': '/tmp/public.json'},
+            'validation': {'messages': []},
+            'publish': {
+                'ok': False,
+                'status': 'publish_failed',
+                'snapshot_id': 'snap-canonical-001',
+                'error': 'token=super-secret',
+            },
+        }
+
+        with patch.object(canonical_engine.CanonicalEngine, 'refresh', return_value=result):
+            with patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                exit_code = canonical_engine.main(['refresh', '--publish'])
+
+        self.assertEqual(exit_code, 1)
+        payload = json.loads(stdout.getvalue())
+        self.assertFalse(payload['publish']['ok'])
+        self.assertEqual(payload['publish']['status'], 'publish_failed')
+        self.assertNotIn('super-secret', stdout.getvalue())
 
     def test_main_prints_safe_summary_by_default_and_full_result_with_json_flag(self) -> None:
         result = {

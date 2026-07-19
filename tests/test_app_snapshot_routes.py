@@ -62,7 +62,11 @@ class AppSnapshotRouteTests(unittest.TestCase):
         no_auth = self.client.post('/internal/snapshot', json=make_snapshot())
         query_auth = self.client.post('/internal/snapshot?key=ingest-key', json=make_snapshot())
         header_auth = self.client.post('/internal/snapshot', json=make_snapshot(snapshot_id='runtime-1'), headers={'Authorization': 'Bearer ingest-key'})
-        x_header_auth = self.client.post('/internal/snapshot', json=make_snapshot(snapshot_id='runtime-2'), headers={'X-Snapshot-Key': 'ingest-key'})
+        x_header_auth = self.client.post(
+            '/internal/snapshot',
+            json=make_snapshot(snapshot_id='runtime-2', generated_at='2026-07-19T08:01:58.123456-07:00'),
+            headers={'X-Snapshot-Key': 'ingest-key'},
+        )
 
         self.assertEqual(no_auth.status_code, 403)
         self.assertEqual(query_auth.status_code, 403)

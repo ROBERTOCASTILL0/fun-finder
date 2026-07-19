@@ -100,6 +100,8 @@ class CanonicalEngine:
         self.lock_path = Path(lock_path or os.environ.get('FUN_FINDER_LOCK_PATH') or (self.data_dir / DEFAULT_LOCK_NAME))
         self.source_keys = canonical_source_keys(source_keys or _env_csv('FUN_FINDER_SOURCE_KEYS'))
         self.publisher_factory = publisher_factory
+        self.generations_dir = self.data_dir / 'generations'
+        self.current_symlink_path = self.data_dir / 'current'
 
     def _resolve_path(self, explicit: str | Path | None, env_name: str, default_name: str) -> Path:
         return Path(explicit or os.environ.get(env_name) or (self.data_dir / default_name))
@@ -121,7 +123,7 @@ class CanonicalEngine:
 
     def _refresh_locked(self) -> dict[str, Any]:
         source_defs = build_canonical_source_definitions(self.source_keys)
-        fetched_at = now_pt().isoformat(timespec='seconds')
+        fetched_at = now_pt().isoformat(timespec='microseconds')
         results_by_key: dict[str, tuple[list[Event], dict[str, Any]]] = {}
         warnings: list[str] = []
         with ThreadPoolExecutor(max_workers=max(1, min(MAX_SOURCE_WORKERS, len(source_defs)))) as pool:
@@ -173,9 +175,11 @@ class CanonicalEngine:
 
         if validation['passed']:
             private_snapshot = self._build_private_snapshot(candidate_full)
-            self._atomic_write_json(self.lkg_full_path, candidate_full)
-            self._atomic_write_json(self.private_snapshot_path, private_snapshot)
-            self._atomic_write_json(self.public_snapshot_path, public_snapshot)
+            self._promote_generation(
+                candidate_full=candidate_full,
+                private_snapshot=private_snapshot,
+                public_snapshot=public_snapshot,
+            )
             self._atomic_write_json(self.publish_state_path, publish_state)
             return {
                 'ok': True,
@@ -342,6 +346,67 @@ class CanonicalEngine:
             tmp_path = Path(tmp.name)
         os.replace(tmp_path, path)
         dir_fd = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(dir_fd)
+        finally:
+            os.close(dir_fd)
+
+    def _promote_generation(
+        self,
+        *,
+        candidate_full: dict[str, Any],
+        private_snapshot: dict[str, Any],
+        public_snapshot: dict[str, Any],
+    ) -> None:
+        self.generations_dir.mkdir(parents=True, exist_ok=True)
+        generation_name = f"{public_snapshot['generated_at'].replace(':', '').replace('-', '').replace('+', '_').replace('.', '_')}_{public_snapshot['snapshot_id']}"
+        tmp_generation = self.generations_dir / f'.{generation_name}.tmp'
+        final_generation = self.generations_dir / generation_name
+        if tmp_generation.exists() or tmp_generation.is_symlink():
+            if tmp_generation.is_dir() and not tmp_generation.is_symlink():
+                for child in tmp_generation.iterdir():
+                    if child.is_file() or child.is_symlink():
+                        child.unlink()
+                tmp_generation.rmdir()
+            else:
+                tmp_generation.unlink()
+        tmp_generation.mkdir(parents=True, exist_ok=False)
+        self._atomic_write_json(tmp_generation / self.lkg_full_path.name, candidate_full)
+        self._atomic_write_json(tmp_generation / self.private_snapshot_path.name, private_snapshot)
+        self._atomic_write_json(tmp_generation / self.public_snapshot_path.name, public_snapshot)
+        self._fsync_dir(tmp_generation)
+        os.replace(tmp_generation, final_generation)
+        self._fsync_dir(self.generations_dir)
+        self._swap_current_generation(final_generation)
+        self._ensure_alias(self.lkg_full_path, self.current_symlink_path / self.lkg_full_path.name)
+        self._ensure_alias(self.private_snapshot_path, self.current_symlink_path / self.private_snapshot_path.name)
+        self._ensure_alias(self.public_snapshot_path, self.current_symlink_path / self.public_snapshot_path.name)
+
+    def _swap_current_generation(self, generation_dir: Path) -> None:
+        self.current_symlink_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_link = self.current_symlink_path.parent / f'.{self.current_symlink_path.name}.tmp'
+        if tmp_link.exists() or tmp_link.is_symlink():
+            tmp_link.unlink()
+        os.symlink(os.path.relpath(generation_dir, start=self.current_symlink_path.parent), tmp_link)
+        os.replace(tmp_link, self.current_symlink_path)
+        self._fsync_dir(self.data_dir)
+
+    def _ensure_alias(self, alias_path: Path, target_path: Path) -> None:
+        alias_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_link = alias_path.parent / f'.{alias_path.name}.tmp'
+        if tmp_link.exists() or tmp_link.is_symlink():
+            tmp_link.unlink()
+        if alias_path.exists() and not alias_path.is_symlink():
+            alias_path.unlink()
+        elif alias_path.is_symlink():
+            alias_path.unlink()
+        relative_target = os.path.relpath(target_path, start=alias_path.parent)
+        os.symlink(relative_target, tmp_link)
+        os.replace(tmp_link, alias_path)
+        self._fsync_dir(alias_path.parent)
+
+    def _fsync_dir(self, path: Path) -> None:
+        dir_fd = os.open(path, os.O_RDONLY)
         try:
             os.fsync(dir_fd)
         finally:
