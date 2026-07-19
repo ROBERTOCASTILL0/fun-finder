@@ -112,6 +112,115 @@ COUNTY_CITY_ALLOWLIST = {
     'shelter island',
 }
 
+EVENTBRITE_SOUTH_BAY_LOCALITIES = {
+    'bonita',
+    'chula vista',
+    'imperial beach',
+    'la presa',
+    'national city',
+    'otay mesa',
+    'san ysidro',
+}
+
+EVENTBRITE_EAST_COUNTY_LOCALITIES = {
+    'alpine',
+    'borrego springs',
+    'casa de oro',
+    'crest',
+    'descanso',
+    'dulzura',
+    'el cajon',
+    'eucalyptus hills',
+    'granite hills',
+    'harbison canyon',
+    'jacumba',
+    'jacumba hot springs',
+    'jamul',
+    'julian',
+    'la mesa',
+    'lakeside',
+    'lemon grove',
+    'mount laguna',
+    'pine valley',
+    'potrero',
+    'ramona',
+    'san diego country estates',
+    'santa ysabel',
+    'santee',
+    'spring valley',
+    'winter gardens',
+}
+
+EVENTBRITE_NORTH_COUNTY_LOCALITIES = {
+    'bonsall',
+    'camp pendleton',
+    'carlsbad',
+    'del mar',
+    'encinitas',
+    'escondido',
+    'fairbanks ranch',
+    'fallbrook',
+    'hidden meadows',
+    'oceanside',
+    'pala',
+    'pauma valley',
+    'poway',
+    'rainbow',
+    'rancho santa fe',
+    'san marcos',
+    'solana beach',
+    'valley center',
+    'vista',
+    'warner springs',
+}
+
+EVENTBRITE_BEACH_LOCALITIES = {
+    'coronado',
+    'la jolla',
+    'mission beach',
+    'ocean beach',
+    'pacific beach',
+    'point loma',
+    'shelter island',
+}
+
+EVENTBRITE_BALBOA_LOCALITIES = {
+    'balboa park',
+}
+
+EVENTBRITE_DOWNTOWN_LOCALITIES = {
+    'barrio logan',
+    'downtown',
+    'downtown san diego',
+    'embarcadero',
+    'gaslamp',
+    'gaslamp quarter',
+    'kettner',
+    'little italy',
+    'petco park',
+}
+
+EVENTBRITE_SAN_DIEGO_NEIGHBORHOODS = {
+    'carmel valley',
+    'city heights',
+    'clairemont',
+    'encanto',
+    'hillcrest',
+    'kearny mesa',
+    'lincoln park',
+    'logan heights',
+    'mira mesa',
+    'normal heights',
+    'north park',
+    'rancho bernardo',
+    'rancho penasquitos',
+    'rancho peñasquitos',
+    'scripps ranch',
+    'serra mesa',
+    'south park',
+    'tierrasanta',
+}
+
 
 def _env_int(name: str, default: int, *, minimum: int, maximum: int) -> int:
     raw = os.environ.get(name)
@@ -293,6 +402,62 @@ def _address_locality_candidates(address: dict[str, Any]) -> set[str]:
 
 
 
+def _address_locality_values(address: dict[str, Any]) -> list[str]:
+    values: list[str] = []
+
+    def add(raw: Any) -> None:
+        value = _normalized_text(raw)
+        if value and value not in values:
+            values.append(value)
+
+    add(address.get('city'))
+    add(address.get('localized_area_display'))
+
+    multi_line = address.get('localized_multi_line_address_display')
+    if isinstance(multi_line, str):
+        for raw_part in re.split(r'[\n,;|]+', multi_line):
+            add(raw_part)
+
+    display = address.get('localized_address_display')
+    if isinstance(display, str):
+        for raw_part in re.split(r'[,;|]+', display):
+            add(raw_part)
+
+    return values
+
+
+
+def _eventbrite_authoritative_area_from_address(detail: dict[str, Any]) -> str | None:
+    venue = detail.get('venue') if isinstance(detail.get('venue'), dict) else None
+    address = venue.get('address') if isinstance(venue, dict) and isinstance(venue.get('address'), dict) else None
+    if not isinstance(address, dict):
+        return None
+
+    locality_values = _address_locality_values(address)
+    city = _normalized_text(address.get('city'))
+
+    for locality in locality_values:
+        if locality in EVENTBRITE_SOUTH_BAY_LOCALITIES:
+            return 'south-bay'
+        if locality in EVENTBRITE_EAST_COUNTY_LOCALITIES:
+            return 'east-county'
+        if locality in EVENTBRITE_NORTH_COUNTY_LOCALITIES:
+            return 'north-county'
+        if locality in EVENTBRITE_BEACH_LOCALITIES:
+            return 'beach'
+        if locality in EVENTBRITE_BALBOA_LOCALITIES or 'balboa park' in locality:
+            return 'balboa'
+        if locality in EVENTBRITE_DOWNTOWN_LOCALITIES or 'downtown' in locality:
+            return 'downtown'
+        if locality == 'san diego':
+            return 'central-san-diego'
+        if city == 'san diego' and locality in EVENTBRITE_SAN_DIEGO_NEIGHBORHOODS:
+            return 'central-san-diego'
+
+    return None
+
+
+
 def _address_is_california(address: dict[str, Any]) -> bool:
     region = _normalized_text(address.get('region'))
     if region in {'ca', 'california'}:
@@ -398,6 +563,10 @@ def _apply_eventbrite_metadata_overrides(event: Any, detail: dict[str, Any]) -> 
         event.tags = sorted(set(tags))
         metadata['features'] = dict(metadata.get('features') or {})
         metadata['features']['free'] = authoritative_is_free
+
+    authoritative_area = _eventbrite_authoritative_area_from_address(detail)
+    if authoritative_area is not None:
+        metadata['area'] = authoritative_area
 
     native_category = _normalized_text(metadata.get('eventbrite_category'))
     native_subcategory = _normalized_text(metadata.get('eventbrite_subcategory'))

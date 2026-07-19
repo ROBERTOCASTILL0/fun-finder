@@ -422,6 +422,92 @@ class EventbriteIngestionTests(unittest.TestCase):
                 detail = self.make_detail_payload(str(500 + idx), venue_city=city, localized_area_display=city)
                 self.assertTrue(eventbrite_ingestion.is_allowed_san_diego_county_event(detail))
 
+    def test_eventbrite_authoritative_venue_area_overrides_description_keywords(self) -> None:
+        detail = self.make_detail_payload(
+            '940',
+            title='Creative Enrichment Summer Camp',
+            venue_city='Chula Vista',
+            localized_area_display='Chula Vista',
+            summary='Creative arts and play for kids.',
+            description_text='Families from North County, Oceanside, and Encinitas are welcome to attend this special showcase.',
+        )
+
+        event = eventbrite_ingestion.normalize_eventbrite_detail(
+            detail,
+            normalizer=public_family_events.normalize_event,
+            source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+            now=self.now,
+        )
+
+        self.assertIsNotNone(event)
+        assert event is not None
+        self.assertEqual(event.metadata['area'], 'south-bay')
+
+    def test_eventbrite_authoritative_venue_area_mapping_uses_locality(self) -> None:
+        cases = [
+            (
+                '941',
+                'Chula Vista Summer Camp',
+                'Chula Vista',
+                'Chula Vista',
+                'Families from North County and Oceanside love this camp.',
+                'south-bay',
+            ),
+            (
+                '942',
+                'Oceanside Pier Walk',
+                'Oceanside',
+                'Oceanside',
+                'Meetups mention Chula Vista in the organizer bio, but the venue is by the pier.',
+                'north-county',
+            ),
+            (
+                '943',
+                'El Cajon Makers Meetup',
+                'El Cajon',
+                'El Cajon',
+                'A regional event that also promotes Pacific Beach and downtown partners.',
+                'east-county',
+            ),
+            (
+                '944',
+                'Boardwalk Storytime',
+                'Pacific Beach',
+                'Pacific Beach',
+                'The description references San Diego and Balboa Park, but the venue is on the boardwalk.',
+                'beach',
+            ),
+            (
+                '945',
+                'Neighborhood Resource Fair',
+                'San Diego',
+                'San Diego',
+                'Hosted in the city core with no neighborhood override in the address.',
+                'central-san-diego',
+            ),
+        ]
+
+        for event_id, title, venue_city, localized_area_display, description_text, expected_area in cases:
+            with self.subTest(venue_city=venue_city, expected_area=expected_area):
+                detail = self.make_detail_payload(
+                    event_id,
+                    title=title,
+                    venue_city=venue_city,
+                    localized_area_display=localized_area_display,
+                    description_text=description_text,
+                )
+
+                event = eventbrite_ingestion.normalize_eventbrite_detail(
+                    detail,
+                    normalizer=public_family_events.normalize_event,
+                    source_label=public_family_events.SOURCE_LABELS['eventbrite'],
+                    now=self.now,
+                )
+
+                self.assertIsNotNone(event)
+                assert event is not None
+                self.assertEqual(event.metadata['area'], expected_area)
+
     def test_full_description_and_categories_enrich_audience_category_and_metadata(self) -> None:
         detail = self.make_detail_payload(
             '950',
