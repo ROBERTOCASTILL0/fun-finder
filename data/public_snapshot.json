@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-8624797afbc07c76",
-  "generated_at": "2026-07-19T09:49:11.899287-07:00",
+  "snapshot_id": "snap-370b0674dd1988da",
+  "generated_at": "2026-07-19T10:58:19.823520-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -11,7 +11,8 @@
     "Meetup San Diego",
     "UCSD Events",
     "San Diego Humane Society",
-    "Dog Meetup Search"
+    "Dog Meetup Search",
+    "Eventbrite San Diego"
   ],
   "errors": [],
   "source_status": [
@@ -92,8 +93,17 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 26,
+      "count": 28,
       "parser": "jsonld"
+    },
+    {
+      "key": "eventbrite",
+      "label": "Eventbrite San Diego",
+      "category": "general_events",
+      "url": "https://www.eventbrite.com/d/ca--san-diego/events/",
+      "status": "loaded",
+      "count": 3,
+      "parser": "eventbrite_api"
     }
   ],
   "source_warnings": [],
@@ -103,7 +113,7 @@
     "label": "Jul 19",
     "is_today": true,
     "count": 12,
-    "summary": "98 ideas \u00b7 9 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+    "summary": "104 ideas \u00b7 12 free \u00b7 34 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -515,7 +525,7 @@
             "food_nearby": false
           },
           "area": "beach",
-          "time_period": "unknown",
+          "time_period": "morning",
           "source_key": "reader",
           "metadata_version": 2
         }
@@ -565,7 +575,7 @@
       "label": "Jul 19",
       "is_today": true,
       "count": 12,
-      "summary": "98 ideas \u00b7 9 free \u00b7 32 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
+      "summary": "104 ideas \u00b7 12 free \u00b7 34 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Trail Tykes",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -977,7 +987,7 @@
               "food_nearby": false
             },
             "area": "beach",
-            "time_period": "unknown",
+            "time_period": "morning",
             "source_key": "reader",
             "metadata_version": 2
           }
@@ -1101,7 +1111,7 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "afternoon",
+            "time_period": "morning",
             "source_key": "kids",
             "metadata_version": 2
           }
@@ -1292,7 +1302,7 @@
       "label": "Jul 21",
       "is_today": false,
       "count": 12,
-      "summary": "12 ideas \u00b7 3 outdoor / nature \u00b7 Dancing Barbie Dream Camp July 20-24, Pacific Beach Tuesday Farmers Market",
+      "summary": "14 ideas \u00b7 1 free \u00b7 3 museum / zoo \u00b7 Dancing Barbie Dream Camp July 20-24, Pacific Beach Tuesday Farmers Market",
       "events": [
         {
           "title": "Dancing Barbie Dream Camp July 20-24",
@@ -1328,7 +1338,7 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "afternoon",
+            "time_period": "morning",
             "source_key": "kids",
             "metadata_version": 2
           }
@@ -1372,6 +1382,52 @@
           }
         },
         {
+          "title": "Creative Enrichment Summer Camp | Ages 5+",
+          "date": "2026-07-21",
+          "url": "https://www.eventbrite.com/e/creative-enrichment-summer-camp-ages-5-tickets-1993746630843",
+          "source": "eventbrite",
+          "source_label": "Eventbrite San Diego",
+          "venue": "Victory Christian Academy (K-12), Chula Vista, CA",
+          "description": "Jump into fun at Creative Enrichment Summer Camp in Chula Vista \u2014where art, games, and new friends come alive! Jump into fun at Creative Enrichment Summer Camp in Chula Vista \u2014where art, games, and new friends come alive! Family & Education Children & Youth @beckysartworld",
+          "time_text": "Tue Jul 21, 9:00 AM",
+          "category": "Toddler-friendly",
+          "is_free": false,
+          "score": 10,
+          "tags": [
+            "children-youth",
+            "eventbrite",
+            "family-education"
+          ],
+          "metadata": {
+            "audience": "young_children",
+            "age_groups": [
+              "kids",
+              "toddler"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": true,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "south-bay",
+            "time_period": "morning",
+            "source_key": "eventbrite",
+            "metadata_version": 2,
+            "eventbrite_id": "1993746630843",
+            "organizer_name": "@beckysartworld",
+            "eventbrite_category": "Family & Education",
+            "eventbrite_subcategory": "Children & Youth",
+            "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188796387%2F118166955759%2F1%2Foriginal.20260714-000033?auto=format%2Ccompress&q=75&sharp=10&s=152704bbaf121f70efddecc5a29de93f"
+          }
+        },
+        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-21",
           "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
@@ -1408,6 +1464,52 @@
           }
         },
         {
+          "title": "PAWmicon 2026",
+          "date": "2026-07-21",
+          "url": "https://www.eventbrite.com/e/pawmicon-2026-tickets-1992599309173",
+          "source": "eventbrite",
+          "source_label": "Eventbrite San Diego",
+          "venue": "Park Bl & Presidents Way Lawn- Behind the Comic Con Museum!, San Diego, CA",
+          "description": "Get ready for a pawsome time at PAWmicon 2026, where pets and pop culture collide for a fun-filled event! Get ready for a pawsome time at PAWmicon 2026, where pets and pop culture collide for a fun-filled event! Community & Culture Other Helen Woodward Animal Center",
+          "time_text": "Tue Jul 21, 4:30 PM",
+          "category": "Museum / zoo",
+          "is_free": true,
+          "score": 7,
+          "tags": [
+            "community-culture",
+            "eventbrite",
+            "free",
+            "museum",
+            "other",
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "afternoon",
+            "source_key": "eventbrite",
+            "metadata_version": 2,
+            "eventbrite_id": "1992599309173",
+            "organizer_name": "Helen Woodward Animal Center",
+            "eventbrite_category": "Community & Culture",
+            "eventbrite_subcategory": "Other",
+            "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1187676582%2F1568074650003%2F1%2Foriginal.20260625-222756?auto=format%2Ccompress&q=75&sharp=10&s=02623c5503e65e2bf47cbf2a1fcd2edd"
+          }
+        },
+        {
           "title": "Ed Sheeran: 'LOOP Tour'",
           "date": "2026-07-21",
           "url": "https://www.kpbs.org/events/2026/07/21/ed-sheeran-loop-tour",
@@ -1438,7 +1540,7 @@
               "food_nearby": false
             },
             "area": "downtown",
-            "time_period": "unknown",
+            "time_period": "afternoon",
             "source_key": "kpbs",
             "metadata_version": 2
           }
@@ -1510,7 +1612,7 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "evening",
+            "time_period": "afternoon",
             "source_key": "kpbs",
             "metadata_version": 2
           }
@@ -1656,74 +1758,6 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "INTJ or TGIF? What's the best way to describe different personality types?",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/civilized-conversation-of-san-diego/events/315364002/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Panera Bread, San Diego, CA, 5620 Balboa Avenue, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T02:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "balboa",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Oceanside Trail Cabrillo National Monument",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/sandiegodayhikers/events/315731101/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Point Loma Tide Pools, San Diego, CA, Lands End Road, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T16:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -1769,7 +1803,7 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "afternoon",
+            "time_period": "morning",
             "source_key": "kids",
             "metadata_version": 2
           }
@@ -1878,7 +1912,7 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "unknown",
+            "time_period": "evening",
             "source_key": "kpbs",
             "metadata_version": 2
           }
@@ -1980,7 +2014,7 @@
               "food_nearby": true
             },
             "area": "downtown",
-            "time_period": "unknown",
+            "time_period": "morning",
             "source_key": "city",
             "metadata_version": 2
           }
@@ -2020,6 +2054,40 @@
           }
         },
         {
+          "title": "Still Life Drawing/Painting",
+          "date": "2026-07-22",
+          "url": "https://www.meetup.com/drawing-fundamentals/events/315711685/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-22T16:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Wednesday Soccer at SDSU ENS Field",
           "date": "2026-07-22",
           "url": "https://www.meetup.com/soccer-at-snap/events/315303910/",
@@ -2050,40 +2118,6 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Youth Transition Center - Probation Department Appreciation (Cert. teams only)",
-          "date": "2026-07-22",
-          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/315688271/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-22T20:15:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         }
@@ -2319,7 +2353,7 @@
               "food_nearby": true
             },
             "area": "central-san-diego",
-            "time_period": "evening",
+            "time_period": "afternoon",
             "source_key": "kpbs",
             "metadata_version": 2
           }
@@ -2541,8 +2575,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 6,
-      "summary": "6 ideas \u00b7 2 free \u00b7 2 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
+      "count": 5,
+      "summary": "5 ideas \u00b7 2 free \u00b7 2 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -2653,7 +2687,7 @@
               "food_nearby": false
             },
             "area": "central-san-diego",
-            "time_period": "unknown",
+            "time_period": "morning",
             "source_key": "kids",
             "metadata_version": 2
           }
@@ -2689,40 +2723,6 @@
               "food_nearby": false
             },
             "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "10 Min Workout \"Pup Pilates: How to workout with your dog\" + Live Chat",
-          "date": "2026-07-24",
-          "url": "https://www.meetup.com/winendinewdoggies/events/315548410/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "Some of the real benefits of group exercise are: 1) You can get more bang for your buck; 2) There's camaraderie between participants; 3) It's great for everyone \u2013 whatever their fitness level; 4) You don\u2019t have to know what you are doing. Therefore, the 10-min Doggie Pilates has become our weekly event. Make a stamp card for your health and your dog bonding time, give it a paw print every time you guys join us. Also, don't hesitate to say hi using the live chat box in the screening room. How to join: At the event time, go to https://w2g.tv/?r=x8rac43l78z0k1lout (Copy and paste it if the link is broken) Stay Safe, Stay Well, and Stay CONNECTED!",
-          "time_text": "2026-07-24T19:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": true,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
             "metadata_version": 2
@@ -2770,7 +2770,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "17 ideas \u00b7 2 free \u00b7 5 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "17 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -2955,6 +2955,51 @@
             "time_period": "afternoon",
             "source_key": "meetup_dogs",
             "metadata_version": 2
+          }
+        },
+        {
+          "title": "Daygo Beach Boogie",
+          "date": "2026-07-25",
+          "url": "https://www.eventbrite.com/e/daygo-beach-boogie-tickets-1991811751567",
+          "source": "eventbrite",
+          "source_label": "Eventbrite San Diego",
+          "venue": "1740 E Mission Bay Dr., San Diego, CA",
+          "description": "Get ready to dance and soak up the sun with good vibes and great tunes at Daygo Beach Boogie! Get ready to dance and soak up the sun with good vibes and great tunes at Daygo Beach Boogie! Community & Culture State Daygo Performance Team",
+          "time_text": "Sat Jul 25, 12:00 PM",
+          "category": "Outdoor / nature",
+          "is_free": true,
+          "score": 4,
+          "tags": [
+            "beach",
+            "community-culture",
+            "eventbrite",
+            "free",
+            "state"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "afternoon",
+            "source_key": "eventbrite",
+            "metadata_version": 2,
+            "eventbrite_id": "1991811751567",
+            "organizer_name": "Daygo Performance Team",
+            "eventbrite_category": "Community & Culture",
+            "eventbrite_subcategory": "State",
+            "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186807213%2F2985498582555%2F1%2Foriginal.20260613-034719?auto=format%2Ccompress&q=75&sharp=10&s=f36e8bedcd74189dc84ee31f9e829729"
           }
         },
         {
@@ -3170,42 +3215,6 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Wheelchair-Accessible Botany Expedition!",
-          "date": "2026-07-25",
-          "url": "https://www.meetup.com/sandiegodayhikers/events/315506973/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Charles Lewis III Memorial Park, San Diego, CA, 4639 Home Avenue,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-25T18:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": true,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -4235,7 +4244,7 @@
               "food_nearby": false
             },
             "area": "central-san-diego",
-            "time_period": "unknown",
+            "time_period": "morning",
             "source_key": "kids",
             "metadata_version": 2
           }
@@ -4830,8 +4839,8 @@
       "weekday": "Thu",
       "label": "Aug 6",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -4916,6 +4925,40 @@
         {
           "title": "Can the U.S. and China Build a Stable Great-Power Relationship?",
           "date": "2026-08-06",
+          "url": "https://calendar.ucsd.edu/event/can-the-us-and-china-build-a-stable-great-power-relationship",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Duane J. Roth Auditorium at Sanford Consortium for Regenerative Medicine, 2880 Torrey Pines Scenic Drive, La Jolla, California - 92037",
+          "description": "In welcoming U.S. President Donald Trump to Beijing in May for a summit, Chinese President Xi Jinping sought to find an answer to the question of whether China and the U.S. would be able to overcome the Thucydides Trap and create a new paradigm of major country relations. After two days of intense conversation, the two leaders offered a tentative \u201cyes,\u201d proposing to create a new era of what they called \u201cconstructive strategic stability.\u201d Following in the tradition of Susan Shirk, who insists on asking difficult questions and challenging conventional wisdom, the political scientist Graham Allison will devote this lecture to examining both the promise and the limits of that vision. 4:15 - 5:00 PM \u2014 Reception on the Terrace5:00 - 6:30 PM \u2014 Public Lecture in Roth Auditorium Presider: Meghan O\u2019Sullivan, Director, The Belfer Center; Jeane Kirkpatrick Professor of the Practice of International Affairs, Harvard Kennedy School Speaker: Graham Allison, Douglas Dillon Professor of Government, Harvard Kennedy School ___________________________________ This public lecture is organized by the 21st Century China Center (21CCC) at the UC San Diego School of Global Policy and Strategy. For more information about this and other 21CCC events, please visit china.ucsd.edu.",
+          "time_text": "2026-08-06T17:00:00-07:00",
+          "category": "Festival / community",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "afternoon",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Can the U.S. and China Build a Stable Great-Power Relationship?",
+          "date": "2026-08-06",
           "url": "https://calendar.ucsd.edu/event/can-the-us-and-china-build-a-stable-great-power-relationship-189",
           "source": "ucsd",
           "source_label": "UCSD Events",
@@ -4942,7 +4985,7 @@
               "food_nearby": false
             },
             "area": "beach",
-            "time_period": "unknown",
+            "time_period": "afternoon",
             "source_key": "ucsd",
             "metadata_version": 2
           }
@@ -5024,7 +5067,7 @@
               "food_nearby": true
             },
             "area": "central-san-diego",
-            "time_period": "unknown",
+            "time_period": "evening",
             "source_key": "kpbs",
             "metadata_version": 2
           }
@@ -5149,9 +5192,9 @@
   "counts": {
     "total_events": 121,
     "days": 21,
-    "free_events": 19,
-    "configured_sources": 9,
-    "loaded_sources": 8
+    "free_events": 21,
+    "configured_sources": 10,
+    "loaded_sources": 9
   },
   "top_categories": [
     {
@@ -5159,12 +5202,12 @@
       "count": 32
     },
     {
-      "name": "All-ages event",
-      "count": 20
+      "name": "Museum / zoo",
+      "count": 17
     },
     {
-      "name": "Museum / zoo",
-      "count": 16
+      "name": "All-ages event",
+      "count": 17
     },
     {
       "name": "Performance / movie",
@@ -5176,11 +5219,11 @@
     },
     {
       "name": "Festival / community",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Toddler-friendly",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Adult outing",
