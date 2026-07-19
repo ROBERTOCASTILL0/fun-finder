@@ -8,7 +8,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request
 
 from analytics import AnalyticsStore
-from public_family_events import public_events_payload
+from snapshot_store import load_active_snapshot, publish_snapshot
 
 ROOT = Path(__file__).resolve().parent
 DASHBOARD = ROOT / "public_dashboard.html"
@@ -54,9 +54,47 @@ def health():
 
 @app.get("/api/events")
 def api_events():
-    # Public endpoint intentionally ignores user-triggered refresh parameters.
-    # Refresh is performed by startup/manual/scheduled server-side jobs only.
-    return jsonify(public_events_payload(force=False))
+    snapshot = load_active_snapshot()
+    if snapshot is None:
+        resp = jsonify({"ok": False, "error": "events snapshot unavailable"})
+        resp.status_code = 503
+        resp.headers["Cache-Control"] = "no-store"
+        return resp
+    return jsonify(snapshot)
+
+
+@app.post("/internal/snapshot")
+def internal_snapshot_publish():
+    auth_error = snapshot_auth_error()
+    if auth_error is not None:
+        return auth_error
+    payload = request.get_json(silent=True)
+    if not isinstance(payload, dict):
+        resp = jsonify({"ok": False, "error": "invalid snapshot payload"})
+        resp.status_code = 400
+        resp.headers["Cache-Control"] = "no-store"
+        resp.headers["Vary"] = "Authorization, X-Snapshot-Key"
+        return resp
+    try:
+        snapshot = publish_snapshot(payload)
+    except ValueError as err:
+        resp = jsonify({"ok": False, "error": str(err)})
+        resp.status_code = 400
+        resp.headers["Cache-Control"] = "no-store"
+        resp.headers["Vary"] = "Authorization, X-Snapshot-Key"
+        return resp
+    resp = jsonify(
+        {
+            "ok": True,
+            "snapshot_id": snapshot["snapshot_id"],
+            "generated_at": snapshot["generated_at"],
+            "counts": snapshot["counts"],
+        }
+    )
+    resp.status_code = 202
+    resp.headers["Cache-Control"] = "no-store"
+    resp.headers["Vary"] = "Authorization, X-Snapshot-Key"
+    return resp
 
 
 @app.post("/api/analytics")
@@ -140,6 +178,31 @@ def analytics_request_key() -> str:
     if auth_header.startswith("Bearer "):
         return auth_header[7:].strip()
     return (request.headers.get("X-Analytics-Key") or "").strip()
+
+
+def snapshot_auth_error():
+    configured_key = (os.environ.get("FUN_FINDER_SNAPSHOT_INGEST_KEY") or "").strip()
+    if not configured_key:
+        resp = jsonify({"ok": False, "error": "snapshot ingest key not configured"})
+        resp.status_code = 503
+        resp.headers["Cache-Control"] = "no-store"
+        resp.headers["Vary"] = "Authorization, X-Snapshot-Key"
+        return resp
+    provided_key = snapshot_request_key()
+    if not provided_key or not hmac.compare_digest(provided_key, configured_key):
+        resp = jsonify({"ok": False, "error": "forbidden"})
+        resp.status_code = 403
+        resp.headers["Cache-Control"] = "no-store"
+        resp.headers["Vary"] = "Authorization, X-Snapshot-Key"
+        return resp
+    return None
+
+
+def snapshot_request_key() -> str:
+    auth_header = request.headers.get("Authorization", "")
+    if auth_header.startswith("Bearer "):
+        return auth_header[7:].strip()
+    return (request.headers.get("X-Snapshot-Key") or "").strip()
 
 
 def serve_html(path: Path):
