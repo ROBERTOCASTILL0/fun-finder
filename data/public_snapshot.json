@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-8075e63f07fc5d51",
-  "generated_at": "2026-07-19T13:01:29.019800-07:00",
+  "snapshot_id": "snap-6ea0451d7c95524f",
+  "generated_at": "2026-07-19T17:02:21.612281-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -48,7 +48,7 @@
       "category": "general_events",
       "url": "https://www.kpbs.org/events/all",
       "status": "loaded",
-      "count": 43,
+      "count": 45,
       "parser": "kpbs"
     },
     {
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 51,
+      "count": 31,
       "parser": "reader"
     },
     {
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 48,
+      "count": 49,
       "parser": "jsonld"
     },
     {
@@ -113,7 +113,7 @@
     "label": "Jul 19",
     "is_today": true,
     "count": 12,
-    "summary": "70 ideas \u00b7 6 free \u00b7 19 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
+    "summary": "48 ideas \u00b7 3 free \u00b7 14 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -339,44 +339,6 @@
         }
       },
       {
-        "title": "Bastille Day- French Market: 4th Edition & FIFA World Cup Final Watch Party",
-        "date": "2026-07-19",
-        "url": "https://www.kpbs.org/events/2026/07/19/bastille-day-french-market-4th-edition-fifa-world-cup-final-watch-party",
-        "source": "kpbs",
-        "source_label": "KPBS",
-        "venue": "Progress Park",
-        "description": "Sports Heritage & Cultural Arts World Cup Outdoors Family Festivals Food / Drinks",
-        "time_text": "Sunday, July 19, 2026 from 11 AM to 4 PM",
-        "category": "Farmers market",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "unknown",
-          "time_period": "morning",
-          "source_key": "kpbs",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-19",
         "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -409,42 +371,6 @@
           "area": "beach",
           "time_period": "unknown",
           "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Alchemy + Light",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "William D. Cannon Art Gallery at Carlsbad Library",
-        "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
-        "time_text": "2026-07-19T13:00-0700",
-        "category": "Festival / community",
-        "is_free": true,
-        "score": 5,
-        "tags": [
-          "free"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "afternoon",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -487,18 +413,128 @@
         }
       },
       {
-        "title": "Freaky Friday: A New Musical",
+        "title": "73rd Annual Over The Line Tournament",
         "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/19/freaky-friday-a-new-musical-comes-t/?et=362804",
+        "url": "https://www.sandiego.gov/event/73rd-annual-over-line-tournament-2",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "This event is an outdoor activity that allows attendees and players to enjoy the game of Over the Line in a setting designed for fun and relaxation.",
+        "time_text": "Sunday, July 19, 2026, 7am - 7pm",
+        "category": "Outdoor / nature",
+        "is_free": false,
+        "score": 4,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "morning",
+          "source_key": "city",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Atomic Groove",
+        "date": "2026-07-19",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/19/atomic-groove-performs-free-concert/?et=362535",
         "source": "reader",
         "source_label": "San Diego Reader",
-        "venue": "Carlsbad Community Cultural Arts Center",
-        "description": "Freaky Friday: A New Musical is based on the Disney Theatrical Productions stage adaptation and the 2018 Disney Channel Original Movie of Freaky Friday, and its popularity is immense in the theatre world. In its first three days of airing on the Disney Channel, it was the number one telecast of the summer for kids and tweens. On stage, theatrical productions see overwhelming popularity with families across the country at sold out performances.Freaky Friday: A New Musical follows an overworked mother, Katherine, and her spontaneous teenage daughter, Ellie, who magically swap bodies the day before Katherine's wedding. Forced to walk in each other's shoes, they discover the hidden struggles of the other's life, ultimately mending their fractured relationship in a heart-warming production with a talented cast of fun characters and toe-tapping musical production numbers.",
-        "time_text": "2026-07-19T14:00-0700",
-        "category": "Performance / movie",
+        "venue": "Civita Park, San Diego",
+        "description": "Atomic Groove is a variety dance band that performs everything from dance jams from every decade to soul, classic rock and jazz. Guests are encouraged to bring blankets, beach chairs, and picnics. Take-out meals can be purchased across the street at Poki Bowl or from various food trucks.",
+        "time_text": "2026-07-19T18:00-0700",
+        "category": "Outdoor / nature",
         "is_free": false,
-        "score": 5,
-        "tags": [],
+        "score": 4,
+        "tags": [
+          "beach",
+          "park"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Atomic Groove Performs Free Concert at Civita Park",
+        "date": "2026-07-19",
+        "url": "https://www.kpbs.org/events/2026/07/19/atomic-groove-performs-free-concert-at-civita-park",
+        "source": "kpbs",
+        "source_label": "KPBS",
+        "venue": "Civita Park Amphitheater",
+        "description": "Outdoor Concerts Outdoors Dance Rock Jazz",
+        "time_text": "Sunday, July 19, 2026 from 6 PM to 7:30 PM",
+        "category": "Outdoor / nature",
+        "is_free": true,
+        "score": 4,
+        "tags": [
+          "free",
+          "park"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": true,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "evening",
+          "source_key": "kpbs",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Charlie & the Chocolate Factory",
+        "date": "2026-07-19",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/19/charlie-the-chocolate-factory/?et=360131",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
+        "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
+        "time_text": "2026-07-19T20:00-0700",
+        "category": "Outdoor / nature",
+        "is_free": false,
+        "score": 4,
+        "tags": [
+          "park"
+        ],
         "metadata": {
           "audience": "family",
           "age_groups": [
@@ -507,7 +543,7 @@
           "features": {
             "free": false,
             "outdoor": true,
-            "indoor": true,
+            "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
@@ -517,42 +553,6 @@
             "food_nearby": false
           },
           "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "School of Rock - The Musical",
-        "date": "2026-07-19",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/19/star-theatre-company-presents-schoo/?et=361760",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Star Theatre, Oceanside",
-        "description": "\"Rock got no reason, rock got no rhyme \u2026 You better get me to school on time!\" Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical is a two-hour, two-act show (plus intermission), based on the hit movie. The tuner follows Dewey Finn, a failed, wannabe rock star who decides to earn an extra bit of cash by posing as a substitute teacher at a prestigious prep school. There he turns a class of straight\u2013A pupils into a guitar-shredding, bass-slapping, mind-blowing rock band. But can he get them to the Battle of the Bands without their parents and the school\u2019s headmistress finding out? Lloyd Webber produced the stage musical on Broadway and in the West End, penning 14 new numbers for the show, which additionally features all of the original songs from the movie. The composer\u2019s tracks \u201cYou\u2019re in the Band\u201d and \u201cStick it to the Man\u201d are well on their way to becoming rock solid standards, while the finale with \u201cTeacher\u2019s Pet\u201d brings audiences to their feet, eight shows a week. Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical, with its sensational live kids\u2019 rock band, is a loving testimony to the transforming power of music. Rated PG",
-        "time_text": "2026-07-19T14:00-0700",
-        "category": "Performance / movie",
-        "is_free": false,
-        "score": 5,
-        "tags": [],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "beach",
           "time_period": "unknown",
           "source_key": "reader",
           "metadata_version": 2
@@ -567,7 +567,7 @@
       "label": "Jul 19",
       "is_today": true,
       "count": 12,
-      "summary": "70 ideas \u00b7 6 free \u00b7 19 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
+      "summary": "48 ideas \u00b7 3 free \u00b7 14 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -793,44 +793,6 @@
           }
         },
         {
-          "title": "Bastille Day- French Market: 4th Edition & FIFA World Cup Final Watch Party",
-          "date": "2026-07-19",
-          "url": "https://www.kpbs.org/events/2026/07/19/bastille-day-french-market-4th-edition-fifa-world-cup-final-watch-party",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Progress Park",
-          "description": "Sports Heritage & Cultural Arts World Cup Outdoors Family Festivals Food / Drinks",
-          "time_text": "Sunday, July 19, 2026 from 11 AM to 4 PM",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "unknown",
-            "time_period": "morning",
-            "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-19",
           "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -863,42 +825,6 @@
             "area": "beach",
             "time_period": "unknown",
             "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Alchemy + Light",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "William D. Cannon Art Gallery at Carlsbad Library",
-          "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
-          "time_text": "2026-07-19T13:00-0700",
-          "category": "Festival / community",
-          "is_free": true,
-          "score": 5,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "afternoon",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -941,18 +867,128 @@
           }
         },
         {
-          "title": "Freaky Friday: A New Musical",
+          "title": "73rd Annual Over The Line Tournament",
           "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/19/freaky-friday-a-new-musical-comes-t/?et=362804",
+          "url": "https://www.sandiego.gov/event/73rd-annual-over-line-tournament-2",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "This event is an outdoor activity that allows attendees and players to enjoy the game of Over the Line in a setting designed for fun and relaxation.",
+          "time_text": "Sunday, July 19, 2026, 7am - 7pm",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 4,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "morning",
+            "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Atomic Groove",
+          "date": "2026-07-19",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/19/atomic-groove-performs-free-concert/?et=362535",
           "source": "reader",
           "source_label": "San Diego Reader",
-          "venue": "Carlsbad Community Cultural Arts Center",
-          "description": "Freaky Friday: A New Musical is based on the Disney Theatrical Productions stage adaptation and the 2018 Disney Channel Original Movie of Freaky Friday, and its popularity is immense in the theatre world. In its first three days of airing on the Disney Channel, it was the number one telecast of the summer for kids and tweens. On stage, theatrical productions see overwhelming popularity with families across the country at sold out performances.Freaky Friday: A New Musical follows an overworked mother, Katherine, and her spontaneous teenage daughter, Ellie, who magically swap bodies the day before Katherine's wedding. Forced to walk in each other's shoes, they discover the hidden struggles of the other's life, ultimately mending their fractured relationship in a heart-warming production with a talented cast of fun characters and toe-tapping musical production numbers.",
-          "time_text": "2026-07-19T14:00-0700",
-          "category": "Performance / movie",
+          "venue": "Civita Park, San Diego",
+          "description": "Atomic Groove is a variety dance band that performs everything from dance jams from every decade to soul, classic rock and jazz. Guests are encouraged to bring blankets, beach chairs, and picnics. Take-out meals can be purchased across the street at Poki Bowl or from various food trucks.",
+          "time_text": "2026-07-19T18:00-0700",
+          "category": "Outdoor / nature",
           "is_free": false,
-          "score": 5,
-          "tags": [],
+          "score": 4,
+          "tags": [
+            "beach",
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Atomic Groove Performs Free Concert at Civita Park",
+          "date": "2026-07-19",
+          "url": "https://www.kpbs.org/events/2026/07/19/atomic-groove-performs-free-concert-at-civita-park",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Civita Park Amphitheater",
+          "description": "Outdoor Concerts Outdoors Dance Rock Jazz",
+          "time_text": "Sunday, July 19, 2026 from 6 PM to 7:30 PM",
+          "category": "Outdoor / nature",
+          "is_free": true,
+          "score": 4,
+          "tags": [
+            "free",
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Charlie & the Chocolate Factory",
+          "date": "2026-07-19",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/19/charlie-the-chocolate-factory/?et=360131",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
+          "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
+          "time_text": "2026-07-19T20:00-0700",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 4,
+          "tags": [
+            "park"
+          ],
           "metadata": {
             "audience": "family",
             "age_groups": [
@@ -961,7 +997,7 @@
             "features": {
               "free": false,
               "outdoor": true,
-              "indoor": true,
+              "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -975,42 +1011,6 @@
             "source_key": "reader",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "School of Rock - The Musical",
-          "date": "2026-07-19",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/19/star-theatre-company-presents-schoo/?et=361760",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Star Theatre, Oceanside",
-          "description": "\"Rock got no reason, rock got no rhyme \u2026 You better get me to school on time!\" Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical is a two-hour, two-act show (plus intermission), based on the hit movie. The tuner follows Dewey Finn, a failed, wannabe rock star who decides to earn an extra bit of cash by posing as a substitute teacher at a prestigious prep school. There he turns a class of straight\u2013A pupils into a guitar-shredding, bass-slapping, mind-blowing rock band. But can he get them to the Battle of the Bands without their parents and the school\u2019s headmistress finding out? Lloyd Webber produced the stage musical on Broadway and in the West End, penning 14 new numbers for the show, which additionally features all of the original songs from the movie. The composer\u2019s tracks \u201cYou\u2019re in the Band\u201d and \u201cStick it to the Man\u201d are well on their way to becoming rock solid standards, while the finale with \u201cTeacher\u2019s Pet\u201d brings audiences to their feet, eight shows a week. Andrew Lloyd Webber\u2019s School of Rock \u2013 The Musical, with its sensational live kids\u2019 rock band, is a loving testimony to the transforming power of music. Rated PG",
-          "time_text": "2026-07-19T14:00-0700",
-          "category": "Performance / movie",
-          "is_free": false,
-          "score": 5,
-          "tags": [],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -1019,8 +1019,8 @@
       "weekday": "Mon",
       "label": "Jul 20",
       "is_today": false,
-      "count": 8,
-      "summary": "8 ideas \u00b7 3 museum / zoo \u00b7 Nickelodeon Takes Over The New Children\u2019s Museum, Dancing Barbie Dream Camp July 20-24",
+      "count": 11,
+      "summary": "11 ideas \u00b7 3 museum / zoo \u00b7 Nickelodeon Takes Over The New Children\u2019s Museum, Dancing Barbie Dream Camp July 20-24",
       "events": [
         {
           "title": "Nickelodeon Takes Over The New Children\u2019s Museum",
@@ -1173,42 +1173,6 @@
           }
         },
         {
-          "title": "Coronado \u26bd\ufe0f Soccer",
-          "date": "2026-07-20",
-          "url": "https://www.meetup.com/coronado-%EF%B8%8F-soccer/events/315477995/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "sunset park, coronado, ca, Coronado, CA, Ocean Blvd, Coronado, CA",
-          "description": "",
-          "time_text": "2026-07-20T00:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "evening",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Sunset Yoga at Mission Bay Park",
           "date": "2026-07-20",
           "url": "https://www.meetup.com/fun-yoga-on-the-bay/events/314821318/",
@@ -1240,6 +1204,144 @@
             },
             "area": "beach",
             "time_period": "evening",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Ventura Cove Open Water Swimming",
+          "date": "2026-07-20",
+          "url": "https://www.meetup.com/one-with-the-ocean-community-swim-all-levels/events/315464962/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Ventura Cove Park, San Diego, CA, 3209 Gleason Rd, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-20T14:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "House of the Dragon, Season 3, Episode 5 - San Diego Watch Party",
+          "date": "2026-07-20",
+          "url": "https://www.meetup.com/house-of-the-dragon-got-akot7k-san-diego-watch-party/events/315681825/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "East Village Tavern, San Diego, CA, 930 Market Street, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-20T01:00:00.000Z",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Little Italy San Diego Tech Coffee",
+          "date": "2026-07-20",
+          "url": "https://www.meetup.com/sandiego-tech-coffee/events/315485877/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Portal Coffee, San Diego, CA, 1495 Pacific Hwy, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-20T16:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "downtown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Pleasant walk n talk Mission Bay",
+          "date": "2026-07-20",
+          "url": "https://www.meetup.com/slow-and-easy-exercisers/events/315730339/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Mission Bay (By Superbloom Cafe), San Diego, CA, 2540 E Mission Bay Dr San Diego, CA 92109 United States, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-20T16:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
           }
@@ -1790,8 +1892,8 @@
       "weekday": "Wed",
       "label": "Jul 22",
       "is_today": false,
-      "count": 10,
-      "summary": "10 ideas \u00b7 4 all-ages event \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
+      "count": 12,
+      "summary": "12 ideas \u00b7 4 all-ages event \u00b7 Dancing Barbie Dream Camp July 20-24, Ocean Beach Certified Farmers' Market 2026",
       "events": [
         {
           "title": "Dancing Barbie Dream Camp July 20-24",
@@ -1902,6 +2004,76 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "MindTravel's 'Silent' Piano Concert",
+          "date": "2026-07-22",
+          "url": "https://www.kpbs.org/events/2026/07/22/mindtravels-silent-piano-concert",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Powerhouse Beach",
+          "description": "Music Outdoor Concerts",
+          "time_text": "Wednesday, July 22, 2026 from 6 PM to 8 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "beach"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "'Doug Loves Movies': Comic-Con Edition",
+          "date": "2026-07-22",
+          "url": "https://www.kpbs.org/events/2026/07/22/doug-loves-movies-comic-con-edition",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "The American Comedy Co.",
+          "description": "Films Comic-Con Pop Culture",
+          "time_text": "Wednesday, July 22, 2026 at 8 PM",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
             "metadata_version": 2
           }
         },
@@ -2828,7 +3000,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "18 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "19 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -3286,7 +3458,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "21 ideas \u00b7 3 free \u00b7 6 all-ages event \u00b7 Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego, San Diego Singles Speed Dating Ages 30-45",
+      "summary": "23 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego, San Diego Singles Speed Dating Ages 30-45",
       "events": [
         {
           "title": "Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego",
@@ -4230,8 +4402,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Newly Renovated Fleet Science Center, Moval Movies - City of Moreno Valley California",
+      "count": 6,
+      "summary": "6 ideas \u00b7 1 free \u00b7 1 museum / zoo \u00b7 Newly Renovated Fleet Science Center, Moval Movies - City of Moreno Valley California",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -4446,40 +4618,6 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "SDXD x IxDF Summer Social (\u27a1\ufe0f \u27a1\ufe0f \u27a1\ufe0f RSVP on Luma)",
-          "date": "2026-07-31",
-          "url": "https://www.meetup.com/s-d-x-d/events/315482556/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Mujeres Brew House, San Diego, CA, 1986 Julian avenue, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-31T02:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -5320,7 +5458,7 @@
     }
   ],
   "counts": {
-    "total_events": 125,
+    "total_events": 129,
     "days": 21,
     "free_events": 19,
     "configured_sources": 10,
@@ -5329,11 +5467,11 @@
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 32
+      "count": 37
     },
     {
       "name": "All-ages event",
-      "count": 19
+      "count": 20
     },
     {
       "name": "Museum / zoo",
@@ -5341,14 +5479,14 @@
     },
     {
       "name": "Performance / movie",
-      "count": 15
-    },
-    {
-      "name": "Festival / community",
-      "count": 9
+      "count": 14
     },
     {
       "name": "Farmers market",
+      "count": 8
+    },
+    {
+      "name": "Festival / community",
       "count": 8
     },
     {
