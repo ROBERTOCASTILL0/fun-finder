@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-1010badc7f20b67b",
-  "generated_at": "2026-07-20T23:13:00.611331-07:00",
+  "snapshot_id": "snap-deb613050a0bc6eb",
+  "generated_at": "2026-07-21T05:13:41.286057-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
     "Kids Out And About",
     "KPBS",
+    "San Diego Reader",
     "Meetup San Diego",
     "UCSD Events",
     "San Diego Humane Society",
@@ -55,8 +56,8 @@
       "label": "San Diego Reader",
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
-      "status": "no_events",
-      "count": 0,
+      "status": "loaded",
+      "count": 41,
       "parser": "reader"
     },
     {
@@ -65,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 53,
+      "count": 54,
       "parser": "jsonld"
     },
     {
@@ -92,7 +93,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 26,
+      "count": 27,
       "parser": "jsonld"
     },
     {
@@ -107,22 +108,100 @@
   ],
   "source_warnings": [],
   "today": {
-    "date": "2026-07-20",
-    "weekday": "Mon",
-    "label": "Jul 20",
+    "date": "2026-07-21",
+    "weekday": "Tue",
+    "label": "Jul 21",
     "is_today": true,
-    "count": 8,
-    "summary": "8 ideas \u00b7 1 free \u00b7 3 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
+    "count": 12,
+    "summary": "60 ideas \u00b7 6 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
     "events": [
       {
+        "title": "Summer Critter Camp",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
+        "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
+        "time_text": "2026-07-21T09:00-0700",
+        "category": "Toddler-friendly",
+        "is_free": false,
+        "score": 16,
+        "tags": [
+          "craft"
+        ],
+        "metadata": {
+          "audience": "young_children",
+          "age_groups": [
+            "kids",
+            "toddler"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": true,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Zoo Camp",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Wild Wonders, Bonsall",
+        "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
+        "time_text": "2026-07-21T09:00-0700",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 13,
+        "tags": [
+          "craft",
+          "zoo"
+        ],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
         "title": "Comics of Care: Healing Through Graphic Medicine",
-        "date": "2026-07-20",
+        "date": "2026-07-21",
         "url": "https://calendar.ucsd.edu/event/comics-of-care-healing-through-graphic-medicine-2026",
         "source": "ucsd",
         "source_label": "UCSD Events",
         "venue": "Sally T. WongAvery Library, 3100 Biomedical Sciences Wy La Jolla, CA 92093",
         "description": "What role can art and storytelling play in understanding health \u2014 and in healing? Explore comics, graphic novels and memoirs from UC San Diego Library's Graphic Medicine Collection: vividly drawn, personal stories about the experience of facing illness and finding care. In these pages, a single drawing can capture what's hard to put into words, sharing insights we can see and feel. We can learn from those who've faced health challenges and witness how they found their way through. Comics of Care is presented in connection with The Science of Story, a signature celebration of storytelling across UC San Diego. Returning for a third year during Comic-Con week, this series explores the art, craft and cultural power of narrative. In joining that conversation, this book exhibit shows how art and stories can help us heal \u2014 by letting us into another person's experience of illness and recovery. We hope these works deepen empathy for health struggles and spark discussion among patients, caregivers and clinicians who want to improve care. This collection was curated by UC San Diego librarians Jeffery Loo, Karen Heskett and Zemirah Ngow. Comics of Care is on view in the Sally T. WongAvery Library breezeway from June 29 to September 13, during the building's open hours.",
-        "time_text": "2026-07-20",
+        "time_text": "2026-07-21",
         "category": "Story / reading",
         "is_free": false,
         "score": 12,
@@ -152,8 +231,130 @@
         }
       },
       {
+        "title": "Pacific Beach Tuesday Farmers Market",
+        "date": "2026-07-21",
+        "url": "https://www.sandiego.gov/event/pacific-beach-tuesday-farmers-market-235",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "The Pacific Beach Tuesday Farmers' Market is an essential outdoor grocery store offering the unique opportunity for customers to meet the farmers and makers of the freshest fare from the small local businesses that they love! Find fresh produce, meats, cheeses, bread, flowers, dips and spreads along with gourmet dining options and handcrafted artisan works.",
+        "time_text": "Tuesday, July 21, 2026, 2 - 7pm",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 12,
+        "tags": [
+          "beach",
+          "craft",
+          "farmers market"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "city",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Creative Enrichment Summer Camp | Ages 5+",
+        "date": "2026-07-21",
+        "url": "https://www.eventbrite.com/e/creative-enrichment-summer-camp-ages-5-tickets-1993746630843",
+        "source": "eventbrite",
+        "source_label": "Eventbrite San Diego",
+        "venue": "Victory Christian Academy (K-12), Chula Vista, CA",
+        "description": "Jump into fun at Creative Enrichment Summer Camp in Chula Vista \u2014where art, games, and new friends come alive! Jump into fun at Creative Enrichment Summer Camp in Chula Vista \u2014where art, games, and new friends come alive! Family & Education Children & Youth @beckysartworld",
+        "time_text": "Tue Jul 21, 9:00 AM",
+        "category": "Toddler-friendly",
+        "is_free": false,
+        "score": 10,
+        "tags": [
+          "children-youth",
+          "eventbrite",
+          "family-education"
+        ],
+        "metadata": {
+          "audience": "young_children",
+          "age_groups": [
+            "kids",
+            "toddler"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": true,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "south-bay",
+          "time_period": "morning",
+          "source_key": "eventbrite",
+          "metadata_version": 3,
+          "eventbrite_id": "1993746630843",
+          "organizer_id": "54227301443",
+          "venue_id": "298523139",
+          "organizer_name": "@beckysartworld",
+          "eventbrite_category": "Family & Education",
+          "eventbrite_subcategory": "Children & Youth",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188796387%2F118166955759%2F1%2Foriginal.20260714-000033?auto=format%2Ccompress&q=75&sharp=10&s=152704bbaf121f70efddecc5a29de93f"
+        }
+      },
+      {
+        "title": "Pacific Beach Tuesday Certified Farmers' Market",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-tuesday-certified-farmers-/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Along Bayard Street, from Garnet to Hornblend",
+        "description": "The P.B. Farmers' Market scene can\u2019t be much different than, say, 100 years ago, or maybe even those medieval markets you read about. Tents, stalls, veggies, fruits, people shouting, touting their wares. Troubadour singing. Smells of herbs, like fennel and rosemary, and carroty steam from a vegan soup a-cooking.",
+        "time_text": "2026-07-21T14:00-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 8,
+        "tags": [
+          "beach"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
         "title": "Shark Summer at Birch Aquarium",
-        "date": "2026-07-20",
+        "date": "2026-07-21",
         "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
         "source": "kids",
         "source_label": "Kids Out And About",
@@ -189,13 +390,13 @@
       },
       {
         "title": "25th Annual Paper Theatre Festival | Exhibition",
-        "date": "2026-07-20",
+        "date": "2026-07-21",
         "url": "https://calendar.ucsd.edu/event/25th-paper-theatre-festival-exhibit",
         "source": "ucsd",
         "source_label": "UCSD Events",
         "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
         "description": "UC San Diego Library\u2019s 25th anniversary season of Paper Theatre Festival returns this summer! Join us for a unique browsing opportunity at this year\u2019s festival, which is taking the form of a colorful exhibition of paper theatres. Located on the 2nd (main) Floor of Geisel Library in The Nest, this display is free and open to the public. Explore at your leisure from July 14 through September 27, 2026, during the building's open hours. If you need assistance or would like an informal, pop-up performance in front of the exhibition on a prearranged date and time, contact exhibition curator Scott Paulson at spaulson@ucsd.edu. Additional Information Annual Paper Theatre Festival: It\u2019s the Smallest Show on Earth! Paper theatre, also known as tabletop or toy theatre, dates back to Victorian-era London. Families would re-enact plays they saw in miniature by cutting and pasting souvenir poster kits purchased from local playhouses. These kits included scenery sheets, costumed paper dolls and condensed scripts. This vintage marketing tool and educational toy is making a comeback!UC San Diego Library plays a featured role in reviving this artful and educational hobby. On display are 25 seasons\u2019 worth of miniature theatrical wonders, showcasing the enthusiastic work of our students, staff, alumni and community members.We are proud to host the oldest continually running paper theatre festival in the United States!An exhibition opening reception is scheduled for Tuesday, July 14, showcasing works from Scott Paulson '84, Rachel Almodovar, Elizabeth Hines, Carin Wallace, Anastasia Hunter, Christina Continelli, and visiting artist Nancy So Miller. Learn more about the exhibition opening reception.",
-        "time_text": "2026-07-20",
+        "time_text": "2026-07-21",
         "category": "Farmers market",
         "is_free": true,
         "score": 7,
@@ -226,14 +427,137 @@
         }
       },
       {
-        "title": "Shark Summer at Birch Aquarium",
-        "date": "2026-07-20",
-        "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+        "title": "Clarion Science Fiction and Fantasy Writer\u2019s Masterclass",
+        "date": "2026-07-21",
+        "url": "https://calendar.ucsd.edu/event/clarion-science-fiction-and-fantasy-writers-masterclass-5724",
         "source": "ucsd",
         "source_label": "UCSD Events",
-        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
-        "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
-        "time_text": "2026-07-20T09:00:00-07:00",
+        "venue": "The Loft, 3151 Matthews Ln, La Jolla, CA 92093",
+        "description": "We\u2019re thrilled to offer FREE registered admission for the Clarion Science Fiction and Fantasy Writer\u2019s Masterclass at UC San Diego \u2014 an immersive, day-long experience exploring the craft and power of speculative fiction. Whether you\u2019re a writer, reader, or simply curious about how science, imagination, and storytelling collide, this is a unique opportunity to learn from acclaimed authors and artists. In the Clarion Science Fiction and Fantasy Writer\u2019s Masterclass events, attendees will have a chance to learn the fundamentals of speculative fiction from faculty and recent alumni of the selective Clarion Writers\u2019 Workshop. Since 1968 Clarion has been the premier proving ground for writers of science, fiction, fantasy and horror, and now the public will have access to these instructors, their keen approaches to craft, their rich knowledge of the field, and their understanding of the traditions that have fed into the strong legacy Clarion has built over the years. Clarion instructors include: T.K. Rex (The Wildcraft Drones), Sumayyah Beck (Airrelle of the Maroon Witches) and Keynote Speaker Erin R. Roberts. Admission: FREE Includes: Breakfast and LunchMorning masterclass sessionLunch Keynote speakerAfternoon masterclass session",
+        "time_text": "2026-07-21T10:00:00-07:00",
+        "category": "Craft / STEAM",
+        "is_free": true,
+        "score": 7,
+        "tags": [
+          "craft",
+          "free"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": true,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "PAWmicon 2026",
+        "date": "2026-07-21",
+        "url": "https://www.eventbrite.com/e/pawmicon-2026-tickets-1992599309173",
+        "source": "eventbrite",
+        "source_label": "Eventbrite San Diego",
+        "venue": "Park Bl & Presidents Way Lawn- Behind the Comic Con Museum!, San Diego, CA",
+        "description": "Get ready for a pawsome time at PAWmicon 2026, where pets and pop culture collide for a fun-filled event! Get ready for a pawsome time at PAWmicon 2026, where pets and pop culture collide for a fun-filled event! Community & Culture Other Helen Woodward Animal Center",
+        "time_text": "Tue Jul 21, 4:30 PM",
+        "category": "Museum / zoo",
+        "is_free": true,
+        "score": 7,
+        "tags": [
+          "community-culture",
+          "eventbrite",
+          "free",
+          "museum",
+          "other",
+          "park"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": true,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "afternoon",
+          "source_key": "eventbrite",
+          "metadata_version": 3,
+          "eventbrite_id": "1992599309173",
+          "organizer_id": "66255161193",
+          "venue_id": "298321973",
+          "organizer_name": "Helen Woodward Animal Center",
+          "eventbrite_category": "Community & Culture",
+          "eventbrite_subcategory": "Other",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1187676582%2F1568074650003%2F1%2Foriginal.20260625-222756?auto=format%2Ccompress&q=75&sharp=10&s=02623c5503e65e2bf47cbf2a1fcd2edd"
+        }
+      },
+      {
+        "title": "Bay Club Summer Camps",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Bay Club Hotel and Marina, San Diego",
+        "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
+        "time_text": "2026-07-21T09:00-0700",
+        "category": "Craft / STEAM",
+        "is_free": false,
+        "score": 6,
+        "tags": [
+          "craft"
+        ],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": true,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Shark Summer",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Birch Aquarium at Scripps, San Diego",
+        "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
+        "time_text": "2026-07-21T09:00-0700",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 6,
@@ -255,149 +579,9 @@
             "bathrooms": false,
             "food_nearby": false
           },
-          "area": "beach",
-          "time_period": "unknown",
-          "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Dr. Seuss's Boids & Beasties | Exhibition",
-        "date": "2026-07-20",
-        "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
-        "source": "ucsd",
-        "source_label": "UCSD Events",
-        "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
-        "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
-        "time_text": "2026-07-20",
-        "category": "Farmers market",
-        "is_free": false,
-        "score": 3,
-        "tags": [],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "evening",
-          "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
-        "date": "2026-07-20",
-        "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
-        "source": "ucsd",
-        "source_label": "UCSD Events",
-        "venue": "",
-        "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
-        "time_text": "2026-07-20",
-        "category": "Museum / zoo",
-        "is_free": false,
-        "score": 3,
-        "tags": [
-          "zoo"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
           "area": "central-san-diego",
-          "time_period": "morning",
-          "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Showcase QI",
-        "date": "2026-07-20",
-        "url": "https://calendar.ucsd.edu/event/showcase-qi",
-        "source": "ucsd",
-        "source_label": "UCSD Events",
-        "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
-        "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
-        "time_text": "2026-07-20",
-        "category": "Performance / movie",
-        "is_free": false,
-        "score": 0,
-        "tags": [],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "morning",
-          "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Ceviche Hour: A Colectivo for Latinx/e Graduate & Professional Students",
-        "date": "2026-07-20",
-        "url": "https://calendar.ucsd.edu/event/ceviche-hour-a-colectivo-for-latinxe-graduate-professional-students",
-        "source": "ucsd",
-        "source_label": "UCSD Events",
-        "venue": "Raza Resource Centro Conference Room, Pepper Canyon Hall Level 2, Room 264, 9435 Russell Ln, La Jolla, CA 92037",
-        "description": "What to Expect: Just as every Latinx/e country has its unique twist on ceviche, each of us experiences the journey of being a graduate and professional student differently.Build community and share \u201crecipes\u201d for handling challenges (e.g., imposter syndrome, productivity) and developing professional growth.Emphasis on strengths, grit (\u201cganas\u201d), persistence, perseverance, thriving, and resilience.\u201cCome as you are\u201d for as little or as long as you\u2019re able to and enjoy snacks, activities, and peer support!Open to all interested studentsSign Up Form: https://forms.gle/E8Ver47mY2UU4hLt5",
-        "time_text": "2026-07-20T12:30:00-07:00",
-        "category": "Adult outing",
-        "is_free": false,
-        "score": -5,
-        "tags": [],
-        "metadata": {
-          "audience": "adult",
-          "age_groups": [
-            "adults"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "beach",
           "time_period": "unknown",
-          "source_key": "ucsd",
+          "source_key": "reader",
           "metadata_version": 2
         }
       }
@@ -405,22 +589,100 @@
   },
   "calendar": [
     {
-      "date": "2026-07-20",
-      "weekday": "Mon",
-      "label": "Jul 20",
+      "date": "2026-07-21",
+      "weekday": "Tue",
+      "label": "Jul 21",
       "is_today": true,
-      "count": 8,
-      "summary": "8 ideas \u00b7 1 free \u00b7 3 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
+      "count": 12,
+      "summary": "60 ideas \u00b7 6 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
       "events": [
         {
+          "title": "Summer Critter Camp",
+          "date": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
+          "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
+          "time_text": "2026-07-21T09:00-0700",
+          "category": "Toddler-friendly",
+          "is_free": false,
+          "score": 16,
+          "tags": [
+            "craft"
+          ],
+          "metadata": {
+            "audience": "young_children",
+            "age_groups": [
+              "kids",
+              "toddler"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": true,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Zoo Camp",
+          "date": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Wild Wonders, Bonsall",
+          "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
+          "time_text": "2026-07-21T09:00-0700",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 13,
+          "tags": [
+            "craft",
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Comics of Care: Healing Through Graphic Medicine",
-          "date": "2026-07-20",
+          "date": "2026-07-21",
           "url": "https://calendar.ucsd.edu/event/comics-of-care-healing-through-graphic-medicine-2026",
           "source": "ucsd",
           "source_label": "UCSD Events",
           "venue": "Sally T. WongAvery Library, 3100 Biomedical Sciences Wy La Jolla, CA 92093",
           "description": "What role can art and storytelling play in understanding health \u2014 and in healing? Explore comics, graphic novels and memoirs from UC San Diego Library's Graphic Medicine Collection: vividly drawn, personal stories about the experience of facing illness and finding care. In these pages, a single drawing can capture what's hard to put into words, sharing insights we can see and feel. We can learn from those who've faced health challenges and witness how they found their way through. Comics of Care is presented in connection with The Science of Story, a signature celebration of storytelling across UC San Diego. Returning for a third year during Comic-Con week, this series explores the art, craft and cultural power of narrative. In joining that conversation, this book exhibit shows how art and stories can help us heal \u2014 by letting us into another person's experience of illness and recovery. We hope these works deepen empathy for health struggles and spark discussion among patients, caregivers and clinicians who want to improve care. This collection was curated by UC San Diego librarians Jeffery Loo, Karen Heskett and Zemirah Ngow. Comics of Care is on view in the Sally T. WongAvery Library breezeway from June 29 to September 13, during the building's open hours.",
-          "time_text": "2026-07-20",
+          "time_text": "2026-07-21",
           "category": "Story / reading",
           "is_free": false,
           "score": 12,
@@ -449,266 +711,6 @@
             "metadata_version": 2
           }
         },
-        {
-          "title": "Shark Summer at Birch Aquarium",
-          "date": "2026-07-20",
-          "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "Have you ever wondered what species swim in our local waters? Or wanted to know what makes sharks such unique animals? This July, join us as we dive deep into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them.",
-          "time_text": "",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 8,
-          "tags": [
-            "aquarium"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "25th Annual Paper Theatre Festival | Exhibition",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/25th-paper-theatre-festival-exhibit",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
-          "description": "UC San Diego Library\u2019s 25th anniversary season of Paper Theatre Festival returns this summer! Join us for a unique browsing opportunity at this year\u2019s festival, which is taking the form of a colorful exhibition of paper theatres. Located on the 2nd (main) Floor of Geisel Library in The Nest, this display is free and open to the public. Explore at your leisure from July 14 through September 27, 2026, during the building's open hours. If you need assistance or would like an informal, pop-up performance in front of the exhibition on a prearranged date and time, contact exhibition curator Scott Paulson at spaulson@ucsd.edu. Additional Information Annual Paper Theatre Festival: It\u2019s the Smallest Show on Earth! Paper theatre, also known as tabletop or toy theatre, dates back to Victorian-era London. Families would re-enact plays they saw in miniature by cutting and pasting souvenir poster kits purchased from local playhouses. These kits included scenery sheets, costumed paper dolls and condensed scripts. This vintage marketing tool and educational toy is making a comeback!UC San Diego Library plays a featured role in reviving this artful and educational hobby. On display are 25 seasons\u2019 worth of miniature theatrical wonders, showcasing the enthusiastic work of our students, staff, alumni and community members.We are proud to host the oldest continually running paper theatre festival in the United States!An exhibition opening reception is scheduled for Tuesday, July 14, showcasing works from Scott Paulson '84, Rachel Almodovar, Elizabeth Hines, Carin Wallace, Anastasia Hunter, Christina Continelli, and visiting artist Nancy So Miller. Learn more about the exhibition opening reception.",
-          "time_text": "2026-07-20",
-          "category": "Farmers market",
-          "is_free": true,
-          "score": 7,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Shark Summer at Birch Aquarium",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
-          "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
-          "time_text": "2026-07-20T09:00:00-07:00",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "aquarium"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Dr. Seuss's Boids & Beasties | Exhibition",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
-          "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
-          "time_text": "2026-07-20",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 3,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "evening",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "",
-          "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
-          "time_text": "2026-07-20",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 3,
-          "tags": [
-            "zoo"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "morning",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Showcase QI",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/showcase-qi",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
-          "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
-          "time_text": "2026-07-20",
-          "category": "Performance / movie",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "morning",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Ceviche Hour: A Colectivo for Latinx/e Graduate & Professional Students",
-          "date": "2026-07-20",
-          "url": "https://calendar.ucsd.edu/event/ceviche-hour-a-colectivo-for-latinxe-graduate-professional-students",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "Raza Resource Centro Conference Room, Pepper Canyon Hall Level 2, Room 264, 9435 Russell Ln, La Jolla, CA 92037",
-          "description": "What to Expect: Just as every Latinx/e country has its unique twist on ceviche, each of us experiences the journey of being a graduate and professional student differently.Build community and share \u201crecipes\u201d for handling challenges (e.g., imposter syndrome, productivity) and developing professional growth.Emphasis on strengths, grit (\u201cganas\u201d), persistence, perseverance, thriving, and resilience.\u201cCome as you are\u201d for as little or as long as you\u2019re able to and enjoy snacks, activities, and peer support!Open to all interested studentsSign Up Form: https://forms.gle/E8Ver47mY2UU4hLt5",
-          "time_text": "2026-07-20T12:30:00-07:00",
-          "category": "Adult outing",
-          "is_free": false,
-          "score": -5,
-          "tags": [],
-          "metadata": {
-            "audience": "adult",
-            "age_groups": [
-              "adults"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-07-21",
-      "weekday": "Tue",
-      "label": "Jul 21",
-      "is_today": false,
-      "count": 12,
-      "summary": "20 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Creative Enrichment Summer Camp | Ages 5+",
-      "events": [
         {
           "title": "Pacific Beach Tuesday Farmers Market",
           "date": "2026-07-21",
@@ -796,6 +798,42 @@
           }
         },
         {
+          "title": "Pacific Beach Tuesday Certified Farmers' Market",
+          "date": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-tuesday-certified-farmers-/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Along Bayard Street, from Garnet to Hornblend",
+          "description": "The P.B. Farmers' Market scene can\u2019t be much different than, say, 100 years ago, or maybe even those medieval markets you read about. Tents, stalls, veggies, fruits, people shouting, touting their wares. Troubadour singing. Smells of herbs, like fennel and rosemary, and carroty steam from a vegan soup a-cooking.",
+          "time_text": "2026-07-21T14:00-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "beach"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-21",
           "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
@@ -828,6 +866,44 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "25th Annual Paper Theatre Festival | Exhibition",
+          "date": "2026-07-21",
+          "url": "https://calendar.ucsd.edu/event/25th-paper-theatre-festival-exhibit",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+          "description": "UC San Diego Library\u2019s 25th anniversary season of Paper Theatre Festival returns this summer! Join us for a unique browsing opportunity at this year\u2019s festival, which is taking the form of a colorful exhibition of paper theatres. Located on the 2nd (main) Floor of Geisel Library in The Nest, this display is free and open to the public. Explore at your leisure from July 14 through September 27, 2026, during the building's open hours. If you need assistance or would like an informal, pop-up performance in front of the exhibition on a prearranged date and time, contact exhibition curator Scott Paulson at spaulson@ucsd.edu. Additional Information Annual Paper Theatre Festival: It\u2019s the Smallest Show on Earth! Paper theatre, also known as tabletop or toy theatre, dates back to Victorian-era London. Families would re-enact plays they saw in miniature by cutting and pasting souvenir poster kits purchased from local playhouses. These kits included scenery sheets, costumed paper dolls and condensed scripts. This vintage marketing tool and educational toy is making a comeback!UC San Diego Library plays a featured role in reviving this artful and educational hobby. On display are 25 seasons\u2019 worth of miniature theatrical wonders, showcasing the enthusiastic work of our students, staff, alumni and community members.We are proud to host the oldest continually running paper theatre festival in the United States!An exhibition opening reception is scheduled for Tuesday, July 14, showcasing works from Scott Paulson '84, Rachel Almodovar, Elizabeth Hines, Carin Wallace, Anastasia Hunter, Christina Continelli, and visiting artist Nancy So Miller. Learn more about the exhibition opening reception.",
+          "time_text": "2026-07-21",
+          "category": "Farmers market",
+          "is_free": true,
+          "score": 7,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         },
@@ -917,55 +993,57 @@
           }
         },
         {
-          "title": "Ed Sheeran: 'LOOP Tour'",
+          "title": "Bay Club Summer Camps",
           "date": "2026-07-21",
-          "url": "https://www.kpbs.org/events/2026/07/21/ed-sheeran-loop-tour",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "PETCO Park",
-          "description": "Music Outdoor Concerts",
-          "time_text": "Tuesday, July 21, 2026 at 5:30 PM",
-          "category": "Outdoor / nature",
+          "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Bay Club Hotel and Marina, San Diego",
+          "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
+          "time_text": "2026-07-21T09:00-0700",
+          "category": "Craft / STEAM",
           "is_free": false,
-          "score": 3,
+          "score": 6,
           "tags": [
-            "park"
+            "craft"
           ],
           "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
             "features": {
               "free": false,
               "outdoor": true,
-              "indoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
-              "low_walking": false,
+              "low_walking": true,
               "shade": false,
               "bathrooms": true,
               "food_nearby": false
             },
-            "area": "downtown",
-            "time_period": "afternoon",
-            "source_key": "kpbs",
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "reader",
             "metadata_version": 2
           }
         },
         {
-          "title": "Share Your Story as an International Student",
+          "title": "Shark Summer",
           "date": "2026-07-21",
-          "url": "https://calendar.ucsd.edu/event/share-your-story-as-an-international-student",
-          "source": "ucsd",
-          "source_label": "UCSD Events",
-          "venue": "",
-          "description": "iSTUDENTS: The Center for Race, Immigration, Citizenship, and Equality (RICE) at UC Law San Francisco is conducting a research study on international student experiences in the U.S. If you are on an F, M, J visa, or OPT status, you\u2019re invited to participate in a short survey and a 45-minute interview (in person or via Zoom). Your voice matters\u2014help us understand how immigration status shapes your sense of belonging across race, language, culture, and life goals. \u2705 Flexible scheduling \ud83c\udf81 $20 gift card upon interview completion \ud83d\udd12 Confidential and IRB-approved To participate, email rice@uclawsf.edu with the subject line \u201cInternational Student Study\u201d.",
-          "time_text": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Birch Aquarium at Scripps, San Diego",
+          "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
+          "time_text": "2026-07-21T09:00-0700",
           "category": "Museum / zoo",
           "is_free": false,
-          "score": 3,
+          "score": 6,
           "tags": [
-            "zoo"
+            "aquarium"
           ],
           "metadata": {
             "audience": "all_ages",
@@ -979,192 +1057,12 @@
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Free English Courses at Connect English",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/free-english-lessons-in-san-diego-with-connect-english/events/315505112/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Connect English San Diego, Mission Valley Campus, San Diego, CA, 4560 Alvarado Canyon Rd, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T20:45:00.000Z",
-          "category": "All-ages event",
-          "is_free": true,
-          "score": 2,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
               "bathrooms": false,
               "food_nearby": false
             },
             "area": "central-san-diego",
             "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Grass Volleyball group at DeAnza Cove Tuesdays and Thursdays",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/san-diego-neals-grass-volleyball-meetup-group/events/315587432/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "De Anza Cove Park, San Diego, CA, 3000 N Mission Bay Dr, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T22:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "PAWmicon 2026",
-          "date": "2026-07-21",
-          "url": "https://www.kpbs.org/events/2026/07/21/pawmicon-2026",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Presidents Way Lawn",
-          "description": "Comic-Con Animals Pop Culture Family",
-          "time_text": "Tuesday, July 21, 2026 from 4:30 PM to 7 PM",
-          "category": "Family outing",
-          "is_free": false,
-          "score": 2,
-          "tags": [],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "afternoon",
-            "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Soccer at Snap (read Comments)",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/soccer-at-snap/events/315710871/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "SDSU mission valley River park, San Diego, CA, Mission valley River park,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T23:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Tuesday Beach Volleyball for a cause",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/san-diego-volleyball-for-charity/events/314822381/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "End of San Gabriel, San Diego, CA, 2889 Ocean Front Walk, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T23:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
+            "source_key": "reader",
             "metadata_version": 2
           }
         }
@@ -1176,7 +1074,7 @@
       "label": "Jul 22",
       "is_today": false,
       "count": 12,
-      "summary": "13 ideas \u00b7 5 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "summary": "20 ideas \u00b7 9 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1358,6 +1256,42 @@
           }
         },
         {
+          "title": "Balboa Park Beginner Ride",
+          "date": "2026-07-22",
+          "url": "https://www.meetup.com/san-diego-mountain-biking-association-sdmba/events/315319287/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Morley Field Sports Complex, San Diego, CA, 2221 Morley Field Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-22T00:30:00.000Z",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "balboa",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Up Close: A Conversation with Brad Bird and Michael Giacchino",
           "date": "2026-07-22",
           "url": "https://www.kpbs.org/events/2026/07/22/up-close-a-conversation-with-brad-bird-and-michael-giacchino",
@@ -1496,17 +1430,17 @@
           }
         },
         {
-          "title": "3d Tue Uke @ Marie Callender's \ud83e\udd67",
+          "title": "\ud83c\udfb8Live Music at McGuffie\u2019s Featuring Our Very Own, That Fellow Carl!\ud83c\udfb6",
           "date": "2026-07-22",
-          "url": "https://www.meetup.com/sdukulele/events/315486357/",
+          "url": "https://www.meetup.com/sd-sociables/events/315744962/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Marie Callender's, San Diego, CA, 6950 Alvarado Road, San Diego, CA",
+          "venue": "McGuffies, San Diego, CA, 8515 Navajo Rd ,, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-22T01:30:00.000Z",
-          "category": "All-ages event",
+          "time_text": "2026-07-22T03:00:00.000Z",
+          "category": "Performance / movie",
           "is_free": false,
-          "score": 0,
+          "score": 1,
           "tags": [],
           "metadata": {
             "audience": "all_ages",
@@ -1530,48 +1464,14 @@
           }
         },
         {
-          "title": "Pomerado Elementary School",
+          "title": "3d Tue Uke @ Marie Callender's \ud83e\udd67",
           "date": "2026-07-22",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315518227/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-22T17:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Wednesday Soccer at SDSU ENS Field",
-          "date": "2026-07-22",
-          "url": "https://www.meetup.com/soccer-at-snap/events/315303910/",
+          "url": "https://www.meetup.com/sdukulele/events/315486357/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "SDSU - ENS Field, San Diego, CA, 5500 Campanile Dr, San Diego, CA",
+          "venue": "Marie Callender's, San Diego, CA, 6950 Alvarado Road, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-22T22:30:00.000Z",
+          "time_text": "2026-07-22T01:30:00.000Z",
           "category": "All-ages event",
           "is_free": false,
           "score": 0,
@@ -1605,7 +1505,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "22 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "23 ideas \u00b7 2 free \u00b7 8 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -2054,8 +1954,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 2 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
+      "count": 8,
+      "summary": "8 ideas \u00b7 2 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -2280,6 +2180,40 @@
           }
         },
         {
+          "title": "10 Min Workout \"Pup Pilates: How to workout with your dog\" + Live Chat",
+          "date": "2026-07-24",
+          "url": "https://www.meetup.com/winendinewdoggies/events/315548410/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "Some of the real benefits of group exercise are: 1) You can get more bang for your buck; 2) There's camaraderie between participants; 3) It's great for everyone \u2013 whatever their fitness level; 4) You don\u2019t have to know what you are doing. Therefore, the 10-min Doggie Pilates has become our weekly event. Make a stamp card for your health and your dog bonding time, give it a paw print every time you guys join us. Also, don't hesitate to say hi using the live chat box in the screening room. How to join: At the event time, go to https://w2g.tv/?r=x8rac43l78z0k1lout (Copy and paste it if the link is broken) Stay Safe, Stay Well, and Stay CONNECTED!",
+          "time_text": "2026-07-24T19:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Special Event | All Bully Breed Pack Walk | Community Event",
           "date": "2026-07-24",
           "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315433539/",
@@ -2321,7 +2255,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "23 ideas \u00b7 3 free \u00b7 7 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "22 ideas \u00b7 3 free \u00b7 7 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -2775,45 +2709,8 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "22 ideas \u00b7 3 free \u00b7 6 all-ages event \u00b7 Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego, San Diego Singles Speed Dating Ages 30-45",
+      "summary": "22 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
       "events": [
-        {
-          "title": "Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego",
-          "date": "2026-07-26",
-          "url": "https://www.meetup.com/black-nerds-meetup-sd/events/315422929/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Waterfront Park, San Diego, CA, 1700 Pacific Hwy San Diego, CA 92101 United States,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-26T22:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": true,
-          "score": 5,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "San Diego Singles Speed Dating Ages 30-45",
           "date": "2026-07-26",
@@ -3204,6 +3101,40 @@
               "food_nearby": false
             },
             "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Paramount Games Studio's Blockbuster Lineup of Fan Experiences",
+          "date": "2026-07-26",
+          "url": "https://www.kpbs.org/events/ongoing/paramount-games-studios-blockbuster-lineup-of-fan-experiences",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Multiple locations",
+          "description": "Comic-Con Pop Culture Lectures & Classes Festivals",
+          "time_text": "Ongoing until July 26, 2026",
+          "category": "Festival / community",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
             "time_period": "unknown",
             "source_key": "kpbs",
             "metadata_version": 2
@@ -4852,27 +4783,36 @@
           }
         }
       ]
+    },
+    {
+      "date": "2026-08-10",
+      "weekday": "Mon",
+      "label": "Aug 10",
+      "is_today": false,
+      "count": 0,
+      "summary": "No strong San Diego matches yet.",
+      "events": []
     }
   ],
   "counts": {
-    "total_events": 117,
+    "total_events": 110,
     "days": 21,
-    "free_events": 19,
+    "free_events": 17,
     "configured_sources": 10,
-    "loaded_sources": 8
+    "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 32
+      "count": 27
     },
     {
       "name": "All-ages event",
-      "count": 18
+      "count": 16
     },
     {
       "name": "Museum / zoo",
-      "count": 16
+      "count": 15
     },
     {
       "name": "Performance / movie",
@@ -4880,18 +4820,18 @@
     },
     {
       "name": "Festival / community",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Farmers market",
       "count": 8
     },
     {
-      "name": "Adult outing",
+      "name": "Toddler-friendly",
       "count": 5
     },
     {
-      "name": "Toddler-friendly",
+      "name": "Craft / STEAM",
       "count": 4
     }
   ]
