@@ -1,13 +1,12 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-bf13fa86e8467d4e",
-  "generated_at": "2026-07-20T17:11:44.566036-07:00",
+  "snapshot_id": "snap-1010badc7f20b67b",
+  "generated_at": "2026-07-20T23:13:00.611331-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
     "Kids Out And About",
     "KPBS",
-    "San Diego Reader",
     "Meetup San Diego",
     "UCSD Events",
     "San Diego Humane Society",
@@ -56,8 +55,8 @@
       "label": "San Diego Reader",
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
-      "status": "loaded",
-      "count": 20,
+      "status": "no_events",
+      "count": 0,
       "parser": "reader"
     },
     {
@@ -66,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 56,
+      "count": 53,
       "parser": "jsonld"
     },
     {
@@ -112,8 +111,8 @@
     "weekday": "Mon",
     "label": "Jul 20",
     "is_today": true,
-    "count": 12,
-    "summary": "28 ideas \u00b7 3 free \u00b7 7 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
+    "count": 8,
+    "summary": "8 ideas \u00b7 1 free \u00b7 3 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -227,79 +226,6 @@
         }
       },
       {
-        "title": "San Diego International Summer Organ Festival: Isabelle Demers",
-        "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/20/spreckels-organ-societys-38th-san-d-33c7e18a/?et=362233",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Spreckels Organ Pavilion, San Diego",
-        "description": "The Spreckels Organ Society presents the 38th Annual San Diego International Summer Organ Festival, the largest organ festival in the United States, featuring the historic Spreckels Organ, the largest open-air musical instrument in the world, with 5,098 pipes of up to 32-feet long, and nine percussion instruments located throughout the building.The summer-long festival \u2013 directed by Ra\u00fal Prieto Ram\u00edrez, Spreckels Organ Society\u2019s Artistic Director and San Diego\u2019s Civic Organist \u2013 takes place in the heart of Balboa Park, from July 13 through Sept. 7. These 90-minute, free admission concerts by acclaimed international artists are brought to the Spreckels Organ Pavilion each Monday evening at 7:30 p.m. by the Spreckels Organ Society. The concerts are free thanks to the support of the Society\u2019s sponsors, donors, members and volunteers.This season, the Monday evening concerts feature artists from five different nations, making it a truly international festival. The variety of concerts is broad with something for everyone.",
-        "time_text": "2026-07-20T19:30-0700",
-        "category": "Museum / zoo",
-        "is_free": true,
-        "score": 7,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "balboa",
-          "time_period": "evening",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "SD Squares: San Diego Square Dancing",
-        "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/20/sd-squares-san-diego-square-dancing/?et=363371",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Central Library, San Diego",
-        "description": "San Diego Squares will be playing old-time fiddle tunes and calling dances that are perfect for beginners and experienced square dancers alike. Dance under the dome of Central Library's rooftop called by local caller Megan Tresenriter, live music by the Bird Park Barn Burners, and a fun time with friends and neighbors. All dances are taught from scratch and every move is called, so you can jump in even if this is your first ever encounter with square dancing.",
-        "time_text": "2026-07-20T18:00-0700",
-        "category": "Outdoor / nature",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-20",
         "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -336,43 +262,6 @@
         }
       },
       {
-        "title": "Learn to Fly Radio Controlled Aircraft Free",
-        "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/ongoing/learn-to-fly-radio-controlled-aircr-eefabafa/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Palomar RC Flyers - Pankey Rd",
-        "description": "The Palomar Radio Control Flyers are hosting free flight lessons on Mondays from 5PM until dusk. (Weather permitting, June 8th - August 10th.) Airplanes provided. Palomar Radio Control Flyers is located close to the intersection of I-15 and Route 76 (Pala Road) in Fallbrook. From Interstate 15 go east on Pala Road approximately 1/4 mile to Pankey Road and turn north (left) onto the dirt road to the field. If you have ever considered becoming an RC pilot, this is your opportunity to learn more about this engaging hobby.",
-        "time_text": "2026-07-20T17:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": true,
-        "score": 5,
-        "tags": [
-          "craft",
-          "free"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "unknown",
-          "time_period": "afternoon",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Dr. Seuss's Boids & Beasties | Exhibition",
         "date": "2026-07-20",
         "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
@@ -403,42 +292,6 @@
           "area": "beach",
           "time_period": "evening",
           "source_key": "ucsd",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Restore Your Writing: Yoga & Journaling",
-        "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/ongoing/restore-your-writing-yoga-journalin/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Inspirations Gallery, San Diego",
-        "description": "A 60-minute restorative yoga and journaling experience with Nicole Staples designed specifically for writers. Through gentle, supported poses and seven carefully crafted journal prompts, one for each chakra, you\u2019ll be invited to slow down, drop in, and let your writing flow from a deeper place. This class isn\u2019t about perfect prose; it\u2019s about you. Move through a grounding warm-up, then alternate between restorative poses and journaling, giving your body space to soften while your words rise to the surface. All props are provided including yoga mats, and bolsters.",
-        "time_text": "2026-07-20T18:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 3,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -479,26 +332,60 @@
         }
       },
       {
-        "title": "Electric Waste Band",
+        "title": "Showcase QI",
         "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/ongoing/electric-waste-band-d298df16/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Winstons Beach Club, San Diego",
-        "description": "Grateful Dead tribute band.",
-        "time_text": "2026-07-20T20:00-0700",
-        "category": "Outdoor / nature",
+        "url": "https://calendar.ucsd.edu/event/showcase-qi",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
+        "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
+        "time_text": "2026-07-20",
+        "category": "Performance / movie",
         "is_free": false,
-        "score": 2,
-        "tags": [
-          "beach"
-        ],
+        "score": 0,
+        "tags": [],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
           "features": {
             "free": false,
-            "outdoor": true,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "morning",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Ceviche Hour: A Colectivo for Latinx/e Graduate & Professional Students",
+        "date": "2026-07-20",
+        "url": "https://calendar.ucsd.edu/event/ceviche-hour-a-colectivo-for-latinxe-graduate-professional-students",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Raza Resource Centro Conference Room, Pepper Canyon Hall Level 2, Room 264, 9435 Russell Ln, La Jolla, CA 92037",
+        "description": "What to Expect: Just as every Latinx/e country has its unique twist on ceviche, each of us experiences the journey of being a graduate and professional student differently.Build community and share \u201crecipes\u201d for handling challenges (e.g., imposter syndrome, productivity) and developing professional growth.Emphasis on strengths, grit (\u201cganas\u201d), persistence, perseverance, thriving, and resilience.\u201cCome as you are\u201d for as little or as long as you\u2019re able to and enjoy snacks, activities, and peer support!Open to all interested studentsSign Up Form: https://forms.gle/E8Ver47mY2UU4hLt5",
+        "time_text": "2026-07-20T12:30:00-07:00",
+        "category": "Adult outing",
+        "is_free": false,
+        "score": -5,
+        "tags": [],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
             "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
@@ -510,43 +397,7 @@
           },
           "area": "beach",
           "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Leucadia Bluegrass Jam",
-        "date": "2026-07-20",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/20/leucadia-bluegrass-jam-a491a83e/?et=363044",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Duck Foot Brewing Leucadia, Encinitas",
-        "description": "Acoustic musicians and listeners alike are invited to the North Country Bluegrass & Folk Club monthly evening bluegrass jam and indoor open mic.",
-        "time_text": "2026-07-20T18:30-0700",
-        "category": "Adult outing",
-        "is_free": false,
-        "score": 1,
-        "tags": [],
-        "metadata": {
-          "audience": "adult",
-          "age_groups": [
-            "adults"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": true,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "evening",
-          "source_key": "reader",
+          "source_key": "ucsd",
           "metadata_version": 2
         }
       }
@@ -558,8 +409,8 @@
       "weekday": "Mon",
       "label": "Jul 20",
       "is_today": true,
-      "count": 12,
-      "summary": "28 ideas \u00b7 3 free \u00b7 7 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
+      "count": 8,
+      "summary": "8 ideas \u00b7 1 free \u00b7 3 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -673,79 +524,6 @@
           }
         },
         {
-          "title": "San Diego International Summer Organ Festival: Isabelle Demers",
-          "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/20/spreckels-organ-societys-38th-san-d-33c7e18a/?et=362233",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Spreckels Organ Pavilion, San Diego",
-          "description": "The Spreckels Organ Society presents the 38th Annual San Diego International Summer Organ Festival, the largest organ festival in the United States, featuring the historic Spreckels Organ, the largest open-air musical instrument in the world, with 5,098 pipes of up to 32-feet long, and nine percussion instruments located throughout the building.The summer-long festival \u2013 directed by Ra\u00fal Prieto Ram\u00edrez, Spreckels Organ Society\u2019s Artistic Director and San Diego\u2019s Civic Organist \u2013 takes place in the heart of Balboa Park, from July 13 through Sept. 7. These 90-minute, free admission concerts by acclaimed international artists are brought to the Spreckels Organ Pavilion each Monday evening at 7:30 p.m. by the Spreckels Organ Society. The concerts are free thanks to the support of the Society\u2019s sponsors, donors, members and volunteers.This season, the Monday evening concerts feature artists from five different nations, making it a truly international festival. The variety of concerts is broad with something for everyone.",
-          "time_text": "2026-07-20T19:30-0700",
-          "category": "Museum / zoo",
-          "is_free": true,
-          "score": 7,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "balboa",
-            "time_period": "evening",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "SD Squares: San Diego Square Dancing",
-          "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/20/sd-squares-san-diego-square-dancing/?et=363371",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Central Library, San Diego",
-          "description": "San Diego Squares will be playing old-time fiddle tunes and calling dances that are perfect for beginners and experienced square dancers alike. Dance under the dome of Central Library's rooftop called by local caller Megan Tresenriter, live music by the Bird Park Barn Burners, and a fun time with friends and neighbors. All dances are taught from scratch and every move is called, so you can jump in even if this is your first ever encounter with square dancing.",
-          "time_text": "2026-07-20T18:00-0700",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-20",
           "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -782,43 +560,6 @@
           }
         },
         {
-          "title": "Learn to Fly Radio Controlled Aircraft Free",
-          "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/ongoing/learn-to-fly-radio-controlled-aircr-eefabafa/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Palomar RC Flyers - Pankey Rd",
-          "description": "The Palomar Radio Control Flyers are hosting free flight lessons on Mondays from 5PM until dusk. (Weather permitting, June 8th - August 10th.) Airplanes provided. Palomar Radio Control Flyers is located close to the intersection of I-15 and Route 76 (Pala Road) in Fallbrook. From Interstate 15 go east on Pala Road approximately 1/4 mile to Pankey Road and turn north (left) onto the dirt road to the field. If you have ever considered becoming an RC pilot, this is your opportunity to learn more about this engaging hobby.",
-          "time_text": "2026-07-20T17:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": true,
-          "score": 5,
-          "tags": [
-            "craft",
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "afternoon",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Dr. Seuss's Boids & Beasties | Exhibition",
           "date": "2026-07-20",
           "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
@@ -849,42 +590,6 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Restore Your Writing: Yoga & Journaling",
-          "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/ongoing/restore-your-writing-yoga-journalin/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Inspirations Gallery, San Diego",
-          "description": "A 60-minute restorative yoga and journaling experience with Nicole Staples designed specifically for writers. Through gentle, supported poses and seven carefully crafted journal prompts, one for each chakra, you\u2019ll be invited to slow down, drop in, and let your writing flow from a deeper place. This class isn\u2019t about perfect prose; it\u2019s about you. Move through a grounding warm-up, then alternate between restorative poses and journaling, giving your body space to soften while your words rise to the surface. All props are provided including yoga mats, and bolsters.",
-          "time_text": "2026-07-20T18:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 3,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -925,26 +630,60 @@
           }
         },
         {
-          "title": "Electric Waste Band",
+          "title": "Showcase QI",
           "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/ongoing/electric-waste-band-d298df16/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Winstons Beach Club, San Diego",
-          "description": "Grateful Dead tribute band.",
-          "time_text": "2026-07-20T20:00-0700",
-          "category": "Outdoor / nature",
+          "url": "https://calendar.ucsd.edu/event/showcase-qi",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
+          "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
+          "time_text": "2026-07-20",
+          "category": "Performance / movie",
           "is_free": false,
-          "score": 2,
-          "tags": [
-            "beach"
-          ],
+          "score": 0,
+          "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
             "features": {
               "free": false,
-              "outdoor": true,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "morning",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Ceviche Hour: A Colectivo for Latinx/e Graduate & Professional Students",
+          "date": "2026-07-20",
+          "url": "https://calendar.ucsd.edu/event/ceviche-hour-a-colectivo-for-latinxe-graduate-professional-students",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Raza Resource Centro Conference Room, Pepper Canyon Hall Level 2, Room 264, 9435 Russell Ln, La Jolla, CA 92037",
+          "description": "What to Expect: Just as every Latinx/e country has its unique twist on ceviche, each of us experiences the journey of being a graduate and professional student differently.Build community and share \u201crecipes\u201d for handling challenges (e.g., imposter syndrome, productivity) and developing professional growth.Emphasis on strengths, grit (\u201cganas\u201d), persistence, perseverance, thriving, and resilience.\u201cCome as you are\u201d for as little or as long as you\u2019re able to and enjoy snacks, activities, and peer support!Open to all interested studentsSign Up Form: https://forms.gle/E8Ver47mY2UU4hLt5",
+          "time_text": "2026-07-20T12:30:00-07:00",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": -5,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -956,43 +695,7 @@
             },
             "area": "beach",
             "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Leucadia Bluegrass Jam",
-          "date": "2026-07-20",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/20/leucadia-bluegrass-jam-a491a83e/?et=363044",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Duck Foot Brewing Leucadia, Encinitas",
-          "description": "Acoustic musicians and listeners alike are invited to the North Country Bluegrass & Folk Club monthly evening bluegrass jam and indoor open mic.",
-          "time_text": "2026-07-20T18:30-0700",
-          "category": "Adult outing",
-          "is_free": false,
-          "score": 1,
-          "tags": [],
-          "metadata": {
-            "audience": "adult",
-            "age_groups": [
-              "adults"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": true,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "evening",
-            "source_key": "reader",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         }
@@ -1004,7 +707,7 @@
       "label": "Jul 21",
       "is_today": false,
       "count": 12,
-      "summary": "22 ideas \u00b7 2 free \u00b7 8 all-ages event \u00b7 Pacific Beach Tuesday Farmers Market, Creative Enrichment Summer Camp | Ages 5+",
+      "summary": "20 ideas \u00b7 3 free \u00b7 6 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Creative Enrichment Summer Camp | Ages 5+",
       "events": [
         {
           "title": "Pacific Beach Tuesday Farmers Market",
@@ -1286,6 +989,78 @@
           }
         },
         {
+          "title": "Free English Courses at Connect English",
+          "date": "2026-07-21",
+          "url": "https://www.meetup.com/free-english-lessons-in-san-diego-with-connect-english/events/315505112/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Connect English San Diego, Mission Valley Campus, San Diego, CA, 4560 Alvarado Canyon Rd, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-21T20:45:00.000Z",
+          "category": "All-ages event",
+          "is_free": true,
+          "score": 2,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Grass Volleyball group at DeAnza Cove Tuesdays and Thursdays",
+          "date": "2026-07-21",
+          "url": "https://www.meetup.com/san-diego-neals-grass-volleyball-meetup-group/events/315587432/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "De Anza Cove Park, San Diego, CA, 3000 N Mission Bay Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-21T22:30:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "PAWmicon 2026",
           "date": "2026-07-21",
           "url": "https://www.kpbs.org/events/2026/07/21/pawmicon-2026",
@@ -1358,14 +1133,14 @@
           }
         },
         {
-          "title": "Walk around Mission Bay Beach and lunch at Charli\u2019s Landing",
+          "title": "Tuesday Beach Volleyball for a cause",
           "date": "2026-07-21",
-          "url": "https://www.meetup.com/strolling-and-sipping/events/315491153/",
+          "url": "https://www.meetup.com/san-diego-volleyball-for-charity/events/314822381/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Charli's Landing, San Diego, CA, 1717 Quivera Road, San Diego, CA",
+          "venue": "End of San Gabriel, San Diego, CA, 2889 Ocean Front Walk, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-21T18:45:00.000Z",
+          "time_text": "2026-07-21T23:00:00.000Z",
           "category": "Outdoor / nature",
           "is_free": false,
           "score": 2,
@@ -1388,78 +1163,6 @@
               "food_nearby": false
             },
             "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "\ud83c\udf73\ud83e\udd5e Breakfast with some San Diego Digital Designers \ud83c\udf73\ud83e\udd5e",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/_sddd_/events/315398307/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Swami's Cafe North Park, San Diego, CA, 3794 30th St, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T15:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "3rd Monday Jam - Jamolele assisted open mic",
-          "date": "2026-07-21",
-          "url": "https://www.meetup.com/jamoasis/events/315445672/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Queen Bee's Art and Cultural Center, San Diego, CA, 3925 Ohio St, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-21T02:00:16.000Z",
-          "category": "Adult outing",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "adult",
-            "age_groups": [
-              "adults"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1902,7 +1605,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "21 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "22 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -2618,7 +2321,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "23 ideas \u00b7 3 free \u00b7 8 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "23 ideas \u00b7 3 free \u00b7 7 outdoor / nature \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -3594,8 +3297,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
+      "count": 3,
+      "summary": "3 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
       "events": [
         {
           "title": "Beginner Volleyball at Nite",
@@ -3652,76 +3355,6 @@
             "features": {
               "free": false,
               "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Open Mic Night!",
-          "date": "2026-07-28",
-          "url": "https://www.meetup.com/deanos-pub-open-mic-meetup-group/events/315593225/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Deano's Pub, La Mesa, CA, 5286 Baltimore Dr, La Mesa, CA",
-          "description": "",
-          "time_text": "2026-07-28T01:00:00.000Z",
-          "category": "Adult outing",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "adult",
-            "age_groups": [
-              "adults"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "east-county",
-            "time_period": "evening",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "private home visit",
-          "date": "2026-07-28",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-28T20:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -4204,7 +3837,7 @@
           }
         },
         {
-          "title": "Group Class | ThermoDOGnamics | Community Event.",
+          "title": "Group Class/optional short walk | ThermoDOGnamics | Community Event.",
           "date": "2026-07-31",
           "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315481192/",
           "source": "meetup_dogs",
@@ -4221,12 +3854,12 @@
             "age_groups": [],
             "features": {
               "free": false,
-              "outdoor": false,
+              "outdoor": true,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
-              "low_walking": false,
+              "low_walking": true,
               "shade": false,
               "bathrooms": false,
               "food_nearby": false
@@ -5222,16 +4855,16 @@
     }
   ],
   "counts": {
-    "total_events": 123,
+    "total_events": 117,
     "days": 21,
-    "free_events": 20,
+    "free_events": 19,
     "configured_sources": 10,
-    "loaded_sources": 9
+    "loaded_sources": 8
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 34
+      "count": 32
     },
     {
       "name": "All-ages event",
@@ -5239,11 +4872,11 @@
     },
     {
       "name": "Museum / zoo",
-      "count": 17
+      "count": 16
     },
     {
       "name": "Performance / movie",
-      "count": 14
+      "count": 15
     },
     {
       "name": "Festival / community",
@@ -5255,11 +4888,11 @@
     },
     {
       "name": "Adult outing",
-      "count": 7
+      "count": 5
     },
     {
-      "name": "Craft / STEAM",
-      "count": 5
+      "name": "Toddler-friendly",
+      "count": 4
     }
   ]
 }
