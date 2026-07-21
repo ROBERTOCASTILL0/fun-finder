@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-deb613050a0bc6eb",
-  "generated_at": "2026-07-21T05:13:41.286057-07:00",
+  "snapshot_id": "snap-215778499b2648e1",
+  "generated_at": "2026-07-21T11:14:21.632709-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -39,7 +39,7 @@
       "category": "family_events",
       "url": "https://sandiego.kidsoutandabout.com/",
       "status": "loaded",
-      "count": 19,
+      "count": 16,
       "parser": "kids"
     },
     {
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 41,
+      "count": 34,
       "parser": "reader"
     },
     {
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 54,
+      "count": 53,
       "parser": "jsonld"
     },
     {
@@ -113,86 +113,8 @@
     "label": "Jul 21",
     "is_today": true,
     "count": 12,
-    "summary": "60 ideas \u00b7 6 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
+    "summary": "53 ideas \u00b7 5 free \u00b7 15 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
     "events": [
-      {
-        "title": "Summer Critter Camp",
-        "date": "2026-07-21",
-        "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-        "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-        "time_text": "2026-07-21T09:00-0700",
-        "category": "Toddler-friendly",
-        "is_free": false,
-        "score": 16,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "young_children",
-          "age_groups": [
-            "kids",
-            "toddler"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": true,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Zoo Camp",
-        "date": "2026-07-21",
-        "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Wild Wonders, Bonsall",
-        "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-        "time_text": "2026-07-21T09:00-0700",
-        "category": "Museum / zoo",
-        "is_free": false,
-        "score": 13,
-        "tags": [
-          "craft",
-          "zoo"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
         "date": "2026-07-21",
@@ -512,52 +434,14 @@
         }
       },
       {
-        "title": "Bay Club Summer Camps",
+        "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-21",
-        "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Bay Club Hotel and Marina, San Diego",
-        "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-        "time_text": "2026-07-21T09:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Shark Summer",
-        "date": "2026-07-21",
-        "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Birch Aquarium at Scripps, San Diego",
-        "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-        "time_text": "2026-07-21T09:00-0700",
+        "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+        "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+        "time_text": "2026-07-21T09:00:00-07:00",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 6,
@@ -579,9 +463,113 @@
             "bathrooms": false,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Pacific Beach Farmers' Market",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Pacific Beach Farmers' Market, San Diego",
+        "description": "",
+        "time_text": "2026-07-21T14:00-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 5,
+        "tags": [
+          "beach"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
           "time_period": "unknown",
           "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Coronado Certified Farmers' Market",
+        "date": "2026-07-21",
+        "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Ferry Landing Marketplace, Coronado",
+        "description": "",
+        "time_text": "2026-07-21T14:30-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 3,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Dr. Seuss's Boids & Beasties | Exhibition",
+        "date": "2026-07-21",
+        "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+        "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+        "time_text": "2026-07-21",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 3,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "ucsd",
           "metadata_version": 2
         }
       }
@@ -594,86 +582,8 @@
       "label": "Jul 21",
       "is_today": true,
       "count": 12,
-      "summary": "60 ideas \u00b7 6 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
+      "summary": "53 ideas \u00b7 5 free \u00b7 15 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
       "events": [
-        {
-          "title": "Summer Critter Camp",
-          "date": "2026-07-21",
-          "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-          "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-          "time_text": "2026-07-21T09:00-0700",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 16,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Zoo Camp",
-          "date": "2026-07-21",
-          "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Wild Wonders, Bonsall",
-          "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-          "time_text": "2026-07-21T09:00-0700",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 13,
-          "tags": [
-            "craft",
-            "zoo"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
           "date": "2026-07-21",
@@ -993,52 +903,14 @@
           }
         },
         {
-          "title": "Bay Club Summer Camps",
+          "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-21",
-          "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Bay Club Hotel and Marina, San Diego",
-          "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-          "time_text": "2026-07-21T09:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Shark Summer",
-          "date": "2026-07-21",
-          "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Birch Aquarium at Scripps, San Diego",
-          "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-          "time_text": "2026-07-21T09:00-0700",
+          "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+          "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+          "time_text": "2026-07-21T09:00:00-07:00",
           "category": "Museum / zoo",
           "is_free": false,
           "score": 6,
@@ -1060,9 +932,113 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Pacific Beach Farmers' Market",
+          "date": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Pacific Beach Farmers' Market, San Diego",
+          "description": "",
+          "time_text": "2026-07-21T14:00-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "beach"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
             "time_period": "unknown",
             "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Coronado Certified Farmers' Market",
+          "date": "2026-07-21",
+          "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Ferry Landing Marketplace, Coronado",
+          "description": "",
+          "time_text": "2026-07-21T14:30-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Dr. Seuss's Boids & Beasties | Exhibition",
+          "date": "2026-07-21",
+          "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+          "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+          "time_text": "2026-07-21",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         }
@@ -1074,7 +1050,7 @@
       "label": "Jul 22",
       "is_today": false,
       "count": 12,
-      "summary": "20 ideas \u00b7 9 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "summary": "20 ideas \u00b7 10 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1252,42 +1228,6 @@
             "area": "unknown",
             "time_period": "evening",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Balboa Park Beginner Ride",
-          "date": "2026-07-22",
-          "url": "https://www.meetup.com/san-diego-mountain-biking-association-sdmba/events/315319287/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Morley Field Sports Complex, San Diego, CA, 2221 Morley Field Dr, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-22T00:30:00.000Z",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "balboa",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -1496,6 +1436,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Must we burn the Constitution?",
+          "date": "2026-07-22",
+          "url": "https://www.meetup.com/philosophical-minds/events/315737260/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Mazara Trattoria, San Diego, CA, 2302 30th St, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-22T02:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1505,7 +1479,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "23 ideas \u00b7 2 free \u00b7 8 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "23 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -1582,6 +1556,42 @@
               "food_nearby": false
             },
             "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-23",
+          "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Have you ever wondered what species swim in our local waters? Or wanted to know what makes sharks such unique animals? This July, join us as we dive deep into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them.",
+          "time_text": "",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
             "time_period": "unknown",
             "source_key": "kids",
             "metadata_version": 2
@@ -1910,42 +1920,6 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "Soccer at Snap (read Comments)",
-          "date": "2026-07-23",
-          "url": "https://www.meetup.com/soccer-at-snap/events/315538502/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "SDSU mission valley River park, San Diego, CA, Mission valley River park,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-23T23:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -1954,8 +1928,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 8,
-      "summary": "8 ideas \u00b7 2 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Moval Movies - City of Moreno Valley California",
+      "count": 7,
+      "summary": "7 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Point Loma Summer Concerts",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -1994,44 +1968,6 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Moval Movies - City of Moreno Valley California",
-          "date": "2026-07-24",
-          "url": "https://sandiego.kidsoutandabout.com/content/moval-movies-city-moreno-valley-california",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "City residents and visitors can enjoy free family-friendly movies at the new City Amphitheater every summer. Bring lawn chairs a blanket and snacks to enjoy and enjoy the show! Umbrellas and canopies must be taken down at sunset. Pets and alcohol are not permitted.",
-          "time_text": "",
-          "category": "Performance / movie",
-          "is_free": true,
-          "score": 8,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "evening",
-            "source_key": "kids",
             "metadata_version": 2
           }
         },
@@ -2709,7 +2645,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "22 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
+      "summary": "21 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
       "events": [
         {
           "title": "San Diego Singles Speed Dating Ages 30-45",
@@ -3228,8 +3164,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
+      "count": 4,
+      "summary": "4 ideas \u00b7 2 festival / community \u00b7 Beginner Volleyball at Nite, Kyber K9 Pack Walk | Community Event",
       "events": [
         {
           "title": "Beginner Volleyball at Nite",
@@ -3286,6 +3222,40 @@
             "features": {
               "free": false,
               "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "private home visit",
+          "date": "2026-07-28",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-28T20:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -3616,8 +3586,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Newly Renovated Fleet Science Center, Moval Movies - City of Moreno Valley California",
+      "count": 6,
+      "summary": "6 ideas \u00b7 2 all-ages event \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -3654,44 +3624,6 @@
             "area": "balboa",
             "time_period": "unknown",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Moval Movies - City of Moreno Valley California",
-          "date": "2026-07-31",
-          "url": "https://sandiego.kidsoutandabout.com/content/moval-movies-city-moreno-valley-california",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "City residents and visitors can enjoy free family-friendly movies at the new City Amphitheater every summer. Bring lawn chairs a blanket and snacks to enjoy and enjoy the show! Umbrellas and canopies must be taken down at sunset. Pets and alcohol are not permitted.",
-          "time_text": "",
-          "category": "Performance / movie",
-          "is_free": true,
-          "score": 8,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "evening",
-            "source_key": "kids",
             "metadata_version": 2
           }
         },
@@ -4479,47 +4411,9 @@
       "weekday": "Fri",
       "label": "Aug 7",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 1 free \u00b7 2 performance / movie \u00b7 Moval Movies - City of Moreno Valley California, The Best of San Diego Party 2026",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 performance / movie \u00b7 The Best of San Diego Party 2026, Monthly Meeting",
       "events": [
-        {
-          "title": "Moval Movies - City of Moreno Valley California",
-          "date": "2026-08-07",
-          "url": "https://sandiego.kidsoutandabout.com/content/moval-movies-city-moreno-valley-california",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "City residents and visitors can enjoy free family-friendly movies at the new City Amphitheater every summer. Bring lawn chairs a blanket and snacks to enjoy and enjoy the show! Umbrellas and canopies must be taken down at sunset. Pets and alcohol are not permitted.",
-          "time_text": "",
-          "category": "Performance / movie",
-          "is_free": true,
-          "score": 8,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "evening",
-            "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "The Best of San Diego Party 2026",
           "date": "2026-08-07",
@@ -4795,43 +4689,43 @@
     }
   ],
   "counts": {
-    "total_events": 110,
+    "total_events": 108,
     "days": 21,
-    "free_events": 17,
+    "free_events": 14,
     "configured_sources": 10,
     "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 27
+      "count": 26
     },
     {
       "name": "All-ages event",
-      "count": 16
+      "count": 18
     },
     {
       "name": "Museum / zoo",
-      "count": 15
+      "count": 14
     },
     {
       "name": "Performance / movie",
-      "count": 15
+      "count": 12
+    },
+    {
+      "name": "Farmers market",
+      "count": 11
     },
     {
       "name": "Festival / community",
       "count": 10
     },
     {
-      "name": "Farmers market",
-      "count": 8
-    },
-    {
       "name": "Toddler-friendly",
-      "count": 5
+      "count": 4
     },
     {
-      "name": "Craft / STEAM",
+      "name": "Adult outing",
       "count": 4
     }
   ]
