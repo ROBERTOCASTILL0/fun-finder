@@ -1,13 +1,12 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-5214d2c6754f8c4c",
-  "generated_at": "2026-07-21T17:15:41.855040-07:00",
+  "snapshot_id": "snap-00fcd1808b114315",
+  "generated_at": "2026-07-21T23:16:35.436160-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
     "Kids Out And About",
     "KPBS",
-    "San Diego Reader",
     "Meetup San Diego",
     "UCSD Events",
     "San Diego Humane Society",
@@ -48,7 +47,7 @@
       "category": "general_events",
       "url": "https://www.kpbs.org/events/all",
       "status": "loaded",
-      "count": 43,
+      "count": 42,
       "parser": "kpbs"
     },
     {
@@ -56,8 +55,8 @@
       "label": "San Diego Reader",
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
-      "status": "loaded",
-      "count": 29,
+      "status": "no_events",
+      "count": 0,
       "parser": "reader"
     },
     {
@@ -66,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 50,
+      "count": 45,
       "parser": "jsonld"
     },
     {
@@ -113,7 +112,7 @@
     "label": "Jul 21",
     "is_today": true,
     "count": 12,
-    "summary": "43 ideas \u00b7 5 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
+    "summary": "14 ideas \u00b7 3 free \u00b7 4 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -468,76 +467,6 @@
         }
       },
       {
-        "title": "Ed Sheeran: 'LOOP Tour'",
-        "date": "2026-07-21",
-        "url": "https://www.kpbs.org/events/2026/07/21/ed-sheeran-loop-tour",
-        "source": "kpbs",
-        "source_label": "KPBS",
-        "venue": "PETCO Park",
-        "description": "Music Outdoor Concerts",
-        "time_text": "Tuesday, July 21, 2026 at 5:30 PM",
-        "category": "Outdoor / nature",
-        "is_free": false,
-        "score": 3,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "downtown",
-          "time_period": "afternoon",
-          "source_key": "kpbs",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Playwriting Read & Critique",
-        "date": "2026-07-21",
-        "url": "https://www.sandiegoreader.com/events/ongoing/playwriting-read-critique/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Online Internet Events, San Diego",
-        "description": "Writing can often feel isolating. However, theatre is definitely a team sport. You don\u2019t have to create in a bubble. In this class, you will get to hear selections of your play out loud so that you can assess if your dialogue, pace, and plot are working. These are things that are difficult to do in your own head. Join award-winning Playwright and teaching artist, Gill Sotu, and share each other\u2019s work and get valuable weekly feedback to get your short or long form play into shape to submit for readings or productions around the country. This workshop will be limited in size, and the focus will be on playwriting. Novice to experienced writers are encouraged to join.",
-        "time_text": "2026-07-21T18:00-0700",
-        "category": "All-ages event",
-        "is_free": false,
-        "score": 3,
-        "tags": [],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Share Your Story as an International Student",
         "date": "2026-07-21",
         "url": "https://calendar.ucsd.edu/event/share-your-story-as-an-international-student",
@@ -572,6 +501,76 @@
           "source_key": "ucsd",
           "metadata_version": 2
         }
+      },
+      {
+        "title": "Showcase QI",
+        "date": "2026-07-21",
+        "url": "https://calendar.ucsd.edu/event/showcase-qi",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
+        "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
+        "time_text": "2026-07-21",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 0,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "morning",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Summer Course on Research Positioning, Research Translation, and Innovation and Entrepreneurship",
+        "date": "2026-07-21",
+        "url": "https://calendar.ucsd.edu/event/summer-course-on-research-positioning-research-translation-and-innovation-and-entrepreneurship",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Qualcomm Institute, 3195 Voigt Drive La Jolla, CA 92093",
+        "description": "This program is designed to help students and postdocs from UC San Diego, the Sanford Consortium and Salk Institute better understand the broader context of their research, including the goals of their labs, the translational impact their work can have on society, and how their research aligns with the overarching missions of major funding agencies such as the NSF, NIH, DOE and DOD. Through a combination of seminars, case studies, workshops and team-based projects on Tuesdays from June 30 to September 1, 2026, participants will gain the skills needed to define research initiatives that address major scientific and societal challenges, with a strong emphasis on multidisciplinary integration. Alumni of this program will have a broader perspective on their day-to-day work in the lab and recognize the greater impact their research can have as they identify translational opportunities. Additionally, participants may discover opportunities to leverage the technologies they help develop, potentially contributing to the formation of startup ventures in the short or long term. The course also equips participants with foundational knowledge of company formation, intellectual property transfer, customer discovery, business models and financing. To enroll in \u201cInnovation and Entrepreneurship Education for Everyone (Section ID: 197166), visit in the course\u2019s UC San Diego Extended Studies page. For a $50 discount code, use SUMMERBUSA26, before June 12, 2026. Instructor Bio: Yves Theriault has a highly diversified background, with multidisciplinary expertise in life sciences, nanotechnology, systems engineering, pharmaceutical and biotechnology research and development strategies, leadership, organizational performance, strategic program and project management, research translation, and innovation and entrepreneurship. He serves as Program Manager for Education and Outreach and Chief Catalyst for Innovation and Entrepreneurship at UC San Diego\u2019s Qualcomm Institute (QI). At QI, he manages the QI Innovation Space and connects QI to the UCSD\u2019s innovation ecosystem. He also develops and implements educational programs focused on convergence education; highly integrated, multidisciplinary science and engineering program and project management; leadership in science and technology environments; research translation; and innovation and entrepreneurship. Yves is a certified Project Management Professional (PMP\u00ae). Over the past 15 years, he has trained more than 1,500 professionals from the life sciences and engineering industries, as well as academia, to perform more effectively on innovation-driven projects. He holds a doctorate in Chemistry from the University of Montreal, a Certificate in Project Management and a Certificate in Systems Engineering from UC San Diego, PMP certification from the Project Management Institute (PMI), and a micro-MBA from the UC San Diego Rady School of Management.",
+        "time_text": "2026-07-21T11:00:00-07:00",
+        "category": "Adult outing",
+        "is_free": false,
+        "score": -3,
+        "tags": [],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
       }
     ]
   },
@@ -582,7 +581,7 @@
       "label": "Jul 21",
       "is_today": true,
       "count": 12,
-      "summary": "43 ideas \u00b7 5 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
+      "summary": "14 ideas \u00b7 3 free \u00b7 4 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -937,76 +936,6 @@
           }
         },
         {
-          "title": "Ed Sheeran: 'LOOP Tour'",
-          "date": "2026-07-21",
-          "url": "https://www.kpbs.org/events/2026/07/21/ed-sheeran-loop-tour",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "PETCO Park",
-          "description": "Music Outdoor Concerts",
-          "time_text": "Tuesday, July 21, 2026 at 5:30 PM",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 3,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "downtown",
-            "time_period": "afternoon",
-            "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Playwriting Read & Critique",
-          "date": "2026-07-21",
-          "url": "https://www.sandiegoreader.com/events/ongoing/playwriting-read-critique/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Online Internet Events, San Diego",
-          "description": "Writing can often feel isolating. However, theatre is definitely a team sport. You don\u2019t have to create in a bubble. In this class, you will get to hear selections of your play out loud so that you can assess if your dialogue, pace, and plot are working. These are things that are difficult to do in your own head. Join award-winning Playwright and teaching artist, Gill Sotu, and share each other\u2019s work and get valuable weekly feedback to get your short or long form play into shape to submit for readings or productions around the country. This workshop will be limited in size, and the focus will be on playwriting. Novice to experienced writers are encouraged to join.",
-          "time_text": "2026-07-21T18:00-0700",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 3,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Share Your Story as an International Student",
           "date": "2026-07-21",
           "url": "https://calendar.ucsd.edu/event/share-your-story-as-an-international-student",
@@ -1041,6 +970,76 @@
             "source_key": "ucsd",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Showcase QI",
+          "date": "2026-07-21",
+          "url": "https://calendar.ucsd.edu/event/showcase-qi",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Aktinson Hall, 3195 Voigt Drive, La Jolla, CA 92093",
+          "description": "You are cordially invited to visit Showcase QI on the first floor of Atkinson Hall (around the corner from Gallery QI and across from Spatial Computing) at the Qualcomm Institute to experience a self-guided tour of stations representing a slice of the Qualcomm Institute at UC San Diego. The show includes video, audio and other material about some of the research, education and shared facilities at the institute. Showcase QI is open from 10 a.m. to 5 p.m., Monday through Friday. We may also have extended hours for special events, such as IDEAS performances and Gallery QI receptions. Please drop by to learn more about the breadth of interdisciplinary activities at QI. For more information, please email qi-communications@ucsd.edu or visit qi.ucsd.edu.",
+          "time_text": "2026-07-21",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "morning",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Summer Course on Research Positioning, Research Translation, and Innovation and Entrepreneurship",
+          "date": "2026-07-21",
+          "url": "https://calendar.ucsd.edu/event/summer-course-on-research-positioning-research-translation-and-innovation-and-entrepreneurship",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Qualcomm Institute, 3195 Voigt Drive La Jolla, CA 92093",
+          "description": "This program is designed to help students and postdocs from UC San Diego, the Sanford Consortium and Salk Institute better understand the broader context of their research, including the goals of their labs, the translational impact their work can have on society, and how their research aligns with the overarching missions of major funding agencies such as the NSF, NIH, DOE and DOD. Through a combination of seminars, case studies, workshops and team-based projects on Tuesdays from June 30 to September 1, 2026, participants will gain the skills needed to define research initiatives that address major scientific and societal challenges, with a strong emphasis on multidisciplinary integration. Alumni of this program will have a broader perspective on their day-to-day work in the lab and recognize the greater impact their research can have as they identify translational opportunities. Additionally, participants may discover opportunities to leverage the technologies they help develop, potentially contributing to the formation of startup ventures in the short or long term. The course also equips participants with foundational knowledge of company formation, intellectual property transfer, customer discovery, business models and financing. To enroll in \u201cInnovation and Entrepreneurship Education for Everyone (Section ID: 197166), visit in the course\u2019s UC San Diego Extended Studies page. For a $50 discount code, use SUMMERBUSA26, before June 12, 2026. Instructor Bio: Yves Theriault has a highly diversified background, with multidisciplinary expertise in life sciences, nanotechnology, systems engineering, pharmaceutical and biotechnology research and development strategies, leadership, organizational performance, strategic program and project management, research translation, and innovation and entrepreneurship. He serves as Program Manager for Education and Outreach and Chief Catalyst for Innovation and Entrepreneurship at UC San Diego\u2019s Qualcomm Institute (QI). At QI, he manages the QI Innovation Space and connects QI to the UCSD\u2019s innovation ecosystem. He also develops and implements educational programs focused on convergence education; highly integrated, multidisciplinary science and engineering program and project management; leadership in science and technology environments; research translation; and innovation and entrepreneurship. Yves is a certified Project Management Professional (PMP\u00ae). Over the past 15 years, he has trained more than 1,500 professionals from the life sciences and engineering industries, as well as academia, to perform more effectively on innovation-driven projects. He holds a doctorate in Chemistry from the University of Montreal, a Certificate in Project Management and a Certificate in Systems Engineering from UC San Diego, PMP certification from the Project Management Institute (PMI), and a micro-MBA from the UC San Diego Rady School of Management.",
+          "time_text": "2026-07-21T11:00:00-07:00",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": -3,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1050,7 +1049,7 @@
       "label": "Jul 22",
       "is_today": false,
       "count": 12,
-      "summary": "23 ideas \u00b7 11 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "summary": "16 ideas \u00b7 5 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1126,42 +1125,6 @@
           }
         },
         {
-          "title": "[RideSD] Transit Happy Hour",
-          "date": "2026-07-22",
-          "url": "https://www.meetup.com/sandiegourbanism/events/315303030/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Hidden Craft, San Diego, CA, 600 West Broadway, suite 130, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-22T01:00:00.000Z",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 3,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "MindTravel's 'Silent' Piano Concert",
           "date": "2026-07-22",
           "url": "https://www.kpbs.org/events/2026/07/22/mindtravels-silent-piano-concert",
@@ -1232,20 +1195,18 @@
           }
         },
         {
-          "title": "Balboa Park Beginner Ride",
+          "title": "Let's Cowork in PB!",
           "date": "2026-07-22",
-          "url": "https://www.meetup.com/san-diego-mountain-biking-association-sdmba/events/315319287/",
+          "url": "https://www.meetup.com/sd-remote-workers/events/315669224/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Morley Field Sports Complex, San Diego, CA, 2221 Morley Field Dr, San Diego, CA",
+          "venue": "Second Nature, San Diego, CA, 5026 Cass St, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-22T00:30:00.000Z",
-          "category": "Museum / zoo",
+          "time_text": "2026-07-22T20:30:00.000Z",
+          "category": "Outdoor / nature",
           "is_free": false,
           "score": 2,
-          "tags": [
-            "park"
-          ],
+          "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
@@ -1258,10 +1219,10 @@
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
+              "bathrooms": false,
               "food_nearby": false
             },
-            "area": "balboa",
+            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1442,17 +1403,17 @@
           }
         },
         {
-          "title": "\ud83c\udfb8Live Music at McGuffie\u2019s Featuring Our Very Own, That Fellow Carl!\ud83c\udfb6",
+          "title": "1 Million Cups - Entrepreneurs present their ideas to the community each week",
           "date": "2026-07-22",
-          "url": "https://www.meetup.com/sd-sociables/events/315744962/",
+          "url": "https://www.meetup.com/1millioncupssd/events/315517170/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "McGuffies, San Diego, CA, 8515 Navajo Rd ,, San Diego, CA",
+          "venue": "7670 Opportunity Rd, San Diego, CA, 7670 Opportunity Road, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-22T03:00:00.000Z",
-          "category": "Performance / movie",
+          "time_text": "2026-07-22T16:00:00.000Z",
+          "category": "Festival / community",
           "is_free": false,
-          "score": 1,
+          "score": 0,
           "tags": [],
           "metadata": {
             "audience": "all_ages",
@@ -1474,6 +1435,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Pomerado Elementary School",
+          "date": "2026-07-22",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315518227/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-22T17:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1483,7 +1478,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "22 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "24 ideas \u00b7 2 free \u00b7 8 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3282,8 +3277,8 @@
       "weekday": "Wed",
       "label": "Jul 29",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 3 all-ages event \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
+      "count": 4,
+      "summary": "4 ideas \u00b7 2 outdoor / nature \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
       "events": [
         {
           "title": "4TH Tues Uke @ MB RV Clubhouse",
@@ -3388,40 +3383,6 @@
             "area": "balboa",
             "time_period": "unknown",
             "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "private home visit",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315672380/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-29T18:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         },
@@ -4693,11 +4654,11 @@
     }
   ],
   "counts": {
-    "total_events": 108,
+    "total_events": 107,
     "days": 21,
     "free_events": 14,
     "configured_sources": 10,
-    "loaded_sources": 9
+    "loaded_sources": 8
   },
   "top_categories": [
     {
@@ -4706,11 +4667,11 @@
     },
     {
       "name": "Museum / zoo",
-      "count": 17
+      "count": 16
     },
     {
       "name": "All-ages event",
-      "count": 17
+      "count": 16
     },
     {
       "name": "Performance / movie",
@@ -4718,18 +4679,18 @@
     },
     {
       "name": "Festival / community",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Farmers market",
       "count": 8
     },
     {
-      "name": "Toddler-friendly",
-      "count": 4
+      "name": "Adult outing",
+      "count": 5
     },
     {
-      "name": "Adult outing",
+      "name": "Toddler-friendly",
       "count": 4
     }
   ]
