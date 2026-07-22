@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-8cfbb9de558006df",
-  "generated_at": "2026-07-22T05:17:59.638759-07:00",
+  "snapshot_id": "snap-3d1cfdcd27937783",
+  "generated_at": "2026-07-22T11:19:27.362021-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 56,
+      "count": 54,
       "parser": "jsonld"
     },
     {
@@ -113,7 +113,7 @@
     "label": "Jul 22",
     "is_today": true,
     "count": 12,
-    "summary": "61 ideas \u00b7 7 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Ocean Beach Farmers' Market",
+    "summary": "59 ideas \u00b7 7 free \u00b7 15 all-ages event \u00b7 Summer Critter Camp, Ocean Beach Farmers' Market",
     "events": [
       {
         "title": "Summer Critter Camp",
@@ -579,7 +579,7 @@
       "label": "Jul 22",
       "is_today": true,
       "count": 12,
-      "summary": "61 ideas \u00b7 7 free \u00b7 16 all-ages event \u00b7 Summer Critter Camp, Ocean Beach Farmers' Market",
+      "summary": "59 ideas \u00b7 7 free \u00b7 15 all-ages event \u00b7 Summer Critter Camp, Ocean Beach Farmers' Market",
       "events": [
         {
           "title": "Summer Critter Camp",
@@ -1493,8 +1493,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 8,
-      "summary": "8 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Point Loma Summer Concerts",
+      "count": 9,
+      "summary": "9 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -1533,6 +1533,42 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-24",
+          "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Have you ever wondered what species swim in our local waters? Or wanted to know what makes sharks such unique animals? This July, join us as we dive deep into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them.",
+          "time_text": "",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kids",
             "metadata_version": 2
           }
         },
@@ -1790,7 +1826,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "26 ideas \u00b7 3 free \u00b7 9 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "26 ideas \u00b7 3 free \u00b7 10 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -2247,7 +2283,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "21 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
+      "summary": "20 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
       "events": [
         {
           "title": "San Diego Singles Speed Dating Ages 30-45",
@@ -3294,8 +3330,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 2 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
+      "count": 8,
+      "summary": "8 ideas \u00b7 3 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -3368,6 +3404,42 @@
             "area": "central-san-diego",
             "time_period": "morning",
             "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Conceive Naturally Women's Circle",
+          "date": "2026-07-31",
+          "url": "https://www.meetup.com/conceiving-naturally-after-loss-unexplained-infertility/events/315699175/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Mission Bay, San Diego, San Diego, CA, S Shores Park Dy, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-31T01:30:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -4470,13 +4542,50 @@
       "weekday": "Tue",
       "label": "Aug 11",
       "is_today": false,
-      "count": 0,
-      "summary": "No strong San Diego matches yet.",
-      "events": []
+      "count": 1,
+      "summary": "1 ideas \u00b7 1 museum / zoo \u00b7 Virtual Estate Planning Webinar",
+      "events": [
+        {
+          "title": "Virtual Estate Planning Webinar",
+          "date": "2026-08-11",
+          "url": "https://sdhumane.org/event/virtual-estate-planning-webinar/",
+          "source": "sdhumane",
+          "source_label": "San Diego Humane Society",
+          "venue": "Zoom",
+          "description": "Did you know that August is National Make-a-Will Month? If you\u2019ve been meaning to create or update your estate plan, now\u2019s the perfect time! By taking this important step now, you\u2019ll gain peace of mind and ensure the people, pets and causes you love are protected for years to come. Join us from the comfort\u2026 \\n",
+          "time_text": "2026-08-11T12:00:00-07:00",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "sdhumane",
+            "metadata_version": 2
+          }
+        }
+      ]
     }
   ],
   "counts": {
-    "total_events": 102,
+    "total_events": 105,
     "days": 21,
     "free_events": 15,
     "configured_sources": 10,
@@ -4485,7 +4594,7 @@
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 28
+      "count": 29
     },
     {
       "name": "All-ages event",
@@ -4493,7 +4602,7 @@
     },
     {
       "name": "Museum / zoo",
-      "count": 12
+      "count": 14
     },
     {
       "name": "Performance / movie",
