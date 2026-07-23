@@ -1,13 +1,12 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-8e2af6602c24af35",
-  "generated_at": "2026-07-22T17:20:17.912112-07:00",
+  "snapshot_id": "snap-858d353bcb43c78f",
+  "generated_at": "2026-07-22T23:20:52.437482-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
     "Kids Out And About",
     "KPBS",
-    "San Diego Reader",
     "Meetup San Diego",
     "UCSD Events",
     "San Diego Humane Society",
@@ -48,7 +47,7 @@
       "category": "general_events",
       "url": "https://www.kpbs.org/events/all",
       "status": "loaded",
-      "count": 42,
+      "count": 41,
       "parser": "kpbs"
     },
     {
@@ -56,8 +55,8 @@
       "label": "San Diego Reader",
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
-      "status": "loaded",
-      "count": 28,
+      "status": "no_events",
+      "count": 0,
       "parser": "reader"
     },
     {
@@ -66,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 54,
+      "count": 48,
       "parser": "jsonld"
     },
     {
@@ -113,7 +112,7 @@
     "label": "Jul 22",
     "is_today": true,
     "count": 12,
-    "summary": "44 ideas \u00b7 3 free \u00b7 11 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Wednesday Crafts and Chats",
+    "summary": "16 ideas \u00b7 1 free \u00b7 5 farmers market \u00b7 Comics of Care: Healing Through Graphic Medicine, Wednesday Crafts and Chats",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -302,44 +301,6 @@
         }
       },
       {
-        "title": "Trivia Night",
-        "date": "2026-07-22",
-        "url": "https://www.sandiegoreader.com/events/ongoing/weekly-trivia-night-at-kairoa-brewi/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Kairoa Brewing Company, San Diego",
-        "description": "Form a team and compete across rounds of pop culture, history, sports, science, and wildcard categories for prizes. Free to play, hosted Wednesdays by Geeks Who Drink.",
-        "time_text": "2026-07-22T18:30-0700",
-        "category": "Adult outing",
-        "is_free": true,
-        "score": 7,
-        "tags": [
-          "free"
-        ],
-        "metadata": {
-          "audience": "adult",
-          "age_groups": [
-            "adults"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "evening",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-22",
         "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -376,154 +337,6 @@
         }
       },
       {
-        "title": "Scapin",
-        "date": "2026-07-22",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/22/scapin-at-north-coast-repertory-the/?et=363285",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "North Coast Repertory Theatre, Solana Beach",
-        "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
-        "time_text": "2026-07-22T20:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 5,
-        "tags": [
-          "beach",
-          "craft"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Charlie & the Chocolate Factory",
-        "date": "2026-07-22",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/22/charlie-the-chocolate-factory/?et=360132",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
-        "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
-        "time_text": "2026-07-22T20:00-0700",
-        "category": "Outdoor / nature",
-        "is_free": false,
-        "score": 4,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Travel Series of Beginner Dance Lessons",
-        "date": "2026-07-22",
-        "url": "https://www.sandiegoreader.com/events/ongoing/travel-series-of-beginner-dance-les/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Balboa Park Club & Ballroom, San Diego",
-        "description": "The San Diego International Folk Dance Club hosts a summer series of beginner dance lessons. See the world through the lens of other countries\u2019 folk dances. Bring a picnic dinner to the free outdoor Twilight Concerts, then stay for the dance lessons. Free entry for students with ID.",
-        "time_text": "2026-07-22T20:00-0700",
-        "category": "Museum / zoo",
-        "is_free": true,
-        "score": 4,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "balboa",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Up Close: A Conversation with Brad Bird & Michael Giacchino",
-        "date": "2026-07-22",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/22/up-close-a-conversation-with-brad-b/?et=363184",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Epstein Family Amphitheater, San Diego",
-        "description": "Together, Michael Giacchino and Brad Bird trace the arc of a filmmaking life that began with a handmade short sent to Disney at age fourteen, sharing stories from over two decades of creative partnership that you won\u2019t have heard anywhere else. Funny, candid, and deeply felt, this is an evening for anyone who has ever loved a movie.",
-        "time_text": "2026-07-22T19:30-0700",
-        "category": "Performance / movie",
-        "is_free": false,
-        "score": 4,
-        "tags": [],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "evening",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Dr. Seuss's Boids & Beasties | Exhibition",
         "date": "2026-07-22",
         "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
@@ -556,6 +369,180 @@
           "source_key": "ucsd",
           "metadata_version": 2
         }
+      },
+      {
+        "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
+        "date": "2026-07-22",
+        "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "",
+        "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
+        "time_text": "2026-07-22",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 3,
+        "tags": [
+          "zoo"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "morning",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "'Doug Loves Movies': Comic-Con Edition",
+        "date": "2026-07-22",
+        "url": "https://www.kpbs.org/events/2026/07/22/doug-loves-movies-comic-con-edition",
+        "source": "kpbs",
+        "source_label": "KPBS",
+        "venue": "The American Comedy Co.",
+        "description": "Films Comic-Con Pop Culture",
+        "time_text": "Wednesday, July 22, 2026 at 8 PM",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 2,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "evening",
+          "source_key": "kpbs",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Up Close: A Conversation with Brad Bird and Michael Giacchino",
+        "date": "2026-07-22",
+        "url": "https://www.kpbs.org/events/2026/07/22/up-close-a-conversation-with-brad-bird-and-michael-giacchino",
+        "source": "kpbs",
+        "source_label": "KPBS",
+        "venue": "Epstein Family Amphitheater",
+        "description": "Lectures & Classes Arts Films Comic-Con Pop Culture",
+        "time_text": "Wednesday, July 22, 2026 at 7:30 PM",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 2,
+        "tags": [],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "evening",
+          "source_key": "kpbs",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "1540 x Paramount+ 2026",
+        "date": "2026-07-22",
+        "url": "https://www.sandiego.gov/event/1540-x-paramount-2026",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "Paramount+ activation that contains numerous interactive engagements with the network's top programs.",
+        "time_text": "Wednesday, July 22, 2026, 4 - 10pm",
+        "category": "All-ages event",
+        "is_free": false,
+        "score": 1,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "evening",
+          "source_key": "city",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Curbside Bites Food Truck Markets - Downtown Lunch",
+        "date": "2026-07-22",
+        "url": "https://www.sandiego.gov/event/curbside-bites-food-truck-markets-downtown-lunch-225",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "San Diego's most popular local food trucks serving lunch every Wednesday in the heart of Downtown San Diego.",
+        "time_text": "Wednesday, July 22, 2026, 11am - 2pm",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 1,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "downtown",
+          "time_period": "morning",
+          "source_key": "city",
+          "metadata_version": 2
+        }
       }
     ]
   },
@@ -566,7 +553,7 @@
       "label": "Jul 22",
       "is_today": true,
       "count": 12,
-      "summary": "44 ideas \u00b7 3 free \u00b7 11 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Wednesday Crafts and Chats",
+      "summary": "16 ideas \u00b7 1 free \u00b7 5 farmers market \u00b7 Comics of Care: Healing Through Graphic Medicine, Wednesday Crafts and Chats",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -755,44 +742,6 @@
           }
         },
         {
-          "title": "Trivia Night",
-          "date": "2026-07-22",
-          "url": "https://www.sandiegoreader.com/events/ongoing/weekly-trivia-night-at-kairoa-brewi/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Kairoa Brewing Company, San Diego",
-          "description": "Form a team and compete across rounds of pop culture, history, sports, science, and wildcard categories for prizes. Free to play, hosted Wednesdays by Geeks Who Drink.",
-          "time_text": "2026-07-22T18:30-0700",
-          "category": "Adult outing",
-          "is_free": true,
-          "score": 7,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "adult",
-            "age_groups": [
-              "adults"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "evening",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-22",
           "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -829,154 +778,6 @@
           }
         },
         {
-          "title": "Scapin",
-          "date": "2026-07-22",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/22/scapin-at-north-coast-repertory-the/?et=363285",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "North Coast Repertory Theatre, Solana Beach",
-          "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
-          "time_text": "2026-07-22T20:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 5,
-          "tags": [
-            "beach",
-            "craft"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Charlie & the Chocolate Factory",
-          "date": "2026-07-22",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/22/charlie-the-chocolate-factory/?et=360132",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
-          "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
-          "time_text": "2026-07-22T20:00-0700",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 4,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Travel Series of Beginner Dance Lessons",
-          "date": "2026-07-22",
-          "url": "https://www.sandiegoreader.com/events/ongoing/travel-series-of-beginner-dance-les/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Balboa Park Club & Ballroom, San Diego",
-          "description": "The San Diego International Folk Dance Club hosts a summer series of beginner dance lessons. See the world through the lens of other countries\u2019 folk dances. Bring a picnic dinner to the free outdoor Twilight Concerts, then stay for the dance lessons. Free entry for students with ID.",
-          "time_text": "2026-07-22T20:00-0700",
-          "category": "Museum / zoo",
-          "is_free": true,
-          "score": 4,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "balboa",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Up Close: A Conversation with Brad Bird & Michael Giacchino",
-          "date": "2026-07-22",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/22/up-close-a-conversation-with-brad-b/?et=363184",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Epstein Family Amphitheater, San Diego",
-          "description": "Together, Michael Giacchino and Brad Bird trace the arc of a filmmaking life that began with a handmade short sent to Disney at age fourteen, sharing stories from over two decades of creative partnership that you won\u2019t have heard anywhere else. Funny, candid, and deeply felt, this is an evening for anyone who has ever loved a movie.",
-          "time_text": "2026-07-22T19:30-0700",
-          "category": "Performance / movie",
-          "is_free": false,
-          "score": 4,
-          "tags": [],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "evening",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Dr. Seuss's Boids & Beasties | Exhibition",
           "date": "2026-07-22",
           "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
@@ -1009,6 +810,180 @@
             "source_key": "ucsd",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
+          "date": "2026-07-22",
+          "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "",
+          "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
+          "time_text": "2026-07-22",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "morning",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "'Doug Loves Movies': Comic-Con Edition",
+          "date": "2026-07-22",
+          "url": "https://www.kpbs.org/events/2026/07/22/doug-loves-movies-comic-con-edition",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "The American Comedy Co.",
+          "description": "Films Comic-Con Pop Culture",
+          "time_text": "Wednesday, July 22, 2026 at 8 PM",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Up Close: A Conversation with Brad Bird and Michael Giacchino",
+          "date": "2026-07-22",
+          "url": "https://www.kpbs.org/events/2026/07/22/up-close-a-conversation-with-brad-bird-and-michael-giacchino",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Epstein Family Amphitheater",
+          "description": "Lectures & Classes Arts Films Comic-Con Pop Culture",
+          "time_text": "Wednesday, July 22, 2026 at 7:30 PM",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "1540 x Paramount+ 2026",
+          "date": "2026-07-22",
+          "url": "https://www.sandiego.gov/event/1540-x-paramount-2026",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "Paramount+ activation that contains numerous interactive engagements with the network's top programs.",
+          "time_text": "Wednesday, July 22, 2026, 4 - 10pm",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 1,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Curbside Bites Food Truck Markets - Downtown Lunch",
+          "date": "2026-07-22",
+          "url": "https://www.sandiego.gov/event/curbside-bites-food-truck-markets-downtown-lunch-225",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "San Diego's most popular local food trucks serving lunch every Wednesday in the heart of Downtown San Diego.",
+          "time_text": "Wednesday, July 22, 2026, 11am - 2pm",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 1,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "downtown",
+            "time_period": "morning",
+            "source_key": "city",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1018,7 +993,7 @@
       "label": "Jul 23",
       "is_today": false,
       "count": 12,
-      "summary": "31 ideas \u00b7 2 free \u00b7 9 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "23 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -1425,15 +1400,15 @@
           }
         },
         {
-          "title": "Co-Hosted Event - INT'L Cafe - Monthly 4th Wednesday - Bankers Hill",
+          "title": "Grass Volleyball group at DeAnza Cove Tuesdays and Thursdays",
           "date": "2026-07-23",
-          "url": "https://www.meetup.com/polyglots-and-language-lovers-of-san-diego/events/314903946/",
+          "url": "https://www.meetup.com/san-diego-neals-grass-volleyball-meetup-group/events/315587443/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Pure Project Balboa Park, San Diego, CA, 2865 5th Ave., San Diego, CA",
+          "venue": "De Anza Cove Park, San Diego, CA, 3000 N Mission Bay Dr, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-23T01:00:00.000Z",
-          "category": "Museum / zoo",
+          "time_text": "2026-07-23T22:30:00.000Z",
+          "category": "Outdoor / nature",
           "is_free": false,
           "score": 2,
           "tags": [
@@ -1452,9 +1427,9 @@
               "low_walking": false,
               "shade": false,
               "bathrooms": true,
-              "food_nearby": true
+              "food_nearby": false
             },
-            "area": "balboa",
+            "area": "beach",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1467,8 +1442,8 @@
       "weekday": "Fri",
       "label": "Jul 24",
       "is_today": false,
-      "count": 9,
-      "summary": "9 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Shark Summer at Birch Aquarium",
+      "count": 8,
+      "summary": "8 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -1687,40 +1662,6 @@
             "area": "unknown",
             "time_period": "morning",
             "source_key": "city",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "10 Min Workout \"Pup Pilates: How to workout with your dog\" + Live Chat",
-          "date": "2026-07-24",
-          "url": "https://www.meetup.com/winendinewdoggies/events/315548410/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "Some of the real benefits of group exercise are: 1) You can get more bang for your buck; 2) There's camaraderie between participants; 3) It's great for everyone \u2013 whatever their fitness level; 4) You don\u2019t have to know what you are doing. Therefore, the 10-min Doggie Pilates has become our weekly event. Make a stamp card for your health and your dog bonding time, give it a paw print every time you guys join us. Also, don't hesitate to say hi using the live chat box in the screening room. How to join: At the event time, go to https://w2g.tv/?r=x8rac43l78z0k1lout (Copy and paste it if the link is broken) Stay Safe, Stay Well, and Stay CONNECTED!",
-          "time_text": "2026-07-24T19:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         },
@@ -2257,7 +2198,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "21 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
+      "summary": "20 ideas \u00b7 2 free \u00b7 6 all-ages event \u00b7 San Diego Singles Speed Dating Ages 30-45, Adult Swim on the Green",
       "events": [
         {
           "title": "San Diego Singles Speed Dating Ages 30-45",
@@ -2515,42 +2456,6 @@
           }
         },
         {
-          "title": "CHAFFING THE DREAM RUN CLUB",
-          "date": "2026-07-26",
-          "url": "https://www.meetup.com/chaffing-the-dream-run-club/events/315775554/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Snapdragon / SDSU Mission Valley River Park, San Diego, CA, 1 Stadium Wy, San Diego, CA 92108,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-26T16:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Comic-Con Art Show",
           "date": "2026-07-26",
           "url": "https://www.kpbs.org/events/ongoing/comic-con-art-show",
@@ -2685,6 +2590,40 @@
               "food_nearby": false
             },
             "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Paramount Games Studio's Blockbuster Lineup of Fan Experiences",
+          "date": "2026-07-26",
+          "url": "https://www.kpbs.org/events/ongoing/paramount-games-studios-blockbuster-lineup-of-fan-experiences",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Multiple locations",
+          "description": "Comic-Con Pop Culture Lectures & Classes Festivals",
+          "time_text": "Ongoing until July 26, 2026",
+          "category": "Festival / community",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
             "time_period": "unknown",
             "source_key": "kpbs",
             "metadata_version": 2
@@ -2928,8 +2867,8 @@
       "weekday": "Wed",
       "label": "Jul 29",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 4 all-ages event \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
+      "count": 8,
+      "summary": "8 ideas \u00b7 5 all-ages event \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
       "events": [
         {
           "title": "4TH Tues Uke @ MB RV Clubhouse",
@@ -3150,6 +3089,40 @@
           "venue": "4655 Executive Dr, San Diego, CA, 4655 Executive Dr, San Diego, CA",
           "description": "",
           "time_text": "2026-07-29T00:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Wednesday Soccer at SDSU ENS Field",
+          "date": "2026-07-29",
+          "url": "https://www.meetup.com/soccer-at-snap/events/315449779/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "SDSU - ENS Field, San Diego, CA, 5500 Campanile Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-29T22:30:00.000Z",
           "category": "All-ages event",
           "is_free": false,
           "score": 0,
@@ -3562,9 +3535,45 @@
       "weekday": "Sat",
       "label": "Aug 1",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 1 outdoor / nature \u00b7 Open-air Yoga - San Diego Botanic Garden, Shark Snorkels Make a Splashy Return to Birch Aquarium",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 2 outdoor / nature \u00b7 Lake Miramar Pack Walk, Open-air Yoga - San Diego Botanic Garden",
       "events": [
+        {
+          "title": "Lake Miramar Pack Walk",
+          "date": "2026-08-01",
+          "url": "https://www.meetup.com/san-diego-dog-meetup/events/315797133/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "Lake Miramar Reservoir, San Diego, CA, 10710 Scripps Lake Drive, San Diego, CA",
+          "description": "Join us for this easy 2 mile nature walk, down a dirt path that hugs the lake! Options to walk on the main path will be available as a comfort option.:) Meet at the main bathroom facilty and first boat dock on your left. Welcome to Real Dog Box Community Pack Walks! We welcome **ALL** dogs, breeds, and temperaments. Enjoying our pack walks? Support our Host & Sponsor: Real Dog Box This local small business delivers air dried treats and chews to your doorstep. Get a free bag of treats when you order your 1st box: real.dog/ravensworld We have grown an amazing and supportive community. To keep everyone safe and promote a calm environment, by attending our walks you are expected to follow & respect our rules: 1. All dogs must remain on leash at all times, handlers must maintain a 3 foot lead. NO retractable or bungee leashes permitted. 1. NO greeting dogs inside or outside our pack until the walk is over, with permission. Please always keep dogs on leash. We know some dogs are friends, but use this time to practice following structured socialization. 1. Maintain at least a 6 foot distance to prevent nose-to-nose/tail interactions. If your dog is a beginner or reactive, we recommend taking more space if needed, by walking at the back of the pack. 1. Come prepared and advocate for your dog. Bring adequate water, poop bags, treats, etc. Monitor your dog and always do what\u2019s best for them. If your dog is slowing down, consider stopping early. If your dog is panting, request a break to give them some water. Our Community Pack Leaders will be leading the walk and can answer any questions that come up. We are looking forward to meeting you and your pup!",
+          "time_text": "2026-08-01T15:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": true,
+          "score": 4,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": true,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "Open-air Yoga - San Diego Botanic Garden",
           "date": "2026-08-01",
@@ -3998,8 +4007,8 @@
       "weekday": "Wed",
       "label": "Aug 5",
       "is_today": false,
-      "count": 1,
-      "summary": "1 ideas \u00b7 1 all-ages event \u00b7 St Paul's Senior Service Nursing & Rehab (Certified Teams Only)",
+      "count": 2,
+      "summary": "2 ideas \u00b7 2 all-ages event \u00b7 St Paul's Senior Service Nursing & Rehab (Certified Teams Only), Still Life Drawing/Painting",
       "events": [
         {
           "title": "St Paul's Senior Service Nursing & Rehab (Certified Teams Only)",
@@ -4032,6 +4041,40 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Still Life Drawing/Painting",
+          "date": "2026-08-05",
+          "url": "https://www.meetup.com/drawing-fundamentals/events/315710804/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-05T16:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -4524,11 +4567,11 @@
     }
   ],
   "counts": {
-    "total_events": 104,
+    "total_events": 106,
     "days": 21,
-    "free_events": 14,
+    "free_events": 13,
     "configured_sources": 10,
-    "loaded_sources": 9
+    "loaded_sources": 8
   },
   "top_categories": [
     {
@@ -4537,26 +4580,26 @@
     },
     {
       "name": "All-ages event",
-      "count": 18
+      "count": 20
     },
     {
       "name": "Museum / zoo",
-      "count": 15
+      "count": 14
     },
     {
       "name": "Performance / movie",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Festival / community",
-      "count": 8
-    },
-    {
-      "name": "Adult outing",
-      "count": 7
+      "count": 9
     },
     {
       "name": "Farmers market",
+      "count": 7
+    },
+    {
+      "name": "Adult outing",
       "count": 6
     },
     {
