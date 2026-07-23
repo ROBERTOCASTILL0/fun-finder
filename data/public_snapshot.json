@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-ef946b5d835df422",
-  "generated_at": "2026-07-23T05:21:43.165361-07:00",
+  "snapshot_id": "snap-e1b77ae0ed8cc5a6",
+  "generated_at": "2026-07-23T11:23:06.455566-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 66,
+      "count": 53,
       "parser": "reader"
     },
     {
@@ -93,7 +93,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 28,
+      "count": 27,
       "parser": "jsonld"
     },
     {
@@ -113,7 +113,7 @@
     "label": "Jul 23",
     "is_today": true,
     "count": 12,
-    "summary": "95 ideas \u00b7 9 free \u00b7 25 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+    "summary": "79 ideas \u00b7 5 free \u00b7 22 adult outing \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
     "events": [
       {
         "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -192,161 +192,6 @@
           "area": "central-san-diego",
           "time_period": "unknown",
           "source_key": "kids",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Summer Critter Camp",
-        "date": "2026-07-23",
-        "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-        "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-        "time_text": "2026-07-23T09:00-0700",
-        "category": "Toddler-friendly",
-        "is_free": false,
-        "score": 16,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "young_children",
-          "age_groups": [
-            "kids",
-            "toddler"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": true,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Camp Fashion Valley",
-        "date": "2026-07-23",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/23/camp-fashion-valley/?et=364074",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Fashion Valley Mall, San Diego",
-        "description": "Enjoy a free, family-friendly weekly series designed to bring interactive and educational experiences to the community. Shoppers and their little ones are invited to enjoy retailer activations, hands-on activities and engaging presentations from community partners, making every Thursday a new opportunity to learn, create and enjoy.Please note: Camp Fashion Valley is not a drop-off event. All children must remain accompanied by a parent or guardian at all times.\u25cf July 23 | Music Makers: Enjoy a live performance from the San Diego Youth Symphony: ChIMES and try hands-on musical instruments.\u25cf July 30 | Nature Explorers: Discover wildlife, animal tracks, skulls and more with educators from the San Diego River Foundation.\u25cf August 6 | Creative Campers: Create a take-home art project with guidance from the San Diego Museum of Art.",
-        "time_text": "2026-07-23T11:00-0700",
-        "category": "Museum / zoo",
-        "is_free": true,
-        "score": 14,
-        "tags": [
-          "free",
-          "museum"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Interactive Zone",
-        "date": "2026-07-23",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/23/interactive-zone-at-petco-park-8fceee3c/?et=363639",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Petco Park, San Diego",
-        "description": "Fans can enjoy themed activations and food trucks in the Lexus Premier Lot, including:The Labu\u2019Tique Shop returns to Petco Park with The Labu\u2019Tique Famers Market! Guests can shop for Labubus, Squishy Toys, Jelly Cats and Needohs. Maruchan\u2019s MaruMart will transport attendees into a vibrant Japanese convenience store\u2013inspired, walk-through experience centered on flavor, ramen, merch, and photo-worthy moments, where a familiar world gets a playful, themed twist just for Comic Con fans. Inside, guests can discover free Maruchan samples, unexpected flavor twists, exclusive merchandise only available at this activation, and surprise giveaways throughout a dynamic environment built for exploration, discovery, and immersive snacking all weekend long. Maruchan is partnering with Demon Slayer: Kimetsu no Yaiba to connect anime and ramen lovers alike at MaruMart with design special elements and merchandise. Complimentary Maruchan Yakisoba samples inspired by fan-favorite Demon Slayer characters, including Tanjiro's Beef Yakisoba, Zenitsu's Chicken Yakisoba, and Inosuke's Spicy Chicken Yakisoba, will be available throughout the experience, served in specially designed collaborative packaging created exclusively for Marumart: Demon Slayer Konbini.Fans can step into The KAYOU Walls of Fandom, a free walk-through experience inside the Interactive Zone at Petco Park that brings the worlds behind KAYOU\u2019s most beloved cards to life. Throughout the experience, guests can get up close and personal with actual KAYOU cards showcased within each installation, revealing the illustration, design, foiling, and craftsmanship that makes every trading card a collectible piece of art. Hello Kitty Cafe Truck returns with exclusive merchandise and sweet treats. Fans can shop totes, hats, throw blankets, mugs, quarter-zip jackets and t-shirts.",
-        "time_text": "2026-07-23T10:00-0700",
-        "category": "Farmers market",
-        "is_free": true,
-        "score": 13,
-        "tags": [
-          "craft",
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "downtown",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Zoo Camp",
-        "date": "2026-07-23",
-        "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Wild Wonders, Bonsall",
-        "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-        "time_text": "2026-07-23T09:00-0700",
-        "category": "Museum / zoo",
-        "is_free": false,
-        "score": 13,
-        "tags": [
-          "craft",
-          "zoo"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -539,19 +384,168 @@
         }
       },
       {
-        "title": "Bay Club Summer Camps",
+        "title": "North Park Farmers Market 2026",
         "date": "2026-07-23",
-        "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Bay Club Hotel and Marina, San Diego",
-        "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-        "time_text": "2026-07-23T09:00-0700",
-        "category": "Craft / STEAM",
+        "url": "https://www.sandiego.gov/event/north-park-farmers-market-2026-27",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "Check out the North Park Thursday Market every Thursday from 3pm to 7:30pm, located between Granada Avenue and Ray Street on North Park Way. Shop tons of different items like fresh produce, prepared foods, flowers, apparel, baked goods and more! Visit the Thursday Market website, or follow @shopnorthparkmarket on Instagram and Facebook for a list of vendors, products, updates and more! To apply to become a vendor visit northparkfarmersmarket.com !",
+        "time_text": "Thursday, July 23, 2026, 3 - 7:30pm",
+        "category": "Farmers market",
         "is_free": false,
         "score": 6,
         "tags": [
+          "farmers market",
+          "park"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": true
+          },
+          "area": "unknown",
+          "time_period": "afternoon",
+          "source_key": "city",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Shark Summer at Birch Aquarium",
+        "date": "2026-07-23",
+        "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+        "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+        "time_text": "2026-07-23T09:00:00-07:00",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 6,
+        "tags": [
+          "aquarium"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Scapin",
+        "date": "2026-07-23",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/23/scapin-at-north-coast-repertory-the/?et=363286",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "North Coast Repertory Theatre, Solana Beach",
+        "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+        "time_text": "2026-07-23T20:00-0700",
+        "category": "Craft / STEAM",
+        "is_free": false,
+        "score": 5,
+        "tags": [
+          "beach",
           "craft"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Summer with Stuart Concert Series",
+        "date": "2026-07-23",
+        "url": "https://calendar.ucsd.edu/event/summer-with-stuart",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Varies",
+        "description": "Join us for the second annual Summer with Stuart, a pop-up concert series at various Stuart Collection Artworks. In partnership with local chamber musicians, we're presenting six weeks of free, family-friendly summer evening programming. Thursdays, 6 - 7 pm July 2: Sun God, Series kickoff with Westwind Brass As America marks its 250th birthday, Westwind Brass celebrates with Sousa-style marches, beloved folk and hymn tunes, jazz standards, Broadway showstoppers, and Hollywood film scores, all carried unamplified across Niki de Saint Phalle\u2019s radiant Sun God lawn. The professional brass quintet \u2014 two trumpets, French horn, trombone, and tuba \u2014 sweeps across the American story, from the concert hall to the silver screen. Think Copland\u2019s wide-open prairie sound and the brassy swagger of big-band jazz. Roughly 60\u201375 minutes of joyful noise for America\u2019s 250th. Check out the band in advance: Listen to Westwind Brass Location: Sun God in Google Maps Parking: Scholars Parking Structure in Google Maps July 9: La Jolla Project, Left Coast Quintet As dusk settles over the Richard Fleischner\u2019s La Jolla Project, five wind players gather among UC San Diego\u2019s popular outdoor artwork, known as \u201cStonehenge,\u201d for an evening that spans centuries in a single breath. The Left Coast Quintet \u2014 flute, oboe, clarinet, French horn, and bassoon \u2014 is one of music\u2019s most eloquent ensembles: five distinct voices, one rich palette of color. Their program moves fluidly from Baroque counterpoint and Classical-era works (the woodwind quintet was born in Mozart\u2019s day) to Romantic showpieces, contemporary discoveries, and imaginative arrangements of jazz and film music. What sets LCQ apart is its blend of warmth, humor, and polish \u2014 as at home with a Baroque partita as a film-score medley, and always ready to let the audience in on the fun. About 60 minutes where art, landscape, and music fold into one another. Check out the band in advance: Listen to Left Coast Quintet on their website Location: La Jolla Project in Google Maps Parking: Theater District Parking Structure in Google Maps July 16: Bear, Westwind Virtuosi Westwind Virtuosi returns to the most intimate setting in the series \u2014 the Bear courtyard, centered on Tim Hawkinson's massive granite boulder, Bear, also known as \"Beryl.\" Something happens when strings play beside that stone: the granite seems to lean in and listen, holding the sound warm and close. This chamber ensemble \u2014 violin, viola, cello, and bass \u2014 draws on the heart of the string repertoire, from Haydn and Mozart through the Romantics, favoring lyrical slow movements that reward close listening: the cello\u2019s deep warmth, the violin\u2019s singing upper register, the feel of private conversation between musicians. Expect folk songs, tango, and lighter classics that translate beautifully to strings in the open air. Check out the band in advance: Listed to Westwind Virtuosi on their website Location: Bear in Google Maps Parking: Gilman Parking Structure in Google Maps July 23: Sun God, Manny Cepeda + Westwind Strings & Brass We\u2019ve never done this before \u2014 and that\u2019s exactly the point: For one electrifying hour, strings, brass, and the irresistible Manny Cepeda come together for a brand-new program of salsa, rhythm, and pure Latin joy. S\u00e1bor means flavor, and this concert has it in abundance. Cepeda \u2014 one of San Diego\u2019s most beloved Latin musicians \u2014 leads a combined ensemble of Westwind string and brass players through salsa, cumbia, bolero, and cha-cha: forms rooted in Cuba, Colombia, and Puerto Rico and built on syncopated rhythm and call-and-response. The strings, unusual in a Latin dance band, lend lush warmth beneath the brass\u2019s punch and swagger \u2014 the full sound of the great Tito Puente\u2013era orchestras. The Sun God lawn's open footprint gives the music room to move. Check out the band in advance: Listen to Manny Cepeda on his website Location: Sun God in Google Maps Parking: Scholars Parking Structure in Google Maps July 30: La Jolla Project, Hornswoggle Thirty French horns gather at dusk at the La Jolla Project\u2014 and the results are elemental. Hornswoggle is one of the few ensembles in the country performing at this scale, and the French horn genuinely sounds better outdoors than in any hall. Thirty players spread across the grounds, dispersing the sound so it surrounds you rather than faces you \u2014 hunting calls and fanfares dating to the 17th and 18th centuries, hymn-like chorales and folk songs that bloom across horns in unison, and contemporary works written for the spatial possibilities of many horns in open air. Against the backdrop of La Jolla Project, it becomes a glorious, soaring wall of brass rolling into the sky. Check out the band in advance: Listen to Hornswoggle on their website Location: La Jolla Project in Google Maps Parking: Theater District Parking Structure in Google Maps August 6: Bear, Chamber Orchestra The Second Summer with Stuart ends the only way it could \u2014 with everyone on stage, Handel in the air, and Bear hearing Water Music for the very first time. Handel wrote Water Music in 1717 to be played outdoors, from a barge on the River Thames for King George I \u2014 one of the earliest masterpieces written for the open air. Three hundred years later, the combined forces of our summer series bring it back where it belongs: beside Tim Hawkinson\u2019s granite boulder Bear, under a summer sky. Roughly twenty musicians \u2014 strings, brass, and winds drawn from every ensemble of the season, many of them former San Diego Chamber Orchestra players \u2014 gather for the full sweep of Handel\u2019s suites: stately overtures, graceful minuets, and spirited hornpipes. Location: Bear in Google Maps Parking: Gilman Parking Structure in Google Maps Summer with Stuart Concert Series Sharable Flyer for Printing (Google Doc) Stuart Collection: The Stuart Collection at the University of California, San Diego \u2013 comprised of 22 permanent artworks by world-renowned artists, and growing \u2013 aims to question conventional understandings of public art in playful and insightful ways through our commissioning programs, and seeks to enrich the cultural, intellectual, and scholarly life of the UC San Diego campus and local San Diego community. We enhance public life through art that encourages thoughtful deliberation, an awareness of difference, mental and physical wellbeing, and that inspires creative solutions to complex issues; and continue to commission exciting new works from the world\u2019s most important contemporary artists through our Landmarks, Emerging Artists and Public Programs.",
+        "time_text": "2026-07-23T18:00:00-07:00",
+        "category": "Adult outing",
+        "is_free": true,
+        "score": 5,
+        "tags": [
+          "free",
+          "park"
+        ],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": true,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Charlie & the Chocolate Factory",
+        "date": "2026-07-23",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/23/charlie-the-chocolate-factory/?et=360133",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
+        "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
+        "time_text": "2026-07-23T20:00-0700",
+        "category": "Outdoor / nature",
+        "is_free": false,
+        "score": 4,
+        "tags": [
+          "park"
         ],
         "metadata": {
           "audience": "family",
@@ -561,16 +555,16 @@
           "features": {
             "free": false,
             "outdoor": true,
-            "indoor": true,
+            "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
-            "low_walking": true,
+            "low_walking": false,
             "shade": false,
             "bathrooms": true,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "north-county",
           "time_period": "unknown",
           "source_key": "reader",
           "metadata_version": 2
@@ -585,7 +579,7 @@
       "label": "Jul 23",
       "is_today": true,
       "count": 12,
-      "summary": "95 ideas \u00b7 9 free \u00b7 25 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "summary": "79 ideas \u00b7 5 free \u00b7 22 adult outing \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -664,161 +658,6 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Summer Critter Camp",
-          "date": "2026-07-23",
-          "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-          "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-          "time_text": "2026-07-23T09:00-0700",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 16,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Camp Fashion Valley",
-          "date": "2026-07-23",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/23/camp-fashion-valley/?et=364074",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Fashion Valley Mall, San Diego",
-          "description": "Enjoy a free, family-friendly weekly series designed to bring interactive and educational experiences to the community. Shoppers and their little ones are invited to enjoy retailer activations, hands-on activities and engaging presentations from community partners, making every Thursday a new opportunity to learn, create and enjoy.Please note: Camp Fashion Valley is not a drop-off event. All children must remain accompanied by a parent or guardian at all times.\u25cf July 23 | Music Makers: Enjoy a live performance from the San Diego Youth Symphony: ChIMES and try hands-on musical instruments.\u25cf July 30 | Nature Explorers: Discover wildlife, animal tracks, skulls and more with educators from the San Diego River Foundation.\u25cf August 6 | Creative Campers: Create a take-home art project with guidance from the San Diego Museum of Art.",
-          "time_text": "2026-07-23T11:00-0700",
-          "category": "Museum / zoo",
-          "is_free": true,
-          "score": 14,
-          "tags": [
-            "free",
-            "museum"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Interactive Zone",
-          "date": "2026-07-23",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/23/interactive-zone-at-petco-park-8fceee3c/?et=363639",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Petco Park, San Diego",
-          "description": "Fans can enjoy themed activations and food trucks in the Lexus Premier Lot, including:The Labu\u2019Tique Shop returns to Petco Park with The Labu\u2019Tique Famers Market! Guests can shop for Labubus, Squishy Toys, Jelly Cats and Needohs. Maruchan\u2019s MaruMart will transport attendees into a vibrant Japanese convenience store\u2013inspired, walk-through experience centered on flavor, ramen, merch, and photo-worthy moments, where a familiar world gets a playful, themed twist just for Comic Con fans. Inside, guests can discover free Maruchan samples, unexpected flavor twists, exclusive merchandise only available at this activation, and surprise giveaways throughout a dynamic environment built for exploration, discovery, and immersive snacking all weekend long. Maruchan is partnering with Demon Slayer: Kimetsu no Yaiba to connect anime and ramen lovers alike at MaruMart with design special elements and merchandise. Complimentary Maruchan Yakisoba samples inspired by fan-favorite Demon Slayer characters, including Tanjiro's Beef Yakisoba, Zenitsu's Chicken Yakisoba, and Inosuke's Spicy Chicken Yakisoba, will be available throughout the experience, served in specially designed collaborative packaging created exclusively for Marumart: Demon Slayer Konbini.Fans can step into The KAYOU Walls of Fandom, a free walk-through experience inside the Interactive Zone at Petco Park that brings the worlds behind KAYOU\u2019s most beloved cards to life. Throughout the experience, guests can get up close and personal with actual KAYOU cards showcased within each installation, revealing the illustration, design, foiling, and craftsmanship that makes every trading card a collectible piece of art. Hello Kitty Cafe Truck returns with exclusive merchandise and sweet treats. Fans can shop totes, hats, throw blankets, mugs, quarter-zip jackets and t-shirts.",
-          "time_text": "2026-07-23T10:00-0700",
-          "category": "Farmers market",
-          "is_free": true,
-          "score": 13,
-          "tags": [
-            "craft",
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "downtown",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Zoo Camp",
-          "date": "2026-07-23",
-          "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Wild Wonders, Bonsall",
-          "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-          "time_text": "2026-07-23T09:00-0700",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 13,
-          "tags": [
-            "craft",
-            "zoo"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -1011,19 +850,168 @@
           }
         },
         {
-          "title": "Bay Club Summer Camps",
+          "title": "North Park Farmers Market 2026",
           "date": "2026-07-23",
-          "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Bay Club Hotel and Marina, San Diego",
-          "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-          "time_text": "2026-07-23T09:00-0700",
-          "category": "Craft / STEAM",
+          "url": "https://www.sandiego.gov/event/north-park-farmers-market-2026-27",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "Check out the North Park Thursday Market every Thursday from 3pm to 7:30pm, located between Granada Avenue and Ray Street on North Park Way. Shop tons of different items like fresh produce, prepared foods, flowers, apparel, baked goods and more! Visit the Thursday Market website, or follow @shopnorthparkmarket on Instagram and Facebook for a list of vendors, products, updates and more! To apply to become a vendor visit northparkfarmersmarket.com !",
+          "time_text": "Thursday, July 23, 2026, 3 - 7:30pm",
+          "category": "Farmers market",
           "is_free": false,
           "score": 6,
           "tags": [
+            "farmers market",
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": true
+            },
+            "area": "unknown",
+            "time_period": "afternoon",
+            "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-23",
+          "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+          "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+          "time_text": "2026-07-23T09:00:00-07:00",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 6,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Scapin",
+          "date": "2026-07-23",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/23/scapin-at-north-coast-repertory-the/?et=363286",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "North Coast Repertory Theatre, Solana Beach",
+          "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+          "time_text": "2026-07-23T20:00-0700",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "beach",
             "craft"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Summer with Stuart Concert Series",
+          "date": "2026-07-23",
+          "url": "https://calendar.ucsd.edu/event/summer-with-stuart",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Varies",
+          "description": "Join us for the second annual Summer with Stuart, a pop-up concert series at various Stuart Collection Artworks. In partnership with local chamber musicians, we're presenting six weeks of free, family-friendly summer evening programming. Thursdays, 6 - 7 pm July 2: Sun God, Series kickoff with Westwind Brass As America marks its 250th birthday, Westwind Brass celebrates with Sousa-style marches, beloved folk and hymn tunes, jazz standards, Broadway showstoppers, and Hollywood film scores, all carried unamplified across Niki de Saint Phalle\u2019s radiant Sun God lawn. The professional brass quintet \u2014 two trumpets, French horn, trombone, and tuba \u2014 sweeps across the American story, from the concert hall to the silver screen. Think Copland\u2019s wide-open prairie sound and the brassy swagger of big-band jazz. Roughly 60\u201375 minutes of joyful noise for America\u2019s 250th. Check out the band in advance: Listen to Westwind Brass Location: Sun God in Google Maps Parking: Scholars Parking Structure in Google Maps July 9: La Jolla Project, Left Coast Quintet As dusk settles over the Richard Fleischner\u2019s La Jolla Project, five wind players gather among UC San Diego\u2019s popular outdoor artwork, known as \u201cStonehenge,\u201d for an evening that spans centuries in a single breath. The Left Coast Quintet \u2014 flute, oboe, clarinet, French horn, and bassoon \u2014 is one of music\u2019s most eloquent ensembles: five distinct voices, one rich palette of color. Their program moves fluidly from Baroque counterpoint and Classical-era works (the woodwind quintet was born in Mozart\u2019s day) to Romantic showpieces, contemporary discoveries, and imaginative arrangements of jazz and film music. What sets LCQ apart is its blend of warmth, humor, and polish \u2014 as at home with a Baroque partita as a film-score medley, and always ready to let the audience in on the fun. About 60 minutes where art, landscape, and music fold into one another. Check out the band in advance: Listen to Left Coast Quintet on their website Location: La Jolla Project in Google Maps Parking: Theater District Parking Structure in Google Maps July 16: Bear, Westwind Virtuosi Westwind Virtuosi returns to the most intimate setting in the series \u2014 the Bear courtyard, centered on Tim Hawkinson's massive granite boulder, Bear, also known as \"Beryl.\" Something happens when strings play beside that stone: the granite seems to lean in and listen, holding the sound warm and close. This chamber ensemble \u2014 violin, viola, cello, and bass \u2014 draws on the heart of the string repertoire, from Haydn and Mozart through the Romantics, favoring lyrical slow movements that reward close listening: the cello\u2019s deep warmth, the violin\u2019s singing upper register, the feel of private conversation between musicians. Expect folk songs, tango, and lighter classics that translate beautifully to strings in the open air. Check out the band in advance: Listed to Westwind Virtuosi on their website Location: Bear in Google Maps Parking: Gilman Parking Structure in Google Maps July 23: Sun God, Manny Cepeda + Westwind Strings & Brass We\u2019ve never done this before \u2014 and that\u2019s exactly the point: For one electrifying hour, strings, brass, and the irresistible Manny Cepeda come together for a brand-new program of salsa, rhythm, and pure Latin joy. S\u00e1bor means flavor, and this concert has it in abundance. Cepeda \u2014 one of San Diego\u2019s most beloved Latin musicians \u2014 leads a combined ensemble of Westwind string and brass players through salsa, cumbia, bolero, and cha-cha: forms rooted in Cuba, Colombia, and Puerto Rico and built on syncopated rhythm and call-and-response. The strings, unusual in a Latin dance band, lend lush warmth beneath the brass\u2019s punch and swagger \u2014 the full sound of the great Tito Puente\u2013era orchestras. The Sun God lawn's open footprint gives the music room to move. Check out the band in advance: Listen to Manny Cepeda on his website Location: Sun God in Google Maps Parking: Scholars Parking Structure in Google Maps July 30: La Jolla Project, Hornswoggle Thirty French horns gather at dusk at the La Jolla Project\u2014 and the results are elemental. Hornswoggle is one of the few ensembles in the country performing at this scale, and the French horn genuinely sounds better outdoors than in any hall. Thirty players spread across the grounds, dispersing the sound so it surrounds you rather than faces you \u2014 hunting calls and fanfares dating to the 17th and 18th centuries, hymn-like chorales and folk songs that bloom across horns in unison, and contemporary works written for the spatial possibilities of many horns in open air. Against the backdrop of La Jolla Project, it becomes a glorious, soaring wall of brass rolling into the sky. Check out the band in advance: Listen to Hornswoggle on their website Location: La Jolla Project in Google Maps Parking: Theater District Parking Structure in Google Maps August 6: Bear, Chamber Orchestra The Second Summer with Stuart ends the only way it could \u2014 with everyone on stage, Handel in the air, and Bear hearing Water Music for the very first time. Handel wrote Water Music in 1717 to be played outdoors, from a barge on the River Thames for King George I \u2014 one of the earliest masterpieces written for the open air. Three hundred years later, the combined forces of our summer series bring it back where it belongs: beside Tim Hawkinson\u2019s granite boulder Bear, under a summer sky. Roughly twenty musicians \u2014 strings, brass, and winds drawn from every ensemble of the season, many of them former San Diego Chamber Orchestra players \u2014 gather for the full sweep of Handel\u2019s suites: stately overtures, graceful minuets, and spirited hornpipes. Location: Bear in Google Maps Parking: Gilman Parking Structure in Google Maps Summer with Stuart Concert Series Sharable Flyer for Printing (Google Doc) Stuart Collection: The Stuart Collection at the University of California, San Diego \u2013 comprised of 22 permanent artworks by world-renowned artists, and growing \u2013 aims to question conventional understandings of public art in playful and insightful ways through our commissioning programs, and seeks to enrich the cultural, intellectual, and scholarly life of the UC San Diego campus and local San Diego community. We enhance public life through art that encourages thoughtful deliberation, an awareness of difference, mental and physical wellbeing, and that inspires creative solutions to complex issues; and continue to commission exciting new works from the world\u2019s most important contemporary artists through our Landmarks, Emerging Artists and Public Programs.",
+          "time_text": "2026-07-23T18:00:00-07:00",
+          "category": "Adult outing",
+          "is_free": true,
+          "score": 5,
+          "tags": [
+            "free",
+            "park"
+          ],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Charlie & the Chocolate Factory",
+          "date": "2026-07-23",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/23/charlie-the-chocolate-factory/?et=360133",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
+          "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
+          "time_text": "2026-07-23T20:00-0700",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 4,
+          "tags": [
+            "park"
           ],
           "metadata": {
             "audience": "family",
@@ -1033,16 +1021,16 @@
             "features": {
               "free": false,
               "outdoor": true,
-              "indoor": true,
+              "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
-              "low_walking": true,
+              "low_walking": false,
               "shade": false,
               "bathrooms": true,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "north-county",
             "time_period": "unknown",
             "source_key": "reader",
             "metadata_version": 2
@@ -1056,7 +1044,7 @@
       "label": "Jul 24",
       "is_today": false,
       "count": 12,
-      "summary": "12 ideas \u00b7 2 free \u00b7 5 all-ages event \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Shark Summer at Birch Aquarium",
+      "summary": "14 ideas \u00b7 2 free \u00b7 7 all-ages event \u00b7 MAVERiC Studio Night Market and Dice Goblins Premiere, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "MAVERiC Studio Night Market and Dice Goblins Premiere",
@@ -1350,6 +1338,40 @@
           }
         },
         {
+          "title": "*New Location* Special Event | All Bully Breed Pack Walk | Community Event",
+          "date": "2026-07-24",
+          "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315433539/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-24T01:30:00.000Z",
+          "category": "Festival / community",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "10 Min Workout \"Pup Pilates: How to workout with your dog\" + Live Chat",
           "date": "2026-07-24",
           "url": "https://www.meetup.com/winendinewdoggies/events/315548410/",
@@ -1384,80 +1406,12 @@
           }
         },
         {
-          "title": "Special Event | All Bully Breed Pack Walk | Community Event",
+          "title": "Mastering Presentations, Liberty Toastmasters - In Person",
           "date": "2026-07-24",
-          "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315433539/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-24T01:30:00.000Z",
-          "category": "Festival / community",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Thursday \u200b\u26bd 5pm | Liberty Station",
-          "date": "2026-07-24",
-          "url": "https://www.meetup.com/casual-soccer/events/315539045/",
+          "url": "https://www.meetup.com/san-diego-district-5-toastmasters-meetup-group/events/315540486/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Liberty Station, San Diego, ca, 2665 Cushing Rd, San Diego, ca",
-          "description": "",
-          "time_text": "2026-07-24T00:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "afternoon",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "\u4e2d\u7f8e\u4ea4\u6d41\u805a\u6703 Chinese Language & Culture Exchange Meetup",
-          "date": "2026-07-24",
-          "url": "https://www.meetup.com/sandiegochinese/events/315540432/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Tea n More, San Diego, CA, 7380 Clairemont Mesa Blvd #111, San Diego, CA",
+          "venue": "St. Paul's Conference Center, San Diego, ca, 2557 Third Avenue, San Diego, ca",
           "description": "",
           "time_text": "2026-07-24T02:00:00.000Z",
           "category": "All-ages event",
@@ -1470,6 +1424,40 @@
             "features": {
               "free": false,
               "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Thursday Lets Code",
+          "date": "2026-07-24",
+          "url": "https://www.meetup.com/free-yourself-coding-hiking-yoga-social-mixers/events/315526735/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Nick the greek, San Diego, CA, 5604 Balboa Ave, San Diego, CA 92111, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-24T01:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -1479,7 +1467,7 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "balboa",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1493,7 +1481,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "26 ideas \u00b7 3 free \u00b7 9 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "27 ideas \u00b7 3 free \u00b7 10 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
       "events": [
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
@@ -1952,7 +1940,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "26 ideas \u00b7 3 free \u00b7 8 all-ages event \u00b7 Concerts on the Green 2026, Hillcrest Farmers Market 2026 - University Ave",
+      "summary": "25 ideas \u00b7 3 free \u00b7 7 outdoor / nature \u00b7 Concerts on the Green 2026, Hillcrest Farmers Market 2026 - University Ave",
       "events": [
         {
           "title": "Concerts on the Green 2026",
@@ -2918,8 +2906,8 @@
       "weekday": "Thu",
       "label": "Jul 30",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 1 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3067,40 +3055,6 @@
             },
             "area": "balboa",
             "time_period": "afternoon",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "San Diego Accessibility & Inclusive Design July Meetup",
-          "date": "2026-07-30",
-          "url": "https://www.meetup.com/a11ysd/events/315006767/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "ServiceNow - San Diego Bldg C, San Diego, CA, 4820 Eastgate Mall, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-30T01:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
           }
@@ -4411,24 +4365,24 @@
     }
   ],
   "counts": {
-    "total_events": 100,
+    "total_events": 99,
     "days": 21,
-    "free_events": 17,
+    "free_events": 16,
     "configured_sources": 10,
     "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 30
+      "count": 31
     },
     {
       "name": "All-ages event",
-      "count": 20
+      "count": 19
     },
     {
       "name": "Museum / zoo",
-      "count": 14
+      "count": 13
     },
     {
       "name": "Performance / movie",
@@ -4444,11 +4398,11 @@
     },
     {
       "name": "Adult outing",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Toddler-friendly",
-      "count": 4
+      "count": 3
     }
   ]
 }
