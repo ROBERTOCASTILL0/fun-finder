@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-0f0693ef3d559543",
-  "generated_at": "2026-07-24T05:27:08.400492-07:00",
+  "snapshot_id": "snap-11218e40893dfbc1",
+  "generated_at": "2026-07-24T11:28:16.897654-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -39,7 +39,7 @@
       "category": "family_events",
       "url": "https://sandiego.kidsoutandabout.com/",
       "status": "loaded",
-      "count": 16,
+      "count": 18,
       "parser": "kids"
     },
     {
@@ -1030,8 +1030,48 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "33 ideas \u00b7 4 free \u00b7 13 all-ages event \u00b7 KPBS Kids Event: Olivewood Gardens Day of Play, National Carousel Day at the Balboa Park Carousel",
+      "summary": "35 ideas \u00b7 5 free \u00b7 14 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, KPBS Kids Event: Olivewood Gardens Day of Play",
       "events": [
+        {
+          "title": "Family Art Adventures - San Diego Museum of Art",
+          "date": "2026-07-25",
+          "url": "https://sandiego.kidsoutandabout.com/content/family-art-adventures-san-diego-museum-art",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Family Art Adventures are dynamic free guided tours specially designed for families with school-aged children ages 5 to 12. Tours are offered the second and fourth Saturdays of each month at 10:30 a.m. Family tour themes change monthly, and each family tour is followed by a hands-on art-making activity. All materials are provided.",
+          "time_text": "",
+          "category": "Toddler-friendly",
+          "is_free": true,
+          "score": 17,
+          "tags": [
+            "free",
+            "museum"
+          ],
+          "metadata": {
+            "audience": "young_children",
+            "age_groups": [
+              "kids",
+              "toddler"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": true,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "morning",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
           "date": "2026-07-25",
@@ -1443,42 +1483,6 @@
             "source_key": "kids",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "Paws to Read at Logan Heights Library",
-          "date": "2026-07-25",
-          "url": "https://sdhumane.org/event/paws-to-read/2026-07-25/",
-          "source": "sdhumane",
-          "source_label": "San Diego Humane Society",
-          "venue": "Logan Heights Library, San Diego, CA, 567 S 28th St",
-          "description": "Practice reading with some great listeners! Children of all ages are invited to read aloud to Canine Ambassadors from San Diego Humane Society at the Logan Heights Library on the second and fourth Saturday of each month from 10-11 a.m. \\n",
-          "time_text": "2026-07-25T10:00:00-07:00",
-          "category": "Story / reading",
-          "is_free": false,
-          "score": 4,
-          "tags": [],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "morning",
-            "source_key": "sdhumane",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -1488,7 +1492,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "26 ideas \u00b7 3 free \u00b7 7 outdoor / nature \u00b7 Concerts on the Green 2026, Hillcrest Farmers Market 2026 - University Ave",
+      "summary": "26 ideas \u00b7 3 free \u00b7 7 all-ages event \u00b7 Concerts on the Green 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Concerts on the Green 2026",
@@ -1525,6 +1529,42 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-26",
+          "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Have you ever wondered what species swim in our local waters? Or wanted to know what makes sharks such unique animals? This July, join us as we dive deep into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them.",
+          "time_text": "",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kids",
             "metadata_version": 2
           }
         },
@@ -1889,40 +1929,6 @@
             "area": "balboa",
             "time_period": "unknown",
             "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Comic-Con Art Show",
-          "date": "2026-07-26",
-          "url": "https://www.kpbs.org/events/ongoing/comic-con-art-show",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Manchester Grand Hyatt San Diego",
-          "description": "Comic-Con Arts Visual Arts Pop Culture Festivals",
-          "time_text": "Ongoing until July 26, 2026",
-          "category": "Performance / movie",
-          "is_free": false,
-          "score": 2,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "kpbs",
             "metadata_version": 2
           }
         }
@@ -2489,8 +2495,8 @@
       "weekday": "Thu",
       "label": "Jul 30",
       "is_today": false,
-      "count": 8,
-      "summary": "8 ideas \u00b7 2 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "count": 7,
+      "summary": "7 ideas \u00b7 2 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Summer with Stuart Concert Series",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -2526,47 +2532,6 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Storytime with an Archaeologist at the San Diego Archaeological Center",
-          "date": "2026-07-30",
-          "url": "https://sandiego.kidsoutandabout.com/content/storytime-archaeologist-san-diego-archaeological-center",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "Join us on select Thursday mornings for archaeology-themed story time at the Center. Stay afterwards to explore the museum with family-friendly activities like our Archaeology Quest and Field Lab.",
-          "time_text": "",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 17,
-          "tags": [
-            "museum",
-            "story time",
-            "storytime"
-          ],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "kids",
             "metadata_version": 2
@@ -3632,8 +3597,8 @@
       "weekday": "Thu",
       "label": "Aug 6",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Storytime with an Archaeologist at the San Diego Archaeological Center",
+      "count": 3,
+      "summary": "3 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Can the U.S. and China Build a Stable Great-Power Relationship?",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3669,47 +3634,6 @@
               "food_nearby": false
             },
             "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Storytime with an Archaeologist at the San Diego Archaeological Center",
-          "date": "2026-08-06",
-          "url": "https://sandiego.kidsoutandabout.com/content/storytime-archaeologist-san-diego-archaeological-center",
-          "source": "kids",
-          "source_label": "Kids Out And About",
-          "venue": "",
-          "description": "Join us on select Thursday mornings for archaeology-themed story time at the Center. Stay afterwards to explore the museum with family-friendly activities like our Archaeology Quest and Field Lab.",
-          "time_text": "",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 17,
-          "tags": [
-            "museum",
-            "story time",
-            "storytime"
-          ],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "kids",
             "metadata_version": 2
@@ -3790,8 +3714,8 @@
       "weekday": "Fri",
       "label": "Aug 7",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 2 outdoor / nature \u00b7 The Best of San Diego Party 2026, First Friday Fitness: Pickleball",
+      "count": 4,
+      "summary": "4 ideas \u00b7 2 outdoor / nature \u00b7 The Best of San Diego Party 2026, First Friday Fitness: Pickleball",
       "events": [
         {
           "title": "The Best of San Diego Party 2026",
@@ -3898,6 +3822,42 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "\ud83c\udf08 Volunteers Needed: Help Build the Big Gay Picnic Community!",
+          "date": "2026-08-07",
+          "url": "https://www.meetup.com/thebiggaypicnic/events/315733482/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Big Gay Picnic @ Balboa Park, San Diego, CA, 2909 Balboa Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-07T09:00:00.000Z",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "balboa",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -3906,9 +3866,49 @@
       "weekday": "Sat",
       "label": "Aug 8",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 2 all-ages event \u00b7 Open-air Yoga - San Diego Botanic Garden, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, Open-air Yoga - San Diego Botanic Garden",
       "events": [
+        {
+          "title": "Family Art Adventures - San Diego Museum of Art",
+          "date": "2026-08-08",
+          "url": "https://sandiego.kidsoutandabout.com/content/family-art-adventures-san-diego-museum-art",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Family Art Adventures are dynamic free guided tours specially designed for families with school-aged children ages 5 to 12. Tours are offered the second and fourth Saturdays of each month at 10:30 a.m. Family tour themes change monthly, and each family tour is followed by a hands-on art-making activity. All materials are provided.",
+          "time_text": "",
+          "category": "Toddler-friendly",
+          "is_free": true,
+          "score": 17,
+          "tags": [
+            "free",
+            "museum"
+          ],
+          "metadata": {
+            "audience": "young_children",
+            "age_groups": [
+              "kids",
+              "toddler"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": true,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "morning",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "Open-air Yoga - San Diego Botanic Garden",
           "date": "2026-08-08",
@@ -4163,9 +4163,48 @@
       "weekday": "Thu",
       "label": "Aug 13",
       "is_today": false,
-      "count": 1,
-      "summary": "1 ideas \u00b7 1 outdoor / nature \u00b7 \ud83c\udfb5 RhythmWorx Community Drum Circle! \ud83c\udfb5 \ud83d\udd34 RSVP to Participate! \ud83d\udd34",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, \ud83c\udfb5 RhythmWorx Community Drum Circle! \ud83c\udfb5 \ud83d\udd34 RSVP to Participate! \ud83d\udd34",
       "events": [
+        {
+          "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
+          "date": "2026-08-13",
+          "url": "https://sandiego.kidsoutandabout.com/content/zumba-kids-community-room-city-heightsweingart-library",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Come and enjoy our free Zumba for Kids program for babies and toddlers. This program involves music and movement to help kids strengthen their motor skills. It is followed by social playtime and healthy, nutritious snacks provided after the program.",
+          "time_text": "",
+          "category": "Performance / movie",
+          "is_free": true,
+          "score": 26,
+          "tags": [
+            "free",
+            "playtime"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "\ud83c\udfb5 RhythmWorx Community Drum Circle! \ud83c\udfb5 \ud83d\udd34 RSVP to Participate! \ud83d\udd34",
           "date": "2026-08-13",
@@ -4206,9 +4245,9 @@
     }
   ],
   "counts": {
-    "total_events": 95,
+    "total_events": 96,
     "days": 21,
-    "free_events": 14,
+    "free_events": 17,
     "configured_sources": 10,
     "loaded_sources": 9
   },
@@ -4223,7 +4262,7 @@
     },
     {
       "name": "Museum / zoo",
-      "count": 14
+      "count": 16
     },
     {
       "name": "Farmers market",
