@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-411efd272b40099a",
-  "generated_at": "2026-07-24T14:14:43.934105-07:00",
+  "snapshot_id": "snap-61c32480d46d08c8",
+  "generated_at": "2026-07-24T14:14:57.109343-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -2009,8 +2009,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 6,
-      "summary": "6 ideas \u00b7 2 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Beginner Volleyball at Nite",
+      "count": 7,
+      "summary": "7 ideas \u00b7 2 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Beginner Volleyball at Nite",
       "events": [
         {
           "title": "Pacific Beach Tuesday Farmers Market",
@@ -2191,6 +2191,40 @@
           }
         },
         {
+          "title": "private home visit",
+          "date": "2026-07-28",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-07-28T20:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Special Event | Sit. Stay. Stella. Coffee Shop Walk |Community Event",
           "date": "2026-07-28",
           "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315578815/",
@@ -2231,8 +2265,8 @@
       "weekday": "Wed",
       "label": "Jul 29",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 3 all-ages event \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
+      "count": 6,
+      "summary": "6 ideas \u00b7 2 outdoor / nature \u00b7 4TH Tues Uke @ MB RV Clubhouse, \ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
       "events": [
         {
           "title": "4TH Tues Uke @ MB RV Clubhouse",
@@ -2407,40 +2441,6 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "private home visit",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315672380/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-29T18:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         },
