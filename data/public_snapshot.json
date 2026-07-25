@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-ae168e2a1d18e747",
-  "generated_at": "2026-07-25T08:18:01.988297-07:00",
+  "snapshot_id": "snap-a48209da566633f5",
+  "generated_at": "2026-07-25T14:18:54.487258-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -48,7 +48,7 @@
       "category": "general_events",
       "url": "https://www.kpbs.org/events/all",
       "status": "loaded",
-      "count": 33,
+      "count": 45,
       "parser": "kpbs"
     },
     {
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 100,
+      "count": 67,
       "parser": "reader"
     },
     {
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 53,
+      "count": 45,
       "parser": "jsonld"
     },
     {
@@ -93,7 +93,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 27,
+      "count": 26,
       "parser": "jsonld"
     },
     {
@@ -113,84 +113,8 @@
     "label": "Jul 25",
     "is_today": true,
     "count": 12,
-    "summary": "132 ideas \u00b7 16 free \u00b7 40 all-ages event \u00b7 Drop In Play, Gardens Day of Play",
+    "summary": "87 ideas \u00b7 8 free \u00b7 27 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, Comics of Care: Healing Through Graphic Medicine",
     "events": [
-      {
-        "title": "Drop In Play",
-        "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/25/drop-in-play-summer-2026/?et=361996",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "ArtReach, San Diego",
-        "description": "Drop-In Play at ArtReach Studio in Hillcrest is a relaxed open play art experience for walking toddlers and kids up to 8 years old. Children explore art materials and sensory stations at their own pace in a safe, creative environment. There\u2019s no formal instruction \u2014 just curiosity, creativity, and hands-on discovery through color, texture, sound, and play. Perfect for families looking for sensory play, toddler activities, and creative indoor play in San Diego, drop in anytime during open hours and stay as long as you\u2019d like.",
-        "time_text": "2026-07-25T09:00-0700",
-        "category": "Toddler-friendly",
-        "is_free": false,
-        "score": 21,
-        "tags": [],
-        "metadata": {
-          "audience": "young_children",
-          "age_groups": [
-            "kids",
-            "toddler"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": true,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": true,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Gardens Day of Play",
-        "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/25/olivewood-gardens-day-of-play/?et=363477",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Olivewood Gardens and Learning Center, National City",
-        "description": "The free family-friendly event invites guests of all ages to learn, explore, and celebrate healthy living in Olivewood\u2019s beautiful garden. During Day of Play, families will participate in nutrition, gardening, STEAM (Science, technology, engineering, art, and math) activities, take-home crafts, physical activities and games, cooking demonstrations from the Kitchenistas, raffle prizes and so much more! Day of Play is a day filled with interactive fun, outdoor exploration, and inspiration for the whole family to come together to play, learn, and celebrate the joy of living well. Registration is optional but encouraged. Pre-registration will enter attendees into a raffle to win a spot in an upcoming family cooking class. Registration is now open at Event Website.",
-        "time_text": "2026-07-25T10:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": true,
-        "score": 18,
-        "tags": [
-          "craft",
-          "free"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "south-bay",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
       {
         "title": "Family Art Adventures - San Diego Museum of Art",
         "date": "2026-07-25",
@@ -232,82 +156,6 @@
         }
       },
       {
-        "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
-        "date": "2026-07-25",
-        "url": "https://www.kpbs.org/events/2026/07/25/kpbs-kids-event-olivewood-gardens-day-of-play",
-        "source": "kpbs",
-        "source_label": "KPBS",
-        "venue": "Olivewood Gardens and Learning Center",
-        "description": "Festivals Family Kids Food / Drinks Gardening Outdoors Arts & Crafts",
-        "time_text": "Saturday, July 25, 2026 from 10 AM to 1 PM",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 15,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "unknown",
-          "time_period": "morning",
-          "source_key": "kpbs",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Interactive Zone",
-        "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/25/interactive-zone-at-petco-park-8fceee3c/?et=363641",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Petco Park, San Diego",
-        "description": "Fans can enjoy themed activations and food trucks in the Lexus Premier Lot, including:The Labu\u2019Tique Shop returns to Petco Park with The Labu\u2019Tique Famers Market! Guests can shop for Labubus, Squishy Toys, Jelly Cats and Needohs. Maruchan\u2019s MaruMart will transport attendees into a vibrant Japanese convenience store\u2013inspired, walk-through experience centered on flavor, ramen, merch, and photo-worthy moments, where a familiar world gets a playful, themed twist just for Comic Con fans. Inside, guests can discover free Maruchan samples, unexpected flavor twists, exclusive merchandise only available at this activation, and surprise giveaways throughout a dynamic environment built for exploration, discovery, and immersive snacking all weekend long. Maruchan is partnering with Demon Slayer: Kimetsu no Yaiba to connect anime and ramen lovers alike at MaruMart with design special elements and merchandise. Complimentary Maruchan Yakisoba samples inspired by fan-favorite Demon Slayer characters, including Tanjiro's Beef Yakisoba, Zenitsu's Chicken Yakisoba, and Inosuke's Spicy Chicken Yakisoba, will be available throughout the experience, served in specially designed collaborative packaging created exclusively for Marumart: Demon Slayer Konbini.Fans can step into The KAYOU Walls of Fandom, a free walk-through experience inside the Interactive Zone at Petco Park that brings the worlds behind KAYOU\u2019s most beloved cards to life. Throughout the experience, guests can get up close and personal with actual KAYOU cards showcased within each installation, revealing the illustration, design, foiling, and craftsmanship that makes every trading card a collectible piece of art. Hello Kitty Cafe Truck returns with exclusive merchandise and sweet treats. Fans can shop totes, hats, throw blankets, mugs, quarter-zip jackets and t-shirts.",
-        "time_text": "2026-07-25T10:00-0700",
-        "category": "Farmers market",
-        "is_free": true,
-        "score": 13,
-        "tags": [
-          "craft",
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "downtown",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Comics of Care: Healing Through Graphic Medicine",
         "date": "2026-07-25",
         "url": "https://calendar.ucsd.edu/event/comics-of-care-healing-through-graphic-medicine-2026",
@@ -345,53 +193,14 @@
         }
       },
       {
-        "title": "National Carousel Day",
-        "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/25/national-carousel-day-at-the-balboa-b6cd8d3c/?et=363447",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Balboa Park Carousel, San Diego",
-        "description": "Celebrate National Carousel Day at the historic Dorothea Laub Balboa Park Carousel. The free community event is presented by Forever Balboa Park, offering free carousel rides all day, family-friendly activities, and live entertainment. Food from local vendors will be available for purchase.Live Entertainment Schedule:Noon \u2013 1:00 pm: Young Lions Jazz Conservatory1:00 \u2013 1:30 pm: Kathryn the Grape1:30 \u2013 2:30 pm: Mariachis and Folklorico Dancers2:30 \u2013 3:30 pm: Opera for KidsBalboa Park\u2019s historic Herschell-Spillman Carousel was built in 1910 and still spins on its original General Electric motor to music played on its original military band organ. It is one of only 12 known remaining carousels in North America that feature a brass ring game. The Balboa Park Carousel is currently owned and operated by Forever Balboa Park.",
-        "time_text": "2026-07-25T11:00-0700",
-        "category": "Museum / zoo",
-        "is_free": true,
-        "score": 12,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "balboa",
-          "time_period": "afternoon",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "America 250 Girl Scout Workshop",
         "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/25/america-250-girl-scout-workshop/?et=360664",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/25/america-250-girl-scout-workshop/?et=360685",
         "source": "reader",
         "source_label": "San Diego Reader",
         "venue": "San Diego History Center",
         "description": "The San Diego History Center is presenting a special exhibition this summer commemorating the 250th anniversary of the United States: America at 250: San Diego 1776\u20132026. The full story of San Diego\u2019s past 250 years ncludes the voices and perspectives of our community. Several opportunities are available for local Girl Scouts to participate in this historic milestone. Scouts who take part in museum field trips will receive an America 250 patch.Engage your Girl Scouts in hands on activities tied to civic engagement and women\u2019s history. Activities include:A guided tour of the America 250 exhibitInteractive San Diego Suffrage lessonArts and crafts for youth to express their wishes for the future of San DiegoSessions (sessions capped at 80 girls):",
-        "time_text": "2026-07-25T10:00-0700",
+        "time_text": "2026-07-25T12:30-0700",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 9,
@@ -533,14 +342,14 @@
         }
       },
       {
-        "title": "Balboa Park Tours: Women\u2019s History Tour",
+        "title": "Bicycle Film Festival San Diego",
         "date": "2026-07-25",
-        "url": "https://www.sandiegoreader.com/events/ongoing/balboa-park-tours-womens-history-to/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Balboa Park, San Diego",
-        "description": "Developed in collaboration with the Center for Women\u2019s History at the San Diego History Center, this special tour highlights the historical and contemporary women whose vision, leadership, and creativity helped shape Balboa Park into the vibrant cultural destination it is today. Among the impactful women featured include philanthropist Ellen Browning Scripps, the \u201cmother of Balboa Park\u201d Kate Sessions, and sculptor Niki de Saint Phalle.The tour meets at the Bea Evenson Fountain, between the Natural History Museum and Fleet Science Center, every third Saturday of the month at 10am. Suggested $5 donation. For more information, contact visitor@balboapark.org or (619) 239-0512 x8.",
-        "time_text": "2026-07-25T10:00-0700",
+        "url": "https://www.kpbs.org/events/2026/07/25/bicycle-film-festival-san-diego",
+        "source": "kpbs",
+        "source_label": "KPBS",
+        "venue": "Museum of Photographic Arts at the San Diego Museum of Art (MOPA @ SDMA) in Balboa Park",
+        "description": "Films Festivals Arts",
+        "time_text": "Saturday, July 25, 2026 at 3 PM",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 7,
@@ -564,7 +373,190 @@
             "food_nearby": false
           },
           "area": "balboa",
+          "time_period": "afternoon",
+          "source_key": "kpbs",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Little Italy Mercato (Saturday)",
+        "date": "2026-07-25",
+        "url": "https://www.sandiego.gov/event/little-italy-mercato-saturday-27",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "The Little Italy certified farmers market features fresh fruits and vegetables, pastured eggs, meat, seafood, bread and pastries, yogurt, cheese and sauces, coffee and specialty treats, along with local artists and crafters, candles, and handmade soap. Shop every Saturday, year-round, rain or shine!",
+        "time_text": "Saturday, July 25, 2026, 8am - 2pm",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 7,
+        "tags": [
+          "craft",
+          "farmers market"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "downtown",
           "time_period": "morning",
+          "source_key": "city",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Birding Basics Class.",
+        "date": "2026-07-25",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/25/birding-basics-class-c49a28fe/?et=363216",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Mission Trails Regional Park, San Carlos",
+        "description": "Join MTRP Trail Guide and experienced birder Winona Sollock for an educational bird identification class. Increase your enjoyment of Nature by learning 5 simple techniques to identify birds at a glance. You will also learn how to use a field guide, so bring one along if you have it.Classes meet at the Visitor Center in Classroom A on the last Saturday of every month (except Nov. and Dec.) at 1:00 p.m. The class is free and open to the public. Seating is limited to the first 15 people.",
+        "time_text": "2026-07-25T13:00-0700",
+        "category": "Outdoor / nature",
+        "is_free": true,
+        "score": 6,
+        "tags": [
+          "free",
+          "park"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": true,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "afternoon",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Shark Summer at Birch Aquarium",
+        "date": "2026-07-25",
+        "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+        "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+        "time_text": "2026-07-25T09:00:00-07:00",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 6,
+        "tags": [
+          "aquarium"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Scapin",
+        "date": "2026-07-25",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/25/scapin-at-north-coast-repertory-the/?et=363289",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "North Coast Repertory Theatre, Solana Beach",
+        "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+        "time_text": "2026-07-25T20:00-0700",
+        "category": "Craft / STEAM",
+        "is_free": false,
+        "score": 5,
+        "tags": [
+          "beach",
+          "craft"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "A Mythical Quest",
+        "date": "2026-07-25",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/25/a-mythical-quest/?et=364188",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Tenth Avenue Arts Center, San Diego",
+        "description": "House of Outcasts presents a fantasy comedy about a young fanatic named Odin who travels to a magical realm after his fianc\u00e9e, Olivia, mysteriously becomes deathly ill. To save her life, Odin must join forces with a band of mythical creatures and obtain a healing potion from the Witch Queen of the Seven Realms.Viewer discretion is advised. The production contains live stage combat, strong language, sexual innuendo and elaborate special effects. Children ages 9 through 12 must be accompanied by an adult age 18 or older. Children age 8 and younger will not be admitted.",
+        "time_text": "2026-07-25T19:30-0700",
+        "category": "Adult outing",
+        "is_free": false,
+        "score": 4,
+        "tags": [],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "unknown",
           "source_key": "reader",
           "metadata_version": 2
         }
@@ -578,84 +570,8 @@
       "label": "Jul 25",
       "is_today": true,
       "count": 12,
-      "summary": "132 ideas \u00b7 16 free \u00b7 40 all-ages event \u00b7 Drop In Play, Gardens Day of Play",
+      "summary": "87 ideas \u00b7 8 free \u00b7 27 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, Comics of Care: Healing Through Graphic Medicine",
       "events": [
-        {
-          "title": "Drop In Play",
-          "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/25/drop-in-play-summer-2026/?et=361996",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "ArtReach, San Diego",
-          "description": "Drop-In Play at ArtReach Studio in Hillcrest is a relaxed open play art experience for walking toddlers and kids up to 8 years old. Children explore art materials and sensory stations at their own pace in a safe, creative environment. There\u2019s no formal instruction \u2014 just curiosity, creativity, and hands-on discovery through color, texture, sound, and play. Perfect for families looking for sensory play, toddler activities, and creative indoor play in San Diego, drop in anytime during open hours and stay as long as you\u2019d like.",
-          "time_text": "2026-07-25T09:00-0700",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 21,
-          "tags": [],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": true,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Gardens Day of Play",
-          "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/25/olivewood-gardens-day-of-play/?et=363477",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Olivewood Gardens and Learning Center, National City",
-          "description": "The free family-friendly event invites guests of all ages to learn, explore, and celebrate healthy living in Olivewood\u2019s beautiful garden. During Day of Play, families will participate in nutrition, gardening, STEAM (Science, technology, engineering, art, and math) activities, take-home crafts, physical activities and games, cooking demonstrations from the Kitchenistas, raffle prizes and so much more! Day of Play is a day filled with interactive fun, outdoor exploration, and inspiration for the whole family to come together to play, learn, and celebrate the joy of living well. Registration is optional but encouraged. Pre-registration will enter attendees into a raffle to win a spot in an upcoming family cooking class. Registration is now open at Event Website.",
-          "time_text": "2026-07-25T10:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": true,
-          "score": 18,
-          "tags": [
-            "craft",
-            "free"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "south-bay",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "Family Art Adventures - San Diego Museum of Art",
           "date": "2026-07-25",
@@ -697,82 +613,6 @@
           }
         },
         {
-          "title": "KPBS Kids Event: Olivewood Gardens Day of Play",
-          "date": "2026-07-25",
-          "url": "https://www.kpbs.org/events/2026/07/25/kpbs-kids-event-olivewood-gardens-day-of-play",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Olivewood Gardens and Learning Center",
-          "description": "Festivals Family Kids Food / Drinks Gardening Outdoors Arts & Crafts",
-          "time_text": "Saturday, July 25, 2026 from 10 AM to 1 PM",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 15,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "unknown",
-            "time_period": "morning",
-            "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Interactive Zone",
-          "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/25/interactive-zone-at-petco-park-8fceee3c/?et=363641",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Petco Park, San Diego",
-          "description": "Fans can enjoy themed activations and food trucks in the Lexus Premier Lot, including:The Labu\u2019Tique Shop returns to Petco Park with The Labu\u2019Tique Famers Market! Guests can shop for Labubus, Squishy Toys, Jelly Cats and Needohs. Maruchan\u2019s MaruMart will transport attendees into a vibrant Japanese convenience store\u2013inspired, walk-through experience centered on flavor, ramen, merch, and photo-worthy moments, where a familiar world gets a playful, themed twist just for Comic Con fans. Inside, guests can discover free Maruchan samples, unexpected flavor twists, exclusive merchandise only available at this activation, and surprise giveaways throughout a dynamic environment built for exploration, discovery, and immersive snacking all weekend long. Maruchan is partnering with Demon Slayer: Kimetsu no Yaiba to connect anime and ramen lovers alike at MaruMart with design special elements and merchandise. Complimentary Maruchan Yakisoba samples inspired by fan-favorite Demon Slayer characters, including Tanjiro's Beef Yakisoba, Zenitsu's Chicken Yakisoba, and Inosuke's Spicy Chicken Yakisoba, will be available throughout the experience, served in specially designed collaborative packaging created exclusively for Marumart: Demon Slayer Konbini.Fans can step into The KAYOU Walls of Fandom, a free walk-through experience inside the Interactive Zone at Petco Park that brings the worlds behind KAYOU\u2019s most beloved cards to life. Throughout the experience, guests can get up close and personal with actual KAYOU cards showcased within each installation, revealing the illustration, design, foiling, and craftsmanship that makes every trading card a collectible piece of art. Hello Kitty Cafe Truck returns with exclusive merchandise and sweet treats. Fans can shop totes, hats, throw blankets, mugs, quarter-zip jackets and t-shirts.",
-          "time_text": "2026-07-25T10:00-0700",
-          "category": "Farmers market",
-          "is_free": true,
-          "score": 13,
-          "tags": [
-            "craft",
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "downtown",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Comics of Care: Healing Through Graphic Medicine",
           "date": "2026-07-25",
           "url": "https://calendar.ucsd.edu/event/comics-of-care-healing-through-graphic-medicine-2026",
@@ -810,53 +650,14 @@
           }
         },
         {
-          "title": "National Carousel Day",
-          "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/25/national-carousel-day-at-the-balboa-b6cd8d3c/?et=363447",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Balboa Park Carousel, San Diego",
-          "description": "Celebrate National Carousel Day at the historic Dorothea Laub Balboa Park Carousel. The free community event is presented by Forever Balboa Park, offering free carousel rides all day, family-friendly activities, and live entertainment. Food from local vendors will be available for purchase.Live Entertainment Schedule:Noon \u2013 1:00 pm: Young Lions Jazz Conservatory1:00 \u2013 1:30 pm: Kathryn the Grape1:30 \u2013 2:30 pm: Mariachis and Folklorico Dancers2:30 \u2013 3:30 pm: Opera for KidsBalboa Park\u2019s historic Herschell-Spillman Carousel was built in 1910 and still spins on its original General Electric motor to music played on its original military band organ. It is one of only 12 known remaining carousels in North America that feature a brass ring game. The Balboa Park Carousel is currently owned and operated by Forever Balboa Park.",
-          "time_text": "2026-07-25T11:00-0700",
-          "category": "Museum / zoo",
-          "is_free": true,
-          "score": 12,
-          "tags": [
-            "free",
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "balboa",
-            "time_period": "afternoon",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "America 250 Girl Scout Workshop",
           "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/25/america-250-girl-scout-workshop/?et=360664",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/25/america-250-girl-scout-workshop/?et=360685",
           "source": "reader",
           "source_label": "San Diego Reader",
           "venue": "San Diego History Center",
           "description": "The San Diego History Center is presenting a special exhibition this summer commemorating the 250th anniversary of the United States: America at 250: San Diego 1776\u20132026. The full story of San Diego\u2019s past 250 years ncludes the voices and perspectives of our community. Several opportunities are available for local Girl Scouts to participate in this historic milestone. Scouts who take part in museum field trips will receive an America 250 patch.Engage your Girl Scouts in hands on activities tied to civic engagement and women\u2019s history. Activities include:A guided tour of the America 250 exhibitInteractive San Diego Suffrage lessonArts and crafts for youth to express their wishes for the future of San DiegoSessions (sessions capped at 80 girls):",
-          "time_text": "2026-07-25T10:00-0700",
+          "time_text": "2026-07-25T12:30-0700",
           "category": "Museum / zoo",
           "is_free": false,
           "score": 9,
@@ -998,14 +799,14 @@
           }
         },
         {
-          "title": "Balboa Park Tours: Women\u2019s History Tour",
+          "title": "Bicycle Film Festival San Diego",
           "date": "2026-07-25",
-          "url": "https://www.sandiegoreader.com/events/ongoing/balboa-park-tours-womens-history-to/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Balboa Park, San Diego",
-          "description": "Developed in collaboration with the Center for Women\u2019s History at the San Diego History Center, this special tour highlights the historical and contemporary women whose vision, leadership, and creativity helped shape Balboa Park into the vibrant cultural destination it is today. Among the impactful women featured include philanthropist Ellen Browning Scripps, the \u201cmother of Balboa Park\u201d Kate Sessions, and sculptor Niki de Saint Phalle.The tour meets at the Bea Evenson Fountain, between the Natural History Museum and Fleet Science Center, every third Saturday of the month at 10am. Suggested $5 donation. For more information, contact visitor@balboapark.org or (619) 239-0512 x8.",
-          "time_text": "2026-07-25T10:00-0700",
+          "url": "https://www.kpbs.org/events/2026/07/25/bicycle-film-festival-san-diego",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Museum of Photographic Arts at the San Diego Museum of Art (MOPA @ SDMA) in Balboa Park",
+          "description": "Films Festivals Arts",
+          "time_text": "Saturday, July 25, 2026 at 3 PM",
           "category": "Museum / zoo",
           "is_free": false,
           "score": 7,
@@ -1029,7 +830,190 @@
               "food_nearby": false
             },
             "area": "balboa",
+            "time_period": "afternoon",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Little Italy Mercato (Saturday)",
+          "date": "2026-07-25",
+          "url": "https://www.sandiego.gov/event/little-italy-mercato-saturday-27",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "The Little Italy certified farmers market features fresh fruits and vegetables, pastured eggs, meat, seafood, bread and pastries, yogurt, cheese and sauces, coffee and specialty treats, along with local artists and crafters, candles, and handmade soap. Shop every Saturday, year-round, rain or shine!",
+          "time_text": "Saturday, July 25, 2026, 8am - 2pm",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 7,
+          "tags": [
+            "craft",
+            "farmers market"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "downtown",
             "time_period": "morning",
+            "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Birding Basics Class.",
+          "date": "2026-07-25",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/25/birding-basics-class-c49a28fe/?et=363216",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Mission Trails Regional Park, San Carlos",
+          "description": "Join MTRP Trail Guide and experienced birder Winona Sollock for an educational bird identification class. Increase your enjoyment of Nature by learning 5 simple techniques to identify birds at a glance. You will also learn how to use a field guide, so bring one along if you have it.Classes meet at the Visitor Center in Classroom A on the last Saturday of every month (except Nov. and Dec.) at 1:00 p.m. The class is free and open to the public. Seating is limited to the first 15 people.",
+          "time_text": "2026-07-25T13:00-0700",
+          "category": "Outdoor / nature",
+          "is_free": true,
+          "score": 6,
+          "tags": [
+            "free",
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "afternoon",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-25",
+          "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+          "description": "This summer, Birch Aquarium is making a splash with the return of Shark Summer! Dive into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Shark Summer kicks off on July 1 and runs through August 2. Offerings vary by day, check the Daily Schedule for the latest.",
+          "time_text": "2026-07-25T09:00:00-07:00",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 6,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Scapin",
+          "date": "2026-07-25",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/25/scapin-at-north-coast-repertory-the/?et=363289",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "North Coast Repertory Theatre, Solana Beach",
+          "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+          "time_text": "2026-07-25T20:00-0700",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "beach",
+            "craft"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "A Mythical Quest",
+          "date": "2026-07-25",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/25/a-mythical-quest/?et=364188",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Tenth Avenue Arts Center, San Diego",
+          "description": "House of Outcasts presents a fantasy comedy about a young fanatic named Odin who travels to a magical realm after his fianc\u00e9e, Olivia, mysteriously becomes deathly ill. To save her life, Odin must join forces with a band of mythical creatures and obtain a healing potion from the Witch Queen of the Seven Realms.Viewer discretion is advised. The production contains live stage combat, strong language, sexual innuendo and elaborate special effects. Children ages 9 through 12 must be accompanied by an adult age 18 or older. Children age 8 and younger will not be admitted.",
+          "time_text": "2026-07-25T19:30-0700",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": 4,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
             "source_key": "reader",
             "metadata_version": 2
           }
@@ -1042,7 +1026,7 @@
       "label": "Jul 26",
       "is_today": false,
       "count": 12,
-      "summary": "31 ideas \u00b7 4 free \u00b7 11 all-ages event \u00b7 Concerts on the Green 2026, Shark Summer at Birch Aquarium",
+      "summary": "30 ideas \u00b7 4 free \u00b7 10 all-ages event \u00b7 Concerts on the Green 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Concerts on the Green 2026",
@@ -1893,8 +1877,8 @@
       "weekday": "Wed",
       "label": "Jul 29",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 3 farmers market \u00b7 Ocean Beach Certified Farmers' Market 2026, 4TH Tues Uke @ MB RV Clubhouse",
+      "count": 8,
+      "summary": "8 ideas \u00b7 3 farmers market \u00b7 Ocean Beach Certified Farmers' Market 2026, Ella Mai \u2013 'Do You Still Love Me?' 2026 Tour",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1930,6 +1914,42 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "city",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Ella Mai \u2013 'Do You Still Love Me?' 2026 Tour",
+          "date": "2026-07-29",
+          "url": "https://www.kpbs.org/events/2026/07/29/ella-mai-do-you-still-love-me-2026-tour",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "The Rady Shell at Jacobs Park",
+          "description": "Outdoor Concerts Music Singer/Songwriter",
+          "time_text": "Wednesday, July 29, 2026 at 7 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
             "metadata_version": 2
           }
         },
@@ -2410,8 +2430,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 2 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
+      "count": 9,
+      "summary": "9 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -2488,6 +2508,42 @@
           }
         },
         {
+          "title": "The Music of John Williams",
+          "date": "2026-07-31",
+          "url": "https://www.kpbs.org/events/2026/07/31/the-music-of-john-williams",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "The Rady Shell at Jacobs Park",
+          "description": "Outdoor Concerts Music",
+          "time_text": "Friday, July 31, 2026 at 7:30 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Nature Nights - Snakes",
           "date": "2026-07-31",
           "url": "https://www.meetup.com/friends-of-tecolote-canyon-natural-park-and-nature-center/events/315713896/",
@@ -2518,6 +2574,42 @@
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "North City\u2019s Free Dance Series Returns with Swing Night",
+          "date": "2026-07-31",
+          "url": "https://www.kpbs.org/events/2026/07/31/north-citys-free-dance-series-returns-with-swing-night",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "North City San Marcos",
+          "description": "Dance Dance Classes Dance Performances",
+          "time_text": "Friday, July 31, 2026 from 6 PM to 8 PM",
+          "category": "All-ages event",
+          "is_free": true,
+          "score": 2,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "evening",
+            "source_key": "kpbs",
             "metadata_version": 2
           }
         },
@@ -2666,9 +2758,83 @@
       "weekday": "Sat",
       "label": "Aug 1",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 1 free \u00b7 2 outdoor / nature \u00b7 Lake Miramar Pack Walk, Open-air Yoga - San Diego Botanic Garden",
+      "count": 7,
+      "summary": "7 ideas \u00b7 1 free \u00b7 4 outdoor / nature \u00b7 San Diego FC Community Block Party, Overnight Adventure Aboard 'Star of India'",
       "events": [
+        {
+          "title": "San Diego FC Community Block Party",
+          "date": "2026-08-01",
+          "url": "https://www.kpbs.org/events/2026/08/01/san-diego-fc-community-block-party",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Willie Henderson Sports Complex",
+          "description": "Health & Wellness Sports Family Food / Drinks Outdoors Kids Teens Festivals",
+          "time_text": "Saturday, August 1, 2026 from 12 PM to 8 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 6,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "central-san-diego",
+            "time_period": "afternoon",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Overnight Adventure Aboard 'Star of India'",
+          "date": "2026-08-01",
+          "url": "https://www.kpbs.org/events/ongoing/overnight-adventure-aboard-star-of-india",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Maritime Museum of San Diego",
+          "description": "Camps Family Museums",
+          "time_text": "Ongoing until August 1, 2026",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "museum"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "Lake Miramar Pack Walk",
           "date": "2026-08-01",
@@ -2776,6 +2942,42 @@
           }
         },
         {
+          "title": "St. Vincent with the San Diego Symphony Orchestra",
+          "date": "2026-08-01",
+          "url": "https://www.kpbs.org/events/2026/08/01/st-vincent-with-the-san-diego-symphony-orchestra",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "The Rady Shell at Jacobs Park",
+          "description": "Outdoor Concerts Music",
+          "time_text": "Saturday, August 1, 2026 at 7:30 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Heart of Gold\u2019s Shelter Adoption Event & Donation Drive",
           "date": "2026-08-01",
           "url": "https://sdhumane.org/event/heart-of-golds-shelter-adoption-event-donation-drive-2/2026-08-01/",
@@ -2816,9 +3018,47 @@
       "weekday": "Sun",
       "label": "Aug 2",
       "is_today": false,
-      "count": 6,
-      "summary": "6 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 Shark Summer at Birch Aquarium is Back for 2026, 35th Annual MORAVA Serbian Summer Folkfest 2026",
+      "count": 8,
+      "summary": "8 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 ArtWalk Brings Fine Art to Liberty Station, Shark Summer at Birch Aquarium is Back for 2026",
       "events": [
+        {
+          "title": "ArtWalk Brings Fine Art to Liberty Station",
+          "date": "2026-08-02",
+          "url": "https://www.kpbs.org/events/ongoing/artwalk-brings-fine-art-to-liberty-station",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "ArtWalk Liberty Station",
+          "description": "Arts Outdoors Family Arts & Crafts Food / Drinks Visual Arts",
+          "time_text": "Ongoing until August 2, 2026",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "craft"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "Shark Summer at Birch Aquarium is Back for 2026",
           "date": "2026-08-02",
@@ -2930,6 +3170,42 @@
             "area": "north-county",
             "time_period": "unknown",
             "source_key": "sdhumane",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Heiva San Diego - 2026",
+          "date": "2026-08-02",
+          "url": "https://www.kpbs.org/events/ongoing/heiva-san-diego-2026",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Harrah's Resort Southern California",
+          "description": "Family Festivals Heritage & Cultural Music Dance Dance Performances Food / Drinks",
+          "time_text": "Ongoing until August 2, 2026",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 5,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "kpbs",
             "metadata_version": 2
           }
         },
@@ -3046,8 +3322,8 @@
       "weekday": "Mon",
       "label": "Aug 3",
       "is_today": false,
-      "count": 1,
-      "summary": "1 ideas \u00b7 1 outdoor / nature \u00b7 2026 Pony-13 World Series",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 outdoor / nature \u00b7 2026 Pony-13 World Series, 10th Annual CaddyHack Golf Festival Benefiting Boys to Men Mentoring",
       "events": [
         {
           "title": "2026 Pony-13 World Series",
@@ -3086,6 +3362,40 @@
             "source_key": "kpbs",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "10th Annual CaddyHack Golf Festival Benefiting Boys to Men Mentoring",
+          "date": "2026-08-03",
+          "url": "https://www.kpbs.org/events/2026/08/03/10th-annual-caddyhack-golf-festival-benefiting-boys-to-men-mentoring",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Fairbanks Ranch Country Club",
+          "description": "Charity Music Sports Food / Drinks",
+          "time_text": "Monday, August 3, 2026 at 11:30 AM",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "unknown",
+            "time_period": "morning",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -3094,9 +3404,45 @@
       "weekday": "Tue",
       "label": "Aug 4",
       "is_today": false,
-      "count": 1,
-      "summary": "1 ideas \u00b7 1 all-ages event \u00b7 1st Monday - Jam-a-Theme - at Queen Bee's",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 outdoor / nature \u00b7 Death Cab for Cutie, 1st Monday - Jam-a-Theme - at Queen Bee's",
       "events": [
+        {
+          "title": "Death Cab for Cutie",
+          "date": "2026-08-04",
+          "url": "https://www.kpbs.org/events/2026/08/04/death-cab-for-cutie",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "PETCO Park",
+          "description": "Music Outdoor Concerts Rock",
+          "time_text": "Tuesday, August 4, 2026 at 7 PM",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "downtown",
+            "time_period": "evening",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "1st Monday - Jam-a-Theme - at Queen Bee's",
           "date": "2026-08-04",
@@ -3216,8 +3562,8 @@
       "weekday": "Thu",
       "label": "Aug 6",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Can the U.S. and China Build a Stable Great-Power Relationship?",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, 'Under The Perfect Sun' Book Talk",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3255,6 +3601,42 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "'Under The Perfect Sun' Book Talk",
+          "date": "2026-08-06",
+          "url": "https://www.kpbs.org/events/2026/08/06/under-the-perfect-sun-book-talk",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "San Diego History Center",
+          "description": "Books Museums",
+          "time_text": "Thursday, August 6, 2026 from 6 PM to 7:30 PM",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "museum"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "evening",
+            "source_key": "kpbs",
             "metadata_version": 2
           }
         },
@@ -3485,8 +3867,8 @@
       "weekday": "Sat",
       "label": "Aug 8",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, Open-air Yoga - San Diego Botanic Garden",
+      "count": 5,
+      "summary": "5 ideas \u00b7 1 free \u00b7 3 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, Open-air Yoga - San Diego Botanic Garden",
       "events": [
         {
           "title": "Family Art Adventures - San Diego Museum of Art",
@@ -3597,6 +3979,40 @@
           }
         },
         {
+          "title": "Mission Hills Post Acute Care - Teams in Training- Prior Host Approval.",
+          "date": "2026-08-08",
+          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/314984703/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-08T20:15:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Salad Lab by Darlene Schrijver",
           "date": "2026-08-08",
           "url": "https://www.meetup.com/cookbook-book-club/events/314703120/",
@@ -3637,9 +4053,47 @@
       "weekday": "Sun",
       "label": "Aug 9",
       "is_today": false,
-      "count": 2,
-      "summary": "2 ideas \u00b7 1 free \u00b7 1 outdoor / nature \u00b7 \ud83e\udea9\u2728 FREE! Summer Concert: Stayin\u2019 Alive \u2013 The Bee Gees & Beyond! @ Rady Shell\u2728\ud83d\udd7a, Frosted Faces Foundation Low-Cost Spay & Neuter Clinics",
+      "count": 3,
+      "summary": "3 ideas \u00b7 1 free \u00b7 1 craft / steam \u00b7 Tiki Oasis 2026 Psychedelic TIki, \ud83e\udea9\u2728 FREE! Summer Concert: Stayin\u2019 Alive \u2013 The Bee Gees & Beyond! @ Rady Shell\u2728\ud83d\udd7a",
       "events": [
+        {
+          "title": "Tiki Oasis 2026 Psychedelic TIki",
+          "date": "2026-08-09",
+          "url": "https://www.kpbs.org/events/ongoing/tiki-oasis-2026-psychedelic-tiki",
+          "source": "kpbs",
+          "source_label": "KPBS",
+          "venue": "Town and Country Resort",
+          "description": "Arts Festivals Lectures & Classes Family Music Exhibits Visual Arts Arts & Crafts Food / Drinks",
+          "time_text": "Ongoing until August 9, 2026",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 11,
+          "tags": [
+            "craft"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
         {
           "title": "\ud83e\udea9\u2728 FREE! Summer Concert: Stayin\u2019 Alive \u2013 The Bee Gees & Beyond! @ Rady Shell\u2728\ud83d\udd7a",
           "date": "2026-08-09",
@@ -3819,8 +4273,8 @@
       "weekday": "Thu",
       "label": "Aug 13",
       "is_today": false,
-      "count": 3,
-      "summary": "3 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3932,6 +4386,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Friendship Manor Nursing & Rehabilitation Center (Teams in Training Welcome)",
+          "date": "2026-08-13",
+          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/313304302/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-13T16:45:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -3983,31 +4471,31 @@
     }
   ],
   "counts": {
-    "total_events": 89,
+    "total_events": 103,
     "days": 21,
-    "free_events": 16,
+    "free_events": 15,
     "configured_sources": 10,
     "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 24
+      "count": 30
     },
     {
       "name": "All-ages event",
-      "count": 18
+      "count": 21
     },
     {
       "name": "Museum / zoo",
-      "count": 16
-    },
-    {
-      "name": "Farmers market",
-      "count": 7
+      "count": 18
     },
     {
       "name": "Performance / movie",
+      "count": 9
+    },
+    {
+      "name": "Farmers market",
       "count": 7
     },
     {
@@ -4015,12 +4503,12 @@
       "count": 6
     },
     {
-      "name": "Toddler-friendly",
-      "count": 3
+      "name": "Craft / STEAM",
+      "count": 4
     },
     {
-      "name": "Craft / STEAM",
-      "count": 3
+      "name": "Adult outing",
+      "count": 4
     }
   ]
 }
