@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-61c32480d46d08c8",
-  "generated_at": "2026-07-24T14:14:57.109343-07:00",
+  "snapshot_id": "snap-3fa8f5044edeb1ed",
+  "generated_at": "2026-07-24T20:15:23.222496-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -57,7 +57,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 66,
+      "count": 2,
       "parser": "reader"
     },
     {
@@ -66,7 +66,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 53,
+      "count": 52,
       "parser": "jsonld"
     },
     {
@@ -113,7 +113,7 @@
     "label": "Jul 24",
     "is_today": true,
     "count": 12,
-    "summary": "79 ideas \u00b7 5 free \u00b7 29 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, MAVERiC Studio Night Market and Dice Goblins Premiere",
+    "summary": "16 ideas \u00b7 2 free \u00b7 4 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, MAVERiC Studio Night Market and Dice Goblins Premiere",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -341,42 +341,6 @@
         }
       },
       {
-        "title": "Summer Concert: Anthony Cullins",
-        "date": "2026-07-24",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/24/summer-concert-blues-musician-antho/?et=363398",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Coronado Library",
-        "description": "Anthony Cullins is a guitarist, songwriter, multi-instrumentalist from Fallbrook, California. Anthony's musical influences include R&B, funk, soul, rock, jazz, and blues prominently displayed in his eclectic improvisational style he calls \"psychedelic soul music\", ranging from Eddie Hazel and Jeff Beck to George Benson and Eric Johnson with dozens of influences in between. Anthony won \"Best Blues Artist\" in the 2023 and 2024 San Diego Music Awards and \"Artist of the Year\" in the 2025 San Diego Music Awards. He is working on two studio albums, and has begun to tour in London, Norway, and all over the states. The Library's Summer Concerts offer the perfect midday musical escape in the Winn Room. This concert is free to attend thanks to the support of the City of Coronado and the Friends of the Coronado Public Library. Seating is first come, first seated and doors will open at 12:45pm.",
-        "time_text": "2026-07-24T13:00-0700",
-        "category": "Performance / movie",
-        "is_free": true,
-        "score": 6,
-        "tags": [
-          "free"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "afternoon",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Tales & Tunes - San Diego Botanic Garden",
         "date": "2026-07-24",
         "url": "https://sandiego.kidsoutandabout.com/content/tales-tunes-san-diego-botanic-garden",
@@ -409,81 +373,6 @@
           "area": "central-san-diego",
           "time_period": "morning",
           "source_key": "kids",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Scapin",
-        "date": "2026-07-24",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/24/scapin-at-north-coast-repertory-the/?et=363287",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "North Coast Repertory Theatre, Solana Beach",
-        "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
-        "time_text": "2026-07-24T14:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 5,
-        "tags": [
-          "beach",
-          "craft"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Charlie & the Chocolate Factory",
-        "date": "2026-07-24",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/24/charlie-the-chocolate-factory/?et=360134",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
-        "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
-        "time_text": "2026-07-24T20:00-0700",
-        "category": "Outdoor / nature",
-        "is_free": false,
-        "score": 4,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -556,6 +445,114 @@
           "source_key": "ucsd",
           "metadata_version": 2
         }
+      },
+      {
+        "title": "Summer Grad Writing Circles",
+        "date": "2026-07-24",
+        "url": "https://calendar.ucsd.edu/event/summer-grad-writing-circles",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+        "description": "Grad Writing Circles are dedicated time and space for graduate students to schedule writing time with their peers across campus. We follow the Pomodoro Method to include 3 blocks of writing twice a week for graduate students to write and advance their projects. Circles have light facilitation and check-ins on goals and intentions. Writing consultations (30min or 60min) will be available for registered participants who participate for at least one writing block. Grad Writing Circles meet in hybrid modality: In Person at Geisel Library First Floor West Wing and via Zoom. he Writing Room is a minimally structured, daily service for graduate students. Grad are welcome to come and go throughout the session and are highly encouraged to join us at the start of the writing blocks. The aim of the Grad Writing Circles are to give you time to \"get away\" and work on your writing project, in the quiet company of others. Bring a coffee, make progress on your project, and enjoy virtual community with other grad writers!",
+        "time_text": "2026-07-24T10:00:00-07:00",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 3,
+        "tags": [
+          "zoo"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
+        "date": "2026-07-24",
+        "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "",
+        "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
+        "time_text": "2026-07-24",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 3,
+        "tags": [
+          "zoo"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "morning",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Weed Warriors",
+        "date": "2026-07-24",
+        "url": "https://calendar.ucsd.edu/event/weed-warriors",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Scripps Coastal Reserve - Mesa, 9400 La Jolla Farms Road La Jolla, California 92093 United States",
+        "description": "Join us every Friday for weeding/work parties at Scripps Coastal Reserve from 8-10 am! Learn more about the flora and fauna of the reserve while lending a hand to remove invasive plants. No RSVP required, but must be able to sign a waiver upon arrival. Make sure to wear closed-toed shoes and clothes you don't mind getting dirty. Gloves and tools will be provided. Please keep in mind that there are no water or bathroom facilities at the reserve. Also note that while this event is family-friendly, no dogs or other pets are allowed inside the reserve.",
+        "time_text": "2026-07-24T08:00:00-07:00",
+        "category": "Family outing",
+        "is_free": false,
+        "score": 2,
+        "tags": [],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "morning",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
       }
     ]
   },
@@ -566,7 +563,7 @@
       "label": "Jul 24",
       "is_today": true,
       "count": 12,
-      "summary": "79 ideas \u00b7 5 free \u00b7 29 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, MAVERiC Studio Night Market and Dice Goblins Premiere",
+      "summary": "16 ideas \u00b7 2 free \u00b7 4 museum / zoo \u00b7 Comics of Care: Healing Through Graphic Medicine, MAVERiC Studio Night Market and Dice Goblins Premiere",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -794,42 +791,6 @@
           }
         },
         {
-          "title": "Summer Concert: Anthony Cullins",
-          "date": "2026-07-24",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/24/summer-concert-blues-musician-antho/?et=363398",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Coronado Library",
-          "description": "Anthony Cullins is a guitarist, songwriter, multi-instrumentalist from Fallbrook, California. Anthony's musical influences include R&B, funk, soul, rock, jazz, and blues prominently displayed in his eclectic improvisational style he calls \"psychedelic soul music\", ranging from Eddie Hazel and Jeff Beck to George Benson and Eric Johnson with dozens of influences in between. Anthony won \"Best Blues Artist\" in the 2023 and 2024 San Diego Music Awards and \"Artist of the Year\" in the 2025 San Diego Music Awards. He is working on two studio albums, and has begun to tour in London, Norway, and all over the states. The Library's Summer Concerts offer the perfect midday musical escape in the Winn Room. This concert is free to attend thanks to the support of the City of Coronado and the Friends of the Coronado Public Library. Seating is first come, first seated and doors will open at 12:45pm.",
-          "time_text": "2026-07-24T13:00-0700",
-          "category": "Performance / movie",
-          "is_free": true,
-          "score": 6,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "afternoon",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Tales & Tunes - San Diego Botanic Garden",
           "date": "2026-07-24",
           "url": "https://sandiego.kidsoutandabout.com/content/tales-tunes-san-diego-botanic-garden",
@@ -862,81 +823,6 @@
             "area": "central-san-diego",
             "time_period": "morning",
             "source_key": "kids",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Scapin",
-          "date": "2026-07-24",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/24/scapin-at-north-coast-repertory-the/?et=363287",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "North Coast Repertory Theatre, Solana Beach",
-          "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
-          "time_text": "2026-07-24T14:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 5,
-          "tags": [
-            "beach",
-            "craft"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Charlie & the Chocolate Factory",
-          "date": "2026-07-24",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/24/charlie-the-chocolate-factory/?et=360134",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Moonlight Amphitheatre in Brengle Terrace Park, Vista",
-          "description": "Based on Roald Dahl\u2019s timeless tale, this spectacular stage adaptation features an original score by Marc Shaiman and Scott Wittman (Hairspray, Mary Poppins Returns) and beloved songs from the classic film by Leslie Bricusse and Anthony Newley, including \u201cPure Imagination,\u201d \u201cThe Candy Man,\u201d \u201cI\u2019ve Got a Golden Ticket,\u201d and \u201cThe Oompa Loompa Song.\u201d Follow young Charlie Bucket and the eccentric chocolatier Willy Wonka on a fantastical journey filled with wonder, whimsy, and, of course, chocolate rivers galore. This golden ticket experience is a treat for kids, kids-at-heart, and anyone who believes in magic.",
-          "time_text": "2026-07-24T20:00-0700",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 4,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -1009,6 +895,114 @@
             "source_key": "ucsd",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Summer Grad Writing Circles",
+          "date": "2026-07-24",
+          "url": "https://calendar.ucsd.edu/event/summer-grad-writing-circles",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+          "description": "Grad Writing Circles are dedicated time and space for graduate students to schedule writing time with their peers across campus. We follow the Pomodoro Method to include 3 blocks of writing twice a week for graduate students to write and advance their projects. Circles have light facilitation and check-ins on goals and intentions. Writing consultations (30min or 60min) will be available for registered participants who participate for at least one writing block. Grad Writing Circles meet in hybrid modality: In Person at Geisel Library First Floor West Wing and via Zoom. he Writing Room is a minimally structured, daily service for graduate students. Grad are welcome to come and go throughout the session and are highly encouraged to join us at the start of the writing blocks. The aim of the Grad Writing Circles are to give you time to \"get away\" and work on your writing project, in the quiet company of others. Bring a coffee, make progress on your project, and enjoy virtual community with other grad writers!",
+          "time_text": "2026-07-24T10:00:00-07:00",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
+          "date": "2026-07-24",
+          "url": "https://calendar.ucsd.edu/event/ucship-talk-live-qa-zoom",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "",
+          "description": "The UC San Diego Student Health Services Insurance Office does not offer in-person meetings. If you have questions about your health insurance, you may join one of our Zoom sessions on Mondays, Wednesdays, and Fridays from 11am - 12pm to speak directly with an Insurance Coordinator. Zoom Meetings Mondays, 11am\u201312pm PST at https://uchealth.zoom.us/j/88081736382Wednesdays, 11am\u201312pm PST at https://uchealth.zoom.us/j/81949023064Fridays, 11am\u201312pm PST at https://uchealth.zoom.us/j/82705053129Please note: These Zoom sessions are conducted in a group format, and other attendees may join. To protect your privacy, please do not share personal health information. Thank you.",
+          "time_text": "2026-07-24",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "morning",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Weed Warriors",
+          "date": "2026-07-24",
+          "url": "https://calendar.ucsd.edu/event/weed-warriors",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Scripps Coastal Reserve - Mesa, 9400 La Jolla Farms Road La Jolla, California 92093 United States",
+          "description": "Join us every Friday for weeding/work parties at Scripps Coastal Reserve from 8-10 am! Learn more about the flora and fauna of the reserve while lending a hand to remove invasive plants. No RSVP required, but must be able to sign a waiver upon arrival. Make sure to wear closed-toed shoes and clothes you don't mind getting dirty. Gloves and tools will be provided. Please keep in mind that there are no water or bathroom facilities at the reserve. Also note that while this event is family-friendly, no dogs or other pets are allowed inside the reserve.",
+          "time_text": "2026-07-24T08:00:00-07:00",
+          "category": "Family outing",
+          "is_free": false,
+          "score": 2,
+          "tags": [],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "morning",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1018,7 +1012,7 @@
       "label": "Jul 25",
       "is_today": false,
       "count": 12,
-      "summary": "36 ideas \u00b7 5 free \u00b7 14 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, KPBS Kids Event: Olivewood Gardens Day of Play",
+      "summary": "33 ideas \u00b7 4 free \u00b7 11 all-ages event \u00b7 Family Art Adventures - San Diego Museum of Art, KPBS Kids Event: Olivewood Gardens Day of Play",
       "events": [
         {
           "title": "Family Art Adventures - San Diego Museum of Art",
@@ -1285,7 +1279,7 @@
           }
         },
         {
-          "title": "NEW DATE: Real Dog's 11-Year Anniversary Celebration! \ud83d\udc3e \ud83c\udf89",
+          "title": "Real Dog's 11-Year Anniversary Celebration! \ud83d\udc3e \ud83c\udf89",
           "date": "2026-07-25",
           "url": "https://www.meetup.com/san-diego-dog-meetup/events/315400772/",
           "source": "meetup_dogs",
@@ -1441,22 +1435,20 @@
           }
         },
         {
-          "title": "Movie in the Park - July 24",
+          "title": "Open-air Yoga - San Diego Botanic Garden",
           "date": "2026-07-25",
-          "url": "https://www.meetup.com/lamesaca/events/315188615/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "La Mesa Municipal Pool and Spa, La Mesa, CA, 5100 Memorial Drive, La Mesa, CA",
-          "description": "",
-          "time_text": "2026-07-25T01:00:00.000Z",
+          "url": "https://sandiego.kidsoutandabout.com/content/open-air-yoga-san-diego-botanic-garden",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Reconnect with nature through gentle movement in our lush gardens. Leave feeling refreshed, rejuvenated, and restored. Arrive 10 minutes early to account for walking to the class location.",
+          "time_text": "",
           "category": "Outdoor / nature",
           "is_free": false,
           "score": 4,
-          "tags": [
-            "park"
-          ],
+          "tags": [],
           "metadata": {
-            "audience": "all_ages",
+            "audience": "family",
             "age_groups": [],
             "features": {
               "free": false,
@@ -1467,12 +1459,12 @@
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
+              "bathrooms": false,
               "food_nearby": false
             },
-            "area": "east-county",
+            "area": "central-san-diego",
             "time_period": "unknown",
-            "source_key": "meetup_general",
+            "source_key": "kids",
             "metadata_version": 2
           }
         }
@@ -3147,7 +3139,7 @@
           }
         },
         {
-          "title": "3-4 mi Easy Kent Trail + Poway Farmer's Market",
+          "title": "2.5 mi Easy Kent Trail & Opt. Poway Farmer's Mkt",
           "date": "2026-08-01",
           "url": "https://www.meetup.com/sdhikingwithdogs/events/315810114/",
           "source": "meetup_dogs",
@@ -3155,7 +3147,7 @@
           "venue": "",
           "description": "",
           "time_text": "2026-08-01T14:30:00.000Z",
-          "category": "Farmers market",
+          "category": "All-ages event",
           "is_free": false,
           "score": 0,
           "tags": [],
@@ -3172,7 +3164,7 @@
               "low_walking": true,
               "shade": false,
               "bathrooms": false,
-              "food_nearby": true
+              "food_nearby": false
             },
             "area": "unknown",
             "time_period": "unknown",
@@ -4271,30 +4263,30 @@
   "counts": {
     "total_events": 97,
     "days": 21,
-    "free_events": 16,
+    "free_events": 15,
     "configured_sources": 10,
     "loaded_sources": 9
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 29
+      "count": 28
     },
     {
       "name": "All-ages event",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Museum / zoo",
-      "count": 15
+      "count": 17
     },
     {
       "name": "Performance / movie",
-      "count": 10
+      "count": 9
     },
     {
       "name": "Farmers market",
-      "count": 8
+      "count": 7
     },
     {
       "name": "Festival / community",
@@ -4305,7 +4297,7 @@
       "count": 5
     },
     {
-      "name": "Craft / STEAM",
+      "name": "Family outing",
       "count": 2
     }
   ]
