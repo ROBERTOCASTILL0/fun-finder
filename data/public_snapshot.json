@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-020446ac0bed9ca7",
-  "generated_at": "2026-07-26T02:24:40.890076-07:00",
+  "snapshot_id": "snap-f4b03085c5429ad7",
+  "generated_at": "2026-07-26T20:27:47.849924-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -47,7 +47,7 @@
       "category": "general_events",
       "url": "https://www.kpbs.org/events/all",
       "status": "loaded",
-      "count": 36,
+      "count": 31,
       "parser": "kpbs"
     },
     {
@@ -56,7 +56,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 101,
+      "count": 30,
       "parser": "reader"
     },
     {
@@ -65,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 54,
+      "count": 48,
       "parser": "jsonld"
     },
     {
@@ -92,7 +92,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 26,
+      "count": 24,
       "parser": "jsonld"
     },
     {
@@ -112,7 +112,7 @@
     "label": "Jul 26",
     "is_today": true,
     "count": 12,
-    "summary": "28 ideas \u00b7 5 free \u00b7 6 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
+    "summary": "44 ideas \u00b7 2 free \u00b7 18 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Nickelodeon: FUN FLOWS HERE",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -148,6 +148,44 @@
           "area": "beach",
           "time_period": "unknown",
           "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Nickelodeon: FUN FLOWS HERE",
+        "date": "2026-07-26",
+        "url": "https://www.sandiego.gov/event/nickelodeon-fun-flows-here-2",
+        "source": "city",
+        "source_label": "City of San Diego",
+        "venue": "",
+        "description": "FUN FLOWS HERE is Nickelodeon's outdoor drop-in activation at SDCC, celebrating family fun and slimed-up nostalgia. Guests can explore a Nickelodeon multiverse filled with series-inspired games, character meet-and-greets, photo moments, crafts, and interactive experiences inspired by SpongeBob SquarePants, PAW Patrol, TMNT, and more. A live DJ keeps the energy flowing throughout the day, alongside select performances and surprise moments. Fans can also score slime-themed giveaways, while a lucky few will have the chance to experience the ultimate Nickelodeon rite of passage: getting slimed.",
+        "time_text": "Sunday, July 26, 2026, 11am - 4pm",
+        "category": "Craft / STEAM",
+        "is_free": false,
+        "score": 9,
+        "tags": [
+          "craft"
+        ],
+        "metadata": {
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "morning",
+          "source_key": "city",
           "metadata_version": 2
         }
       },
@@ -337,57 +375,55 @@
         }
       },
       {
-        "title": "Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego",
+        "title": "Scapin",
         "date": "2026-07-26",
-        "url": "https://www.meetup.com/black-nerds-meetup-sd/events/315422929/",
-        "source": "meetup_general",
-        "source_label": "Meetup San Diego",
-        "venue": "Waterfront Park, San Diego, CA, 1700 Pacific Hwy San Diego, CA 92101 United States,, San Diego, CA",
-        "description": "",
-        "time_text": "2026-07-26T22:00:00.000Z",
-        "category": "Outdoor / nature",
-        "is_free": true,
+        "url": "https://www.sandiegoreader.com/events/2026/jul/26/scapin-at-north-coast-repertory-the/?et=363291",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "North Coast Repertory Theatre, Solana Beach",
+        "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+        "time_text": "2026-07-26T19:00-0700",
+        "category": "Craft / STEAM",
+        "is_free": false,
         "score": 5,
         "tags": [
-          "free",
-          "park"
+          "beach",
+          "craft"
         ],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
           "features": {
-            "free": true,
+            "free": false,
             "outdoor": true,
-            "indoor": false,
+            "indoor": true,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
             "low_walking": false,
             "shade": false,
-            "bathrooms": true,
+            "bathrooms": false,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "beach",
           "time_period": "unknown",
-          "source_key": "meetup_general",
+          "source_key": "reader",
           "metadata_version": 2
         }
       },
       {
-        "title": "Adult Swim on the Green",
+        "title": "A Mythical Quest",
         "date": "2026-07-26",
-        "url": "https://www.kpbs.org/events/ongoing/adult-swim-on-the-green",
-        "source": "kpbs",
-        "source_label": "KPBS",
-        "venue": "San Diego Bayfront Park",
-        "description": "Outdoors Comic-Con Pop Culture Festivals",
-        "time_text": "Ongoing until July 26, 2026",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/26/a-mythical-quest/?et=364189",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Tenth Avenue Arts Center, San Diego",
+        "description": "House of Outcasts presents a fantasy comedy about a young fanatic named Odin who travels to a magical realm after his fianc\u00e9e, Olivia, mysteriously becomes deathly ill. To save her life, Odin must join forces with a band of mythical creatures and obtain a healing potion from the Witch Queen of the Seven Realms.Viewer discretion is advised. The production contains live stage combat, strong language, sexual innuendo and elaborate special effects. Children ages 9 through 12 must be accompanied by an adult age 18 or older. Children age 8 and younger will not be admitted.",
+        "time_text": "2026-07-26T19:30-0700",
         "category": "Adult outing",
         "is_free": false,
         "score": 4,
-        "tags": [
-          "park"
-        ],
+        "tags": [],
         "metadata": {
           "audience": "adult",
           "age_groups": [
@@ -395,8 +431,8 @@
           ],
           "features": {
             "free": false,
-            "outdoor": true,
-            "indoor": false,
+            "outdoor": false,
+            "indoor": true,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
@@ -407,70 +443,66 @@
           },
           "area": "central-san-diego",
           "time_period": "unknown",
-          "source_key": "kpbs",
+          "source_key": "reader",
           "metadata_version": 2
         }
       },
       {
-        "title": "Maruchan\u2019s MaruMart: 'Demon Slayer Konbini'",
+        "title": "Birch Aquarium is Open Late Sundays",
         "date": "2026-07-26",
-        "url": "https://www.kpbs.org/events/ongoing/maruchans-marumart",
-        "source": "kpbs",
-        "source_label": "KPBS",
-        "venue": "Petco Park Interactive Zone",
-        "description": "Family Food / Drinks Comic-Con",
-        "time_text": "Ongoing until July 26, 2026",
-        "category": "Outdoor / nature",
-        "is_free": false,
-        "score": 4,
-        "tags": [
-          "park"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "downtown",
-          "time_period": "unknown",
-          "source_key": "kpbs",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Nature Appreciation Meditation & Walk: Sunday Reset on Balboa Park Trails",
-        "date": "2026-07-26",
-        "url": "https://www.meetup.com/mindful-connection-with-nature-meetup-group/events/315136640/",
-        "source": "meetup_general",
-        "source_label": "Meetup San Diego",
-        "venue": "Six and Upas Trails Gateway, San Diego, CA, 6th Ave & Upas St, San Diego, CA",
-        "description": "",
-        "time_text": "2026-07-26T17:30:00.000Z",
+        "url": "https://calendar.ucsd.edu/event/birch-after-hours",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+        "description": "Looking for the perfect way to wind down after the weekend? Birch Aquarium is open late every Sunday evening from 5 \u2013 7 p.m. Enjoy an all-ages experience featuring discounted tickets and a fun, relaxing vibe!",
+        "time_text": "2026-07-26T17:00:00-07:00",
         "category": "Museum / zoo",
         "is_free": false,
-        "score": 4,
+        "score": 3,
         "tags": [
-          "park"
+          "aquarium"
         ],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
           "features": {
             "free": false,
-            "outdoor": true,
-            "indoor": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Dr. Seuss's Boids & Beasties | Exhibition",
+        "date": "2026-07-26",
+        "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+        "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+        "time_text": "2026-07-26",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 3,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
@@ -479,28 +511,30 @@
             "bathrooms": true,
             "food_nearby": false
           },
-          "area": "balboa",
-          "time_period": "unknown",
-          "source_key": "meetup_general",
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "ucsd",
           "metadata_version": 2
         }
       },
       {
-        "title": "San Diego Singles Speed Dating Ages 50-65",
+        "title": "Le Petit Chef",
         "date": "2026-07-26",
-        "url": "https://www.meetup.com/san-diego-singles-network/events/315365101/",
-        "source": "meetup_general",
-        "source_label": "Meetup San Diego",
-        "venue": "The Original 40 Brewing, San Diego, CA, 3117 University Ave, San Diego, CA",
-        "description": "",
-        "time_text": "2026-07-26T23:00:00.000Z",
-        "category": "All-ages event",
+        "url": "https://www.sandiegoreader.com/events/ongoing/le-petit-chef-at-hilton-san-diego-g/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Hilton San Diego Gaslamp Quarter",
+        "description": "Le Petit Chef is an immersive experience that blends 3D projection mapping technology and a multi-course culinary journey. Designed as a \u201c3D cinema on your plate,\u201d the experience transforms the table into a theatrical stage where guests follow the animated adventures of the world\u2019s smallest chef and his international companions through a series of playful, visually stunning performances, and you the audience get to decide which chef ultimately wins in the end.Over the course of approximately two hours, guests enjoy a globally inspired four-course menu with three distinct options\u2014Classic, Vegetarian, and Junior\u2014making it ideal for couples, families, and groups. With evolving storylines and refreshed menus introduced regularly, Le Petit Chef continues to be a standout attraction in the Gaslamp Quarter, offering a unique mix of storytelling, entertainment, and elevated cuisine.",
+        "time_text": "2026-07-26T18:30-0700",
+        "category": "Family outing",
         "is_free": false,
-        "score": 4,
+        "score": 3,
         "tags": [],
         "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
+          "audience": "family",
+          "age_groups": [
+            "kids"
+          ],
           "features": {
             "free": false,
             "outdoor": false,
@@ -513,46 +547,9 @@
             "bathrooms": false,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "downtown",
           "time_period": "unknown",
-          "source_key": "meetup_general",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "\ud83c\udfb6FREE! Ron\u2019s Garage @Coronado\u2019s Spreckles Park\ud83c\udfb6",
-        "date": "2026-07-26",
-        "url": "https://www.meetup.com/sd-sociables/events/314309678/",
-        "source": "meetup_general",
-        "source_label": "Meetup San Diego",
-        "venue": "Spreckles Park, Coronado, CA, 601 Orange Ave, Coronado, CA",
-        "description": "",
-        "time_text": "2026-07-26T22:30:00.000Z",
-        "category": "Outdoor / nature",
-        "is_free": true,
-        "score": 4,
-        "tags": [
-          "free",
-          "park"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "beach",
-          "time_period": "unknown",
-          "source_key": "meetup_general",
+          "source_key": "reader",
           "metadata_version": 2
         }
       }
@@ -565,7 +562,7 @@
       "label": "Jul 26",
       "is_today": true,
       "count": 12,
-      "summary": "28 ideas \u00b7 5 free \u00b7 6 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Concerts on the Green 2026",
+      "summary": "44 ideas \u00b7 2 free \u00b7 18 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Nickelodeon: FUN FLOWS HERE",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -601,6 +598,44 @@
             "area": "beach",
             "time_period": "unknown",
             "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Nickelodeon: FUN FLOWS HERE",
+          "date": "2026-07-26",
+          "url": "https://www.sandiego.gov/event/nickelodeon-fun-flows-here-2",
+          "source": "city",
+          "source_label": "City of San Diego",
+          "venue": "",
+          "description": "FUN FLOWS HERE is Nickelodeon's outdoor drop-in activation at SDCC, celebrating family fun and slimed-up nostalgia. Guests can explore a Nickelodeon multiverse filled with series-inspired games, character meet-and-greets, photo moments, crafts, and interactive experiences inspired by SpongeBob SquarePants, PAW Patrol, TMNT, and more. A live DJ keeps the energy flowing throughout the day, alongside select performances and surprise moments. Fans can also score slime-themed giveaways, while a lucky few will have the chance to experience the ultimate Nickelodeon rite of passage: getting slimed.",
+          "time_text": "Sunday, July 26, 2026, 11am - 4pm",
+          "category": "Craft / STEAM",
+          "is_free": false,
+          "score": 9,
+          "tags": [
+            "craft"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "morning",
+            "source_key": "city",
             "metadata_version": 2
           }
         },
@@ -790,57 +825,55 @@
           }
         },
         {
-          "title": "Blanket Sounds: Free Live Music, Art, & DJ Pop-Up in San Diego",
+          "title": "Scapin",
           "date": "2026-07-26",
-          "url": "https://www.meetup.com/black-nerds-meetup-sd/events/315422929/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Waterfront Park, San Diego, CA, 1700 Pacific Hwy San Diego, CA 92101 United States,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-26T22:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": true,
+          "url": "https://www.sandiegoreader.com/events/2026/jul/26/scapin-at-north-coast-repertory-the/?et=363291",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "North Coast Repertory Theatre, Solana Beach",
+          "description": "The schemes are outrageous. The disguises are ridiculous. The fun is unavoidable. He'll lie, he'll scheme, he'll hide you in a sack. You'll love every minute. North Coast Repertory Theatre presents Scapin, Moli\u00e8re\u2019s irresistible comedy of trickery and mayhem in a dazzling new adaptation by Bill Irwin and Mark O\u2019Donnell \u2014 reimagined for today\u2019s audiences with fresh American flair and nonstop physical comedy. Watch crafty servant Scapin spin outrageous webs of disguise and deception to help a band of young lovers outwit their impossibly miserly fathers. Physical comedy and razor-sharp wit collide in this carnival of theatrical surprises \u2014 a masterful blend of classic French farce and contemporary slapstick that will leave audiences breathless with laughter.Discover one of theatre\u2019s greatest comedic treasures \u2014 outrageous schemes, inspired slapstick, and the timeless reminder that a good servant is worth his weight in chaos.",
+          "time_text": "2026-07-26T19:00-0700",
+          "category": "Craft / STEAM",
+          "is_free": false,
           "score": 5,
           "tags": [
-            "free",
-            "park"
+            "beach",
+            "craft"
           ],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
             "features": {
-              "free": true,
+              "free": false,
               "outdoor": true,
-              "indoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
+              "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "beach",
             "time_period": "unknown",
-            "source_key": "meetup_general",
+            "source_key": "reader",
             "metadata_version": 2
           }
         },
         {
-          "title": "Adult Swim on the Green",
+          "title": "A Mythical Quest",
           "date": "2026-07-26",
-          "url": "https://www.kpbs.org/events/ongoing/adult-swim-on-the-green",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "San Diego Bayfront Park",
-          "description": "Outdoors Comic-Con Pop Culture Festivals",
-          "time_text": "Ongoing until July 26, 2026",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/26/a-mythical-quest/?et=364189",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Tenth Avenue Arts Center, San Diego",
+          "description": "House of Outcasts presents a fantasy comedy about a young fanatic named Odin who travels to a magical realm after his fianc\u00e9e, Olivia, mysteriously becomes deathly ill. To save her life, Odin must join forces with a band of mythical creatures and obtain a healing potion from the Witch Queen of the Seven Realms.Viewer discretion is advised. The production contains live stage combat, strong language, sexual innuendo and elaborate special effects. Children ages 9 through 12 must be accompanied by an adult age 18 or older. Children age 8 and younger will not be admitted.",
+          "time_text": "2026-07-26T19:30-0700",
           "category": "Adult outing",
           "is_free": false,
           "score": 4,
-          "tags": [
-            "park"
-          ],
+          "tags": [],
           "metadata": {
             "audience": "adult",
             "age_groups": [
@@ -848,8 +881,8 @@
             ],
             "features": {
               "free": false,
-              "outdoor": true,
-              "indoor": false,
+              "outdoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -860,70 +893,66 @@
             },
             "area": "central-san-diego",
             "time_period": "unknown",
-            "source_key": "kpbs",
+            "source_key": "reader",
             "metadata_version": 2
           }
         },
         {
-          "title": "Maruchan\u2019s MaruMart: 'Demon Slayer Konbini'",
+          "title": "Birch Aquarium is Open Late Sundays",
           "date": "2026-07-26",
-          "url": "https://www.kpbs.org/events/ongoing/maruchans-marumart",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Petco Park Interactive Zone",
-          "description": "Family Food / Drinks Comic-Con",
-          "time_text": "Ongoing until July 26, 2026",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 4,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "downtown",
-            "time_period": "unknown",
-            "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Nature Appreciation Meditation & Walk: Sunday Reset on Balboa Park Trails",
-          "date": "2026-07-26",
-          "url": "https://www.meetup.com/mindful-connection-with-nature-meetup-group/events/315136640/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Six and Upas Trails Gateway, San Diego, CA, 6th Ave & Upas St, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-26T17:30:00.000Z",
+          "url": "https://calendar.ucsd.edu/event/birch-after-hours",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Birch Aquarium, 2300 Expedition Way, La Jolla, CA 92093",
+          "description": "Looking for the perfect way to wind down after the weekend? Birch Aquarium is open late every Sunday evening from 5 \u2013 7 p.m. Enjoy an all-ages experience featuring discounted tickets and a fun, relaxing vibe!",
+          "time_text": "2026-07-26T17:00:00-07:00",
           "category": "Museum / zoo",
           "is_free": false,
-          "score": 4,
+          "score": 3,
           "tags": [
-            "park"
+            "aquarium"
           ],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
             "features": {
               "free": false,
-              "outdoor": true,
-              "indoor": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Dr. Seuss's Boids & Beasties | Exhibition",
+          "date": "2026-07-26",
+          "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+          "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+          "time_text": "2026-07-26",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -932,28 +961,30 @@
               "bathrooms": true,
               "food_nearby": false
             },
-            "area": "balboa",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         },
         {
-          "title": "San Diego Singles Speed Dating Ages 50-65",
+          "title": "Le Petit Chef",
           "date": "2026-07-26",
-          "url": "https://www.meetup.com/san-diego-singles-network/events/315365101/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "The Original 40 Brewing, San Diego, CA, 3117 University Ave, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-26T23:00:00.000Z",
-          "category": "All-ages event",
+          "url": "https://www.sandiegoreader.com/events/ongoing/le-petit-chef-at-hilton-san-diego-g/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Hilton San Diego Gaslamp Quarter",
+          "description": "Le Petit Chef is an immersive experience that blends 3D projection mapping technology and a multi-course culinary journey. Designed as a \u201c3D cinema on your plate,\u201d the experience transforms the table into a theatrical stage where guests follow the animated adventures of the world\u2019s smallest chef and his international companions through a series of playful, visually stunning performances, and you the audience get to decide which chef ultimately wins in the end.Over the course of approximately two hours, guests enjoy a globally inspired four-course menu with three distinct options\u2014Classic, Vegetarian, and Junior\u2014making it ideal for couples, families, and groups. With evolving storylines and refreshed menus introduced regularly, Le Petit Chef continues to be a standout attraction in the Gaslamp Quarter, offering a unique mix of storytelling, entertainment, and elevated cuisine.",
+          "time_text": "2026-07-26T18:30-0700",
+          "category": "Family outing",
           "is_free": false,
-          "score": 4,
+          "score": 3,
           "tags": [],
           "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
+            "audience": "family",
+            "age_groups": [
+              "kids"
+            ],
             "features": {
               "free": false,
               "outdoor": false,
@@ -966,21 +997,31 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "downtown",
             "time_period": "unknown",
-            "source_key": "meetup_general",
+            "source_key": "reader",
             "metadata_version": 2
           }
-        },
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": "Mon",
+      "label": "Jul 27",
+      "is_today": false,
+      "count": 11,
+      "summary": "11 ideas \u00b7 1 free \u00b7 3 outdoor / nature \u00b7 **NEW TIME! Pacific Highlands Ranch - Carmel Valley Pack Walk, UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
+      "events": [
         {
-          "title": "\ud83c\udfb6FREE! Ron\u2019s Garage @Coronado\u2019s Spreckles Park\ud83c\udfb6",
-          "date": "2026-07-26",
-          "url": "https://www.meetup.com/sd-sociables/events/314309678/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Spreckles Park, Coronado, CA, 601 Orange Ave, Coronado, CA",
-          "description": "",
-          "time_text": "2026-07-26T22:30:00.000Z",
+          "title": "**NEW TIME! Pacific Highlands Ranch - Carmel Valley Pack Walk",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/san-diego-dog-meetup/events/315471692/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "Solana Ranch Park, San Diego, CA, 13605 Pacific Highlands Ranch Pkwy, San Diego, CA",
+          "description": "We will enjoy a neighborhood park and surrounding dirt trails near the Pacific Highlands Ranch area in Carmel Valley. Fairly easy, mostly flat walk on dirt trail and sidewalk. Afterwards we will take a quick lap around the recently renovated shopping center for some distraction training opportunities. Total distance is under 2 miles, just about an hour. Meet at the grassy area at the front of Solana Ranch park, just off Pacific Highlands Ranch Pkwy. **Welcome to Real Dog Box Community Pack Walks!** We welcome **ALL** dogs, breeds, and temperaments. Enjoying our pack walks? Support our Host & Sponsor: Real Dog Box This local small business delivers air dried treats and chews to your doorstep. Get a free bag of treats when you order your 1st box: real.dog/takkopakko or shop with us for treats and chews in person after the walk! We have grown an amazing and supportive community. To keep everyone safe and promote a calm environment, by attending our walks you are expected to follow & respect our rules: 1. All dogs must remain on leash at all times, handlers must maintain a 3 foot lead. NO retractable or bungee leashes permitted. 1. NO greeting dogs inside or outside our pack until the walk is over, with permission. Please always keep dogs on leash. We know some dogs are friends, but use this time to practice following structured socialization. 1. Maintain at least a 6 foot distance to prevent nose-to-nose/tail interactions. If your dog is a beginner or reactive, we recommend taking more space if needed, by walking at the back of the pack. 1. Come prepared and advocate for your dog. Bring adequate water, poop bags, treats, etc. Monitor your dog and always do what\u2019s best for them. If your dog is slowing down, consider stopping early. If your dog is panting, request a break to give them some water. Our Community Pack Leaders will be leading the walk and can answer any questions that come up. We are looking forward to meeting you and your pup!",
+          "time_text": "2026-07-27T01:30:00.000Z",
           "category": "Outdoor / nature",
           "is_free": true,
           "score": 4,
@@ -994,31 +1035,21 @@
             "features": {
               "free": true,
               "outdoor": true,
-              "indoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
+              "stroller_friendly": true,
+              "low_walking": true,
               "shade": false,
               "bathrooms": true,
               "food_nearby": false
             },
-            "area": "beach",
+            "area": "central-san-diego",
             "time_period": "unknown",
-            "source_key": "meetup_general",
+            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
-        }
-      ]
-    },
-    {
-      "date": "2026-07-27",
-      "weekday": "Mon",
-      "label": "Jul 27",
-      "is_today": false,
-      "count": 6,
-      "summary": "6 ideas \u00b7 2 craft / steam \u00b7 UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm, Sunset Yoga at Mission Bay Park",
-      "events": [
+        },
         {
           "title": "UCSHIP TALK: Live Q&A (Zoom) Mon, Wed, Fri 11am - 12pm",
           "date": "2026-07-27",
@@ -1052,42 +1083,6 @@
             "area": "central-san-diego",
             "time_period": "morning",
             "source_key": "ucsd",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Sunset Yoga at Mission Bay Park",
-          "date": "2026-07-27",
-          "url": "https://www.meetup.com/fun-yoga-on-the-bay/events/315091969/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "2688 E Mission Bay Dr., San Diego, CA, 2688 E Mission Bay Dr., San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-27T02:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "evening",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -1160,6 +1155,144 @@
           }
         },
         {
+          "title": "Ventura Cove Open Water Swimming",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/one-with-the-ocean-community-swim-all-levels/events/315585008/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Ventura Cove Park, San Diego, CA, 3209 Gleason Rd, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-27T14:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "American Mah Jongg at Allied Garden Recreation Center",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/san-diego-americanmah-jongg-meetup/events/315589652/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Allied Gardens Recreation Center, San Diego, CA, 5155 Greenbrier Ave, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-27T20:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Little Italy San Diego Tech Coffee",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/sandiego-tech-coffee/events/315586364/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Portal Coffee, San Diego, CA, 1495 Pacific Hwy, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-27T16:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "downtown",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Pleasant walk n talk Mission Bay",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/slow-and-easy-exercisers/events/315731304/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Mission Bay (By Superbloom Cafe), San Diego, CA, 2540 E Mission Bay Dr San Diego, CA 92109 United States, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-27T16:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Showcase QI",
           "date": "2026-07-27",
           "url": "https://calendar.ucsd.edu/event/showcase-qi",
@@ -1190,6 +1323,40 @@
             "area": "beach",
             "time_period": "morning",
             "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Silent Meditation",
+          "date": "2026-07-27",
+          "url": "https://www.meetup.com/thedharmabums/events/315588962/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "The Dharma Bum Temple, San Diego, CA, 4144 Campus Ave, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-27T19:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -1234,8 +1401,8 @@
       "weekday": "Tue",
       "label": "Jul 28",
       "is_today": false,
-      "count": 7,
-      "summary": "7 ideas \u00b7 2 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Beginner Volleyball at Nite",
+      "count": 6,
+      "summary": "6 ideas \u00b7 2 outdoor / nature \u00b7 Pacific Beach Tuesday Farmers Market, Beginner Volleyball at Nite",
       "events": [
         {
           "title": "Pacific Beach Tuesday Farmers Market",
@@ -1416,40 +1583,6 @@
           }
         },
         {
-          "title": "private home visit",
-          "date": "2026-07-28",
-          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315580851/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-28T20:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Special Event | Sit. Stay. Stella. Coffee Shop Walk |Community Event",
           "date": "2026-07-28",
           "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315578815/",
@@ -1491,7 +1624,7 @@
       "label": "Jul 29",
       "is_today": false,
       "count": 10,
-      "summary": "10 ideas \u00b7 4 outdoor / nature \u00b7 Ocean Beach Certified Farmers' Market 2026, Ella Mai \u2013 'Do You Still Love Me?' 2026 Tour",
+      "summary": "10 ideas \u00b7 3 farmers market \u00b7 Ocean Beach Certified Farmers' Market 2026, Ella Mai \u2013 'Do You Still Love Me?' 2026 Tour",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1639,42 +1772,6 @@
           }
         },
         {
-          "title": "Mission Bay Indeterminate Ride",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/san-diego-mountain-biking-association-sdmba/events/315834817/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "De Anza Cove Park, San Diego, CA, 3000 N Mission Bay Dr, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T00:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "\ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
           "date": "2026-07-29",
           "url": "https://www.meetup.com/sd-sociables/events/314326803/",
@@ -1813,6 +1910,40 @@
           }
         },
         {
+          "title": "Mission Bay Indeterminate Ride",
+          "date": "2026-07-29",
+          "url": "https://www.meetup.com/san-diego-mountain-biking-association-sdmba/events/315834817/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Harland Clubhouse, San Diego, CA, 2702 N. MISSION BAY DRIVE, SAN DIEGO, CA 92109, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-29T00:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Wednesday Soccer at SDSU ENS Field",
           "date": "2026-07-29",
           "url": "https://www.meetup.com/soccer-at-snap/events/315449779/",
@@ -1853,8 +1984,8 @@
       "weekday": "Thu",
       "label": "Jul 30",
       "is_today": false,
-      "count": 8,
-      "summary": "8 ideas \u00b7 2 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, North Park Farmers Market 2026",
+      "count": 7,
+      "summary": "7 ideas \u00b7 2 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, North Park Farmers Market 2026",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -2110,40 +2241,6 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "Visit with seniors: White Sands (CERTIFIED teams only)",
-          "date": "2026-07-30",
-          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/315618363/",
-          "source": "meetup_dogs",
-          "source_label": "Dog Meetup Search",
-          "venue": "",
-          "description": "",
-          "time_text": "2026-07-30T16:45:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "unknown",
-            "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -2152,8 +2249,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 11,
-      "summary": "11 ideas \u00b7 2 free \u00b7 5 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Point Loma Summer Concerts",
+      "count": 10,
+      "summary": "10 ideas \u00b7 2 free \u00b7 4 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Tales & Tunes - San Diego Botanic Garden",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -2190,44 +2287,6 @@
             "area": "balboa",
             "time_period": "unknown",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Point Loma Summer Concerts",
-          "date": "2026-07-31",
-          "url": "https://www.sandiego.gov/event/point-loma-summer-concerts-35",
-          "source": "city",
-          "source_label": "City of San Diego",
-          "venue": "",
-          "description": "Since 2001, Point Loma Summer Concerts has been bringing family-friendly Live Music Concerts to Point Loma Park Little League Fields, located at 1049 Catalina Boulevard. Concerts start at 5:30pm with Jr. Stage performers, a Patriotic Performance and then 6:30pm for the Main Stage entertainers. Show up early to get Parking and a good spot on the Field all-grass Seating Area, as the Concerts are now a community tradition providing a family & pet-friendly atmosphere. All Ages are Welcome.!!!",
-          "time_text": "Friday, July 31, 2026, 5:30 - 8:30pm",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": true,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "unknown",
-            "time_period": "afternoon",
-            "source_key": "city",
             "metadata_version": 2
           }
         },
@@ -2556,45 +2615,8 @@
       "label": "Aug 1",
       "is_today": false,
       "count": 12,
-      "summary": "15 ideas \u00b7 2 free \u00b7 7 outdoor / nature \u00b7 Little Italy Mercato (Saturday), San Diego FC Community Block Party",
+      "summary": "15 ideas \u00b7 2 free \u00b7 7 outdoor / nature \u00b7 San Diego FC Community Block Party, Brewery Pup Saturday Meetup",
       "events": [
-        {
-          "title": "Little Italy Mercato (Saturday)",
-          "date": "2026-08-01",
-          "url": "https://www.sandiego.gov/event/little-italy-mercato-saturday-28",
-          "source": "city",
-          "source_label": "City of San Diego",
-          "venue": "",
-          "description": "The Little Italy certified farmers market features fresh fruits and vegetables, pastured eggs, meat, seafood, bread and pastries, yogurt, cheese and sauces, coffee and specialty treats, along with local artists and crafters, candles, and handmade soap. Shop every Saturday, year-round, rain or shine!",
-          "time_text": "Saturday, August 1, 2026, 8am - 2pm",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 7,
-          "tags": [
-            "craft",
-            "farmers market"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": true
-            },
-            "area": "downtown",
-            "time_period": "morning",
-            "source_key": "city",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "San Diego FC Community Block Party",
           "date": "2026-08-01",
@@ -2632,40 +2654,38 @@
           }
         },
         {
-          "title": "Overnight Adventure Aboard 'Star of India'",
+          "title": "Brewery Pup Saturday Meetup",
           "date": "2026-08-01",
-          "url": "https://www.kpbs.org/events/ongoing/overnight-adventure-aboard-star-of-india",
-          "source": "kpbs",
-          "source_label": "KPBS",
-          "venue": "Maritime Museum of San Diego",
-          "description": "Camps Family Museums",
-          "time_text": "Ongoing until August 1, 2026",
-          "category": "Museum / zoo",
+          "url": "https://www.meetup.com/san-diego-brewery-pup-crawl/events/315846499/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "Deft Brewing, San Diego, CA, 5328 Banks Street, San Diego, CA",
+          "description": "Bring your dog (or just yourself) for an afternoon of cold drinks, good conversation, and wagging tails. We look forward to meeting you and your fur baby! **A few house rules:** * Dogs should be comfortable around other dogs and people * Please bring water, waste bags, and anything your pup needs to stay comfortable * Owners are responsible for their dogs at all times",
+          "time_text": "2026-08-01T21:00:00.000Z",
+          "category": "Adult outing",
           "is_free": false,
-          "score": 5,
-          "tags": [
-            "museum"
-          ],
+          "score": 4,
+          "tags": [],
           "metadata": {
-            "audience": "family",
+            "audience": "adult",
             "age_groups": [
-              "kids"
+              "adults"
             ],
             "features": {
               "free": false,
               "outdoor": false,
               "indoor": true,
-              "dog_friendly": false,
+              "dog_friendly": true,
               "toddler_friendly": false,
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
+              "bathrooms": false,
               "food_nearby": false
             },
             "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "kpbs",
+            "time_period": "afternoon",
+            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         },
@@ -2813,6 +2833,40 @@
           }
         },
         {
+          "title": "Frosted Faces Foundation Open House",
+          "date": "2026-08-01",
+          "url": "https://sdhumane.org/event/frosted-faces-foundation-open-house-2/2026-08-01/",
+          "source": "sdhumane",
+          "source_label": "San Diego Humane Society",
+          "venue": "Frosted Faces Foundation, Ramona, CA, 1448 Pine St.",
+          "description": "You are invited to an Open House this weekend at FFF! Open House is every weekend, Saturday and Sunday from 10 a.m.-1 p.m. Do you wonder which dogs are social with other dogs or want to see dogs interact with you off leash in a play yard? Open House is for you! All our Frosted\u2026 \\n",
+          "time_text": "2026-08-01T10:00:00-07:00",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "morning",
+            "source_key": "sdhumane",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Shark Snorkels Make a Splashy Return to Birch Aquarium",
           "date": "2026-08-01",
           "url": "https://www.kpbs.org/events/2026/08/01/shark-snorkels-make-a-splashy-return-to-birch-aquarium",
@@ -2921,14 +2975,14 @@
           }
         },
         {
-          "title": "Soccer at Snap (@ Thrive Park kickoff at 9AM)",
+          "title": "Soccer at Snap (@ Thrive Park kickoff at 8AM)",
           "date": "2026-08-01",
           "url": "https://www.meetup.com/soccer-at-snap/events/315654991/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
           "venue": "SDSU mission valley River park, San Diego, CA, Mission valley River park,, San Diego, CA",
           "description": "",
-          "time_text": "2026-08-01T16:00:00.000Z",
+          "time_text": "2026-08-01T15:00:00.000Z",
           "category": "Outdoor / nature",
           "is_free": false,
           "score": 2,
@@ -2997,8 +3051,8 @@
       "weekday": "Sun",
       "label": "Aug 2",
       "is_today": false,
-      "count": 11,
-      "summary": "11 ideas \u00b7 2 free \u00b7 4 outdoor / nature \u00b7 ArtWalk Brings Fine Art to Liberty Station, Shark Summer at Birch Aquarium is Back for 2026",
+      "count": 10,
+      "summary": "10 ideas \u00b7 2 free \u00b7 3 outdoor / nature \u00b7 ArtWalk Brings Fine Art to Liberty Station, Shark Summer at Birch Aquarium is Back for 2026",
       "events": [
         {
           "title": "ArtWalk Brings Fine Art to Liberty Station",
@@ -3110,42 +3164,6 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Beach Volleyball Learn and Play",
-          "date": "2026-08-02",
-          "url": "https://www.meetup.com/beach-volleyball-learn-and-play/events/315701496/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Mission Beach, San Diego, CA, Mission Beach, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-02T18:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 5,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -3409,8 +3427,8 @@
       "weekday": "Mon",
       "label": "Aug 3",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 3 outdoor / nature \u00b7 2026 Pony-13 World Series, 10th Annual CaddyHack Golf Festival Benefiting Boys to Men Mentoring",
+      "count": 5,
+      "summary": "5 ideas \u00b7 3 outdoor / nature \u00b7 2026 Pony-13 World Series, 10th Annual CaddyHack Golf Festival Benefiting Boys to Men Mentoring",
       "events": [
         {
           "title": "2026 Pony-13 World Series",
@@ -3555,6 +3573,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "private home visit",
+          "date": "2026-08-03",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315671493/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-03T20:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -3563,8 +3615,8 @@
       "weekday": "Tue",
       "label": "Aug 4",
       "is_today": false,
-      "count": 2,
-      "summary": "2 ideas \u00b7 1 outdoor / nature \u00b7 Death Cab for Cutie, 1st Monday - Jam-a-Theme - at Queen Bee's",
+      "count": 3,
+      "summary": "3 ideas \u00b7 2 all-ages event \u00b7 Death Cab for Cutie, 1st Monday - Jam-a-Theme - at Queen Bee's",
       "events": [
         {
           "title": "Death Cab for Cutie",
@@ -3635,6 +3687,40 @@
             "source_key": "meetup_general",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "America's student debt crisis: Causes, damage done, solutions.",
+          "date": "2026-08-04",
+          "url": "https://www.meetup.com/civilized-conversation-of-san-diego/events/315363614/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Panera Bread, San Diego, CA, 5620 Balboa Avenue, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-04T02:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "balboa",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -3687,8 +3773,8 @@
       "weekday": "Thu",
       "label": "Aug 6",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, 'Under The Perfect Sun' Book Talk",
+      "count": 5,
+      "summary": "5 ideas \u00b7 1 free \u00b7 2 festival / community \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, 'Under The Perfect Sun' Book Talk",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -3762,6 +3848,42 @@
             "area": "central-san-diego",
             "time_period": "evening",
             "source_key": "kpbs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Annual BBQ & Ski Trip Signups for 2027 Ski Season",
+          "date": "2026-08-06",
+          "url": "https://www.meetup.com/action-ski-club/events/315248429/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Mt Acadia Neighborhood Park, San Diego, CA, 3865 Mount Acadia Blvd, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-06T00:30:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -4249,8 +4371,8 @@
       "weekday": "Sun",
       "label": "Aug 9",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Tiki Oasis 2026 Psychedelic TIki, \ud83e\udea9\u2728 FREE! Summer Concert: Stayin\u2019 Alive \u2013 The Bee Gees & Beyond! @ Rady Shell\u2728\ud83d\udd7a",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 1 craft / steam \u00b7 Tiki Oasis 2026 Psychedelic TIki, \ud83e\udea9\u2728 FREE! Summer Concert: Stayin\u2019 Alive \u2013 The Bee Gees & Beyond! @ Rady Shell\u2728\ud83d\udd7a",
       "events": [
         {
           "title": "Tiki Oasis 2026 Psychedelic TIki",
@@ -4356,40 +4478,6 @@
               "shade": false,
               "bathrooms": true,
               "food_nearby": true
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Drinks, Death & The Deep Blue Sea",
-          "date": "2026-08-09",
-          "url": "https://www.meetup.com/the-death-network/events/315391436/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "H&M Landing, San Diego, CA, 2803 Emerson Street, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-09T01:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
             },
             "area": "central-san-diego",
             "time_period": "unknown",
@@ -4538,8 +4626,8 @@
       "weekday": "Thu",
       "label": "Aug 13",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -4683,40 +4771,6 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "San Diego JavaScript Monthly Meetup @ Edge",
-          "date": "2026-08-13",
-          "url": "https://www.meetup.com/sandiegojs/events/315597720/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Edge, San Diego, CA, 1495 Pacific Hwy #300, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-13T01:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -4926,24 +4980,24 @@
     }
   ],
   "counts": {
-    "total_events": 116,
+    "total_events": 118,
     "days": 21,
-    "free_events": 20,
+    "free_events": 19,
     "configured_sources": 10,
     "loaded_sources": 8
   },
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 41
+      "count": 38
     },
     {
       "name": "All-ages event",
-      "count": 22
+      "count": 24
     },
     {
       "name": "Museum / zoo",
-      "count": 15
+      "count": 14
     },
     {
       "name": "Performance / movie",
@@ -4954,16 +5008,16 @@
       "count": 9
     },
     {
+      "name": "Craft / STEAM",
+      "count": 7
+    },
+    {
       "name": "Festival / community",
       "count": 6
     },
     {
-      "name": "Craft / STEAM",
-      "count": 5
-    },
-    {
-      "name": "Story / reading",
-      "count": 3
+      "name": "Adult outing",
+      "count": 4
     }
   ]
 }
