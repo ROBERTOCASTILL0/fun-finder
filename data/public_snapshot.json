@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-0192bc352c80e943",
-  "generated_at": "2026-07-28T08:35:14.197976-07:00",
+  "snapshot_id": "snap-6e85a608cd5cd1f3",
+  "generated_at": "2026-07-28T14:36:47.705127-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -56,7 +56,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 40,
+      "count": 33,
       "parser": "reader"
     },
     {
@@ -65,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 53,
+      "count": 51,
       "parser": "jsonld"
     },
     {
@@ -92,7 +92,7 @@
       "category": "dog_friendly",
       "url": "https://www.meetup.com/topics/dogs/us/ca/san_diego/",
       "status": "loaded",
-      "count": 24,
+      "count": 23,
       "parser": "jsonld"
     },
     {
@@ -112,86 +112,8 @@
     "label": "Jul 28",
     "is_today": true,
     "count": 12,
-    "summary": "56 ideas \u00b7 5 free \u00b7 14 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
+    "summary": "47 ideas \u00b7 4 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
     "events": [
-      {
-        "title": "Summer Critter Camp",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-        "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-        "time_text": "2026-07-28T09:00-0700",
-        "category": "Toddler-friendly",
-        "is_free": false,
-        "score": 16,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "young_children",
-          "age_groups": [
-            "kids",
-            "toddler"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": true,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Zoo Camp",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Wild Wonders, Bonsall",
-        "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-        "time_text": "2026-07-28T09:00-0700",
-        "category": "Museum / zoo",
-        "is_free": false,
-        "score": 13,
-        "tags": [
-          "craft",
-          "zoo"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
         "date": "2026-07-28",
@@ -378,80 +300,6 @@
         }
       },
       {
-        "title": "Bay Club Summer Camps",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Bay Club Hotel and Marina, San Diego",
-        "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-        "time_text": "2026-07-28T09:00-0700",
-        "category": "Craft / STEAM",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "craft"
-        ],
-        "metadata": {
-          "audience": "family",
-          "age_groups": [
-            "kids"
-          ],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": true,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Shark Summer",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Birch Aquarium at Scripps, San Diego",
-        "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-        "time_text": "2026-07-28T09:00-0700",
-        "category": "Museum / zoo",
-        "is_free": false,
-        "score": 6,
-        "tags": [
-          "aquarium"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": false
-          },
-          "area": "central-san-diego",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "Shark Summer at Birch Aquarium",
         "date": "2026-07-28",
         "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -488,42 +336,6 @@
         }
       },
       {
-        "title": "Alchemy + Light",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "William D. Cannon Art Gallery at Carlsbad Library",
-        "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
-        "time_text": "2026-07-28T10:00-0700",
-        "category": "Festival / community",
-        "is_free": true,
-        "score": 5,
-        "tags": [
-          "free"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": true,
-            "outdoor": false,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": false
-          },
-          "area": "north-county",
-          "time_period": "afternoon",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
         "title": "ha ha ha ha ha ha ha",
         "date": "2026-07-28",
         "url": "https://www.sandiegoreader.com/events/2026/jul/28/ha-ha-ha-ha-ha-ha-ha/?et=363314",
@@ -556,6 +368,184 @@
           "source_key": "reader",
           "metadata_version": 2
         }
+      },
+      {
+        "title": "Pacific Beach Farmers' Market",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Pacific Beach Farmers' Market, San Diego",
+        "description": "",
+        "time_text": "2026-07-28T14:00-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 5,
+        "tags": [
+          "beach"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Salsa Under The Stars",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/28/salsa-under-the-stars-at-otay-ranch/?et=363172",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Otay Ranch Town Center, Chula Vista",
+        "description": "Running from mid July until mid September, the Salsa Under The Stars series will feature the Manny Cepeda Orchestra quartet and offer Latin music and dancing for all ages during the center's weekly Farmers Market. Originally from San Juan, Puerto Rico, bandleader Manny Cepeda has both a Bachelors in Music Education and Masters in Music and retired from the Navy as the top Enlisted Bandmaster after 31 years of service. In 2004 the Manny Cepeda Orchestra was born.",
+        "time_text": "2026-07-28T16:40-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 4,
+        "tags": [
+          "farmers market"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": true
+          },
+          "area": "north-county",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Alzheimer's Association: Understanding Alzheimer's & Dementia",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/28/alzheimers-association-understandin-c5a7db98/?et=363587",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Zoom, San Diego",
+        "description": "Alzheimer's disease is not a normal part of aging. Learn about the impact of Alzheimer's; the difference between Alzheimer's and dementia; stages and risk factors; current research and treatments available for some symptoms; and Alzheimer's Association resources.",
+        "time_text": "2026-07-28T12:00-0700",
+        "category": "Museum / zoo",
+        "is_free": false,
+        "score": 3,
+        "tags": [
+          "zoo"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Book Marketing for Authors",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/2026/jul/28/book-marketing-for-authors/?et=360833",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Online Internet Events, San Diego",
+        "description": "This six-week course helps independent authors build a clear, actionable marketing foundation\u2014one that\u2019s personalized, scalable, and sustainable. Whether you\u2019re preparing to launch your debut title or breathe new life into a book that\u2019s already out, you\u2019ll learn how to think like a publisher and promote like a marketer. Each week, explore a key part of your author marketing plan\u2014from brand identity and messaging to website visibility, SEO/GEO strategy, and book launch planning\u2014so by the end, you\u2019ll have a personalized roadmap to increase your visibility, strengthen your connection with readers, and expand your discoverability across platforms. You\u2019ll discover how to:\u2022 Identify your ideal readers and understand what motivates them to buy\u2022 Build an author brand that resonates and sets you apart\u2022 Craft messaging that turns browsers into buyers\u2022 Design a website that converts visitors into fans\u2022 Use SEO and GEO-targeting to expand your reach online and locally\u2022 Plan and execute a book launch that builds buzz and drives sales\u2022 Sustain long-term visibility and reader engagement after launch Each week includes a short preparation assignment, practical examples, and guided discussion to help you apply these strategies directly to your book and brand",
+        "time_text": "2026-07-28T17:30-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 3,
+        "tags": [
+          "craft"
+        ],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "central-san-diego",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Coronado Certified Farmers' Market",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "Ferry Landing Marketplace, Coronado",
+        "description": "",
+        "time_text": "2026-07-28T14:30-0700",
+        "category": "Farmers market",
+        "is_free": false,
+        "score": 3,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": true,
+            "indoor": false,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": true
+          },
+          "area": "beach",
+          "time_period": "unknown",
+          "source_key": "reader",
+          "metadata_version": 2
+        }
       }
     ]
   },
@@ -566,86 +556,8 @@
       "label": "Jul 28",
       "is_today": true,
       "count": 12,
-      "summary": "56 ideas \u00b7 5 free \u00b7 14 all-ages event \u00b7 Summer Critter Camp, Zoo Camp",
+      "summary": "47 ideas \u00b7 4 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
       "events": [
-        {
-          "title": "Summer Critter Camp",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/summer-critter-camp-helen-woodward-/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Helen Woodward Animal Center, Rancho Santa Fe",
-          "description": "Summer Critter Camp is for kids Preschool through 8th grade. Children will experience daily animal interactions that will amaze them as they get up close and personal with a variety of species including birds, small mammals, reptiles, large mammals, and invertebrates. Summer camp activities are different each day and include animal themed games, crafts, songs, and more.",
-          "time_text": "2026-07-28T09:00-0700",
-          "category": "Toddler-friendly",
-          "is_free": false,
-          "score": 16,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "young_children",
-            "age_groups": [
-              "kids",
-              "toddler"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": true,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Zoo Camp",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/zoo-camp/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Wild Wonders, Bonsall",
-          "description": "Zoo Camp at Wild Wonders is filled with animal interactions, crafts and activities, and great fun in the outdoors.If your child is between 6 and 12, they\u2019re going to love this awesome camp. Kids spend half a day with our staff of biologists, life scientists, and keepers learning about animals from all over the world. Campers will help care for a selection of the 100+ exotic animals that make their forever home at Wild Wonders.Three day camps are $255/child, and run Tuesday \u2013 Thursday. They begin June 9, with camps running through July.One day camps also start June 9, and the price is $90/child. Sibling discounts are available at $80 for each additional child.",
-          "time_text": "2026-07-28T09:00-0700",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 13,
-          "tags": [
-            "craft",
-            "zoo"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
           "date": "2026-07-28",
@@ -832,80 +744,6 @@
           }
         },
         {
-          "title": "Bay Club Summer Camps",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/bay-club-summer-camps-open-to-every/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Bay Club Hotel and Marina, San Diego",
-          "description": "Summer Camps give families access to world-class sports, fitness, and enrichment programming, no membership required. Open to both members and non-members, camps feature age-appropriate athletics including aquatics, basketball, and tennis, along with engaging activities like arts & crafts, DIY projects, STEM challenges, group games, theme weeks, and team-building exercises.Flexible scheduling makes it easy to fit camp into your summer: choose from full-day, half-day, single-day, or weeklong sessions. Select programs include lunch.Early enrollment is now open at most clubs with early-bird discounts available. Members always save 25% on all registrations.",
-          "time_text": "2026-07-28T09:00-0700",
-          "category": "Craft / STEAM",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "craft"
-          ],
-          "metadata": {
-            "audience": "family",
-            "age_groups": [
-              "kids"
-            ],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": true,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Shark Summer",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/shark-summer-at-birch-aquarium-50bab008/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Birch Aquarium at Scripps, San Diego",
-          "description": "Dive into the world of sharks, with fin-tastic fun for shark fans of all ages. Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them. Offerings vary by day, check the Daily Schedule for the latest.",
-          "time_text": "2026-07-28T09:00-0700",
-          "category": "Museum / zoo",
-          "is_free": false,
-          "score": 6,
-          "tags": [
-            "aquarium"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Shark Summer at Birch Aquarium",
           "date": "2026-07-28",
           "url": "https://calendar.ucsd.edu/event/shark-summer-at-birch-aquarium-2026",
@@ -942,42 +780,6 @@
           }
         },
         {
-          "title": "Alchemy + Light",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/william-d-cannon-art-gallery-exhibi/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "William D. Cannon Art Gallery at Carlsbad Library",
-          "description": "The artists of True North Photo Society explore the interplay of alchemy and light in their newest collection of photographic works. This exhibit highlights their innovative approaches to transforming moments into luminous visual experiences. Visitors are invited to discover the subtle magic found in each image. Visit April 18, 3 to 5 p.m., for a free artists reception open to the community. The Cannon Gallery is a focal point for art and culture in the City of Carlsbad and throughout San Diego County. The Cannon Gallery opened in 1999 and strives to engage individuals and community through meaningful visual arts exhibits and programs. The space is in the Carlsbad City Library Complex which receives over 2,000 visitors per day.",
-          "time_text": "2026-07-28T10:00-0700",
-          "category": "Festival / community",
-          "is_free": true,
-          "score": 5,
-          "tags": [
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "north-county",
-            "time_period": "afternoon",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "ha ha ha ha ha ha ha",
           "date": "2026-07-28",
           "url": "https://www.sandiegoreader.com/events/2026/jul/28/ha-ha-ha-ha-ha-ha-ha/?et=363314",
@@ -1010,6 +812,184 @@
             "source_key": "reader",
             "metadata_version": 2
           }
+        },
+        {
+          "title": "Pacific Beach Farmers' Market",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Pacific Beach Farmers' Market, San Diego",
+          "description": "",
+          "time_text": "2026-07-28T14:00-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 5,
+          "tags": [
+            "beach"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Salsa Under The Stars",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/28/salsa-under-the-stars-at-otay-ranch/?et=363172",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Otay Ranch Town Center, Chula Vista",
+          "description": "Running from mid July until mid September, the Salsa Under The Stars series will feature the Manny Cepeda Orchestra quartet and offer Latin music and dancing for all ages during the center's weekly Farmers Market. Originally from San Juan, Puerto Rico, bandleader Manny Cepeda has both a Bachelors in Music Education and Masters in Music and retired from the Navy as the top Enlisted Bandmaster after 31 years of service. In 2004 the Manny Cepeda Orchestra was born.",
+          "time_text": "2026-07-28T16:40-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 4,
+          "tags": [
+            "farmers market"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": true
+            },
+            "area": "north-county",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Alzheimer's Association: Understanding Alzheimer's & Dementia",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/28/alzheimers-association-understandin-c5a7db98/?et=363587",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Zoom, San Diego",
+          "description": "Alzheimer's disease is not a normal part of aging. Learn about the impact of Alzheimer's; the difference between Alzheimer's and dementia; stages and risk factors; current research and treatments available for some symptoms; and Alzheimer's Association resources.",
+          "time_text": "2026-07-28T12:00-0700",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "zoo"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Book Marketing for Authors",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/2026/jul/28/book-marketing-for-authors/?et=360833",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Online Internet Events, San Diego",
+          "description": "This six-week course helps independent authors build a clear, actionable marketing foundation\u2014one that\u2019s personalized, scalable, and sustainable. Whether you\u2019re preparing to launch your debut title or breathe new life into a book that\u2019s already out, you\u2019ll learn how to think like a publisher and promote like a marketer. Each week, explore a key part of your author marketing plan\u2014from brand identity and messaging to website visibility, SEO/GEO strategy, and book launch planning\u2014so by the end, you\u2019ll have a personalized roadmap to increase your visibility, strengthen your connection with readers, and expand your discoverability across platforms. You\u2019ll discover how to:\u2022 Identify your ideal readers and understand what motivates them to buy\u2022 Build an author brand that resonates and sets you apart\u2022 Craft messaging that turns browsers into buyers\u2022 Design a website that converts visitors into fans\u2022 Use SEO and GEO-targeting to expand your reach online and locally\u2022 Plan and execute a book launch that builds buzz and drives sales\u2022 Sustain long-term visibility and reader engagement after launch Each week includes a short preparation assignment, practical examples, and guided discussion to help you apply these strategies directly to your book and brand",
+          "time_text": "2026-07-28T17:30-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 3,
+          "tags": [
+            "craft"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Coronado Certified Farmers' Market",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "Ferry Landing Marketplace, Coronado",
+          "description": "",
+          "time_text": "2026-07-28T14:30-0700",
+          "category": "Farmers market",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "reader",
+            "metadata_version": 2
+          }
         }
       ]
     },
@@ -1019,7 +999,7 @@
       "label": "Jul 29",
       "is_today": false,
       "count": 12,
-      "summary": "18 ideas \u00b7 8 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "summary": "17 ideas \u00b7 1 free \u00b7 7 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1091,6 +1071,43 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Tuesday Night Spike - The largest FREE Spikeball event on the planet!",
+          "date": "2026-07-29",
+          "url": "https://www.meetup.com/sdroundnet/events/315607416/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "World Famous, San Diego, CA, 711 Pacific Beach Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-29T00:00:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": true,
+          "score": 4,
+          "tags": [
+            "beach",
+            "free"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": true,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -1188,42 +1205,6 @@
               "free": false,
               "outdoor": true,
               "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Mission Bay Cleanup & Casual Connections",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/alcohol-free-san-diego/events/315800445/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "De Anza Cove Park, San Diego, CA, North Mission Bay Dr @ De Anza Rd (3000 N Mission Bay Dr, San Diego, CA 92109), San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T01:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -1413,14 +1394,14 @@
           }
         },
         {
-          "title": "Dads of Daughters Debate and Dinner Party",
+          "title": "mindfulness exercises: breath work, qigong, tai chi, guided meditation, theory",
           "date": "2026-07-29",
-          "url": "https://www.meetup.com/san-diego-singles-network/events/315365149/",
+          "url": "https://www.meetup.com/zendao-mindfulness-tai-chi/events/315795285/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Surf Rider Pizza, San Diego, CA, 8381 La Mesa Blvd., San Diego, CA",
+          "venue": "Standley Recreation Center, San Diego, CA, 3585 Governor Drive, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-29T02:00:00.000Z",
+          "time_text": "2026-07-29T00:00:00.000Z",
           "category": "All-ages event",
           "is_free": false,
           "score": 0,
@@ -1431,16 +1412,16 @@
             "features": {
               "free": false,
               "outdoor": false,
-              "indoor": false,
+              "indoor": true,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": false,
+              "bathrooms": true,
               "food_nearby": false
             },
-            "area": "east-county",
+            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1788,8 +1769,8 @@
       "weekday": "Fri",
       "label": "Jul 31",
       "is_today": false,
-      "count": 11,
-      "summary": "11 ideas \u00b7 2 free \u00b7 5 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Point Loma Summer Concerts",
+      "count": 12,
+      "summary": "12 ideas \u00b7 2 free \u00b7 5 outdoor / nature \u00b7 Newly Renovated Fleet Science Center, Point Loma Summer Concerts",
       "events": [
         {
           "title": "Newly Renovated Fleet Science Center",
@@ -2083,6 +2064,42 @@
           }
         },
         {
+          "title": "Rocking FULL MOON BONFIRE! POTLUCK PICNIC! 60s Dancing Music! Karaoke! RSVP now!",
+          "date": "2026-07-31",
+          "url": "https://www.meetup.com/activities/events/315470486/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "2700 De Anza Rd, San Diego, CA, 2700 De Anza Rd, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-31T23:00:00.000Z",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": 1,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
           "title": "Group Class/optional short walk | ThermoDOGnamics | Community Event.",
           "date": "2026-07-31",
           "url": "https://www.meetup.com/the-bully-bunch-pack-walks/events/315481192/",
@@ -2192,7 +2209,7 @@
       "label": "Aug 1",
       "is_today": false,
       "count": 12,
-      "summary": "20 ideas \u00b7 2 free \u00b7 8 outdoor / nature \u00b7 Little Italy Mercato (Saturday), San Diego FC Community Block Party",
+      "summary": "19 ideas \u00b7 2 free \u00b7 8 outdoor / nature \u00b7 Little Italy Mercato (Saturday), San Diego FC Community Block Party",
       "events": [
         {
           "title": "Little Italy Mercato (Saturday)",
@@ -2632,7 +2649,7 @@
       "label": "Aug 2",
       "is_today": false,
       "count": 12,
-      "summary": "13 ideas \u00b7 2 free \u00b7 4 outdoor / nature \u00b7 ArtWalk Brings Fine Art to Liberty Station, Shark Summer at Birch Aquarium is Back for 2026",
+      "summary": "12 ideas \u00b7 2 free \u00b7 3 museum / zoo \u00b7 ArtWalk Brings Fine Art to Liberty Station, Shark Summer at Birch Aquarium is Back for 2026",
       "events": [
         {
           "title": "ArtWalk Brings Fine Art to Liberty Station",
@@ -2744,42 +2761,6 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "kpbs",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Beach Volleyball Learn and Play",
-          "date": "2026-08-02",
-          "url": "https://www.meetup.com/beach-volleyball-learn-and-play/events/315701496/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Mission Beach, San Diego, CA, Mission Beach, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-02T18:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 5,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         },
@@ -3065,6 +3046,42 @@
               "shade": false,
               "bathrooms": false,
               "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Come Have a Drink at Wetstone Wine Bar!",
+          "date": "2026-08-02",
+          "url": "https://www.meetup.com/san-diego-wine-and-other-things/events/315832221/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Wet Stone Wine Bar & Cafe, San Diego, CA, 1927 4th Avenue, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-02T23:00:00.000Z",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": -4,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": true
             },
             "area": "central-san-diego",
             "time_period": "unknown",
@@ -4117,8 +4134,8 @@
       "weekday": "Tue",
       "label": "Aug 11",
       "is_today": false,
-      "count": 1,
-      "summary": "1 ideas \u00b7 1 museum / zoo \u00b7 Virtual Estate Planning Webinar",
+      "count": 2,
+      "summary": "2 ideas \u00b7 1 museum / zoo \u00b7 Virtual Estate Planning Webinar, Together We Grow - Medically Fragile Young Adults (CERTIFIED TEAMS ONLY)",
       "events": [
         {
           "title": "Virtual Estate Planning Webinar",
@@ -4153,6 +4170,40 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "sdhumane",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Together We Grow - Medically Fragile Young Adults (CERTIFIED TEAMS ONLY)",
+          "date": "2026-08-11",
+          "url": "https://www.meetup.com/love-on-a-leash-san-diego-central-chapter/events/315422566/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-11T16:45:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
             "metadata_version": 2
           }
         }
@@ -4243,8 +4294,8 @@
       "weekday": "Thu",
       "label": "Aug 13",
       "is_today": false,
-      "count": 5,
-      "summary": "5 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
+      "count": 4,
+      "summary": "4 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -4390,40 +4441,6 @@
             "source_key": "meetup_dogs",
             "metadata_version": 2
           }
-        },
-        {
-          "title": "San Diego JavaScript Monthly Meetup @ Edge",
-          "date": "2026-08-13",
-          "url": "https://www.meetup.com/sandiegojs/events/315597720/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Edge, San Diego, CA, 1495 Pacific Hwy #300, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-13T01:30:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
         }
       ]
     },
@@ -4432,8 +4449,8 @@
       "weekday": "Fri",
       "label": "Aug 14",
       "is_today": false,
-      "count": 2,
-      "summary": "2 ideas \u00b7 2 free \u00b7 1 all-ages event \u00b7 Free Social: Build Confidence Through Play (No Improv Experience Needed), SDSU Mission Valley River Park Pack Walk",
+      "count": 3,
+      "summary": "3 ideas \u00b7 2 free \u00b7 2 all-ages event \u00b7 Free Social: Build Confidence Through Play (No Improv Experience Needed), SDSU Mission Valley River Park Pack Walk",
       "events": [
         {
           "title": "Free Social: Build Confidence Through Play (No Improv Experience Needed)",
@@ -4503,6 +4520,40 @@
               "food_nearby": false
             },
             "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Twin Peaks Middle School Challenged and Special Ed Students",
+          "date": "2026-08-14",
+          "url": "https://www.meetup.com/san-diego-inland-love-on-a-leash/events/315447573/",
+          "source": "meetup_dogs",
+          "source_label": "Dog Meetup Search",
+          "venue": "",
+          "description": "",
+          "time_text": "2026-08-14T16:00:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
             "metadata_version": 2
@@ -4683,7 +4734,7 @@
     }
   ],
   "counts": {
-    "total_events": 109,
+    "total_events": 111,
     "days": 21,
     "free_events": 18,
     "configured_sources": 10,
@@ -4692,35 +4743,35 @@
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 35
+      "count": 34
     },
     {
       "name": "All-ages event",
-      "count": 21
+      "count": 22
     },
     {
       "name": "Museum / zoo",
-      "count": 17
+      "count": 16
     },
     {
       "name": "Farmers market",
-      "count": 9
+      "count": 13
     },
     {
       "name": "Performance / movie",
       "count": 9
     },
     {
+      "name": "Adult outing",
+      "count": 6
+    },
+    {
       "name": "Festival / community",
-      "count": 5
+      "count": 4
     },
     {
       "name": "Craft / STEAM",
-      "count": 4
-    },
-    {
-      "name": "Adult outing",
-      "count": 4
+      "count": 3
     }
   ]
 }
