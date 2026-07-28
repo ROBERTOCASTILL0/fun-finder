@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-bee50db8bcde7aba",
-  "generated_at": "2026-07-28T02:33:40.893621-07:00",
+  "snapshot_id": "snap-0192bc352c80e943",
+  "generated_at": "2026-07-28T08:35:14.197976-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -1019,7 +1019,7 @@
       "label": "Jul 29",
       "is_today": false,
       "count": 12,
-      "summary": "17 ideas \u00b7 8 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "summary": "18 ideas \u00b7 8 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1188,6 +1188,42 @@
               "free": false,
               "outdoor": true,
               "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Mission Bay Cleanup & Casual Connections",
+          "date": "2026-07-29",
+          "url": "https://www.meetup.com/alcohol-free-san-diego/events/315800445/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "De Anza Cove Park, San Diego, CA, North Mission Bay Dr @ De Anza Rd (3000 N Mission Bay Dr, San Diego, CA 92109), San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-29T01:30:00.000Z",
+          "category": "Outdoor / nature",
+          "is_free": false,
+          "score": 2,
+          "tags": [
+            "park"
+          ],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -1405,40 +1441,6 @@
               "food_nearby": false
             },
             "area": "east-county",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "mindfulness exercises: breath work, qigong, tai chi, guided meditation, theory",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/zendao-mindfulness-tai-chi/events/315795285/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Standley Recreation Center, San Diego, CA, 3585 Governor Drive, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T00:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -4115,8 +4117,8 @@
       "weekday": "Tue",
       "label": "Aug 11",
       "is_today": false,
-      "count": 2,
-      "summary": "2 ideas \u00b7 1 museum / zoo \u00b7 Virtual Estate Planning Webinar, Walk around Mission Bay Beach and lunch at Superbloom",
+      "count": 1,
+      "summary": "1 ideas \u00b7 1 museum / zoo \u00b7 Virtual Estate Planning Webinar",
       "events": [
         {
           "title": "Virtual Estate Planning Webinar",
@@ -4151,42 +4153,6 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "sdhumane",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Walk around Mission Bay Beach and lunch at Superbloom",
-          "date": "2026-08-11",
-          "url": "https://www.meetup.com/strolling-and-sipping/events/315600631/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Superbloom Cafe and Juice, San Diego, CA, 2688 East Mission Bay Dr. ,, San Diego, CA",
-          "description": "",
-          "time_text": "2026-08-11T18:45:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": true
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -4717,7 +4683,7 @@
     }
   ],
   "counts": {
-    "total_events": 110,
+    "total_events": 109,
     "days": 21,
     "free_events": 18,
     "configured_sources": 10,
@@ -4730,7 +4696,7 @@
     },
     {
       "name": "All-ages event",
-      "count": 22
+      "count": 21
     },
     {
       "name": "Museum / zoo",
