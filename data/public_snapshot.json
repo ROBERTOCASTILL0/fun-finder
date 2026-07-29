@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_id": "snap-6e85a608cd5cd1f3",
-  "generated_at": "2026-07-28T14:36:47.705127-07:00",
+  "snapshot_id": "snap-2a68a175e0d2ce33",
+  "generated_at": "2026-07-28T20:37:57.527429-07:00",
   "ok": true,
   "sources": [
     "City of San Diego",
@@ -56,7 +56,7 @@
       "category": "general_events",
       "url": "https://www.sandiegoreader.com/events/",
       "status": "loaded",
-      "count": 33,
+      "count": 4,
       "parser": "reader"
     },
     {
@@ -65,7 +65,7 @@
       "category": "general_events",
       "url": "https://www.meetup.com/find/us--ca--san-diego/",
       "status": "loaded",
-      "count": 51,
+      "count": 40,
       "parser": "jsonld"
     },
     {
@@ -112,7 +112,7 @@
     "label": "Jul 28",
     "is_today": true,
     "count": 12,
-    "summary": "47 ideas \u00b7 4 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
+    "summary": "16 ideas \u00b7 2 free \u00b7 4 adult outing \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
     "events": [
       {
         "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -186,42 +186,6 @@
           "area": "beach",
           "time_period": "evening",
           "source_key": "city",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Pacific Beach Tuesday Certified Farmers' Market",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-tuesday-certified-farmers-/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Along Bayard Street, from Garnet to Hornblend",
-        "description": "The P.B. Farmers' Market scene can\u2019t be much different than, say, 100 years ago, or maybe even those medieval markets you read about. Tents, stalls, veggies, fruits, people shouting, touting their wares. Troubadour singing. Smells of herbs, like fennel and rosemary, and carroty steam from a vegan soup a-cooking.",
-        "time_text": "2026-07-28T14:00-0700",
-        "category": "Farmers market",
-        "is_free": false,
-        "score": 8,
-        "tags": [
-          "beach"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": true
-          },
-          "area": "beach",
-          "time_period": "unknown",
-          "source_key": "reader",
           "metadata_version": 2
         }
       },
@@ -336,25 +300,59 @@
         }
       },
       {
-        "title": "ha ha ha ha ha ha ha",
+        "title": "Dr. Seuss's Boids & Beasties | Exhibition",
         "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/28/ha-ha-ha-ha-ha-ha-ha/?et=363314",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Mandell Weiss Forum, San Diego",
-        "description": "Created and performed by Julia MasliDirected by Kim NobleJulia Masli\u2019s award-winning solo phenomenon ha ha ha ha ha ha ha arrives in San Diego for two weeks only following a string of critically acclaimed runs at The Public Theatre, Yale Repertory Theatre, Pasadena Playhouse, Woolly Mammoth Theatre Company, Soho Playhouse in New York City, Melbourne International Comedy Festival, London\u2019s Soho Theatre and the Edinburgh Fringe Festival.Part clowning, part surreal social experiment, part connection-forging alchemy, ha ha ha ha ha ha ha transforms La Jolla Playhouse\u2019s Forum Theatre into a playground of spontaneity, outlandish hilarity, and surprising poignancy, all shaped in real time by the audience. Anarchic. Side-splitting. Unexpectedly tender.The Guardian says ha ha ha ha ha ha ha is \u201ca great unexpected carnival of mutual care, ring-led with a featherlight touch by a clown whose mischief is matched only by her compassion.\u201dUtterly unlike anything else onstage, this is a completely different experience every night that keeps audiences coming back again and again. ha ha ha ha ha ha ha is a quintessential WOW experience \u2013 improvised heavily and based on audience participation.",
-        "time_text": "2026-07-28T19:00-0700",
-        "category": "Festival / community",
+        "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+        "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+        "time_text": "2026-07-28",
+        "category": "Farmers market",
         "is_free": false,
-        "score": 5,
+        "score": 3,
         "tags": [],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
           "features": {
             "free": false,
-            "outdoor": true,
+            "outdoor": false,
             "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "beach",
+          "time_period": "evening",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "ha ha ha ha ha ha ha",
+        "date": "2026-07-28",
+        "url": "https://calendar.ucsd.edu/event/ha-ha-ha-ha-ha-ha-ha-2963",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "La Jolla Playhouse, 2910 La Jolla Village Drive, La Jolla, CA 92093",
+        "description": "Julia Masli\u2019s award-winning solo phenomenon ha ha ha ha ha ha ha (a New York Times Top Pick of the Year) arrives in San Diego for two weeks only following a string of critically acclaimed runs across the world, from Edinburgh to New York to Melbourne. The Guardian says it's \u201cThe year's most exciting, have-to-be-there comedy moment.\" Theatermania agrees: \u201cIt\u2019s a testament to what a community can achieve when it works together.\u201d",
+        "time_text": "2026-07-28",
+        "category": "Performance / movie",
+        "is_free": false,
+        "score": 3,
+        "tags": [],
+        "metadata": {
+          "audience": "all_ages",
+          "age_groups": [],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
             "stroller_friendly": false,
@@ -364,92 +362,20 @@
             "food_nearby": false
           },
           "area": "beach",
-          "time_period": "evening",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Pacific Beach Farmers' Market",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Pacific Beach Farmers' Market, San Diego",
-        "description": "",
-        "time_text": "2026-07-28T14:00-0700",
-        "category": "Farmers market",
-        "is_free": false,
-        "score": 5,
-        "tags": [
-          "beach"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": false,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": false,
-            "food_nearby": true
-          },
-          "area": "beach",
           "time_period": "unknown",
-          "source_key": "reader",
+          "source_key": "ucsd",
           "metadata_version": 2
         }
       },
       {
-        "title": "Salsa Under The Stars",
+        "title": "Share Your Story as an International Student",
         "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/28/salsa-under-the-stars-at-otay-ranch/?et=363172",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Otay Ranch Town Center, Chula Vista",
-        "description": "Running from mid July until mid September, the Salsa Under The Stars series will feature the Manny Cepeda Orchestra quartet and offer Latin music and dancing for all ages during the center's weekly Farmers Market. Originally from San Juan, Puerto Rico, bandleader Manny Cepeda has both a Bachelors in Music Education and Masters in Music and retired from the Navy as the top Enlisted Bandmaster after 31 years of service. In 2004 the Manny Cepeda Orchestra was born.",
-        "time_text": "2026-07-28T16:40-0700",
-        "category": "Farmers market",
-        "is_free": false,
-        "score": 4,
-        "tags": [
-          "farmers market"
-        ],
-        "metadata": {
-          "audience": "all_ages",
-          "age_groups": [],
-          "features": {
-            "free": false,
-            "outdoor": true,
-            "indoor": true,
-            "dog_friendly": false,
-            "toddler_friendly": false,
-            "stroller_friendly": false,
-            "low_walking": false,
-            "shade": false,
-            "bathrooms": true,
-            "food_nearby": true
-          },
-          "area": "north-county",
-          "time_period": "unknown",
-          "source_key": "reader",
-          "metadata_version": 2
-        }
-      },
-      {
-        "title": "Alzheimer's Association: Understanding Alzheimer's & Dementia",
-        "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/28/alzheimers-association-understandin-c5a7db98/?et=363587",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Zoom, San Diego",
-        "description": "Alzheimer's disease is not a normal part of aging. Learn about the impact of Alzheimer's; the difference between Alzheimer's and dementia; stages and risk factors; current research and treatments available for some symptoms; and Alzheimer's Association resources.",
-        "time_text": "2026-07-28T12:00-0700",
+        "url": "https://calendar.ucsd.edu/event/share-your-story-as-an-international-student",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "",
+        "description": "iSTUDENTS: The Center for Race, Immigration, Citizenship, and Equality (RICE) at UC Law San Francisco is conducting a research study on international student experiences in the U.S. If you are on an F, M, J visa, or OPT status, you\u2019re invited to participate in a short survey and a 45-minute interview (in person or via Zoom). Your voice matters\u2014help us understand how immigration status shapes your sense of belonging across race, language, culture, and life goals. \u2705 Flexible scheduling \ud83c\udf81 $20 gift card upon interview completion \ud83d\udd12 Confidential and IRB-approved To participate, email rice@uclawsf.edu with the subject line \u201cInternational Student Study\u201d.",
+        "time_text": "2026-07-28",
         "category": "Museum / zoo",
         "is_free": false,
         "score": 3,
@@ -462,6 +388,44 @@
           "features": {
             "free": false,
             "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": true,
+            "food_nearby": false
+          },
+          "area": "unknown",
+          "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Open Mic Night: Free For All",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/ongoing/open-mic-night-free-for-all/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "McGuffie's Live, San Diego",
+        "description": "",
+        "time_text": "2026-07-28T21:00-0700",
+        "category": "Adult outing",
+        "is_free": true,
+        "score": 2,
+        "tags": [
+          "free"
+        ],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": true,
+            "outdoor": false,
             "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
@@ -472,26 +436,24 @@
             "food_nearby": false
           },
           "area": "central-san-diego",
-          "time_period": "unknown",
+          "time_period": "evening",
           "source_key": "reader",
           "metadata_version": 2
         }
       },
       {
-        "title": "Book Marketing for Authors",
+        "title": "UC San Diego 2026 Cardiovascular Sciences Summer Seminar Series",
         "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/2026/jul/28/book-marketing-for-authors/?et=360833",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Online Internet Events, San Diego",
-        "description": "This six-week course helps independent authors build a clear, actionable marketing foundation\u2014one that\u2019s personalized, scalable, and sustainable. Whether you\u2019re preparing to launch your debut title or breathe new life into a book that\u2019s already out, you\u2019ll learn how to think like a publisher and promote like a marketer. Each week, explore a key part of your author marketing plan\u2014from brand identity and messaging to website visibility, SEO/GEO strategy, and book launch planning\u2014so by the end, you\u2019ll have a personalized roadmap to increase your visibility, strengthen your connection with readers, and expand your discoverability across platforms. You\u2019ll discover how to:\u2022 Identify your ideal readers and understand what motivates them to buy\u2022 Build an author brand that resonates and sets you apart\u2022 Craft messaging that turns browsers into buyers\u2022 Design a website that converts visitors into fans\u2022 Use SEO and GEO-targeting to expand your reach online and locally\u2022 Plan and execute a book launch that builds buzz and drives sales\u2022 Sustain long-term visibility and reader engagement after launch Each week includes a short preparation assignment, practical examples, and guided discussion to help you apply these strategies directly to your book and brand",
-        "time_text": "2026-07-28T17:30-0700",
-        "category": "Farmers market",
+        "url": "https://calendar.ucsd.edu/event/focus-2026summer-seminars",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Skaggs Pharmaceutical Sciences Building (PSB), 9255 Pharmacy Ln, La Jolla, CA 92093",
+        "description": "Join UC San Diego FOCUS program for the 2026 Cardiovascular Sciences Summer Seminar Series, presentd by UC San Diego's faculty researchers and a FOCUS program alumnus. The seminars are open to the public; no registration is required. Light rereshments will be served.",
+        "time_text": "2026-07-28",
+        "category": "Craft / STEAM",
         "is_free": false,
-        "score": 3,
-        "tags": [
-          "craft"
-        ],
+        "score": 2,
+        "tags": [],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
@@ -507,31 +469,31 @@
             "bathrooms": false,
             "food_nearby": false
           },
-          "area": "central-san-diego",
+          "area": "beach",
           "time_period": "unknown",
-          "source_key": "reader",
+          "source_key": "ucsd",
           "metadata_version": 2
         }
       },
       {
-        "title": "Coronado Certified Farmers' Market",
+        "title": "UC San Diego 2026 Infectious Diseases Summer Seminar Series",
         "date": "2026-07-28",
-        "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
-        "source": "reader",
-        "source_label": "San Diego Reader",
-        "venue": "Ferry Landing Marketplace, Coronado",
-        "description": "",
-        "time_text": "2026-07-28T14:30-0700",
-        "category": "Farmers market",
+        "url": "https://calendar.ucsd.edu/event/rapid-2026summer-seminars",
+        "source": "ucsd",
+        "source_label": "UCSD Events",
+        "venue": "Skaggs Pharmaceutical Sciences Building (PSB), 9255 Pharmacy Ln, La Jolla, CA 92093",
+        "description": "Join UC San Diego RAPID program for 2026 Infectious Diseases Summer Seminar Series, presented by two of UC San Diego\u2019s infectious diseases faculty researchers and a RAPID program alumnus. Seminars are open to public; no registration is required. Light refreshments will be served.",
+        "time_text": "2026-07-28",
+        "category": "Craft / STEAM",
         "is_free": false,
-        "score": 3,
+        "score": 2,
         "tags": [],
         "metadata": {
           "audience": "all_ages",
           "age_groups": [],
           "features": {
             "free": false,
-            "outdoor": true,
+            "outdoor": false,
             "indoor": false,
             "dog_friendly": false,
             "toddler_friendly": false,
@@ -539,10 +501,46 @@
             "low_walking": false,
             "shade": false,
             "bathrooms": false,
-            "food_nearby": true
+            "food_nearby": false
           },
           "area": "beach",
           "time_period": "unknown",
+          "source_key": "ucsd",
+          "metadata_version": 2
+        }
+      },
+      {
+        "title": "Open Mic Night",
+        "date": "2026-07-28",
+        "url": "https://www.sandiegoreader.com/events/ongoing/open-mic-night-c0ae5d74/",
+        "source": "reader",
+        "source_label": "San Diego Reader",
+        "venue": "1st Street Bar, Encinitas",
+        "description": "",
+        "time_text": "2026-07-28T21:00-0700",
+        "category": "Adult outing",
+        "is_free": false,
+        "score": 0,
+        "tags": [],
+        "metadata": {
+          "audience": "adult",
+          "age_groups": [
+            "adults"
+          ],
+          "features": {
+            "free": false,
+            "outdoor": false,
+            "indoor": true,
+            "dog_friendly": false,
+            "toddler_friendly": false,
+            "stroller_friendly": false,
+            "low_walking": false,
+            "shade": false,
+            "bathrooms": false,
+            "food_nearby": false
+          },
+          "area": "north-county",
+          "time_period": "evening",
           "source_key": "reader",
           "metadata_version": 2
         }
@@ -556,7 +554,7 @@
       "label": "Jul 28",
       "is_today": true,
       "count": 12,
-      "summary": "47 ideas \u00b7 4 free \u00b7 13 all-ages event \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
+      "summary": "16 ideas \u00b7 2 free \u00b7 4 adult outing \u00b7 Comics of Care: Healing Through Graphic Medicine, Pacific Beach Tuesday Farmers Market",
       "events": [
         {
           "title": "Comics of Care: Healing Through Graphic Medicine",
@@ -630,42 +628,6 @@
             "area": "beach",
             "time_period": "evening",
             "source_key": "city",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Pacific Beach Tuesday Certified Farmers' Market",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-tuesday-certified-farmers-/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Along Bayard Street, from Garnet to Hornblend",
-          "description": "The P.B. Farmers' Market scene can\u2019t be much different than, say, 100 years ago, or maybe even those medieval markets you read about. Tents, stalls, veggies, fruits, people shouting, touting their wares. Troubadour singing. Smells of herbs, like fennel and rosemary, and carroty steam from a vegan soup a-cooking.",
-          "time_text": "2026-07-28T14:00-0700",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 8,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": true
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "reader",
             "metadata_version": 2
           }
         },
@@ -780,25 +742,59 @@
           }
         },
         {
-          "title": "ha ha ha ha ha ha ha",
+          "title": "Dr. Seuss's Boids & Beasties | Exhibition",
           "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/28/ha-ha-ha-ha-ha-ha-ha/?et=363314",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Mandell Weiss Forum, San Diego",
-          "description": "Created and performed by Julia MasliDirected by Kim NobleJulia Masli\u2019s award-winning solo phenomenon ha ha ha ha ha ha ha arrives in San Diego for two weeks only following a string of critically acclaimed runs at The Public Theatre, Yale Repertory Theatre, Pasadena Playhouse, Woolly Mammoth Theatre Company, Soho Playhouse in New York City, Melbourne International Comedy Festival, London\u2019s Soho Theatre and the Edinburgh Fringe Festival.Part clowning, part surreal social experiment, part connection-forging alchemy, ha ha ha ha ha ha ha transforms La Jolla Playhouse\u2019s Forum Theatre into a playground of spontaneity, outlandish hilarity, and surprising poignancy, all shaped in real time by the audience. Anarchic. Side-splitting. Unexpectedly tender.The Guardian says ha ha ha ha ha ha ha is \u201ca great unexpected carnival of mutual care, ring-led with a featherlight touch by a clown whose mischief is matched only by her compassion.\u201dUtterly unlike anything else onstage, this is a completely different experience every night that keeps audiences coming back again and again. ha ha ha ha ha ha ha is a quintessential WOW experience \u2013 improvised heavily and based on audience participation.",
-          "time_text": "2026-07-28T19:00-0700",
-          "category": "Festival / community",
+          "url": "https://calendar.ucsd.edu/event/dr-seusss-boids-beasties-exhibit-2026",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Geisel Library, 9701 Hopkins Drive, La Jolla, CA 92093",
+          "description": "This exhibition features select items from UC San Diego Library\u2019s Dr. Seuss Collection \u2014 Theodor Seuss Geisel\u2019s personal collection of drawings, scrapbooks, sketches and other works donated to UC San Diego after his death in 1991. Located on the 2nd (main) Floor in the Exhibition Gallery and the adjacent hallway (towards Geisel Southwest), Dr. Seuss\u2019s Boids & Beasties includes original drawings by Geisel \u2014 a long-time resident of La Jolla \u2014 and showcases his whimsical and fantastical creatures and creative talent. \u201cBoids & Beasties\u201d is Geisel\u2019s own term for his fantastical creatures. Dr. Seuss books have entertained and educated for more than half a century. In fabricating tales and bringing fantastic creatures to life in the imaginations of young and old alike, he has given us the likes of the Cat in the Hat, Gertrude McFuzz, Yertle the Turtle, the Grinch, and the Lorax; we now have places to go like Solla Sollew, Who-ville and Sala-ma-Sond. His style of flamboyant, colorful illustrations, surreal surroundings, and clever yet simple rhymes have made his work recognizable throughout the world. These creations are fun, but with a serious purpose. They teach reading, self-confidence, and the wonderful possibilities of our imaginations. Dr. Seuss's Boids & Beasties is on view at Geisel Library in the Exhibition Gallery on the 2nd (main) Floor during the building's open hours. ABOUT THE DR. SEUSS COLLECTION UC San Diego\u2019s Dr. Seuss Collection contains original drawings, sketches, proofs, notebooks, manuscript drafts, books, audio and videotapes, photographs, and memorabilia. With more than 20,000 items, the collection documents the full range of Dr. Seuss\u2019s creative achievements, beginning in 1919 with his high school activities and ending with his death in 1991. Included are early student writings, drawings and class notes; commercial art for Standard Oil of New Jersey, Ford Motor and other companies; stories and illustrations published in Judge Magazine, Red Book Magazine, The Saturday Evening Post, and other popular magazines of the 1920s and 1930s; anti-fascist political cartoons published chiefly in PM; U.S. Army brochures and other documents related to Geisel\u2019s service during World War II; drawings and text, both rough drafts and finished renderings, for Dr. Seuss\u2019s books; \u201cbone pile\u201d fragments of preliminary drawings, false starts, and experimental sketches; scripts, storyboards and production notes for screenplay adaptations; his notes as editor of Beginner Books, a division of Random House; and other documents and artifacts that reflect marketing, publishing, commercial production, and public reactions to Dr. Seuss\u2019s work.",
+          "time_text": "2026-07-28",
+          "category": "Farmers market",
           "is_free": false,
-          "score": 5,
+          "score": 3,
           "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
             "features": {
               "free": false,
-              "outdoor": true,
+              "outdoor": false,
               "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "beach",
+            "time_period": "evening",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "ha ha ha ha ha ha ha",
+          "date": "2026-07-28",
+          "url": "https://calendar.ucsd.edu/event/ha-ha-ha-ha-ha-ha-ha-2963",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "La Jolla Playhouse, 2910 La Jolla Village Drive, La Jolla, CA 92093",
+          "description": "Julia Masli\u2019s award-winning solo phenomenon ha ha ha ha ha ha ha (a New York Times Top Pick of the Year) arrives in San Diego for two weeks only following a string of critically acclaimed runs across the world, from Edinburgh to New York to Melbourne. The Guardian says it's \u201cThe year's most exciting, have-to-be-there comedy moment.\" Theatermania agrees: \u201cIt\u2019s a testament to what a community can achieve when it works together.\u201d",
+          "time_text": "2026-07-28",
+          "category": "Performance / movie",
+          "is_free": false,
+          "score": 3,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
               "stroller_friendly": false,
@@ -808,92 +804,20 @@
               "food_nearby": false
             },
             "area": "beach",
-            "time_period": "evening",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Pacific Beach Farmers' Market",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/pacific-beach-farmers-market/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Pacific Beach Farmers' Market, San Diego",
-          "description": "",
-          "time_text": "2026-07-28T14:00-0700",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 5,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": true
-            },
-            "area": "beach",
             "time_period": "unknown",
-            "source_key": "reader",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         },
         {
-          "title": "Salsa Under The Stars",
+          "title": "Share Your Story as an International Student",
           "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/28/salsa-under-the-stars-at-otay-ranch/?et=363172",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Otay Ranch Town Center, Chula Vista",
-          "description": "Running from mid July until mid September, the Salsa Under The Stars series will feature the Manny Cepeda Orchestra quartet and offer Latin music and dancing for all ages during the center's weekly Farmers Market. Originally from San Juan, Puerto Rico, bandleader Manny Cepeda has both a Bachelors in Music Education and Masters in Music and retired from the Navy as the top Enlisted Bandmaster after 31 years of service. In 2004 the Manny Cepeda Orchestra was born.",
-          "time_text": "2026-07-28T16:40-0700",
-          "category": "Farmers market",
-          "is_free": false,
-          "score": 4,
-          "tags": [
-            "farmers market"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": true
-            },
-            "area": "north-county",
-            "time_period": "unknown",
-            "source_key": "reader",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Alzheimer's Association: Understanding Alzheimer's & Dementia",
-          "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/28/alzheimers-association-understandin-c5a7db98/?et=363587",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Zoom, San Diego",
-          "description": "Alzheimer's disease is not a normal part of aging. Learn about the impact of Alzheimer's; the difference between Alzheimer's and dementia; stages and risk factors; current research and treatments available for some symptoms; and Alzheimer's Association resources.",
-          "time_text": "2026-07-28T12:00-0700",
+          "url": "https://calendar.ucsd.edu/event/share-your-story-as-an-international-student",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "",
+          "description": "iSTUDENTS: The Center for Race, Immigration, Citizenship, and Equality (RICE) at UC Law San Francisco is conducting a research study on international student experiences in the U.S. If you are on an F, M, J visa, or OPT status, you\u2019re invited to participate in a short survey and a 45-minute interview (in person or via Zoom). Your voice matters\u2014help us understand how immigration status shapes your sense of belonging across race, language, culture, and life goals. \u2705 Flexible scheduling \ud83c\udf81 $20 gift card upon interview completion \ud83d\udd12 Confidential and IRB-approved To participate, email rice@uclawsf.edu with the subject line \u201cInternational Student Study\u201d.",
+          "time_text": "2026-07-28",
           "category": "Museum / zoo",
           "is_free": false,
           "score": 3,
@@ -906,6 +830,44 @@
             "features": {
               "free": false,
               "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Open Mic Night: Free For All",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/ongoing/open-mic-night-free-for-all/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "McGuffie's Live, San Diego",
+          "description": "",
+          "time_text": "2026-07-28T21:00-0700",
+          "category": "Adult outing",
+          "is_free": true,
+          "score": 2,
+          "tags": [
+            "free"
+          ],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": true,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -916,26 +878,24 @@
               "food_nearby": false
             },
             "area": "central-san-diego",
-            "time_period": "unknown",
+            "time_period": "evening",
             "source_key": "reader",
             "metadata_version": 2
           }
         },
         {
-          "title": "Book Marketing for Authors",
+          "title": "UC San Diego 2026 Cardiovascular Sciences Summer Seminar Series",
           "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/2026/jul/28/book-marketing-for-authors/?et=360833",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Online Internet Events, San Diego",
-          "description": "This six-week course helps independent authors build a clear, actionable marketing foundation\u2014one that\u2019s personalized, scalable, and sustainable. Whether you\u2019re preparing to launch your debut title or breathe new life into a book that\u2019s already out, you\u2019ll learn how to think like a publisher and promote like a marketer. Each week, explore a key part of your author marketing plan\u2014from brand identity and messaging to website visibility, SEO/GEO strategy, and book launch planning\u2014so by the end, you\u2019ll have a personalized roadmap to increase your visibility, strengthen your connection with readers, and expand your discoverability across platforms. You\u2019ll discover how to:\u2022 Identify your ideal readers and understand what motivates them to buy\u2022 Build an author brand that resonates and sets you apart\u2022 Craft messaging that turns browsers into buyers\u2022 Design a website that converts visitors into fans\u2022 Use SEO and GEO-targeting to expand your reach online and locally\u2022 Plan and execute a book launch that builds buzz and drives sales\u2022 Sustain long-term visibility and reader engagement after launch Each week includes a short preparation assignment, practical examples, and guided discussion to help you apply these strategies directly to your book and brand",
-          "time_text": "2026-07-28T17:30-0700",
-          "category": "Farmers market",
+          "url": "https://calendar.ucsd.edu/event/focus-2026summer-seminars",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Skaggs Pharmaceutical Sciences Building (PSB), 9255 Pharmacy Ln, La Jolla, CA 92093",
+          "description": "Join UC San Diego FOCUS program for the 2026 Cardiovascular Sciences Summer Seminar Series, presentd by UC San Diego's faculty researchers and a FOCUS program alumnus. The seminars are open to the public; no registration is required. Light rereshments will be served.",
+          "time_text": "2026-07-28",
+          "category": "Craft / STEAM",
           "is_free": false,
-          "score": 3,
-          "tags": [
-            "craft"
-          ],
+          "score": 2,
+          "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
@@ -951,31 +911,31 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "central-san-diego",
+            "area": "beach",
             "time_period": "unknown",
-            "source_key": "reader",
+            "source_key": "ucsd",
             "metadata_version": 2
           }
         },
         {
-          "title": "Coronado Certified Farmers' Market",
+          "title": "UC San Diego 2026 Infectious Diseases Summer Seminar Series",
           "date": "2026-07-28",
-          "url": "https://www.sandiegoreader.com/events/ongoing/coronado-certified-farmers-market/",
-          "source": "reader",
-          "source_label": "San Diego Reader",
-          "venue": "Ferry Landing Marketplace, Coronado",
-          "description": "",
-          "time_text": "2026-07-28T14:30-0700",
-          "category": "Farmers market",
+          "url": "https://calendar.ucsd.edu/event/rapid-2026summer-seminars",
+          "source": "ucsd",
+          "source_label": "UCSD Events",
+          "venue": "Skaggs Pharmaceutical Sciences Building (PSB), 9255 Pharmacy Ln, La Jolla, CA 92093",
+          "description": "Join UC San Diego RAPID program for 2026 Infectious Diseases Summer Seminar Series, presented by two of UC San Diego\u2019s infectious diseases faculty researchers and a RAPID program alumnus. Seminars are open to public; no registration is required. Light refreshments will be served.",
+          "time_text": "2026-07-28",
+          "category": "Craft / STEAM",
           "is_free": false,
-          "score": 3,
+          "score": 2,
           "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
             "features": {
               "free": false,
-              "outdoor": true,
+              "outdoor": false,
               "indoor": false,
               "dog_friendly": false,
               "toddler_friendly": false,
@@ -983,10 +943,46 @@
               "low_walking": false,
               "shade": false,
               "bathrooms": false,
-              "food_nearby": true
+              "food_nearby": false
             },
             "area": "beach",
             "time_period": "unknown",
+            "source_key": "ucsd",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Open Mic Night",
+          "date": "2026-07-28",
+          "url": "https://www.sandiegoreader.com/events/ongoing/open-mic-night-c0ae5d74/",
+          "source": "reader",
+          "source_label": "San Diego Reader",
+          "venue": "1st Street Bar, Encinitas",
+          "description": "",
+          "time_text": "2026-07-28T21:00-0700",
+          "category": "Adult outing",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "adult",
+            "age_groups": [
+              "adults"
+            ],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "north-county",
+            "time_period": "evening",
             "source_key": "reader",
             "metadata_version": 2
           }
@@ -998,8 +994,8 @@
       "weekday": "Wed",
       "label": "Jul 29",
       "is_today": false,
-      "count": 12,
-      "summary": "17 ideas \u00b7 1 free \u00b7 7 all-ages event \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
+      "count": 8,
+      "summary": "8 ideas \u00b7 3 farmers market \u00b7 Ocean Beach Certified Farmers' Market 2026, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Ocean Beach Certified Farmers' Market 2026",
@@ -1075,43 +1071,6 @@
           }
         },
         {
-          "title": "Tuesday Night Spike - The largest FREE Spikeball event on the planet!",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/sdroundnet/events/315607416/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "World Famous, San Diego, CA, 711 Pacific Beach Dr, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T00:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": true,
-          "score": 4,
-          "tags": [
-            "beach",
-            "free"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": true,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": false,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "evening",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
           "title": "Ella Mai \u2013 'Do You Still Love Me?' 2026 Tour",
           "date": "2026-07-29",
           "url": "https://www.kpbs.org/events/2026/07/29/ella-mai-do-you-still-love-me-2026-tour",
@@ -1148,20 +1107,18 @@
           }
         },
         {
-          "title": "4TH Tues Uke @ MB RV Clubhouse",
+          "title": "Let's Cowork in PB!",
           "date": "2026-07-29",
-          "url": "https://www.meetup.com/sdukulele/events/315380305/",
+          "url": "https://www.meetup.com/sd-remote-workers/events/315796751/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Mission Bay RV Park, San Diego, CA, 2727 De Anza Rd, San Diego, CA",
+          "venue": "Second Nature, San Diego, CA, 5026 Cass St, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-29T01:30:00.000Z",
+          "time_text": "2026-07-29T20:30:00.000Z",
           "category": "Outdoor / nature",
           "is_free": false,
           "score": 2,
-          "tags": [
-            "park"
-          ],
+          "tags": [],
           "metadata": {
             "audience": "all_ages",
             "age_groups": [],
@@ -1174,118 +1131,10 @@
               "stroller_friendly": false,
               "low_walking": false,
               "shade": false,
-              "bathrooms": true,
+              "bathrooms": false,
               "food_nearby": false
             },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Hotel Del Moonrise",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/travel-landscape-night-photography-meetup/events/314601980/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Coronado Dog Beach, Coronado, CA, 100 Ocean Blvd., Ocean Blvd. and Ocean Drive, Coronado, CA",
-          "description": "",
-          "time_text": "2026-07-29T02:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "beach"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "Summer Ice Cream walk 4ish miles",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/slow-and-easy-exercisers/events/315805348/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Cannonball Sushi Belmont Park, San Diego, CA, 3105 Ocean Front Walk, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T01:00:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "beach",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "\ud83c\udfbcThat Beatles Cover Band! Twilight @Balboa\u2019s Park Spreckels Pavilion\ud83c\udfb6",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/sd-sociables/events/314326803/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Spreckels Organ Pavilion, San Diego, CA, 1549 El Prado # 10, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T00:30:00.000Z",
-          "category": "Outdoor / nature",
-          "is_free": false,
-          "score": 2,
-          "tags": [
-            "park"
-          ],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": true,
-              "indoor": false,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
-            "area": "balboa",
+            "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
             "metadata_version": 2
@@ -1360,14 +1209,48 @@
           }
         },
         {
-          "title": "A Place To Talk About The Beatles",
+          "title": "Walk along Sunset Cliffs and optional lunch",
           "date": "2026-07-29",
-          "url": "https://www.meetup.com/norwegian-wood-society/events/315427775/",
+          "url": "https://www.meetup.com/movies-n-more/events/315433021/",
           "source": "meetup_general",
           "source_label": "Meetup San Diego",
-          "venue": "Spreckels Organ Pavillion, San Diego, CA, Pan American Road East, San Diego, CA",
+          "venue": "Bottom of Adair St @ Sunset Cliffs Blvd., San Diego, CA, 1370 Sunset Cliffs Blvd, San Diego, CA",
           "description": "",
-          "time_text": "2026-07-29T01:00:00.000Z",
+          "time_text": "2026-07-29T18:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": true,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "evening",
+            "source_key": "meetup_general",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Wednesday Soccer at SDSU ENS Field",
+          "date": "2026-07-29",
+          "url": "https://www.meetup.com/soccer-at-snap/events/315449779/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "SDSU - ENS Field, San Diego, CA, 5500 Campanile Dr, San Diego, CA",
+          "description": "",
+          "time_text": "2026-07-29T22:30:00.000Z",
           "category": "All-ages event",
           "is_free": false,
           "score": 0,
@@ -1387,40 +1270,6 @@
               "bathrooms": false,
               "food_nearby": false
             },
-            "area": "balboa",
-            "time_period": "unknown",
-            "source_key": "meetup_general",
-            "metadata_version": 2
-          }
-        },
-        {
-          "title": "mindfulness exercises: breath work, qigong, tai chi, guided meditation, theory",
-          "date": "2026-07-29",
-          "url": "https://www.meetup.com/zendao-mindfulness-tai-chi/events/315795285/",
-          "source": "meetup_general",
-          "source_label": "Meetup San Diego",
-          "venue": "Standley Recreation Center, San Diego, CA, 3585 Governor Drive, San Diego, CA",
-          "description": "",
-          "time_text": "2026-07-29T00:00:00.000Z",
-          "category": "All-ages event",
-          "is_free": false,
-          "score": 0,
-          "tags": [],
-          "metadata": {
-            "audience": "all_ages",
-            "age_groups": [],
-            "features": {
-              "free": false,
-              "outdoor": false,
-              "indoor": true,
-              "dog_friendly": false,
-              "toddler_friendly": false,
-              "stroller_friendly": false,
-              "low_walking": false,
-              "shade": false,
-              "bathrooms": true,
-              "food_nearby": false
-            },
             "area": "central-san-diego",
             "time_period": "unknown",
             "source_key": "meetup_general",
@@ -1434,8 +1283,8 @@
       "weekday": "Thu",
       "label": "Jul 30",
       "is_today": false,
-      "count": 9,
-      "summary": "9 ideas \u00b7 2 free \u00b7 2 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, North Park Farmers Market 2026",
+      "count": 10,
+      "summary": "10 ideas \u00b7 2 free \u00b7 3 museum / zoo \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, Shark Summer at Birch Aquarium",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -1468,6 +1317,42 @@
               "low_walking": false,
               "shade": false,
               "bathrooms": true,
+              "food_nearby": false
+            },
+            "area": "unknown",
+            "time_period": "unknown",
+            "source_key": "kids",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "Shark Summer at Birch Aquarium",
+          "date": "2026-07-30",
+          "url": "https://sandiego.kidsoutandabout.com/content/shark-summer-birch-aquarium",
+          "source": "kids",
+          "source_label": "Kids Out And About",
+          "venue": "",
+          "description": "Have you ever wondered what species swim in our local waters? Or wanted to know what makes sharks such unique animals? This July, join us as we dive deep into the world of these amazing animals, with fin-tastic fun for shark fans of all ages! Shark Summer celebrates the vital role sharks play in the ecosystem, while shining a light on the important conservation work and research being done to protect them.",
+          "time_text": "",
+          "category": "Museum / zoo",
+          "is_free": false,
+          "score": 8,
+          "tags": [
+            "aquarium"
+          ],
+          "metadata": {
+            "audience": "family",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": true,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
               "food_nearby": false
             },
             "area": "unknown",
@@ -4294,8 +4179,8 @@
       "weekday": "Thu",
       "label": "Aug 13",
       "is_today": false,
-      "count": 4,
-      "summary": "4 ideas \u00b7 1 free \u00b7 1 performance / movie \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
+      "count": 5,
+      "summary": "5 ideas \u00b7 1 free \u00b7 2 all-ages event \u00b7 Zumba for Kids at the Community Room - City Heights/Weingart Library, INT'L CAFE at Pure Project Brewing Balboa Park",
       "events": [
         {
           "title": "Zumba for Kids at the Community Room - City Heights/Weingart Library",
@@ -4439,6 +4324,40 @@
             "area": "unknown",
             "time_period": "unknown",
             "source_key": "meetup_dogs",
+            "metadata_version": 2
+          }
+        },
+        {
+          "title": "San Diego JavaScript Monthly Meetup @ Edge",
+          "date": "2026-08-13",
+          "url": "https://www.meetup.com/sandiegojs/events/315597720/",
+          "source": "meetup_general",
+          "source_label": "Meetup San Diego",
+          "venue": "Edge, San Diego, CA, 1495 Pacific Hwy #300, San Diego, CA",
+          "description": "",
+          "time_text": "2026-08-13T01:30:00.000Z",
+          "category": "All-ages event",
+          "is_free": false,
+          "score": 0,
+          "tags": [],
+          "metadata": {
+            "audience": "all_ages",
+            "age_groups": [],
+            "features": {
+              "free": false,
+              "outdoor": false,
+              "indoor": false,
+              "dog_friendly": false,
+              "toddler_friendly": false,
+              "stroller_friendly": false,
+              "low_walking": false,
+              "shade": false,
+              "bathrooms": false,
+              "food_nearby": false
+            },
+            "area": "central-san-diego",
+            "time_period": "unknown",
+            "source_key": "meetup_general",
             "metadata_version": 2
           }
         }
@@ -4734,7 +4653,7 @@
     }
   ],
   "counts": {
-    "total_events": 111,
+    "total_events": 109,
     "days": 21,
     "free_events": 18,
     "configured_sources": 10,
@@ -4743,34 +4662,34 @@
   "top_categories": [
     {
       "name": "Outdoor / nature",
-      "count": 34
+      "count": 30
     },
     {
       "name": "All-ages event",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Museum / zoo",
-      "count": 16
-    },
-    {
-      "name": "Farmers market",
-      "count": 13
+      "count": 17
     },
     {
       "name": "Performance / movie",
+      "count": 10
+    },
+    {
+      "name": "Farmers market",
       "count": 9
     },
     {
       "name": "Adult outing",
-      "count": 6
-    },
-    {
-      "name": "Festival / community",
-      "count": 4
+      "count": 8
     },
     {
       "name": "Craft / STEAM",
+      "count": 5
+    },
+    {
+      "name": "Festival / community",
       "count": 3
     }
   ]
